@@ -1,0 +1,84 @@
+'use client';
+
+import { Zap, Cpu, Sparkles } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import type { LucideIcon } from 'lucide-react';
+import { AnimatedSection } from './AnimatedSection';
+
+interface DiffItem {
+  icon: LucideIcon;
+  gradient: string;
+  titleKey: 'item1Title' | 'item2Title' | 'item3Title';
+  textKey: 'item1Text' | 'item2Text' | 'item3Text';
+  delay: number;
+}
+
+const items: DiffItem[] = [
+  {
+    icon: Zap,
+    gradient: 'from-purple-500 to-blue-500',
+    titleKey: 'item1Title',
+    textKey: 'item1Text',
+    delay: 0,
+  },
+  {
+    icon: Cpu,
+    gradient: 'from-blue-500 to-violet-500',
+    titleKey: 'item2Title',
+    textKey: 'item2Text',
+    delay: 0.1,
+  },
+  {
+    icon: Sparkles,
+    gradient: 'from-violet-500 to-purple-500',
+    titleKey: 'item3Title',
+    textKey: 'item3Text',
+    delay: 0.2,
+  },
+];
+
+export function Differentiation() {
+  const t = useTranslations('differentiation');
+
+  return (
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        {/* Title */}
+        <AnimatedSection className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+            {t('title')}
+          </h2>
+        </AnimatedSection>
+
+        {/* 3-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <AnimatedSection key={item.titleKey} delay={item.delay}>
+                <div className="group bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 h-full text-center md:text-left">
+                  {/* Icon with gradient background circle */}
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
+                  >
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-white font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm leading-relaxed">{t(item.textKey)}</p>
+                </div>
+              </AnimatedSection>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
