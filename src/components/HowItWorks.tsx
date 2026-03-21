@@ -1,6 +1,6 @@
 'use client';
 
-import { Database, Brain, Rocket } from 'lucide-react';
+import { Target, Brain, BarChart3 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import type { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -17,7 +17,7 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
-    icon: Database,
+    icon: Target,
     titleKey: 'step1Title',
     textKey: 'step1Text',
     delay: 0,
@@ -31,7 +31,7 @@ const steps: Step[] = [
   },
   {
     number: '03',
-    icon: Rocket,
+    icon: BarChart3,
     titleKey: 'step3Title',
     textKey: 'step3Text',
     delay: 0.3,

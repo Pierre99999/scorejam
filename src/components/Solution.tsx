@@ -35,7 +35,7 @@ export function Solution() {
       <div className="relative max-w-3xl mx-auto px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-4">
-            The Solution
+            Solution
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
             {beforePart}
@@ -46,8 +46,11 @@ export function Solution() {
             ) : null}
             {afterPart}
           </h2>
-          <p className="text-gray-400 text-xl leading-relaxed">
+          <p className="text-gray-400 text-xl leading-relaxed mb-8">
             {t('text')}
+          </p>
+          <p className="text-lg sm:text-xl font-medium italic text-white/80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
+            {t('punchline')}
           </p>
         </AnimatedSection>
       </div>

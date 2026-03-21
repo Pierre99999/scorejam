@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { CALENDLY_URL } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 export function Header() {
   const t = useTranslations('header');
+  const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -75,6 +76,12 @@ export function Header() {
           >
             {t('useCases')}
           </a>
+          <Link
+            href={`/${locale}/pricing`}
+            className="hover:text-white transition-colors duration-200"
+          >
+            {t('pricing')}
+          </Link>
         </nav>
 
         {/* Desktop Right */}
@@ -125,6 +132,13 @@ export function Header() {
           >
             {t('useCases')}
           </a>
+          <Link
+            href={`/${locale}/pricing`}
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          >
+            {t('pricing')}
+          </Link>
           <div className="pt-2 pb-1 border-t border-white/5 flex items-center justify-between mt-1">
             <span className="text-sm font-medium text-gray-400">
               <LanguageSwitcher />

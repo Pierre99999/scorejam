@@ -8,6 +8,7 @@ import { UseCases } from '@/components/UseCases';
 import { ProductPreview } from '@/components/ProductPreview';
 import { SocialProof } from '@/components/SocialProof';
 import { Differentiation } from '@/components/Differentiation';
+import { Testimonials } from '@/components/Testimonials';
 import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
 
@@ -30,6 +31,7 @@ export default async function Home({
         <ProductPreview />
         <SocialProof />
         <Differentiation />
+        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />
