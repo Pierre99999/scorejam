@@ -104,7 +104,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {/* ════════════════════════════════════════════════════════════
                 LEFT SIDE — Marketing / Value
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-1/2 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full lg:w-2/3 flex items-center justify-center overflow-hidden">
               {/* Background decorations */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-[var(--page-bg)] to-blue-950/20" />
@@ -120,7 +120,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 />
               </div>
 
-              <div className="relative max-w-md w-full mx-auto px-8 py-16 lg:px-12 lg:py-20 flex flex-col gap-10">
+              <div className="relative max-w-2xl w-full mx-auto px-8 py-16 lg:px-16 lg:py-20 flex flex-col gap-10">
                 {/* Headline */}
                 <div>
                   <div className="inline-flex items-center gap-2 mb-5">
@@ -207,7 +207,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {/* ════════════════════════════════════════════════════════════
                 RIGHT SIDE — Form
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-1/2 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
+            <div className="relative w-full lg:w-1/3 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
               <div className="max-w-sm w-full mx-auto px-8 py-16 lg:px-12 lg:py-20 flex flex-col gap-6">
                 {/* Form title */}
                 <h2 className="text-2xl font-bold text-[var(--text-primary)]">
