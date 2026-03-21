@@ -57,8 +57,8 @@ export default async function LocaleLayout({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} className="dark scroll-smooth">
-      <body className={`${inter.className} bg-gray-950 text-white antialiased`}>
+    <html lang={locale} className="dark scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.className} bg-[var(--page-bg)] text-[var(--text-primary)] antialiased transition-colors duration-300`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SignupShell>
             {children}

@@ -2,6 +2,7 @@
 
 import { SignupProvider, useSignup } from './SignupContext';
 import { SignupModal } from './SignupModal';
+import { ThemeProvider } from './ThemeProvider';
 import type { ReactNode } from 'react';
 
 function ModalRenderer() {
@@ -11,9 +12,11 @@ function ModalRenderer() {
 
 export function SignupShell({ children }: { children: ReactNode }) {
   return (
-    <SignupProvider>
-      {children}
-      <ModalRenderer />
-    </SignupProvider>
+    <ThemeProvider>
+      <SignupProvider>
+        {children}
+        <ModalRenderer />
+      </SignupProvider>
+    </ThemeProvider>
   );
 }
