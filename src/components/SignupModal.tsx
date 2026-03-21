@@ -120,7 +120,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 />
               </div>
 
-              <div className="relative max-w-2xl w-full mx-auto px-8 py-16 lg:px-16 lg:py-20 flex flex-col gap-10">
+              <div className="relative w-full px-6 py-12 lg:px-12 lg:py-16 flex flex-col gap-8">
                 {/* Headline */}
                 <div>
                   <div className="inline-flex items-center gap-2 mb-5">
