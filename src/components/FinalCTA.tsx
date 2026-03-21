@@ -1,0 +1,39 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { AnimatedSection } from './AnimatedSection';
+import { CALENDLY_URL } from '@/lib/constants';
+
+export function FinalCTA() {
+  const t = useTranslations('finalCta');
+
+  return (
+    <AnimatedSection className="relative w-full bg-gradient-to-br from-purple-900/20 via-gray-950 to-blue-900/20 overflow-hidden">
+      {/* Radial glow effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-600/10 blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full bg-purple-500/8 blur-3xl" />
+      </div>
+
+      <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+          {t('title')}
+        </h2>
+        <p className="mt-6 text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+          {t('subtitle')}
+        </p>
+        <div className="mt-10">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+          >
+            {t('cta')}
+          </a>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
