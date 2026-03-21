@@ -1,1 +1,98 @@
-{}
+{
+  "header": {
+    "howItWorks": "How it works",
+    "useCases": "Use Cases",
+    "bookDemo": "Book a demo"
+  },
+  "hero": {
+    "headline": "Turn your data into revenue with AI scoring",
+    "subheadline": "Know exactly who to target, when, and why.",
+    "cta1": "Book a demo",
+    "cta2": "See how it works"
+  },
+  "problem": {
+    "title": "You're losing opportunities every day",
+    "card1Title": "No prioritization",
+    "card1Text": "Too many leads, no way to know which ones matter most.",
+    "card2Title": "Wasted effort",
+    "card2Text": "Sales teams spend hours chasing prospects that will never convert.",
+    "card3Title": "Zero visibility",
+    "card3Text": "Marketing can't see what's actually driving conversions."
+  },
+  "solution": {
+    "title": "Score what matters",
+    "text": "Scorejam analyzes your data in real-time and tells you exactly where to focus — so every action drives revenue."
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1Title": "Connect your data",
+    "step1Text": "Plug in your CRM, analytics, or any data source in minutes.",
+    "step2Title": "AI scores everything",
+    "step2Text": "Our AI analyzes patterns and assigns actionable scores in real-time.",
+    "step3Title": "Act on insights",
+    "step3Text": "Focus your team on the opportunities that actually convert."
+  },
+  "useCases": {
+    "title": "Built for your team",
+    "sales": "Sales",
+    "salesTitle": "Close more deals, faster",
+    "salesText": "Prioritize leads by conversion probability. Stop wasting time on dead ends.",
+    "salesBullet1": "Lead scoring based on real behavior",
+    "salesBullet2": "Pipeline prioritization",
+    "salesBullet3": "Automated alerts on hot leads",
+    "marketing": "Marketing",
+    "marketingTitle": "Know what converts",
+    "marketingText": "Understand which campaigns and channels drive actual revenue.",
+    "marketingBullet1": "Campaign performance scoring",
+    "marketingBullet2": "Channel attribution insights",
+    "marketingBullet3": "Audience segmentation",
+    "saas": "SaaS",
+    "saasTitle": "Reduce churn, grow revenue",
+    "saasText": "Identify at-risk accounts and expansion opportunities before it's too late.",
+    "saasBullet1": "Health scoring per account",
+    "saasBullet2": "Churn prediction",
+    "saasBullet3": "Upsell opportunity detection",
+    "ecommerce": "E-commerce",
+    "ecommerceTitle": "Maximize customer value",
+    "ecommerceText": "Score customers by lifetime value and target your best segments.",
+    "ecommerceBullet1": "Customer lifetime value scoring",
+    "ecommerceBullet2": "Purchase propensity prediction",
+    "ecommerceBullet3": "Personalized offer targeting"
+  },
+  "product": {
+    "title": "Your scoring dashboard",
+    "subtitle": "Real-time insights at a glance"
+  },
+  "socialProof": {
+    "title": "Results that speak",
+    "kpi1Value": "+32%",
+    "kpi1Label": "conversion rate",
+    "kpi2Value": "-45%",
+    "kpi2Label": "wasted time",
+    "kpi3Value": "10min",
+    "kpi3Label": "setup time"
+  },
+  "differentiation": {
+    "title": "Why Scorejam",
+    "item1Title": "Real-time",
+    "item1Text": "Scores update as your data changes. No batch processing, no delays.",
+    "item2Title": "AI-native",
+    "item2Text": "Built from the ground up with machine learning — not bolted on.",
+    "item3Title": "Zero complexity",
+    "item3Text": "No setup headaches. Connect your data and get insights in minutes."
+  },
+  "finalCta": {
+    "title": "Start focusing on what matters",
+    "subtitle": "Join the teams that stopped guessing and started scoring.",
+    "cta": "Book a demo"
+  },
+  "footer": {
+    "tagline": "Turn data into revenue.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 Scorejam. All rights reserved."
+  }
+}
