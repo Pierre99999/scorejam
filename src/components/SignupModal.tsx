@@ -14,7 +14,6 @@ import {
   Lock,
   Eye,
   EyeOff,
-  Quote,
   Zap,
 } from 'lucide-react';
 
@@ -104,7 +103,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {/* ════════════════════════════════════════════════════════════
                 LEFT SIDE — Marketing / Value
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-2/3 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full lg:w-1/2 flex items-center justify-center overflow-hidden">
               {/* Background decorations */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-[var(--page-bg)] to-blue-950/20" />
@@ -120,7 +119,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 />
               </div>
 
-              <div className="relative w-full px-6 py-12 lg:px-12 lg:py-16 flex flex-col gap-8">
+              <div className="relative w-full px-8 py-12 lg:px-16 lg:py-16 flex flex-col gap-8">
                 {/* Headline */}
                 <div>
                   <div className="inline-flex items-center gap-2 mb-5">
@@ -184,31 +183,14 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                   ))}
                 </div>
 
-                {/* Testimonial */}
-                <div className="relative rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] px-6 py-5">
-                  <Quote size={20} className="text-purple-500/30 mb-2" />
-                  <p className="text-sm text-[var(--text-secondary)] italic leading-relaxed">
-                    {t('testimonial')}
-                  </p>
-                </div>
-
-                {/* Bottom highlight */}
-                <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/10">
-                  <span className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 shadow-lg shadow-purple-900/30">
-                    <Sparkles size={14} className="text-white" />
-                  </span>
-                  <p className="text-sm font-semibold bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
-                    {t('seeResults')}
-                  </p>
-                </div>
               </div>
             </div>
 
             {/* ════════════════════════════════════════════════════════════
                 RIGHT SIDE — Form
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-1/3 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
-              <div className="w-full px-6 py-12 lg:px-8 lg:py-16 flex flex-col gap-6">
+            <div className="relative w-full lg:w-1/2 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
+              <div className="max-w-md w-full mx-auto px-8 py-12 lg:px-16 lg:py-16 flex flex-col gap-6">
                 {/* Form title */}
                 <h2 className="text-2xl font-bold text-[var(--text-primary)]">
                   {t('formTitle')}
