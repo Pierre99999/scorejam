@@ -54,11 +54,11 @@
 /* ═══ LIGHT THEME (default) ═══ */
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0f;
+  --foreground: #2d2d3a;
   --card: #f9fafb;
-  --card-foreground: #0a0a0f;
+  --card-foreground: #2d2d3a;
   --popover: #ffffff;
-  --popover-foreground: #0a0a0f;
+  --popover-foreground: #2d2d3a;
   --primary: #FF6F61;                          /* coral — dominant light mode */
   --primary-foreground: #ffffff;
   --secondary: #f3f4f6;
@@ -78,7 +78,7 @@
   --chart-5: #d94f43;
   --radius: 0.625rem;
   --sidebar: #f9fafb;
-  --sidebar-foreground: #0a0a0f;
+  --sidebar-foreground: #2d2d3a;
   --sidebar-primary: #FF6F61;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3f4f6;
@@ -94,7 +94,7 @@
   --card-bg: #ffffff;
   --card-border: #e5e7eb;
   --card-border-hover: #d1d5db;
-  --text-primary: #0a0a0f;
+  --text-primary: #2d2d3a;
   --text-secondary: #4b5563;
   --text-muted: #6b7280;
   --text-inverted: #ffffff;
