@@ -2,13 +2,13 @@
   "header": {
     "howItWorks": "How it works",
     "useCases": "Use Cases",
-    "bookDemo": "Book a demo",
+    "bookDemo": "Start for free",
     "pricing": "Pricing"
   },
   "hero": {
     "headline": "Turn your data into revenue with AI scoring",
     "subheadline": "Know exactly who to target, when, and why.",
-    "cta1": "Book a demo",
+    "cta1": "Start for free",
     "cta2": "See how it works"
   },
   "problem": {
@@ -98,7 +98,37 @@
   "finalCta": {
     "title": "Start focusing on what matters",
     "subtitle": "Join the teams that stopped guessing and started scoring.",
-    "cta": "Book a demo"
+    "cta": "Start for free"
+  },
+  "signup": {
+    "headline": "Get started in minutes. Get your first insights immediately.",
+    "subtext": "No complex setup needed. Scorejam guides you to ask the right questions and quickly understand what matters.",
+    "benefitsTitle": "What you'll get:",
+    "benefit1": "Relevant questions, automatically",
+    "benefit2": "Actionable answers",
+    "benefit3": "Clear insights, no complex analysis",
+    "projectionTitle": "In 5 minutes, you can:",
+    "projection1": "Create your first diagnosis",
+    "projection2": "Ask your first questions",
+    "projection3": "Get your first insights",
+    "reassurance1": "No credit card required",
+    "reassurance2": "Free to start",
+    "reassurance3": "Simple to get started",
+    "testimonial": "We finally have answers we can actually use.",
+    "formTitle": "Create your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "emailHint": "Use your professional email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Choose a password",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "cta": "Create my free account",
+    "ctaSub": "1 free diagnosis included",
+    "googleCta": "Continue with Google",
+    "securityNote": "Your data is secure. No spam.",
+    "orDivider": "or",
+    "seeResults": "You'll see your first results in less than 5 minutes"
   },
   "pricing": {
     "title": "Simple, transparent pricing",

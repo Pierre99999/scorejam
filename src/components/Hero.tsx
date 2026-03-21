@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, type Variants } from 'framer-motion';
-import { CALENDLY_URL } from '@/lib/constants';
+import { useSignup } from './SignupContext';
 
 // Helper: wraps gradient-keyword spans around a phrase found in the headline
 function HighlightedHeadline({ text }: { text: string }) {
@@ -187,6 +187,7 @@ function DashboardMock() {
 
 export function Hero() {
   const t = useTranslations('hero');
+  const { openSignup } = useSignup();
 
   const handleHowItWorks = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -247,14 +248,12 @@ export function Hero() {
               variants={itemVariants}
               className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openSignup}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
               >
                 {t('cta1')}
-              </a>
+              </button>
               <a
                 href="#how-it-works"
                 onClick={handleHowItWorks}

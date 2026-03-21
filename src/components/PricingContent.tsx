@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Check, Eye, Zap, TrendingUp, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
-import { CALENDLY_URL } from '@/lib/constants';
+import { useSignup } from './SignupContext';
 
 // ─── Plan cards ───────────────────────────────────────────────────────────────
 
@@ -17,6 +17,7 @@ interface PlanCardProps {
   ctaLabel: string;
   badge?: string;
   highlighted?: boolean;
+  onCtaClick: () => void;
 }
 
 function PlanCard({
@@ -28,6 +29,7 @@ function PlanCard({
   ctaLabel,
   badge,
   highlighted,
+  onCtaClick,
 }: PlanCardProps) {
   return (
     <div
@@ -96,10 +98,8 @@ function PlanCard({
         </ul>
 
         {/* CTA */}
-        <a
-          href={CALENDLY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={onCtaClick}
           className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
             highlighted
               ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
@@ -107,7 +107,7 @@ function PlanCard({
           }`}
         >
           {ctaLabel}
-        </a>
+        </button>
       </div>
     </div>
   );
@@ -168,6 +168,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 export function PricingContent() {
   const t = useTranslations('pricing');
+  const { openSignup } = useSignup();
 
   const starterFeatures = [
     t('starterFeature1'),
@@ -236,6 +237,7 @@ export function PricingContent() {
                 desc={t('starterDesc')}
                 features={starterFeatures}
                 ctaLabel={t('starterCta')}
+                onCtaClick={openSignup}
               />
             </AnimatedSection>
 
@@ -250,6 +252,7 @@ export function PricingContent() {
                 ctaLabel={t('proCta')}
                 badge={t('proBadge')}
                 highlighted
+                onCtaClick={openSignup}
               />
             </AnimatedSection>
 
@@ -261,6 +264,7 @@ export function PricingContent() {
                 desc={t('scaleDesc')}
                 features={scaleFeatures}
                 ctaLabel={t('scaleCta')}
+                onCtaClick={openSignup}
               />
             </AnimatedSection>
           </div>

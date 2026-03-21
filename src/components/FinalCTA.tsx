@@ -2,10 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import { AnimatedSection } from './AnimatedSection';
-import { CALENDLY_URL } from '@/lib/constants';
+import { useSignup } from './SignupContext';
 
 export function FinalCTA() {
   const t = useTranslations('finalCta');
+  const { openSignup } = useSignup();
 
   return (
     <AnimatedSection className="relative w-full bg-gradient-to-br from-purple-900/20 via-gray-950 to-blue-900/20 overflow-hidden">
@@ -24,14 +25,12 @@ export function FinalCTA() {
           {t('subtitle')}
         </p>
         <div className="mt-10">
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openSignup}
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
           >
             {t('cta')}
-          </a>
+          </button>
         </div>
       </div>
     </AnimatedSection>

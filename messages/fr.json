@@ -2,13 +2,13 @@
   "header": {
     "howItWorks": "Comment ça marche",
     "useCases": "Cas d'usage",
-    "bookDemo": "Réserver une démo",
+    "bookDemo": "Démarrer gratuitement",
     "pricing": "Tarifs"
   },
   "hero": {
     "headline": "Transformez vos données en revenus grâce au scoring IA",
     "subheadline": "Sachez exactement qui cibler, quand et pourquoi.",
-    "cta1": "Réserver une démo",
+    "cta1": "Démarrer gratuitement",
     "cta2": "Voir comment ça marche"
   },
   "problem": {
@@ -98,7 +98,37 @@
   "finalCta": {
     "title": "Concentrez-vous sur l'essentiel",
     "subtitle": "Rejoignez les équipes qui ont arrêté de deviner et qui scorent.",
-    "cta": "Réserver une démo"
+    "cta": "Démarrer gratuitement"
+  },
+  "signup": {
+    "headline": "Commencez en quelques minutes. Obtenez vos premiers insights immédiatement.",
+    "subtext": "Pas besoin de config complexe. Scorejam vous guide pour poser les bonnes questions et comprendre rapidement ce qui compte.",
+    "benefitsTitle": "Ce que vous allez obtenir :",
+    "benefit1": "Des questions pertinentes automatiquement",
+    "benefit2": "Des réponses exploitables",
+    "benefit3": "Des insights clairs, sans analyse complexe",
+    "projectionTitle": "En 5 minutes, vous pouvez :",
+    "projection1": "Créer votre premier diagnostic",
+    "projection2": "Poser vos premières questions",
+    "projection3": "Obtenir vos premiers insights",
+    "reassurance1": "Aucune carte bancaire requise",
+    "reassurance2": "Gratuit pour commencer",
+    "reassurance3": "Simple à prendre en main",
+    "testimonial": "On a enfin des réponses qu'on peut utiliser concrètement.",
+    "formTitle": "Créer votre compte",
+    "emailLabel": "Email",
+    "emailPlaceholder": "vous@entreprise.com",
+    "emailHint": "Utilisez votre email professionnel de préférence",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Choisissez un mot de passe",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "cta": "Créer mon compte gratuitement",
+    "ctaSub": "1 diagnostic gratuit inclus",
+    "googleCta": "Continuer avec Google",
+    "securityNote": "Vos données sont sécurisées. Aucun spam.",
+    "orDivider": "ou",
+    "seeResults": "Vous verrez vos premiers résultats en moins de 5 minutes"
   },
   "pricing": {
     "title": "Tarifs simples et transparents",

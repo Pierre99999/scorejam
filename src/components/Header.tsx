@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { CALENDLY_URL } from '@/lib/constants';
+import { useSignup } from './SignupContext';
 import { cn } from '@/lib/utils';
 
 export function Header() {
   const t = useTranslations('header');
   const locale = useLocale();
+  const { openSignup } = useSignup();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -89,14 +90,12 @@ export function Header() {
           <span className="text-sm font-medium text-gray-400 hover:text-white transition-colors cursor-pointer">
             <LanguageSwitcher />
           </span>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openSignup}
             className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-md shadow-purple-900/30"
           >
             {t('bookDemo')}
-          </a>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -113,7 +112,7 @@ export function Header() {
       <div
         className={cn(
           'md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-white/5',
-          mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0',
+          mobileOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0',
           scrolled || mobileOpen ? 'bg-gray-950/95 backdrop-blur-lg' : 'bg-transparent',
         )}
       >
@@ -143,15 +142,12 @@ export function Header() {
             <span className="text-sm font-medium text-gray-400">
               <LanguageSwitcher />
             </span>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
+            <button
+              onClick={() => { setMobileOpen(false); openSignup(); }}
               className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200"
             >
               {t('bookDemo')}
-            </a>
+            </button>
           </div>
         </nav>
       </div>

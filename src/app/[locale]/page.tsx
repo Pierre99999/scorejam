@@ -10,6 +10,7 @@ import { SocialProof } from '@/components/SocialProof';
 import { Differentiation } from '@/components/Differentiation';
 import { Testimonials } from '@/components/Testimonials';
 import { FinalCTA } from '@/components/FinalCTA';
+import { InlineCTA } from '@/components/InlineCTA';
 import { Footer } from '@/components/Footer';
 
 export default async function Home({
@@ -26,8 +27,10 @@ export default async function Home({
         <Hero />
         <Problem />
         <Solution />
+        <InlineCTA />
         <HowItWorks />
         <UseCases />
+        <InlineCTA />
         <ProductPreview />
         <SocialProof />
         <Differentiation />
