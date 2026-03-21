@@ -7,7 +7,7 @@ import { AnimatedSection } from './AnimatedSection';
 function GridBackground() {
   return (
     <div
-      className="absolute inset-0 opacity-[0.04] pointer-events-none rounded-xl"
+      className="absolute inset-0 opacity-[var(--grid-opacity)] pointer-events-none rounded-xl"
       style={{
         backgroundImage:
           'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
@@ -27,9 +27,9 @@ function ScoreCard({
   trend: 'up' | 'down';
 }) {
   return (
-    <div className="flex-1 bg-gray-800/60 rounded-xl p-4 border border-white/5">
+    <div className="flex-1 bg-[var(--card-bg)] rounded-xl p-4 border border-[var(--line-subtle)]">
       <div className="flex items-start justify-between mb-1">
-        <span className="text-3xl font-bold text-white">{value}</span>
+        <span className="text-3xl font-bold text-[var(--text-primary)]">{value}</span>
         <span
           className={`text-xs font-semibold px-1.5 py-0.5 rounded ${
             trend === 'up'
@@ -40,7 +40,7 @@ function ScoreCard({
           {trend === 'up' ? '↑' : '↓'}
         </span>
       </div>
-      <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">{label}</p>
+      <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">{label}</p>
     </div>
   );
 }
@@ -58,10 +58,10 @@ function BarChart() {
 
   return (
     <div className="mt-6">
-      <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-3">
+      <p className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-medium mb-3">
         Score distribution
       </p>
-      <div className="flex items-end gap-2 h-24 bg-gray-800/40 rounded-lg px-3 py-3">
+      <div className="flex items-end gap-2 h-24 bg-[var(--card-bg)] rounded-lg px-3 py-3">
         {bars.map((bar, i) => (
           <div key={i} className="flex-1 flex flex-col justify-end h-full">
             <div
@@ -86,14 +86,14 @@ function PipelineBar({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-xs text-gray-500 w-20 shrink-0 text-right">{label}</span>
-      <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
+      <span className="text-xs text-[var(--text-muted)] w-20 shrink-0 text-right">{label}</span>
+      <div className="flex-1 h-2 bg-[var(--card-border)] rounded-full overflow-hidden">
         <div
           className="h-full rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
           style={{ width }}
         />
       </div>
-      <span className="text-xs text-gray-400 w-8 shrink-0">{count}</span>
+      <span className="text-xs text-[var(--text-secondary)] w-8 shrink-0">{count}</span>
     </div>
   );
 }
@@ -102,24 +102,24 @@ function DashboardMockup() {
   return (
     /* Gradient border wrapper */
     <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-blue-500/30 to-purple-500/20 shadow-lg shadow-purple-500/10">
-      <div className="relative rounded-xl bg-gray-900 p-6 overflow-hidden">
+      <div className="relative rounded-xl bg-[var(--section-bg)] p-6 overflow-hidden">
         <GridBackground />
 
         {/* Subtle corner glows */}
-        <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-purple-600/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
+        <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[var(--glow-purple)] blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-3xl pointer-events-none" />
 
         {/* Dashboard header */}
         <div className="relative flex items-center justify-between mb-6">
           <div>
-            <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">
+            <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-widest">
               AI Score Dashboard
             </p>
-            <p className="text-white font-semibold text-sm mt-0.5">Lead Intelligence</p>
+            <p className="text-[var(--text-primary)] font-semibold text-sm mt-0.5">Lead Intelligence</p>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs text-gray-500">Live</span>
+            <span className="text-xs text-[var(--text-muted)]">Live</span>
           </div>
         </div>
 
@@ -137,7 +137,7 @@ function DashboardMockup() {
 
         {/* Bottom: pipeline visualization */}
         <div className="relative mt-6">
-          <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-3">
+          <p className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-medium mb-3">
             Pipeline
           </p>
           <div className="flex flex-col gap-2.5">
@@ -163,10 +163,10 @@ export function ProductPreview() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
-          <p className="mt-4 text-gray-400 text-lg">{t('subtitle')}</p>
+          <p className="mt-4 text-[var(--text-secondary)] text-lg">{t('subtitle')}</p>
         </AnimatedSection>
 
         {/* Dashboard mockup with scale-up animation */}

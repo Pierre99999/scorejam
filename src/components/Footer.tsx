@@ -7,7 +7,7 @@ export function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="border-t border-gray-800 py-12">
+    <footer className="border-t border-[var(--card-border)] py-12">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top: Logo + tagline */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
@@ -20,11 +20,11 @@ export function Footer() {
                 height={24}
                 className="rounded-sm"
               />
-              <span className="font-bold text-white text-lg tracking-tight">
+              <span className="font-bold text-[var(--text-primary)] text-lg tracking-tight">
                 Scorejam
               </span>
             </div>
-            <p className="mt-2 text-sm text-gray-400">{t('tagline')}</p>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">{t('tagline')}</p>
           </div>
         </div>
 
@@ -32,12 +32,12 @@ export function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-10">
           {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">{t('product')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('product')}</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <a
                   href="#how-it-works"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   How it works
                 </a>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <a
                   href="#use-cases"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   Use Cases
                 </a>
@@ -55,12 +55,12 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">{t('company')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('company')}</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   About
                 </a>
@@ -68,7 +68,7 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   Blog
                 </a>
@@ -78,12 +78,12 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">{t('legal')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('legal')}</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   {t('privacy')}
                 </a>
@@ -91,7 +91,7 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   {t('terms')}
                 </a>
@@ -101,8 +101,8 @@ export function Footer() {
         </div>
 
         {/* Bottom: copyright */}
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-sm text-gray-500 text-center">{t('copyright')}</p>
+        <div className="border-t border-[var(--card-border)] pt-8">
+          <p className="text-sm text-[var(--text-muted)] text-center">{t('copyright')}</p>
         </div>
       </div>
     </footer>

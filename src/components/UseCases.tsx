@@ -64,7 +64,7 @@ export function UseCases() {
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
             Use Cases
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
         </AnimatedSection>
@@ -79,7 +79,7 @@ export function UseCases() {
                 'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border',
                 activeTab === key
                   ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg shadow-purple-900/30'
-                  : 'text-gray-400 border-gray-800 bg-gray-900/50 hover:border-gray-700 hover:text-gray-200 hover:bg-gray-900/70'
+                  : 'text-[var(--text-secondary)] border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)]'
               )}
             >
               {t(key)}
@@ -98,19 +98,19 @@ export function UseCases() {
               transition={{ duration: 0.25, ease: 'easeInOut' }}
             >
               <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/20 via-blue-500/10 to-purple-500/5">
-                <div className="relative rounded-2xl bg-gray-900/80 p-8 sm:p-10 overflow-hidden backdrop-blur-sm">
+                <div className="relative rounded-2xl bg-[var(--card-bg)] p-8 sm:p-10 overflow-hidden backdrop-blur-sm">
                   {/* Subtle inner glow */}
-                  <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-purple-600/8 blur-2xl pointer-events-none" />
-                  <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-blue-600/8 blur-2xl pointer-events-none" />
+                  <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
+                  <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
 
                   <div className="relative">
                     {/* Content title */}
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-3">
                       {t(activeContent.titleKey)}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-2xl">
+                    <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-8 max-w-2xl">
                       {t(activeContent.textKey)}
                     </p>
 
@@ -122,7 +122,7 @@ export function UseCases() {
                             className="w-5 h-5 text-purple-400 shrink-0 mt-0.5"
                             strokeWidth={1.5}
                           />
-                          <span className="text-gray-300 text-base leading-relaxed">
+                          <span className="text-[var(--text-secondary)] text-base leading-relaxed">
                             {t(bulletKey as Parameters<typeof t>[0])}
                           </span>
                         </li>

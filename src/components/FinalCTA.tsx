@@ -9,19 +9,19 @@ export function FinalCTA() {
   const { openSignup } = useSignup();
 
   return (
-    <AnimatedSection className="relative w-full bg-gradient-to-br from-purple-900/20 via-gray-950 to-blue-900/20 overflow-hidden">
+    <AnimatedSection className="relative w-full bg-gradient-to-br from-purple-900/20 via-[var(--page-bg)] to-blue-900/20 overflow-hidden">
       {/* Radial glow effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-600/10 blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-600/10 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full bg-purple-500/8 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[var(--glow-purple)] blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-[var(--glow-blue)] blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full bg-[var(--glow-purple)] blur-3xl" />
       </div>
 
       <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+        <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
           {t('title')}
         </h2>
-        <p className="mt-6 text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
           {t('subtitle')}
         </p>
         <div className="mt-10">

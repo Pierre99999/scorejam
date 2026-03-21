@@ -57,7 +57,7 @@ export function Problem() {
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
             The Problem
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
             {t('title')}
           </h2>
         </AnimatedSection>
@@ -68,7 +68,7 @@ export function Problem() {
             const Icon = card.icon;
             return (
               <AnimatedSection key={card.titleKey} delay={card.delay}>
-                <div className="group bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 h-full">
+                <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full">
                   {/* Icon */}
                   <div
                     className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 ${card.iconBg} transition-transform duration-300 group-hover:scale-110`}
@@ -77,12 +77,12 @@ export function Problem() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-semibold text-lg mb-2">
+                  <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">
                     {t(card.titleKey)}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                     {t(card.textKey)}
                   </p>
                 </div>

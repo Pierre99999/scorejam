@@ -37,7 +37,7 @@ export function Solution() {
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-4">
             Solution
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight mb-6">
             {beforePart}
             {highlightedPart ? (
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -46,10 +46,10 @@ export function Solution() {
             ) : null}
             {afterPart}
           </h2>
-          <p className="text-gray-400 text-xl leading-relaxed mb-8">
+          <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
             {t('text')}
           </p>
-          <p className="text-lg sm:text-xl font-medium italic text-white/80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
+          <p className="text-lg sm:text-xl font-medium italic text-[var(--text-primary)] opacity-80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
             {t('punchline')}
           </p>
         </AnimatedSection>

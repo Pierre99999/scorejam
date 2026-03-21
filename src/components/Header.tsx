@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { ThemeToggle } from './ThemeToggle';
 import { useSignup } from './SignupContext';
 import { cn } from '@/lib/utils';
 
@@ -39,7 +40,7 @@ export function Header() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-gray-950/80 backdrop-blur-lg border-b border-white/5 shadow-lg shadow-black/20'
+          ? 'bg-[var(--overlay-bg)] backdrop-blur-lg border-b border-[var(--line-subtle)] shadow-lg shadow-black/20'
           : 'bg-transparent',
       )}
     >
@@ -56,38 +57,39 @@ export function Header() {
             height={32}
             className="rounded-sm"
           />
-          <span className="font-bold text-white text-lg tracking-tight group-hover:text-white/90 transition-colors">
+          <span className="font-bold text-[var(--text-primary)] text-lg tracking-tight group-hover:opacity-90 transition-colors">
             Scorejam
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
           <a
             href="#how-it-works"
             onClick={(e) => handleAnchorClick(e, '#how-it-works')}
-            className="hover:text-white transition-colors duration-200"
+            className="hover:text-[var(--text-primary)] transition-colors duration-200"
           >
             {t('howItWorks')}
           </a>
           <a
             href="#use-cases"
             onClick={(e) => handleAnchorClick(e, '#use-cases')}
-            className="hover:text-white transition-colors duration-200"
+            className="hover:text-[var(--text-primary)] transition-colors duration-200"
           >
             {t('useCases')}
           </a>
           <Link
             href={`/${locale}/pricing`}
-            className="hover:text-white transition-colors duration-200"
+            className="hover:text-[var(--text-primary)] transition-colors duration-200"
           >
             {t('pricing')}
           </Link>
         </nav>
 
         {/* Desktop Right */}
-        <div className="hidden md:flex items-center gap-5">
-          <span className="text-sm font-medium text-gray-400 hover:text-white transition-colors cursor-pointer">
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <span className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors cursor-pointer">
             <LanguageSwitcher />
           </span>
           <button
@@ -100,7 +102,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+          className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -111,35 +113,35 @@ export function Header() {
       {/* Mobile slide-down panel */}
       <div
         className={cn(
-          'md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-white/5',
+          'md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-[var(--line-subtle)]',
           mobileOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0',
-          scrolled || mobileOpen ? 'bg-gray-950/95 backdrop-blur-lg' : 'bg-transparent',
+          scrolled || mobileOpen ? 'bg-[var(--overlay-bg)] backdrop-blur-lg' : 'bg-transparent',
         )}
       >
         <nav className="flex flex-col gap-1 px-6 py-4">
           <a
             href="#how-it-works"
             onClick={(e) => handleAnchorClick(e, '#how-it-works')}
-            className="py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             {t('howItWorks')}
           </a>
           <a
             href="#use-cases"
             onClick={(e) => handleAnchorClick(e, '#use-cases')}
-            className="py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             {t('useCases')}
           </a>
           <Link
             href={`/${locale}/pricing`}
             onClick={() => setMobileOpen(false)}
-            className="py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             {t('pricing')}
           </Link>
-          <div className="pt-2 pb-1 border-t border-white/5 flex items-center justify-between mt-1">
-            <span className="text-sm font-medium text-gray-400">
+          <div className="pt-2 pb-1 border-t border-[var(--line-subtle)] flex items-center justify-between mt-1">
+            <span className="text-sm font-medium text-[var(--text-secondary)]">
               <LanguageSwitcher />
             </span>
             <button

@@ -53,7 +53,7 @@ function AnimatedKpi({ rawValue, label }: { rawValue: string; label: string }) {
         {count}
         {suffix}
       </p>
-      <p className="mt-3 text-gray-400 text-sm font-medium uppercase tracking-wider">{label}</p>
+      <p className="mt-3 text-[var(--text-secondary)] text-sm font-medium uppercase tracking-wider">{label}</p>
     </div>
   );
 }
@@ -66,7 +66,7 @@ function LogoPlaceholders() {
       {logos.map((i) => (
         <div
           key={i}
-          className="h-12 w-24 rounded-lg bg-gray-800/50 border border-white/5 animate-pulse"
+          className="h-12 w-24 rounded-lg bg-[var(--card-bg)] border border-[var(--line-subtle)] animate-pulse"
           style={{ animationDelay: `${i * 120}ms` }}
         />
       ))}
@@ -92,7 +92,7 @@ export function SocialProof() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
         <AnimatedSection className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
         </AnimatedSection>

@@ -54,7 +54,7 @@ export function HowItWorks() {
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
             Process
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
         </AnimatedSection>
@@ -66,7 +66,7 @@ export function HowItWorks() {
             className="hidden md:block absolute top-[52px] left-[calc(16.67%+32px)] right-[calc(16.67%+32px)] h-px pointer-events-none"
             aria-hidden="true"
           >
-            <div className="w-full h-full border-t-2 border-dashed border-gray-700" />
+            <div className="w-full h-full border-t-2 border-dashed border-[var(--card-border-hover)]" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
@@ -78,7 +78,7 @@ export function HowItWorks() {
                     {/* Numbered circle with gradient border */}
                     <div className="relative mb-6 z-10">
                       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 p-px">
-                        <div className="w-full h-full rounded-full bg-gray-950 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-[var(--page-bg)] flex items-center justify-center">
                           <span className="text-sm font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                             {step.number}
                           </span>
@@ -87,17 +87,17 @@ export function HowItWorks() {
                     </div>
 
                     {/* Icon */}
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 bg-purple-500/10">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5 bg-[var(--badge-bg)]">
                       <Icon className="w-6 h-6 text-purple-400" strokeWidth={1.5} />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-white font-semibold text-lg mb-2">
+                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">
                       {t(step.titleKey)}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-xs mx-auto">
                       {t(step.textKey)}
                     </p>
                   </div>

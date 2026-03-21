@@ -79,7 +79,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
       {isOpen && (
         <motion.div
           key="signup-modal"
-          className="fixed inset-0 z-50 bg-gray-950"
+          className="fixed inset-0 z-50 bg-[var(--page-bg)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -96,7 +96,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             <button
               onClick={onClose}
               aria-label="Close"
-              className="fixed top-5 right-5 z-[60] p-2.5 rounded-full bg-gray-900/80 backdrop-blur-sm border border-white/10 text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-150"
+              className="fixed top-5 right-5 z-[60] p-2.5 rounded-full bg-[var(--section-bg)] backdrop-blur-sm border border-[var(--line-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--card-bg)] transition-all duration-150"
             >
               <X size={20} />
             </button>
@@ -107,12 +107,12 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             <div className="relative w-full lg:w-1/2 flex items-center justify-center overflow-hidden">
               {/* Background decorations */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-gray-950 to-blue-950/20" />
-                <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-purple-600/10 blur-[100px]" />
-                <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-600/8 blur-[80px]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-[var(--page-bg)] to-blue-950/20" />
+                <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-[var(--glow-purple)] blur-[100px]" />
+                <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[var(--glow-blue)] blur-[80px]" />
                 {/* Subtle grid pattern */}
                 <div
-                  className="absolute inset-0 opacity-[0.03]"
+                  className="absolute inset-0 opacity-[var(--grid-opacity)]"
                   style={{
                     backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
                     backgroundSize: '40px 40px',
@@ -124,21 +124,21 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 {/* Headline */}
                 <div>
                   <div className="inline-flex items-center gap-2 mb-5">
-                    <span className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-medium tracking-wide uppercase">
+                    <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
                       <Zap size={12} className="inline -mt-0.5 mr-1" />
                       Quick start
                     </span>
                   </div>
-                  <h1 className="text-3xl lg:text-4xl font-bold text-white leading-[1.15] tracking-tight">
+                  <h1 className="text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-[1.15] tracking-tight">
                     {t('headline')}
                   </h1>
-                  <p className="mt-4 text-base text-gray-400 leading-relaxed">
+                  <p className="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
                     {t('subtext')}
                   </p>
                 </div>
 
                 {/* Benefits card */}
-                <div className="rounded-xl bg-gray-900/40 border border-white/5 p-5">
+                <div className="rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] p-5">
                   <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-4">
                     {t('benefitsTitle')}
                   </p>
@@ -148,7 +148,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                         <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-green-500/15">
                           <Check size={12} className="text-green-400" strokeWidth={3} />
                         </span>
-                        <span className="text-sm text-gray-200 leading-snug">{t(key)}</span>
+                        <span className="text-sm text-[var(--text-secondary)] leading-snug">{t(key)}</span>
                       </li>
                     ))}
                   </ul>
@@ -162,10 +162,10 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                   <ul className="flex flex-col gap-3">
                     {projections.map((key, i) => (
                       <li key={key} className="flex items-center gap-3">
-                        <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-gray-900/60 border border-white/5">
+                        <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--section-bg)] border border-[var(--line-subtle)]">
                           {projectionIcons[i]}
                         </span>
-                        <span className="text-sm text-gray-200">{t(key)}</span>
+                        <span className="text-sm text-[var(--text-secondary)]">{t(key)}</span>
                       </li>
                     ))}
                   </ul>
@@ -176,7 +176,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                   {reassurances.map(({ key, icon }) => (
                     <span
                       key={key}
-                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-gray-900/60 border border-white/5 text-xs text-gray-300 font-medium"
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[var(--section-bg)] border border-[var(--line-subtle)] text-xs text-[var(--text-secondary)] font-medium"
                     >
                       {icon}
                       {t(key)}
@@ -185,9 +185,9 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 </div>
 
                 {/* Testimonial */}
-                <div className="relative rounded-xl bg-gray-900/40 border border-white/5 px-6 py-5">
+                <div className="relative rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] px-6 py-5">
                   <Quote size={20} className="text-purple-500/30 mb-2" />
-                  <p className="text-sm text-gray-300 italic leading-relaxed">
+                  <p className="text-sm text-[var(--text-secondary)] italic leading-relaxed">
                     {t('testimonial')}
                   </p>
                 </div>
@@ -207,17 +207,17 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {/* ════════════════════════════════════════════════════════════
                 RIGHT SIDE — Form
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-1/2 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-white/5 bg-gray-950/50">
+            <div className="relative w-full lg:w-1/2 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
               <div className="max-w-sm w-full mx-auto px-8 py-16 lg:px-12 lg:py-20 flex flex-col gap-6">
                 {/* Form title */}
-                <h2 className="text-2xl font-bold text-white">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)]">
                   {t('formTitle')}
                 </h2>
 
                 {/* Google button */}
                 <button
                   type="button"
-                  className="flex items-center justify-center gap-3 w-full px-4 py-3.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-sm font-medium text-gray-200 transition-all duration-150"
+                  className="flex items-center justify-center gap-3 w-full px-4 py-3.5 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] text-sm font-medium text-[var(--text-secondary)] transition-all duration-150"
                 >
                   <GoogleIcon />
                   {t('googleCta')}
@@ -225,16 +225,16 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
                 {/* Divider */}
                 <div className="flex items-center gap-4">
-                  <div className="flex-1 h-px bg-white/8" />
-                  <span className="text-xs text-gray-600 uppercase tracking-wider">{t('orDivider')}</span>
-                  <div className="flex-1 h-px bg-white/8" />
+                  <div className="flex-1 h-px bg-[var(--line-subtle)]" />
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider">{t('orDivider')}</span>
+                  <div className="flex-1 h-px bg-[var(--line-subtle)]" />
                 </div>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
                   {/* Email */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-email" className="text-sm font-medium text-gray-300">
+                    <label htmlFor="signup-email" className="text-sm font-medium text-[var(--text-secondary)]">
                       {t('emailLabel')}
                     </label>
                     <input
@@ -242,14 +242,14 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                       type="email"
                       autoComplete="email"
                       placeholder={t('emailPlaceholder')}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-800 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
+                      className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
                     />
-                    <p className="text-xs text-gray-500 ml-1">{t('emailHint')}</p>
+                    <p className="text-xs text-[var(--text-muted)] ml-1">{t('emailHint')}</p>
                   </div>
 
                   {/* Password */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-password" className="text-sm font-medium text-gray-300">
+                    <label htmlFor="signup-password" className="text-sm font-medium text-[var(--text-secondary)]">
                       {t('passwordLabel')}
                     </label>
                     <div className="relative">
@@ -258,12 +258,12 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                         type={showPassword ? 'text' : 'password'}
                         autoComplete="new-password"
                         placeholder={t('passwordPlaceholder')}
-                        className="w-full px-4 py-3 pr-11 rounded-xl bg-gray-900 border border-gray-800 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
+                        className="w-full px-4 py-3 pr-11 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword((v) => !v)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors duration-150"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors duration-150"
                         aria-label={showPassword ? 'Hide password' : 'Show password'}
                       >
                         {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -273,16 +273,16 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
                   {/* Name (optional) */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-name" className="text-sm font-medium text-gray-300">
+                    <label htmlFor="signup-name" className="text-sm font-medium text-[var(--text-secondary)]">
                       {t('nameLabel')}{' '}
-                      <span className="text-gray-600 text-xs font-normal">(optional)</span>
+                      <span className="text-[var(--text-muted)] text-xs font-normal">(optional)</span>
                     </label>
                     <input
                       id="signup-name"
                       type="text"
                       autoComplete="name"
                       placeholder={t('namePlaceholder')}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-800 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
+                      className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
                     />
                   </div>
 
@@ -295,12 +295,12 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                   </button>
 
                   {/* Sub-CTA */}
-                  <p className="text-center text-xs text-gray-500">{t('ctaSub')}</p>
+                  <p className="text-center text-xs text-[var(--text-muted)]">{t('ctaSub')}</p>
 
                   {/* Security note */}
                   <div className="flex items-center justify-center gap-2 pt-2">
-                    <Lock size={13} className="text-gray-600 shrink-0" />
-                    <p className="text-xs text-gray-500">{t('securityNote')}</p>
+                    <Lock size={13} className="text-[var(--text-muted)] shrink-0" />
+                    <p className="text-xs text-[var(--text-muted)]">{t('securityNote')}</p>
                   </div>
                 </form>
               </div>
@@ -312,7 +312,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {toastVisible && (
               <motion.div
                 key="toast"
-                className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-xl bg-gray-800 border border-white/10 text-sm text-white shadow-xl z-[60]"
+                className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-xl bg-[var(--card-bg)] border border-[var(--card-border)] text-sm text-[var(--text-primary)] shadow-xl z-[60]"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}

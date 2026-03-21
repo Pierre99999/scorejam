@@ -73,14 +73,14 @@ function ScoreCard({
   color: string;
 }) {
   return (
-    <div className="flex items-center gap-3 bg-gray-800/60 rounded-lg px-3 py-2.5">
+    <div className="flex items-center gap-3 bg-[var(--card-bg)] rounded-lg px-3 py-2.5">
       <div
         className={`flex items-center justify-center w-10 h-10 rounded-md text-white font-bold text-sm shrink-0 ${color}`}
       >
         {score}
       </div>
       <div className="min-w-0">
-        <p className="text-xs text-gray-300 font-medium truncate">{label}</p>
+        <p className="text-xs text-[var(--text-secondary)] font-medium truncate">{label}</p>
         <div className="mt-1 h-1.5 rounded-full bg-gray-700 overflow-hidden w-24">
           <div
             className={`h-full rounded-full ${color}`}
@@ -104,7 +104,7 @@ function MiniBarChart() {
 
   return (
     <div className="mt-4">
-      <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-2">
+      <p className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-medium mb-2">
         Conversion trend
       </p>
       <div className="flex items-end gap-1.5 h-16">
@@ -119,7 +119,7 @@ function MiniBarChart() {
       </div>
       <div className="flex gap-1.5 mt-1">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day) => (
-          <div key={day} className="flex-1 text-center text-[10px] text-gray-600">
+          <div key={day} className="flex-1 text-center text-[10px] text-[var(--text-muted)]">
             {day}
           </div>
         ))}
@@ -134,24 +134,24 @@ function DashboardMock() {
     // Gradient border wrapper
     <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/40 via-blue-500/30 to-purple-500/10 shadow-2xl shadow-purple-900/30">
       {/* Inner card */}
-      <div className="relative rounded-2xl bg-gray-900 p-5 overflow-hidden">
+      <div className="relative rounded-2xl bg-[var(--section-bg)] p-5 overflow-hidden">
         {/* Subtle glow */}
-        <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-purple-600/10 blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-600/10 blur-2xl pointer-events-none" />
+        <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
+        <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
 
         {/* Header row */}
         <div className="flex items-center justify-between mb-4">
           <div>
-            <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">
+            <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">
               AI Score Dashboard
             </p>
-            <p className="text-white font-semibold text-sm mt-0.5">
+            <p className="text-[var(--text-primary)] font-semibold text-sm mt-0.5">
               Lead Intelligence
             </p>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs text-gray-500">Live</span>
+            <span className="text-xs text-[var(--text-muted)]">Live</span>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ function DashboardMock() {
         <MiniBarChart />
 
         {/* Footer stat row */}
-        <div className="mt-4 pt-3 border-t border-white/5 flex gap-4">
+        <div className="mt-4 pt-3 border-t border-[var(--line-subtle)] flex gap-4">
           {[
             { value: '+32%', label: 'Conversion' },
             { value: '10min', label: 'Setup' },
@@ -176,7 +176,7 @@ function DashboardMock() {
               <p className="text-sm font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 {stat.value}
               </p>
-              <p className="text-[10px] text-gray-600 mt-0.5">{stat.label}</p>
+              <p className="text-[10px] text-[var(--text-muted)] mt-0.5">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -198,11 +198,11 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-600/10 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[var(--glow-purple)] blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[var(--glow-blue)] blur-3xl" />
         {/* Subtle grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[var(--grid-opacity)]"
           style={{
             backgroundImage:
               'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
@@ -222,7 +222,7 @@ export function Hero() {
           >
             {/* Eyebrow badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
-              <span className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-medium tracking-wide uppercase">
+              <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
                 AI-powered lead scoring
               </span>
             </motion.div>
@@ -230,7 +230,7 @@ export function Hero() {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
               <HighlightedHeadline text={t('headline')} />
             </motion.h1>
@@ -238,7 +238,7 @@ export function Hero() {
             {/* Subheadline */}
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0"
+              className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
               {t('subheadline')}
             </motion.p>
@@ -257,17 +257,17 @@ export function Hero() {
               <a
                 href="#how-it-works"
                 onClick={handleHowItWorks}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-gray-300 border border-white/10 hover:border-white/20 hover:text-white bg-white/5 hover:bg-white/10 transition-all duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-secondary)] border border-[var(--line-subtle)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10 transition-all duration-200"
               >
                 {t('cta2')}
-                <span className="ml-2 text-gray-500">→</span>
+                <span className="ml-2 text-[var(--text-muted)]">→</span>
               </a>
             </motion.div>
 
             {/* Social proof hint */}
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-xs text-gray-600"
+              className="mt-6 text-xs text-[var(--text-muted)]"
             >
               No credit card required · Setup in 10 minutes
             </motion.p>

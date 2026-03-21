@@ -23,7 +23,7 @@ export function Testimonials() {
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
             Testimonials
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
         </AnimatedSection>
@@ -31,16 +31,16 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((item, index) => (
             <AnimatedSection key={item.quoteKey} delay={index * 0.1}>
-              <div className="group relative h-full bg-gray-900/50 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-gray-700">
+              <div className="group relative h-full bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 transition-all duration-300 hover:border-[var(--card-border-hover)]">
                 <Quote className="w-8 h-8 text-purple-500/30 mb-4" />
-                <blockquote className="text-gray-300 leading-relaxed mb-6 italic">
+                <blockquote className="text-[var(--text-secondary)] leading-relaxed mb-6 italic">
                   &ldquo;{t(item.quoteKey)}&rdquo;
                 </blockquote>
                 <div className="mt-auto">
-                  <p className="text-white font-semibold text-sm">
+                  <p className="text-[var(--text-primary)] font-semibold text-sm">
                     {t(item.authorKey)}
                   </p>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-[var(--text-muted)] text-sm">
                     {t(item.roleKey)}
                   </p>
                 </div>

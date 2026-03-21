@@ -49,7 +49,7 @@ export function Differentiation() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             {t('title')}
           </h2>
         </AnimatedSection>
@@ -60,7 +60,7 @@ export function Differentiation() {
             const Icon = item.icon;
             return (
               <AnimatedSection key={item.titleKey} delay={item.delay}>
-                <div className="group bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 h-full text-center md:text-left">
+                <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
                   {/* Icon with gradient background circle */}
                   <div
                     className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
@@ -69,10 +69,10 @@ export function Differentiation() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+                  <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed">{t(item.textKey)}</p>
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{t(item.textKey)}</p>
                 </div>
               </AnimatedSection>
             );

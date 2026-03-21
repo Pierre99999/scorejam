@@ -35,14 +35,14 @@ function PlanCard({
     <div
       className={`relative flex flex-col rounded-2xl transition-all duration-300 ${
         highlighted
-          ? 'scale-[1.03] bg-gray-900 shadow-2xl shadow-purple-900/40 ring-2 ring-transparent'
-          : 'bg-gray-900/50 border border-gray-800 hover:border-gray-700 hover:bg-gray-900/70'
+          ? 'scale-[1.03] bg-[var(--section-bg)] shadow-2xl shadow-purple-900/40 ring-2 ring-transparent'
+          : 'bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)]'
       }`}
       style={
         highlighted
           ? {
               background:
-                'linear-gradient(#0d0d14, #0d0d14) padding-box, linear-gradient(135deg, #a855f7, #3b82f6) border-box',
+                'linear-gradient(var(--section-bg), var(--section-bg)) padding-box, linear-gradient(135deg, #a855f7, #3b82f6) border-box',
               border: '2px solid transparent',
             }
           : undefined
@@ -59,7 +59,7 @@ function PlanCard({
 
       <div className="flex flex-col flex-1 p-7 pt-8">
         {/* Plan name */}
-        <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">
+        <p className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-widest mb-3">
           {name}
         </p>
 
@@ -67,17 +67,17 @@ function PlanCard({
         <div className="flex items-end gap-1 mb-1">
           {period ? (
             <>
-              <span className="text-gray-400 text-2xl font-semibold self-start mt-1.5">$</span>
-              <span className="text-5xl font-bold text-white leading-none">{price}</span>
-              <span className="text-gray-500 text-sm mb-1">{period}</span>
+              <span className="text-[var(--text-secondary)] text-2xl font-semibold self-start mt-1.5">$</span>
+              <span className="text-5xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
+              <span className="text-[var(--text-muted)] text-sm mb-1">{period}</span>
             </>
           ) : (
-            <span className="text-4xl font-bold text-white leading-none">{price}</span>
+            <span className="text-4xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
           )}
         </div>
 
         {/* Description */}
-        <p className="text-gray-400 text-sm mb-6">{desc}</p>
+        <p className="text-[var(--text-secondary)] text-sm mb-6">{desc}</p>
 
         {/* Feature list */}
         <ul className="flex flex-col gap-3 mb-8 flex-1">
@@ -87,12 +87,12 @@ function PlanCard({
                 className={`mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full ${
                   highlighted
                     ? 'bg-gradient-to-br from-purple-500 to-blue-500'
-                    : 'bg-gray-800'
+                    : 'bg-[var(--card-border)]'
                 }`}
               >
                 <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
               </span>
-              <span className="text-gray-300 text-sm leading-snug">{feature}</span>
+              <span className="text-[var(--text-secondary)] text-sm leading-snug">{feature}</span>
             </li>
           ))}
         </ul>
@@ -103,7 +103,7 @@ function PlanCard({
           className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
             highlighted
               ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
-              : 'border border-gray-700 text-gray-300 hover:border-gray-600 hover:text-white bg-white/5 hover:bg-white/10'
+              : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
           }`}
         >
           {ctaLabel}
@@ -123,13 +123,13 @@ function CreditPack({
   price: string;
 }) {
   return (
-    <div className="bg-gray-900/40 border border-gray-800 rounded-xl p-5 flex items-center justify-between hover:border-gray-700 hover:bg-gray-900/60 transition-all duration-200">
+    <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 flex items-center justify-between hover:border-[var(--card-border-hover)] transition-all duration-200">
       <div>
-        <p className="text-white font-semibold text-base">{label}</p>
+        <p className="text-[var(--text-primary)] font-semibold text-base">{label}</p>
       </div>
       <div className="text-right">
-        <p className="text-white font-bold text-xl">
-          <span className="text-gray-400 text-sm font-normal mr-0.5">$</span>
+        <p className="text-[var(--text-primary)] font-bold text-xl">
+          <span className="text-[var(--text-secondary)] text-sm font-normal mr-0.5">$</span>
           {price}
         </p>
       </div>
@@ -143,20 +143,20 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-gray-800 rounded-xl overflow-hidden">
+    <div className="border border-[var(--card-border)] rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-white/[0.02] transition-colors duration-200"
       >
-        <span className="text-white font-medium text-sm">{question}</span>
+        <span className="text-[var(--text-primary)] font-medium text-sm">{question}</span>
         <ChevronDown
-          className={`w-4 h-4 text-gray-500 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 text-[var(--text-muted)] flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
         />
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-48' : 'max-h-0'}`}
       >
-        <p className="px-6 pb-5 text-gray-400 text-sm leading-relaxed border-t border-gray-800 pt-4">
+        <p className="px-6 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-[var(--card-border)] pt-4">
           {answer}
         </p>
       </div>
@@ -218,10 +218,10 @@ export function PricingContent() {
       {/* ── Section 1: Hero ── */}
       <section className="relative pt-32 pb-16 text-center px-6">
         <AnimatedSection>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
             {t('title')}
           </h1>
-          <p className="mt-5 text-lg text-gray-400 max-w-xl mx-auto">{t('subtitle')}</p>
+          <p className="mt-5 text-lg text-[var(--text-secondary)] max-w-xl mx-auto">{t('subtitle')}</p>
         </AnimatedSection>
       </section>
 
@@ -275,8 +275,8 @@ export function PricingContent() {
       <section className="relative py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">{t('creditsTitle')}</h2>
-            <p className="mt-3 text-gray-400 text-sm">{t('creditsSubtitle')}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{t('creditsTitle')}</h2>
+            <p className="mt-3 text-[var(--text-secondary)] text-sm">{t('creditsSubtitle')}</p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
@@ -295,10 +295,10 @@ export function PricingContent() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         <div className="max-w-2xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
               {t('howCreditsTitle')}
             </h2>
-            <p className="text-gray-400 leading-relaxed">{t('howCreditsText')}</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">{t('howCreditsText')}</p>
           </AnimatedSection>
         </div>
       </section>
@@ -308,7 +308,7 @@ export function PricingContent() {
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
         <div className="max-w-7xl mx-auto">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
               {t('valueTitle')}
             </h2>
           </AnimatedSection>
@@ -318,14 +318,14 @@ export function PricingContent() {
               const Icon = item.icon;
               return (
                 <AnimatedSection key={item.titleKey} delay={item.delay}>
-                  <div className="group bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 h-full text-center md:text-left">
+                  <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
                     <div
                       className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
                     >
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{t(item.textKey)}</p>
+                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{t(item.textKey)}</p>
                   </div>
                 </AnimatedSection>
               );
@@ -338,17 +338,17 @@ export function PricingContent() {
       <section className="relative py-16 px-6">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">{t('projectionTitle')}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{t('projectionTitle')}</h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
             <ul className="flex flex-col gap-4">
               {[t('projectionItem1'), t('projectionItem2'), t('projectionItem3')].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 bg-gray-900/40 border border-gray-800 rounded-xl px-5 py-4">
+                <li key={i} className="flex items-start gap-3 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl px-5 py-4">
                   <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 mt-0.5">
                     <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
                   </span>
-                  <span className="text-gray-300 text-sm">{item}</span>
+                  <span className="text-[var(--text-secondary)] text-sm">{item}</span>
                 </li>
               ))}
             </ul>
@@ -360,7 +360,7 @@ export function PricingContent() {
       <section className="relative py-24 px-6">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">{t('faqTitle')}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">{t('faqTitle')}</h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
