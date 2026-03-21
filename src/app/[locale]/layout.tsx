@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Inter } from 'next/font/google';
+import { SignupShell } from '@/components/SignupShell';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -59,7 +60,9 @@ export default async function LocaleLayout({
     <html lang={locale} className="dark scroll-smooth">
       <body className={`${inter.className} bg-gray-950 text-white antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <SignupShell>
+            {children}
+          </SignupShell>
         </NextIntlClientProvider>
       </body>
     </html>
