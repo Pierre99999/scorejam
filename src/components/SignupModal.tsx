@@ -208,7 +208,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 RIGHT SIDE — Form
                ════════════════════════════════════════════════════════════ */}
             <div className="relative w-full lg:w-1/3 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
-              <div className="max-w-sm w-full mx-auto px-8 py-16 lg:px-12 lg:py-20 flex flex-col gap-6">
+              <div className="w-full px-6 py-12 lg:px-8 lg:py-16 flex flex-col gap-6">
                 {/* Form title */}
                 <h2 className="text-2xl font-bold text-[var(--text-primary)]">
                   {t('formTitle')}
