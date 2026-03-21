@@ -1,0 +1,11 @@
+services:
+  scorejam-landing:
+    build: .
+    container_name: scorejam-landing
+    restart: unless-stopped
+    networks:
+      - traefik_proxy
+
+networks:
+  traefik_proxy:
+    external: true
