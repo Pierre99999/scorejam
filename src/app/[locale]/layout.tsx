@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: 'AI-powered scoring platform that helps teams prioritize what matters most. Know exactly who to target, when, and why.',
     },
     fr: {
-      title: 'Scorejam — Transformez vos donnees en revenus grace au scoring IA',
-      description: 'Plateforme de scoring IA qui aide les equipes a prioriser ce qui compte. Sachez exactement qui cibler, quand et pourquoi.',
+      title: 'Scorejam — Transformez vos données en revenus grâce au scoring IA',
+      description: 'Plateforme de scoring IA qui aide les équipes à prioriser ce qui compte. Sachez exactement qui cibler, quand et pourquoi.',
     },
   };
 

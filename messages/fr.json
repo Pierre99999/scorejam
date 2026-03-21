@@ -1,70 +1,70 @@
 {
   "header": {
-    "howItWorks": "Comment ca marche",
+    "howItWorks": "Comment ça marche",
     "useCases": "Cas d'usage",
-    "bookDemo": "Reserver une demo"
+    "bookDemo": "Réserver une démo"
   },
   "hero": {
-    "headline": "Transformez vos donnees en revenus grace au scoring IA",
+    "headline": "Transformez vos données en revenus grâce au scoring IA",
     "subheadline": "Sachez exactement qui cibler, quand et pourquoi.",
-    "cta1": "Reserver une demo",
-    "cta2": "Voir comment ca marche"
+    "cta1": "Réserver une démo",
+    "cta2": "Voir comment ça marche"
   },
   "problem": {
-    "title": "Vous perdez des opportunites chaque jour",
+    "title": "Vous perdez des opportunités chaque jour",
     "card1Title": "Aucune priorisation",
     "card1Text": "Trop de leads, aucun moyen de savoir lesquels comptent vraiment.",
-    "card2Title": "Efforts gaspilles",
+    "card2Title": "Efforts gaspillés",
     "card2Text": "Vos commerciaux passent des heures sur des prospects qui ne convertiront jamais.",
-    "card3Title": "Zero visibilite",
-    "card3Text": "Le marketing ne voit pas ce qui genere reellement des conversions."
+    "card3Title": "Zéro visibilité",
+    "card3Text": "Le marketing ne voit pas ce qui génère réellement des conversions."
   },
   "solution": {
     "title": "Scorez ce qui compte",
-    "text": "Scorejam analyse vos donnees en temps reel et vous dit exactement ou concentrer vos efforts — pour que chaque action genere du revenu."
+    "text": "Scorejam analyse vos données en temps réel et vous dit exactement où concentrer vos efforts — pour que chaque action génère du revenu."
   },
   "howItWorks": {
-    "title": "Comment ca marche",
-    "step1Title": "Connectez vos donnees",
-    "step1Text": "Branchez votre CRM, analytics ou toute source de donnees en quelques minutes.",
+    "title": "Comment ça marche",
+    "step1Title": "Connectez vos données",
+    "step1Text": "Branchez votre CRM, analytics ou toute source de données en quelques minutes.",
     "step2Title": "L'IA score tout",
-    "step2Text": "Notre IA analyse les patterns et attribue des scores actionnables en temps reel.",
-    "step3Title": "Passez a l'action",
-    "step3Text": "Concentrez votre equipe sur les opportunites qui convertissent reellement."
+    "step2Text": "Notre IA analyse les patterns et attribue des scores actionnables en temps réel.",
+    "step3Title": "Passez à l'action",
+    "step3Text": "Concentrez votre équipe sur les opportunités qui convertissent réellement."
   },
   "useCases": {
-    "title": "Concu pour votre equipe",
+    "title": "Conçu pour votre équipe",
     "sales": "Ventes",
     "salesTitle": "Concluez plus de deals, plus vite",
-    "salesText": "Priorisez les leads par probabilite de conversion. Arretez de perdre du temps sur des impasses.",
-    "salesBullet1": "Scoring de leads base sur le comportement reel",
+    "salesText": "Priorisez les leads par probabilité de conversion. Arrêtez de perdre du temps sur des impasses.",
+    "salesBullet1": "Scoring de leads basé sur le comportement réel",
     "salesBullet2": "Priorisation du pipeline",
     "salesBullet3": "Alertes automatiques sur les leads chauds",
     "marketing": "Marketing",
     "marketingTitle": "Sachez ce qui convertit",
-    "marketingText": "Comprenez quelles campagnes et quels canaux generent du revenu.",
+    "marketingText": "Comprenez quelles campagnes et quels canaux génèrent du revenu.",
     "marketingBullet1": "Scoring de performance des campagnes",
     "marketingBullet2": "Insights d'attribution par canal",
     "marketingBullet3": "Segmentation d'audience",
     "saas": "SaaS",
-    "saasTitle": "Reduisez le churn, augmentez le revenu",
-    "saasText": "Identifiez les comptes a risque et les opportunites d'expansion avant qu'il ne soit trop tard.",
-    "saasBullet1": "Score de sante par compte",
-    "saasBullet2": "Prediction de churn",
-    "saasBullet3": "Detection d'opportunites d'upsell",
+    "saasTitle": "Réduisez le churn, augmentez le revenu",
+    "saasText": "Identifiez les comptes à risque et les opportunités d'expansion avant qu'il ne soit trop tard.",
+    "saasBullet1": "Score de santé par compte",
+    "saasBullet2": "Prédiction de churn",
+    "saasBullet3": "Détection d'opportunités d'upsell",
     "ecommerce": "E-commerce",
     "ecommerceTitle": "Maximisez la valeur client",
     "ecommerceText": "Scorez vos clients par valeur vie et ciblez vos meilleurs segments.",
     "ecommerceBullet1": "Scoring de valeur vie client",
-    "ecommerceBullet2": "Prediction de propension d'achat",
-    "ecommerceBullet3": "Ciblage d'offres personnalisees"
+    "ecommerceBullet2": "Prédiction de propension d'achat",
+    "ecommerceBullet3": "Ciblage d'offres personnalisées"
   },
   "product": {
     "title": "Votre tableau de bord scoring",
-    "subtitle": "Des insights en temps reel, en un coup d'oeil"
+    "subtitle": "Des insights en temps réel, en un coup d'œil"
   },
   "socialProof": {
-    "title": "Des resultats qui parlent",
+    "title": "Des résultats qui parlent",
     "kpi1Value": "+32%",
     "kpi1Label": "taux de conversion",
     "kpi2Value": "-45%",
@@ -74,25 +74,25 @@
   },
   "differentiation": {
     "title": "Pourquoi Scorejam",
-    "item1Title": "Temps reel",
-    "item1Text": "Les scores se mettent a jour quand vos donnees changent. Pas de batch, pas de delais.",
+    "item1Title": "Temps réel",
+    "item1Text": "Les scores se mettent à jour quand vos données changent. Pas de batch, pas de délais.",
     "item2Title": "IA native",
-    "item2Text": "Construit de zero avec le machine learning — pas ajoute apres coup.",
-    "item3Title": "Zero complexite",
-    "item3Text": "Aucune prise de tete a l'installation. Connectez vos donnees et obtenez des insights en minutes."
+    "item2Text": "Construit de zéro avec le machine learning — pas ajouté après coup.",
+    "item3Title": "Zéro complexité",
+    "item3Text": "Aucune prise de tête à l'installation. Connectez vos données et obtenez des insights en minutes."
   },
   "finalCta": {
     "title": "Concentrez-vous sur l'essentiel",
-    "subtitle": "Rejoignez les equipes qui ont arrete de deviner et qui scorent.",
-    "cta": "Reserver une demo"
+    "subtitle": "Rejoignez les équipes qui ont arrêté de deviner et qui scorent.",
+    "cta": "Réserver une démo"
   },
   "footer": {
-    "tagline": "Transformez vos donnees en revenus.",
+    "tagline": "Transformez vos données en revenus.",
     "product": "Produit",
     "company": "Entreprise",
-    "legal": "Mentions legales",
-    "privacy": "Politique de confidentialite",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
-    "copyright": "© 2026 Scorejam. Tous droits reserves."
+    "copyright": "© 2026 Scorejam. Tous droits réservés."
   }
 }
