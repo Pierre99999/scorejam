@@ -69,7 +69,7 @@ const tabs: TabContent[] = [
       'Validate beta features before full launch',
       'Pinpoint UX friction and usability blockers',
       'Run product satisfaction surveys with built-in NPS',
-      'Diagnose why specific features aren't getting adopted',
+      "Diagnose why specific features aren't getting adopted",
     ],
   },
   {
@@ -82,7 +82,7 @@ const tabs: TabContent[] = [
       'Assess team effectiveness and collaboration dynamics',
       'Evaluate role fit across technical, behavioral, and cultural dimensions',
       'Measure employee engagement drivers and killers',
-      'Audit culture health — what's real vs. what's performative',
+      "Audit culture health — what's real vs. what's performative",
     ],
   },
   {
