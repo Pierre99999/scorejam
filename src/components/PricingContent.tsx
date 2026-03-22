@@ -182,11 +182,8 @@ export function PricingContent() {
   ];
 
   const scaleFeatures = [
-    'Unlimited credits',
-    'Dedicated account manager',
-    'Custom integrations',
-    'SLA & premium support',
-    'On-premise option',
+    'Includes 15 credits',
+    'Valid until used',
   ];
 
   const valueItems = [
@@ -252,12 +249,12 @@ export function PricingContent() {
 
             <AnimatedSection delay={0.2}>
               <PlanCard
-                name="Scale"
-                price="Custom"
-                desc="For organizations with specific needs"
+                name="One-Shot"
+                price="19.99"
+                desc="One-time purchase, no subscription"
                 features={scaleFeatures}
-                ctaLabel="Contact sales"
-                onCtaClick={openContactSales}
+                ctaLabel="Buy now"
+                onCtaClick={openSignup}
               />
             </AnimatedSection>
           </div>
