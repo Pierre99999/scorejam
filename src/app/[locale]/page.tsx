@@ -5,6 +5,7 @@ import { Problem } from '@/components/Problem';
 import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
 import { UseCases } from '@/components/UseCases';
+import { Channels } from '@/components/Channels';
 import { ProductPreview } from '@/components/ProductPreview';
 import { SocialProof } from '@/components/SocialProof';
 import { Differentiation } from '@/components/Differentiation';
@@ -30,6 +31,7 @@ export default async function Home({
         <InlineCTA />
         <HowItWorks />
         <UseCases />
+        <Channels />
         <InlineCTA />
         <ProductPreview />
         <SocialProof />

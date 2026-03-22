@@ -114,21 +114,24 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   </p>
                 </div>
 
-                {/* Scale features card */}
-                <div className="rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] p-5">
+                {/* Scale features — individual cards */}
+                <div>
                   <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4">
                     {t('featuresTitle')}
                   </p>
-                  <ul className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3">
                     {scaleFeatures.map(({ key, icon }) => (
-                      <li key={key} className="flex items-center gap-3">
-                        <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--section-bg)] border border-[var(--line-subtle)]">
+                      <div
+                        key={key}
+                        className="flex items-center gap-4 rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] px-5 py-4 hover:border-[var(--card-border-hover)] transition-all duration-200"
+                      >
+                        <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/15">
                           {icon}
                         </span>
-                        <span className="text-sm text-[var(--text-secondary)]">{t(key)}</span>
-                      </li>
+                        <span className="text-sm font-medium text-[var(--text-primary)]">{t(key)}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 {/* Reassurance */}

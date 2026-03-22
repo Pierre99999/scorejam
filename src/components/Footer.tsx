@@ -1,10 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
+import { useSignup } from './SignupContext';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
+  const { openContactSales } = useSignup();
 
   return (
     <footer className="border-t border-[var(--card-border)] py-12">
@@ -58,12 +62,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('company')}</h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={openContactSales}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
-                  About
-                </a>
+                  {t('contactUs')}
+                </button>
               </li>
               <li>
                 <a
@@ -81,20 +85,20 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('legal')}</h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={`/${locale}/privacy`}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   {t('privacy')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={`/${locale}/terms`}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   {t('terms')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

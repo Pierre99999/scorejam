@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Inter } from 'next/font/google';
 import { SignupShell } from '@/components/SignupShell';
+import { CookieConsent } from '@/components/CookieConsent';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -62,6 +63,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SignupShell>
             {children}
+            <CookieConsent />
           </SignupShell>
         </NextIntlClientProvider>
       </body>
