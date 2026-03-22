@@ -1,11 +1,9 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { AnimatedSection } from './AnimatedSection';
 import { useSignup } from './SignupContext';
 
 export function FinalCTA() {
-  const t = useTranslations('finalCta');
   const { openSignup } = useSignup();
 
   return (
@@ -19,17 +17,17 @@ export function FinalCTA() {
 
       <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          {t('title')}
+          Start focusing on what matters
         </h2>
         <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
-          {t('subtitle')}
+          Join the teams that stopped guessing and started scoring.
         </p>
         <div className="mt-10">
           <button
             onClick={openSignup}
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
           >
-            {t('cta')}
+            Start for free
           </button>
         </div>
       </div>

@@ -8,6 +8,9 @@ interface SignupContextType {
   isContactSalesOpen: boolean;
   openContactSales: () => void;
   closeContactSales: () => void;
+  isLoginOpen: boolean;
+  openLogin: () => void;
+  closeLogin: () => void;
 }
 
 const SignupContext = createContext<SignupContextType>({
@@ -17,11 +20,15 @@ const SignupContext = createContext<SignupContextType>({
   isContactSalesOpen: false,
   openContactSales: () => {},
   closeContactSales: () => {},
+  isLoginOpen: false,
+  openLogin: () => {},
+  closeLogin: () => {},
 });
 
 export function SignupProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactSalesOpen, setIsContactSalesOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   return (
     <SignupContext.Provider
       value={{
@@ -31,6 +38,9 @@ export function SignupProvider({ children }: { children: ReactNode }) {
         isContactSalesOpen,
         openContactSales: () => setIsContactSalesOpen(true),
         closeContactSales: () => setIsContactSalesOpen(false),
+        isLoginOpen,
+        openLogin: () => setIsLoginOpen(true),
+        closeLogin: () => setIsLoginOpen(false),
       }}
     >
       {children}

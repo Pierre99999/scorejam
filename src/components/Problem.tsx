@@ -1,7 +1,6 @@
 'use client';
 
 import { Target, Clock, EyeOff } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import type { LucideIcon } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
@@ -9,8 +8,8 @@ interface ProblemCard {
   icon: LucideIcon;
   iconBg: string;
   iconColor: string;
-  titleKey: 'card1Title' | 'card2Title' | 'card3Title';
-  textKey: 'card1Text' | 'card2Text' | 'card3Text';
+  title: string;
+  text: string;
   delay: number;
 }
 
@@ -19,31 +18,29 @@ const cards: ProblemCard[] = [
     icon: Target,
     iconBg: 'bg-purple-500/10',
     iconColor: 'text-purple-400',
-    titleKey: 'card1Title',
-    textKey: 'card1Text',
+    title: 'No prioritization',
+    text: 'Too many leads, no way to know which ones matter most.',
     delay: 0,
   },
   {
     icon: Clock,
     iconBg: 'bg-blue-500/10',
     iconColor: 'text-blue-400',
-    titleKey: 'card2Title',
-    textKey: 'card2Text',
+    title: 'Wasted effort',
+    text: 'Sales teams spend hours chasing prospects that will never convert.',
     delay: 0.1,
   },
   {
     icon: EyeOff,
     iconBg: 'bg-violet-500/10',
     iconColor: 'text-violet-400',
-    titleKey: 'card3Title',
-    textKey: 'card3Text',
+    title: 'Zero visibility',
+    text: "Marketing can't see what's actually driving conversions.",
     delay: 0.2,
   },
 ];
 
 export function Problem() {
-  const t = useTranslations('problem');
-
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Subtle gradient background hint */}
@@ -58,7 +55,7 @@ export function Problem() {
             The Problem
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            {t('title')}
+            You&apos;re losing opportunities every day
           </h2>
         </AnimatedSection>
 
@@ -67,7 +64,7 @@ export function Problem() {
           {cards.map((card) => {
             const Icon = card.icon;
             return (
-              <AnimatedSection key={card.titleKey} delay={card.delay}>
+              <AnimatedSection key={card.title} delay={card.delay}>
                 <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full">
                   {/* Icon */}
                   <div
@@ -78,12 +75,12 @@ export function Problem() {
 
                   {/* Title */}
                   <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">
-                    {t(card.titleKey)}
+                    {card.title}
                   </h3>
 
                   {/* Description */}
                   <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                    {t(card.textKey)}
+                    {card.text}
                   </p>
                 </div>
               </AnimatedSection>

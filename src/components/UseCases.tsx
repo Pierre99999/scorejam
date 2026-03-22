@@ -2,51 +2,70 @@
 
 import { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 import { cn } from '@/lib/utils';
 
 type TabKey = 'sales' | 'marketing' | 'saas' | 'ecommerce';
 
-const tabKeys: TabKey[] = ['sales', 'marketing', 'saas', 'ecommerce'];
-
 interface TabContent {
   tabKey: TabKey;
-  titleKey: 'salesTitle' | 'marketingTitle' | 'saasTitle' | 'ecommerceTitle';
-  textKey: 'salesText' | 'marketingText' | 'saasText' | 'ecommerceText';
-  bullets: [string, string, string];
+  label: string;
+  title: string;
+  text: string;
+  bullets: string[];
 }
 
 const tabs: TabContent[] = [
   {
     tabKey: 'sales',
-    titleKey: 'salesTitle',
-    textKey: 'salesText',
-    bullets: ['salesBullet1', 'salesBullet2', 'salesBullet3'],
+    label: 'Sales',
+    title: 'Close more deals, faster',
+    text: 'Prioritize leads by conversion probability. Stop wasting time on dead ends.',
+    bullets: [
+      'Lead scoring based on real behavior',
+      'Pipeline prioritization',
+      'Automated alerts on hot leads',
+    ],
   },
   {
     tabKey: 'marketing',
-    titleKey: 'marketingTitle',
-    textKey: 'marketingText',
-    bullets: ['marketingBullet1', 'marketingBullet2', 'marketingBullet3'],
+    label: 'Marketing',
+    title: 'Know what converts',
+    text: 'Understand which campaigns and channels drive actual revenue.',
+    bullets: [
+      'Campaign performance scoring',
+      'Channel attribution insights',
+      'Audience segmentation',
+    ],
   },
   {
     tabKey: 'saas',
-    titleKey: 'saasTitle',
-    textKey: 'saasText',
-    bullets: ['saasBullet1', 'saasBullet2', 'saasBullet3'],
+    label: 'SaaS',
+    title: 'Reduce churn, grow revenue',
+    text: "Identify at-risk accounts and expansion opportunities before it's too late.",
+    bullets: [
+      'Health scoring per account',
+      'Churn prediction',
+      'Upsell opportunity detection',
+    ],
   },
   {
     tabKey: 'ecommerce',
-    titleKey: 'ecommerceTitle',
-    textKey: 'ecommerceText',
-    bullets: ['ecommerceBullet1', 'ecommerceBullet2', 'ecommerceBullet3'],
+    label: 'E-commerce',
+    title: 'Maximize customer value',
+    text: 'Score customers by lifetime value and target your best segments.',
+    bullets: [
+      'Customer lifetime value scoring',
+      'Purchase propensity prediction',
+      'Personalized offer targeting',
+    ],
   },
 ];
 
+const tabKeys: TabKey[] = ['sales', 'marketing', 'saas', 'ecommerce'];
+
 export function UseCases() {
-  const t = useTranslations('useCases');
   const [activeTab, setActiveTab] = useState<TabKey>('sales');
 
   const activeContent = tabs.find((tab) => tab.tabKey === activeTab)!;
@@ -65,26 +84,29 @@ export function UseCases() {
             Use Cases
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            Built for your team
           </h2>
         </AnimatedSection>
 
         {/* Tab buttons */}
         <AnimatedSection delay={0.1} className="flex flex-wrap justify-center gap-2 mb-10">
-          {tabKeys.map((key) => (
-            <button
-              key={key}
-              onClick={() => setActiveTab(key)}
-              className={cn(
-                'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border',
-                activeTab === key
-                  ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg shadow-purple-900/30'
-                  : 'text-[var(--text-secondary)] border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)]'
-              )}
-            >
-              {t(key)}
-            </button>
-          ))}
+          {tabKeys.map((key) => {
+            const tab = tabs.find((t) => t.tabKey === key)!;
+            return (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={cn(
+                  'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border',
+                  activeTab === key
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg shadow-purple-900/30'
+                    : 'text-[var(--text-secondary)] border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)]'
+                )}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
         </AnimatedSection>
 
         {/* Tab content with AnimatePresence crossfade */}
@@ -106,24 +128,24 @@ export function UseCases() {
                   <div className="relative">
                     {/* Content title */}
                     <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-3">
-                      {t(activeContent.titleKey)}
+                      {activeContent.title}
                     </h3>
 
                     {/* Description */}
                     <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-8 max-w-2xl">
-                      {t(activeContent.textKey)}
+                      {activeContent.text}
                     </p>
 
                     {/* Bullet points */}
                     <ul className="space-y-4">
-                      {activeContent.bullets.map((bulletKey) => (
-                        <li key={bulletKey} className="flex items-start gap-3">
+                      {activeContent.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3">
                           <CheckCircle
                             className="w-5 h-5 text-purple-400 shrink-0 mt-0.5"
                             strokeWidth={1.5}
                           />
                           <span className="text-[var(--text-secondary)] text-base leading-relaxed">
-                            {t(bulletKey as Parameters<typeof t>[0])}
+                            {bullet}
                           </span>
                         </li>
                       ))}

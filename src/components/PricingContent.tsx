@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { Check, Eye, Zap, TrendingUp, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
@@ -167,44 +166,43 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 // ─── Main export ──────────────────────────────────────────────────────────────
 
 export function PricingContent() {
-  const t = useTranslations('pricing');
   const { openSignup, openContactSales } = useSignup();
 
   const starterFeatures = [
-    t('starterFeature1'),
-    t('starterFeature2'),
-    t('starterFeature3'),
-    t('starterFeature4'),
+    '50 credits / month',
+    '1 scoring project',
+    'Basic insights',
+    'Email support',
   ];
 
   const proFeatures = [
-    t('proFeature1'),
-    t('proFeature2'),
-    t('proFeature3'),
-    t('proFeature4'),
-    t('proFeature5'),
+    '500 credits / month',
+    'Unlimited projects',
+    'Advanced AI insights',
+    'Priority support',
+    'Team collaboration',
   ];
 
   const scaleFeatures = [
-    t('scaleFeature1'),
-    t('scaleFeature2'),
-    t('scaleFeature3'),
-    t('scaleFeature4'),
-    t('scaleFeature5'),
+    'Unlimited credits',
+    'Dedicated account manager',
+    'Custom integrations',
+    'SLA & premium support',
+    'On-premise option',
   ];
 
   const valueItems = [
-    { icon: Eye, gradient: 'from-purple-500 to-blue-500', titleKey: 'valueItem1Title' as const, textKey: 'valueItem1Text' as const, delay: 0 },
-    { icon: Zap, gradient: 'from-blue-500 to-violet-500', titleKey: 'valueItem2Title' as const, textKey: 'valueItem2Text' as const, delay: 0.1 },
-    { icon: TrendingUp, gradient: 'from-violet-500 to-purple-500', titleKey: 'valueItem3Title' as const, textKey: 'valueItem3Text' as const, delay: 0.2 },
+    { icon: Eye, gradient: 'from-purple-500 to-blue-500', title: 'Clarity', text: 'Stop guessing. Know exactly where to focus.', delay: 0 },
+    { icon: Zap, gradient: 'from-blue-500 to-violet-500', title: 'Speed', text: 'From data to decisions in minutes, not weeks.', delay: 0.1 },
+    { icon: TrendingUp, gradient: 'from-violet-500 to-purple-500', title: 'Results', text: 'Teams using Scorejam convert 32% more.', delay: 0.2 },
   ];
 
   const faqItems = [
-    { q: t('faq1Q'), a: t('faq1A') },
-    { q: t('faq2Q'), a: t('faq2A') },
-    { q: t('faq3Q'), a: t('faq3A') },
-    { q: t('faq4Q'), a: t('faq4A') },
-    { q: t('faq5Q'), a: t('faq5A') },
+    { q: 'Can I try Scorejam for free?', a: 'Yes! The Starter plan is completely free with 50 credits per month. No credit card required.' },
+    { q: 'What happens when I run out of credits?', a: 'You can purchase additional credit packs anytime, or upgrade to Pro for more monthly credits.' },
+    { q: 'Can I cancel anytime?', a: 'Absolutely. No commitment, no hidden fees. Cancel your Pro subscription anytime.' },
+    { q: 'Do unused credits roll over?', a: 'Monthly credits reset each billing cycle, but purchased credit packs never expire.' },
+    { q: 'Is there a setup fee?', a: 'No. Zero setup fee, zero complexity. You\'re up and running in 10 minutes.' },
   ];
 
   return (
@@ -215,55 +213,52 @@ export function PricingContent() {
         <div className="absolute top-48 right-1/4 w-96 h-96 rounded-full bg-blue-600/5 blur-3xl" />
       </div>
 
-      {/* ── Section 1: Hero ── */}
+      {/* Section 1: Hero */}
       <section className="relative pt-32 pb-16 text-center px-6">
         <AnimatedSection>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            {t('title')}
+            Simple, transparent pricing
           </h1>
-          <p className="mt-5 text-lg text-[var(--text-secondary)] max-w-xl mx-auto">{t('subtitle')}</p>
+          <p className="mt-5 text-lg text-[var(--text-secondary)] max-w-xl mx-auto">Start free. Scale when you&apos;re ready.</p>
         </AnimatedSection>
       </section>
 
-      {/* ── Section 2: Pricing Plans ── */}
+      {/* Section 2: Pricing Plans */}
       <section className="relative py-8 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            {/* Starter */}
             <AnimatedSection delay={0}>
               <PlanCard
-                name={t('starter')}
-                price={t('starterPrice')}
-                desc={t('starterDesc')}
+                name="Starter"
+                price="Free"
+                desc="Perfect to discover Scorejam"
                 features={starterFeatures}
-                ctaLabel={t('starterCta')}
+                ctaLabel="Get started free"
                 onCtaClick={openSignup}
               />
             </AnimatedSection>
 
-            {/* Pro — highlighted */}
             <AnimatedSection delay={0.1}>
               <PlanCard
-                name={t('pro')}
-                price={t('proPrice')}
-                period={t('proPeriod')}
-                desc={t('proDesc')}
+                name="Pro"
+                price="49"
+                period="/month"
+                desc="For teams that need real results"
                 features={proFeatures}
-                ctaLabel={t('proCta')}
-                badge={t('proBadge')}
+                ctaLabel="Start Pro trial"
+                badge="Most popular"
                 highlighted
                 onCtaClick={openSignup}
               />
             </AnimatedSection>
 
-            {/* Scale */}
             <AnimatedSection delay={0.2}>
               <PlanCard
-                name={t('scale')}
-                price={t('scalePrice')}
-                desc={t('scaleDesc')}
+                name="Scale"
+                price="Custom"
+                desc="For organizations with specific needs"
                 features={scaleFeatures}
-                ctaLabel={t('scaleCta')}
+                ctaLabel="Contact sales"
                 onCtaClick={openContactSales}
               />
             </AnimatedSection>
@@ -271,45 +266,45 @@ export function PricingContent() {
         </div>
       </section>
 
-      {/* ── Section 3: Credit Packs ── */}
+      {/* Section 3: Credit Packs */}
       <section className="relative py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{t('creditsTitle')}</h2>
-            <p className="mt-3 text-[var(--text-secondary)] text-sm">{t('creditsSubtitle')}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">Need more credits?</h2>
+            <p className="mt-3 text-[var(--text-secondary)] text-sm">Boost your usage with credit packs</p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
             <div className="flex flex-col gap-4">
-              <CreditPack label={t('creditsPack1')} price={t('creditsPack1Price')} />
-              <CreditPack label={t('creditsPack2')} price={t('creditsPack2Price')} />
-              <CreditPack label={t('creditsPack3')} price={t('creditsPack3Price')} />
+              <CreditPack label="100 credits" price="9" />
+              <CreditPack label="500 credits" price="39" />
+              <CreditPack label="2000 credits" price="129" />
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Section 4: How Credits Work ── */}
+      {/* Section 4: How Credits Work */}
       <section className="relative py-16 px-6">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         <div className="max-w-2xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
-              {t('howCreditsTitle')}
+              How credits work
             </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">{t('howCreditsText')}</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Each scoring analysis uses credits. A simple questionnaire uses ~5 credits. A detailed diagnostic uses ~20 credits. Credits never expire.</p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Section 5: Value Section ── */}
+      {/* Section 5: Value Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
         <div className="max-w-7xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-              {t('valueTitle')}
+              What you actually get
             </h2>
           </AnimatedSection>
 
@@ -317,15 +312,15 @@ export function PricingContent() {
             {valueItems.map((item) => {
               const Icon = item.icon;
               return (
-                <AnimatedSection key={item.titleKey} delay={item.delay}>
+                <AnimatedSection key={item.title} delay={item.delay}>
                   <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
                     <div
                       className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
                     >
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                     </div>
-                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
-                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{t(item.textKey)}</p>
+                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{item.text}</p>
                   </div>
                 </AnimatedSection>
               );
@@ -334,16 +329,20 @@ export function PricingContent() {
         </div>
       </section>
 
-      {/* ── Section 6: Usage Projection ── */}
+      {/* Section 6: Usage Projection */}
       <section className="relative py-16 px-6">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{t('projectionTitle')}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">What can you do with credits?</h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
             <ul className="flex flex-col gap-4">
-              {[t('projectionItem1'), t('projectionItem2'), t('projectionItem3')].map((item, i) => (
+              {[
+                '50 credits = ~10 basic scoring analyses',
+                '500 credits = ~100 basic or ~25 deep analyses',
+                'Unlimited = score everything, all the time',
+              ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl px-5 py-4">
                   <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 mt-0.5">
                     <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
@@ -356,11 +355,11 @@ export function PricingContent() {
         </div>
       </section>
 
-      {/* ── Section 7: FAQ ── */}
+      {/* Section 7: FAQ */}
       <section className="relative py-24 px-6">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">{t('faqTitle')}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">Frequently asked questions</h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>

@@ -1,15 +1,14 @@
 'use client';
 
 import { Zap, Cpu, Sparkles } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import type { LucideIcon } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 interface DiffItem {
   icon: LucideIcon;
   gradient: string;
-  titleKey: 'item1Title' | 'item2Title' | 'item3Title';
-  textKey: 'item1Text' | 'item2Text' | 'item3Text';
+  title: string;
+  text: string;
   delay: number;
 }
 
@@ -17,29 +16,27 @@ const items: DiffItem[] = [
   {
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
-    titleKey: 'item1Title',
-    textKey: 'item1Text',
+    title: 'Real-time',
+    text: 'Scores update as your data changes. No batch processing, no delays.',
     delay: 0,
   },
   {
     icon: Cpu,
     gradient: 'from-blue-500 to-violet-500',
-    titleKey: 'item2Title',
-    textKey: 'item2Text',
+    title: 'AI-native',
+    text: 'Built from the ground up with machine learning — not bolted on.',
     delay: 0.1,
   },
   {
     icon: Sparkles,
     gradient: 'from-violet-500 to-purple-500',
-    titleKey: 'item3Title',
-    textKey: 'item3Text',
+    title: 'Zero complexity',
+    text: 'No setup headaches. Connect your data and get insights in minutes.',
     delay: 0.2,
   },
 ];
 
 export function Differentiation() {
-  const t = useTranslations('differentiation');
-
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
@@ -50,7 +47,7 @@ export function Differentiation() {
         {/* Title */}
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            Why Scorejam
           </h2>
         </AnimatedSection>
 
@@ -59,7 +56,7 @@ export function Differentiation() {
           {items.map((item) => {
             const Icon = item.icon;
             return (
-              <AnimatedSection key={item.titleKey} delay={item.delay}>
+              <AnimatedSection key={item.title} delay={item.delay}>
                 <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
                   {/* Icon with gradient background circle */}
                   <div
@@ -69,10 +66,10 @@ export function Differentiation() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+                  <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{item.title}</h3>
 
                   {/* Description */}
-                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{t(item.textKey)}</p>
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{item.text}</p>
                 </div>
               </AnimatedSection>
             );

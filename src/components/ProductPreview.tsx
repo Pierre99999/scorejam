@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 
@@ -37,7 +36,7 @@ function ScoreCard({
               : 'bg-red-500/15 text-red-400'
           }`}
         >
-          {trend === 'up' ? '↑' : '↓'}
+          {trend === 'up' ? '\u2191' : '\u2193'}
         </span>
       </div>
       <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">{label}</p>
@@ -152,8 +151,6 @@ function DashboardMockup() {
 }
 
 export function ProductPreview() {
-  const t = useTranslations('product');
-
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
@@ -164,9 +161,9 @@ export function ProductPreview() {
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            Your scoring dashboard
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] text-lg">{t('subtitle')}</p>
+          <p className="mt-4 text-[var(--text-secondary)] text-lg">Real-time insights at a glance</p>
         </AnimatedSection>
 
         {/* Dashboard mockup with scale-up animation */}

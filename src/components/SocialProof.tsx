@@ -1,14 +1,10 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useInView } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 
 // Parse the display value into a numeric target and surrounding text
-// e.g. "+32%" -> { prefix: '+', number: 32, suffix: '%' }
-// e.g. "-45%" -> { prefix: '-', number: 45, suffix: '%' }
-// e.g. "10min" -> { prefix: '', number: 10, suffix: 'min' }
 function parseKpiValue(raw: string): { prefix: string; number: number; suffix: string } {
   const match = raw.match(/^([^0-9]*)(\d+)([^0-9]*)$/);
   if (!match) return { prefix: '', number: 0, suffix: raw };
@@ -75,12 +71,10 @@ function LogoPlaceholders() {
 }
 
 export function SocialProof() {
-  const t = useTranslations('socialProof');
-
   const kpis = [
-    { rawValue: t('kpi1Value'), label: t('kpi1Label') },
-    { rawValue: t('kpi2Value'), label: t('kpi2Label') },
-    { rawValue: t('kpi3Value'), label: t('kpi3Label') },
+    { rawValue: '+32%', label: 'conversion rate' },
+    { rawValue: '-45%', label: 'wasted time' },
+    { rawValue: '10min', label: 'setup time' },
   ];
 
   return (
@@ -93,7 +87,7 @@ export function SocialProof() {
         {/* Title */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            Results that speak
           </h2>
         </AnimatedSection>
 

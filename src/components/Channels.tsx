@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { AnimatedSection } from './AnimatedSection';
 import {
   Globe,
@@ -14,19 +13,17 @@ import {
 } from 'lucide-react';
 
 const channels = [
-  { icon: Globe, label: 'website', gradient: 'from-blue-500 to-cyan-400' },
-  { icon: Mail, label: 'email', gradient: 'from-purple-500 to-pink-400' },
-  { icon: MessageSquare, label: 'slack', gradient: 'from-emerald-500 to-teal-400' },
-  { icon: Linkedin, label: 'linkedin', gradient: 'from-blue-600 to-blue-400' },
-  { icon: Send, label: 'sms', gradient: 'from-orange-500 to-amber-400' },
-  { icon: QrCode, label: 'qrcode', gradient: 'from-violet-500 to-purple-400' },
-  { icon: Smartphone, label: 'inapp', gradient: 'from-rose-500 to-pink-400' },
-  { icon: Share2, label: 'api', gradient: 'from-indigo-500 to-blue-400' },
+  { icon: Globe, name: 'Website', gradient: 'from-blue-500 to-cyan-400' },
+  { icon: Mail, name: 'Email', gradient: 'from-purple-500 to-pink-400' },
+  { icon: MessageSquare, name: 'Slack', gradient: 'from-emerald-500 to-teal-400' },
+  { icon: Linkedin, name: 'LinkedIn', gradient: 'from-blue-600 to-blue-400' },
+  { icon: Send, name: 'SMS', gradient: 'from-orange-500 to-amber-400' },
+  { icon: QrCode, name: 'QR Code', gradient: 'from-violet-500 to-purple-400' },
+  { icon: Smartphone, name: 'In-App', gradient: 'from-rose-500 to-pink-400' },
+  { icon: Share2, name: 'API', gradient: 'from-indigo-500 to-blue-400' },
 ];
 
 export function Channels() {
-  const t = useTranslations('channels');
-
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
@@ -37,22 +34,22 @@ export function Channels() {
         {/* Section heading */}
         <AnimatedSection className="text-center mb-14">
           <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
-            {t('badge')}
+            Distribution
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            From analysis to distribution
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            {t('hook')}
+            Your diagnosis becomes a touchpoint with your ecosystem.
           </p>
         </AnimatedSection>
 
         {/* Channel cards grid */}
         <AnimatedSection delay={0.1}>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {channels.map(({ icon: Icon, label, gradient }) => (
+            {channels.map(({ icon: Icon, name, gradient }) => (
               <div
-                key={label}
+                key={name}
                 className="group relative rounded-2xl p-px bg-gradient-to-br from-purple-500/15 via-blue-500/5 to-purple-500/0 hover:from-purple-500/30 hover:via-blue-500/15 hover:to-purple-500/10 transition-all duration-300"
               >
                 <div className="relative flex flex-col items-center gap-3 rounded-2xl bg-[var(--card-bg)] px-4 py-6 sm:py-8 overflow-hidden">
@@ -70,7 +67,7 @@ export function Channels() {
 
                   {/* Label */}
                   <span className="relative text-sm font-medium text-[var(--text-primary)]">
-                    {t(label as Parameters<typeof t>[0])}
+                    {name}
                   </span>
                 </div>
               </div>
@@ -85,7 +82,7 @@ export function Channels() {
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
               <p className="relative text-[var(--text-secondary)] text-base leading-relaxed max-w-2xl mx-auto">
-                {t('description')}
+                Scorejam turns every diagnosis into an engagement lever by intelligently distributing it across your channels. You don&apos;t just collect answers — you create useful interactions.
               </p>
             </div>
           </div>

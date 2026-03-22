@@ -1,13 +1,11 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion, type Variants } from 'framer-motion';
 import { useSignup } from './SignupContext';
 
 // Helper: wraps gradient-keyword spans around a phrase found in the headline
 function HighlightedHeadline({ text }: { text: string }) {
-  // Keywords to highlight in each language
-  const keywords = ['revenue', 'AI scoring', 'revenus', 'scoring IA'];
+  const keywords = ['revenue', 'AI scoring'];
   let remaining = text;
   const parts: Array<{ text: string; highlight: boolean }> = [];
 
@@ -170,7 +168,7 @@ function DashboardMock() {
           {[
             { value: '+32%', label: 'Conversion' },
             { value: '10min', label: 'Setup' },
-            { value: '−45%', label: 'Waste' },
+            { value: '\u221245%', label: 'Waste' },
           ].map((stat) => (
             <div key={stat.label} className="flex-1 text-center">
               <p className="text-sm font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -186,7 +184,6 @@ function DashboardMock() {
 }
 
 export function Hero() {
-  const t = useTranslations('hero');
   const { openSignup } = useSignup();
 
   const handleHowItWorks = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -232,7 +229,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              <HighlightedHeadline text={t('headline')} />
+              <HighlightedHeadline text="Turn your data into revenue with AI scoring" />
             </motion.h1>
 
             {/* Subheadline */}
@@ -240,7 +237,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              {t('subheadline')}
+              Know exactly who to target, when, and why.
             </motion.p>
 
             {/* CTAs */}
@@ -252,15 +249,15 @@ export function Hero() {
                 onClick={openSignup}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
               >
-                {t('cta1')}
+                Start for free
               </button>
               <a
                 href="#how-it-works"
                 onClick={handleHowItWorks}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-secondary)] border border-[var(--line-subtle)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10 transition-all duration-200"
               >
-                {t('cta2')}
-                <span className="ml-2 text-[var(--text-muted)]">→</span>
+                See how it works
+                <span className="ml-2 text-[var(--text-muted)]">&rarr;</span>
               </a>
             </motion.div>
 

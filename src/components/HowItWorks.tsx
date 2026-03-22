@@ -1,16 +1,14 @@
 'use client';
 
 import { Target, Brain, BarChart3 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import type { LucideIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 
 interface Step {
   number: string;
   icon: LucideIcon;
-  titleKey: 'step1Title' | 'step2Title' | 'step3Title';
-  textKey: 'step1Text' | 'step2Text' | 'step3Text';
+  title: string;
+  text: string;
   delay: number;
 }
 
@@ -18,29 +16,27 @@ const steps: Step[] = [
   {
     number: '01',
     icon: Target,
-    titleKey: 'step1Title',
-    textKey: 'step1Text',
+    title: 'Define your objective',
+    text: 'Understand, qualify, validate, prioritize.',
     delay: 0,
   },
   {
     number: '02',
     icon: Brain,
-    titleKey: 'step2Title',
-    textKey: 'step2Text',
+    title: 'Scorejam builds the diagnosis',
+    text: 'Guided questions + AI logic.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    titleKey: 'step3Title',
-    textKey: 'step3Text',
+    title: 'Get clear insights',
+    text: 'Scores, priorities, recommendations.',
     delay: 0.3,
   },
 ];
 
 export function HowItWorks() {
-  const t = useTranslations('howItWorks');
-
   return (
     <section id="how-it-works" className="relative py-24 overflow-hidden">
       {/* Subtle gradient background */}
@@ -55,7 +51,7 @@ export function HowItWorks() {
             Process
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            {t('title')}
+            How it works
           </h2>
         </AnimatedSection>
 
@@ -93,12 +89,12 @@ export function HowItWorks() {
 
                     {/* Title */}
                     <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">
-                      {t(step.titleKey)}
+                      {step.title}
                     </h3>
 
                     {/* Description */}
                     <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-xs mx-auto">
-                      {t(step.textKey)}
+                      {step.text}
                     </p>
                   </div>
                 </AnimatedSection>

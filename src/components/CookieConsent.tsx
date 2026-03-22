@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, ChevronDown, Shield } from 'lucide-react';
 
@@ -30,7 +29,6 @@ function storeConsent(prefs: CookiePreferences) {
 }
 
 export function CookieConsent() {
-  const t = useTranslations('cookies');
   const [state, setState] = useState<ConsentState>('pending');
   const [showDetails, setShowDetails] = useState(false);
   const [prefs, setPrefs] = useState<CookiePreferences>({
@@ -89,10 +87,10 @@ export function CookieConsent() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-1">
-                      {t('title')}
+                      We value your privacy
                     </h3>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      {t('description')}
+                      We use cookies to enhance your experience, analyze site traffic, and personalize content. You can choose which cookies to accept.
                     </p>
                   </div>
                 </div>
@@ -106,7 +104,7 @@ export function CookieConsent() {
                     size={14}
                     className={`transition-transform duration-200 ${showDetails ? 'rotate-180' : ''}`}
                   />
-                  {t('customize')}
+                  Customize preferences
                 </button>
 
                 {/* Cookie categories (collapsible) */}
@@ -125,18 +123,18 @@ export function CookieConsent() {
                           <div className="flex items-center gap-3">
                             <Shield size={14} className="text-green-400 shrink-0" />
                             <div>
-                              <p className="text-sm font-medium text-[var(--text-primary)]">{t('essential')}</p>
-                              <p className="text-xs text-[var(--text-muted)]">{t('essentialDesc')}</p>
+                              <p className="text-sm font-medium text-[var(--text-primary)]">Essential</p>
+                              <p className="text-xs text-[var(--text-muted)]">Required for the site to function properly</p>
                             </div>
                           </div>
-                          <span className="text-xs font-medium text-green-400 shrink-0">{t('alwaysOn')}</span>
+                          <span className="text-xs font-medium text-green-400 shrink-0">Always on</span>
                         </div>
 
                         {/* Analytics */}
                         <label className="flex items-center justify-between gap-4 rounded-xl bg-[var(--section-bg)] border border-[var(--line-subtle)] px-4 py-3 cursor-pointer hover:border-[var(--card-border-hover)] transition-colors duration-200">
                           <div>
-                            <p className="text-sm font-medium text-[var(--text-primary)]">{t('analytics')}</p>
-                            <p className="text-xs text-[var(--text-muted)]">{t('analyticsDesc')}</p>
+                            <p className="text-sm font-medium text-[var(--text-primary)]">Analytics</p>
+                            <p className="text-xs text-[var(--text-muted)]">Help us understand how you use our site</p>
                           </div>
                           <div className="relative shrink-0">
                             <input
@@ -153,8 +151,8 @@ export function CookieConsent() {
                         {/* Marketing */}
                         <label className="flex items-center justify-between gap-4 rounded-xl bg-[var(--section-bg)] border border-[var(--line-subtle)] px-4 py-3 cursor-pointer hover:border-[var(--card-border-hover)] transition-colors duration-200">
                           <div>
-                            <p className="text-sm font-medium text-[var(--text-primary)]">{t('marketing')}</p>
-                            <p className="text-xs text-[var(--text-muted)]">{t('marketingDesc')}</p>
+                            <p className="text-sm font-medium text-[var(--text-primary)]">Marketing</p>
+                            <p className="text-xs text-[var(--text-muted)]">Used to deliver relevant ads and campaigns</p>
                           </div>
                           <div className="relative shrink-0">
                             <input
@@ -179,21 +177,21 @@ export function CookieConsent() {
                       onClick={handleSavePreferences}
                       className="flex-1 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/20 hover:-translate-y-0.5 transition-all duration-200"
                     >
-                      {t('savePreferences')}
+                      Save preferences
                     </button>
                   ) : (
                     <button
                       onClick={handleAcceptAll}
                       className="flex-1 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/20 hover:-translate-y-0.5 transition-all duration-200"
                     >
-                      {t('acceptAll')}
+                      Accept all
                     </button>
                   )}
                   <button
                     onClick={handleRejectAll}
                     className="flex-1 px-5 py-2.5 rounded-xl text-sm font-semibold border border-[var(--card-border)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10 transition-all duration-200"
                   >
-                    {t('rejectAll')}
+                    Essential only
                   </button>
                 </div>
               </div>

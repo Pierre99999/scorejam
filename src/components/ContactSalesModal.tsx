@@ -1,11 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
-  Check,
   Lock,
   Zap,
   Building2,
@@ -21,7 +19,6 @@ interface ContactSalesModalProps {
 }
 
 export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
-  const t = useTranslations('contactSales');
   const [toastVisible, setToastVisible] = useState(false);
 
   useEffect(() => {
@@ -47,11 +44,11 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
   };
 
   const scaleFeatures = [
-    { key: 'feature1' as const, icon: <Users size={16} className="text-purple-400 shrink-0" /> },
-    { key: 'feature2' as const, icon: <Headphones size={16} className="text-blue-400 shrink-0" /> },
-    { key: 'feature3' as const, icon: <Settings size={16} className="text-violet-400 shrink-0" /> },
-    { key: 'feature4' as const, icon: <Building2 size={16} className="text-green-400 shrink-0" /> },
-    { key: 'feature5' as const, icon: <Server size={16} className="text-orange-400 shrink-0" /> },
+    { text: 'Unlimited credits for your entire team', icon: <Users size={16} className="text-purple-400 shrink-0" /> },
+    { text: 'Dedicated account manager', icon: <Headphones size={16} className="text-blue-400 shrink-0" /> },
+    { text: 'Custom integrations & API access', icon: <Settings size={16} className="text-violet-400 shrink-0" /> },
+    { text: 'SLA & premium support', icon: <Building2 size={16} className="text-green-400 shrink-0" /> },
+    { text: 'On-premise deployment option', icon: <Server size={16} className="text-orange-400 shrink-0" /> },
   ];
 
   return (
@@ -103,32 +100,32 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   <div className="inline-flex items-center gap-2 mb-5">
                     <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-blue-400 text-xs font-medium tracking-wide uppercase">
                       <Zap size={12} className="inline -mt-0.5 mr-1" />
-                      {t('badge')}
+                      Enterprise
                     </span>
                   </div>
                   <h1 className="text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-[1.15] tracking-tight">
-                    {t('headline')}
+                    Let&apos;s build your custom plan.
                   </h1>
                   <p className="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
-                    {t('subtext')}
+                    Our sales team will work with you to create a tailored solution that fits your organization&apos;s needs.
                   </p>
                 </div>
 
-                {/* Scale features — individual cards */}
+                {/* Scale features */}
                 <div>
                   <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4">
-                    {t('featuresTitle')}
+                    What&apos;s included in Scale:
                   </p>
                   <div className="flex flex-col gap-3">
-                    {scaleFeatures.map(({ key, icon }) => (
+                    {scaleFeatures.map(({ text, icon }) => (
                       <div
-                        key={key}
+                        key={text}
                         className="flex items-center gap-4 rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] px-5 py-4 hover:border-[var(--card-border-hover)] transition-all duration-200"
                       >
                         <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/15">
                           {icon}
                         </span>
-                        <span className="text-sm font-medium text-[var(--text-primary)]">{t(key)}</span>
+                        <span className="text-sm font-medium text-[var(--text-primary)]">{text}</span>
                       </div>
                     ))}
                   </div>
@@ -137,7 +134,7 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                 {/* Reassurance */}
                 <div className="rounded-xl bg-gradient-to-br from-blue-500/5 to-purple-500/5 border border-blue-500/10 p-5">
                   <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    {t('reassurance')}
+                    Our team typically responds within 24 hours. We&apos;ll schedule a call to understand your needs and propose a tailored plan.
                   </p>
                 </div>
               </div>
@@ -149,10 +146,10 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                 {/* Form title */}
                 <div>
                   <h2 className="text-2xl font-bold text-[var(--text-primary)]">
-                    {t('formTitle')}
+                    Contact our sales team
                   </h2>
                   <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                    {t('formSubtitle')}
+                    Fill in your details and we&apos;ll get back to you shortly.
                   </p>
                 </div>
 
@@ -161,13 +158,13 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   {/* Name */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-name" className="text-sm font-medium text-[var(--text-secondary)]">
-                      {t('nameLabel')}
+                      Full name
                     </label>
                     <input
                       id="contact-name"
                       type="text"
                       autoComplete="name"
-                      placeholder={t('namePlaceholder')}
+                      placeholder="Your name"
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/50 transition-all duration-150"
                     />
                   </div>
@@ -175,13 +172,13 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   {/* Email */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-email" className="text-sm font-medium text-[var(--text-secondary)]">
-                      {t('emailLabel')}
+                      Work email
                     </label>
                     <input
                       id="contact-email"
                       type="email"
                       autoComplete="email"
-                      placeholder={t('emailPlaceholder')}
+                      placeholder="you@company.com"
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/50 transition-all duration-150"
                     />
                   </div>
@@ -189,13 +186,13 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   {/* Company */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-company" className="text-sm font-medium text-[var(--text-secondary)]">
-                      {t('companyLabel')}
+                      Company
                     </label>
                     <input
                       id="contact-company"
                       type="text"
                       autoComplete="organization"
-                      placeholder={t('companyPlaceholder')}
+                      placeholder="Your company name"
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/50 transition-all duration-150"
                     />
                   </div>
@@ -203,14 +200,14 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   {/* Phone (optional) */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-phone" className="text-sm font-medium text-[var(--text-secondary)]">
-                      {t('phoneLabel')}{' '}
+                      Phone{' '}
                       <span className="text-[var(--text-muted)] text-xs font-normal">(optional)</span>
                     </label>
                     <input
                       id="contact-phone"
                       type="tel"
                       autoComplete="tel"
-                      placeholder={t('phonePlaceholder')}
+                      placeholder="+1 (555) 000-0000"
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/50 transition-all duration-150"
                     />
                   </div>
@@ -218,13 +215,13 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                   {/* Message */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-message" className="text-sm font-medium text-[var(--text-secondary)]">
-                      {t('messageLabel')}{' '}
+                      Message{' '}
                       <span className="text-[var(--text-muted)] text-xs font-normal">(optional)</span>
                     </label>
                     <textarea
                       id="contact-message"
                       rows={3}
-                      placeholder={t('messagePlaceholder')}
+                      placeholder="Tell us about your needs..."
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/50 transition-all duration-150 resize-none"
                     />
                   </div>
@@ -234,16 +231,16 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                     type="submit"
                     className="w-full px-6 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-400 hover:to-purple-400 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50 hover:-translate-y-0.5 transition-all duration-200"
                   >
-                    {t('cta')}
+                    Request a demo
                   </button>
 
                   {/* Sub-CTA */}
-                  <p className="text-center text-xs text-[var(--text-muted)]">{t('ctaSub')}</p>
+                  <p className="text-center text-xs text-[var(--text-muted)]">No commitment — we&apos;ll reach out within 24h</p>
 
                   {/* Security note */}
                   <div className="flex items-center justify-center gap-2 pt-2">
                     <Lock size={13} className="text-[var(--text-muted)] shrink-0" />
-                    <p className="text-xs text-[var(--text-muted)]">{t('securityNote')}</p>
+                    <p className="text-xs text-[var(--text-muted)]">Your data is secure. No spam.</p>
                   </div>
                 </form>
               </div>
@@ -261,7 +258,7 @@ export function ContactSalesModal({ isOpen, onClose }: ContactSalesModalProps) {
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('toast')}
+                Request received — we&apos;ll be in touch soon!
               </motion.div>
             )}
           </AnimatePresence>

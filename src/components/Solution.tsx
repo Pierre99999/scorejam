@@ -1,14 +1,10 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
-  const t = useTranslations('solution');
-
-  // Split "Score what matters" to highlight "what matters"
-  const title = t('title');
-  const highlightKeywords = ['what matters', 'ce qui compte'];
+  const title = 'Score what matters';
+  const highlightKeywords = ['what matters'];
   let highlightedPart = '';
   let beforePart = title;
   let afterPart = '';
@@ -47,10 +43,10 @@ export function Solution() {
             {afterPart}
           </h2>
           <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
-            {t('text')}
+            Scorejam analyzes your data in real-time and tells you exactly where to focus — so every action drives revenue.
           </p>
           <p className="text-lg sm:text-xl font-medium italic text-[var(--text-primary)] opacity-80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
-            {t('punchline')}
+            You&apos;re not just collecting answers. You&apos;re truly understanding.
           </p>
         </AnimatedSection>
       </div>

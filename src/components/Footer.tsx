@@ -2,12 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
 import { useSignup } from './SignupContext';
 
 export function Footer() {
-  const t = useTranslations('footer');
-  const locale = useLocale();
   const { openContactSales } = useSignup();
 
   return (
@@ -28,7 +25,7 @@ export function Footer() {
                 Scorejam
               </span>
             </div>
-            <p className="mt-2 text-sm text-[var(--text-secondary)]">{t('tagline')}</p>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">Turn data into revenue.</p>
           </div>
         </div>
 
@@ -36,7 +33,7 @@ export function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-10">
           {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('product')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Product</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <a
@@ -59,14 +56,14 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('company')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Company</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <button
                   onClick={openContactSales}
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
-                  {t('contactUs')}
+                  Contact us
                 </button>
               </li>
               <li>
@@ -82,22 +79,22 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">{t('legal')}</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Legal</h3>
             <ul className="flex flex-col gap-3">
               <li>
                 <Link
-                  href={`/${locale}/privacy`}
+                  href="/privacy"
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
-                  {t('privacy')}
+                  Privacy Policy
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/terms`}
+                  href="/terms"
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
-                  {t('terms')}
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -106,7 +103,7 @@ export function Footer() {
 
         {/* Bottom: copyright */}
         <div className="border-t border-[var(--card-border)] pt-8">
-          <p className="text-sm text-[var(--text-muted)] text-center">{t('copyright')}</p>
+          <p className="text-sm text-[var(--text-muted)] text-center">&copy; 2026 Scorejam. All rights reserved.</p>
         </div>
       </div>
     </footer>

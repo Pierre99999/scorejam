@@ -2,21 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  X,
-  Check,
-  Rocket,
-  ArrowRight,
-  Shield,
-  CreditCard,
-  Sparkles,
-  Lock,
-  Eye,
-  EyeOff,
-  Zap,
-} from 'lucide-react';
+import { X, Lock, Eye, EyeOff, Sparkles } from 'lucide-react';
 
-interface SignupModalProps {
+interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
@@ -32,7 +20,7 @@ function GoogleIcon() {
   );
 }
 
-export function SignupModal({ isOpen, onClose }: SignupModalProps) {
+export function LoginModal({ isOpen, onClose }: LoginModalProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
 
@@ -58,32 +46,11 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
     setTimeout(() => setToastVisible(false), 3000);
   };
 
-  const benefits = [
-    'Relevant questions, automatically',
-    'Actionable answers',
-    'Clear insights, no complex analysis',
-  ];
-  const projections = [
-    'Create your first diagnosis',
-    'Ask your first questions',
-    'Get your first insights',
-  ];
-  const reassurances = [
-    { text: 'No credit card required', icon: <Shield size={14} className="text-green-400" /> },
-    { text: 'Free to start', icon: <CreditCard size={14} className="text-blue-400" /> },
-    { text: 'Simple to get started', icon: <Sparkles size={14} className="text-purple-400" /> },
-  ];
-  const projectionIcons = [
-    <Rocket key="r" size={16} className="text-purple-400 shrink-0" />,
-    <ArrowRight key="a1" size={16} className="text-blue-400 shrink-0" />,
-    <ArrowRight key="a2" size={16} className="text-blue-400 shrink-0" />,
-  ];
-
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          key="signup-modal"
+          key="login-modal"
           className="fixed inset-0 z-50 bg-[var(--page-bg)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -106,9 +73,8 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
               <X size={20} />
             </button>
 
-            {/* LEFT SIDE — Marketing / Value */}
+            {/* LEFT SIDE — Welcome back (hidden on mobile) */}
             <div className="relative w-full lg:w-1/2 hidden lg:flex items-center justify-center overflow-hidden">
-              {/* Background decorations */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-[var(--page-bg)] to-blue-950/20" />
                 <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-[var(--glow-purple)] blur-[100px]" />
@@ -122,85 +88,35 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                 />
               </div>
 
-              <div className="relative w-full px-8 py-12 lg:px-16 lg:py-16 flex flex-col gap-8">
-                {/* Headline */}
+              <div className="relative w-full px-8 py-12 lg:px-16 lg:py-16 flex flex-col gap-8 items-center text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500/15 to-blue-500/15 border border-purple-500/20">
+                  <Sparkles size={32} className="text-purple-400" />
+                </div>
                 <div>
-                  <div className="inline-flex items-center gap-2 mb-5">
-                    <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
-                      <Zap size={12} className="inline -mt-0.5 mr-1" />
-                      Quick start
-                    </span>
-                  </div>
                   <h1 className="text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-[1.15] tracking-tight">
-                    Get started in minutes. Get your first insights immediately.
+                    Welcome back!
                   </h1>
-                  <p className="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
-                    No complex setup needed. Scorejam guides you to ask the right questions and quickly understand what matters.
+                  <p className="mt-4 text-base text-[var(--text-secondary)] leading-relaxed max-w-md">
+                    Your scoring dashboard is waiting. Log in to access your diagnostics, insights, and team data.
                   </p>
                 </div>
-
-                {/* Benefits card */}
-                <div className="rounded-xl bg-[var(--card-bg)] border border-[var(--line-subtle)] p-5">
-                  <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-4">
-                    What you&apos;ll get:
+                <div className="rounded-xl bg-gradient-to-br from-purple-500/5 to-blue-500/5 border border-purple-500/10 p-5 max-w-sm">
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    Need an account? Click &quot;Start for free&quot; in the header to get started in minutes.
                   </p>
-                  <ul className="flex flex-col gap-3">
-                    {benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-green-500/15">
-                          <Check size={12} className="text-green-400" strokeWidth={3} />
-                        </span>
-                        <span className="text-sm text-[var(--text-secondary)] leading-snug">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-
-                {/* Projection card */}
-                <div className="rounded-xl bg-gradient-to-br from-purple-500/5 to-blue-500/5 border border-purple-500/10 p-5">
-                  <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4">
-                    In 5 minutes, you can:
-                  </p>
-                  <ul className="flex flex-col gap-3">
-                    {projections.map((projection, i) => (
-                      <li key={projection} className="flex items-center gap-3">
-                        <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--section-bg)] border border-[var(--line-subtle)]">
-                          {projectionIcons[i]}
-                        </span>
-                        <span className="text-sm text-[var(--text-secondary)]">{projection}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Reassurance pills */}
-                <div className="flex flex-wrap gap-2.5">
-                  {reassurances.map(({ text, icon }) => (
-                    <span
-                      key={text}
-                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[var(--section-bg)] border border-[var(--line-subtle)] text-xs text-[var(--text-secondary)] font-medium"
-                    >
-                      {icon}
-                      {text}
-                    </span>
-                  ))}
-                </div>
-
               </div>
             </div>
 
-            {/* RIGHT SIDE — Form */}
+            {/* RIGHT SIDE — Login Form */}
             <div className="relative w-full lg:w-1/2 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--line-subtle)] bg-[var(--section-bg)]">
               <div className="w-full px-6 py-12 lg:px-10 lg:py-16 flex flex-col gap-6">
-                {/* Form title */}
-                <h2 className="text-2xl font-bold text-[var(--text-primary)]">
-                  Create your account
-                </h2>
+                <h2 className="text-2xl font-bold text-[var(--text-primary)]">Log in to your account</h2>
 
                 {/* Google button */}
                 <button
                   type="button"
-                  className="flex items-center justify-center gap-3 w-full px-4 py-3.5 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] hover:bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] text-sm font-medium text-[var(--text-secondary)] transition-all duration-150"
+                  className="flex items-center justify-center gap-3 w-full px-4 py-3.5 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] text-sm font-medium text-[var(--text-secondary)] transition-all duration-150"
                 >
                   <GoogleIcon />
                   Continue with Google
@@ -215,32 +131,28 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-                  {/* Email */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-email" className="text-sm font-medium text-[var(--text-secondary)]">
-                      Email
-                    </label>
+                    <label htmlFor="login-email" className="text-sm font-medium text-[var(--text-secondary)]">Email</label>
                     <input
-                      id="signup-email"
+                      id="login-email"
                       type="email"
                       autoComplete="email"
                       placeholder="you@company.com"
                       className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
                     />
-                    <p className="text-xs text-[var(--text-muted)] ml-1">Use your professional email</p>
                   </div>
 
-                  {/* Password */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-password" className="text-sm font-medium text-[var(--text-secondary)]">
-                      Password
-                    </label>
+                    <div className="flex items-center justify-between">
+                      <label htmlFor="login-password" className="text-sm font-medium text-[var(--text-secondary)]">Password</label>
+                      <button type="button" className="text-xs text-purple-400 hover:text-purple-300 font-medium transition-colors">Forgot password?</button>
+                    </div>
                     <div className="relative">
                       <input
-                        id="signup-password"
+                        id="login-password"
                         type={showPassword ? 'text' : 'password'}
-                        autoComplete="new-password"
-                        placeholder="Choose a password"
+                        autoComplete="current-password"
+                        placeholder="Your password"
                         className="w-full px-4 py-3 pr-11 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
                       />
                       <button
@@ -254,33 +166,13 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
                     </div>
                   </div>
 
-                  {/* Name (optional) */}
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="signup-name" className="text-sm font-medium text-[var(--text-secondary)]">
-                      Name{' '}
-                      <span className="text-[var(--text-muted)] text-xs font-normal">(optional)</span>
-                    </label>
-                    <input
-                      id="signup-name"
-                      type="text"
-                      autoComplete="name"
-                      placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-purple-500/60 focus:border-purple-500/50 transition-all duration-150"
-                    />
-                  </div>
-
-                  {/* CTA button */}
                   <button
                     type="submit"
                     className="w-full px-6 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5 transition-all duration-200"
                   >
-                    Create my free account
+                    Log in
                   </button>
 
-                  {/* Sub-CTA */}
-                  <p className="text-center text-xs text-[var(--text-muted)]">1 free diagnosis included</p>
-
-                  {/* Security note */}
                   <div className="flex items-center justify-center gap-2 pt-2">
                     <Lock size={13} className="text-[var(--text-muted)] shrink-0" />
                     <p className="text-xs text-[var(--text-muted)]">Your data is secure. No spam.</p>
@@ -290,7 +182,6 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             </div>
           </motion.div>
 
-          {/* Coming soon toast */}
           <AnimatePresence>
             {toastVisible && (
               <motion.div
