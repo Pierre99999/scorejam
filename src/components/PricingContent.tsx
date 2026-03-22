@@ -329,28 +329,35 @@ export function PricingContent() {
         </div>
       </section>
 
-      {/* Section 6: Usage Projection */}
+      {/* Section 6: What Are Credits For */}
       <section className="relative py-16 px-6">
-        <div className="max-w-2xl mx-auto">
-          <AnimatedSection className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">What can you do with credits?</h2>
+        <div className="max-w-3xl mx-auto">
+          <AnimatedSection className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">What Are Credits For?</h2>
+            <p className="mt-4 text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
+              Credits power every step of your diagnostic—from creation to continuous improvement.
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <ul className="flex flex-col gap-4">
-              {[
-                '50 credits = ~10 basic scoring analyses',
-                '500 credits = ~100 basic or ~25 deep analyses',
-                'Unlimited = score everything, all the time',
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 mt-0.5">
-                    <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
-                  </span>
-                  <span className="text-[var(--text-secondary)] text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Generate Your Diagnostic</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Build structured questionnaires, scoring logic, and recommendations automatically.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Analyze Every Response</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Each answer is processed to update scores, priorities, and insights in real time.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Run AI-Powered Analytics</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Aggregate responses to uncover patterns, gaps, and opportunities.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Recompute When Things Change</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Update a question, adjust scoring, or refine your model—everything is reanalyzed instantly.</p>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
