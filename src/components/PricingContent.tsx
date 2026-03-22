@@ -291,7 +291,7 @@ export function PricingContent() {
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
               How credits work
             </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">Each scoring analysis uses credits. A simple questionnaire uses ~5 credits. A detailed diagnostic uses ~20 credits. Credits never expire.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Each scoring analysis uses credits. A simple diagnostic uses ~3 credits. 50 responses uses ~1 credit. AI analytics uses ~1 credit.</p>
           </AnimatedSection>
         </div>
       </section>

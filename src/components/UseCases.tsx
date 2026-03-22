@@ -69,7 +69,7 @@ const tabs: TabContent[] = [
       "Validate beta features before full launch",
       "Pinpoint UX friction and usability blockers",
       "Run product satisfaction surveys with built-in NPS",
-      "Diagnose why specific features are not getting adopted",
+      "Diagnose why specific features are not being adopted",
     ],
   },
   {
