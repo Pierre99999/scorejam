@@ -168,7 +168,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 export function PricingContent() {
   const t = useTranslations('pricing');
-  const { openSignup } = useSignup();
+  const { openSignup, openContactSales } = useSignup();
 
   const starterFeatures = [
     t('starterFeature1'),
@@ -264,7 +264,7 @@ export function PricingContent() {
                 desc={t('scaleDesc')}
                 features={scaleFeatures}
                 ctaLabel={t('scaleCta')}
-                onCtaClick={openSignup}
+                onCtaClick={openContactSales}
               />
             </AnimatedSection>
           </div>

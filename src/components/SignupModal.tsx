@@ -103,7 +103,7 @@ export function SignupModal({ isOpen, onClose }: SignupModalProps) {
             {/* ════════════════════════════════════════════════════════════
                 LEFT SIDE — Marketing / Value
                ════════════════════════════════════════════════════════════ */}
-            <div className="relative w-full lg:w-1/2 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full lg:w-1/2 hidden lg:flex items-center justify-center overflow-hidden">
               {/* Background decorations */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 via-[var(--page-bg)] to-blue-950/20" />
