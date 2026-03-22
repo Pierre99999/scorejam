@@ -17,10 +17,10 @@ const channels = [
   { icon: Mail, name: 'Email', gradient: 'from-purple-500 to-pink-400' },
   { icon: MessageSquare, name: 'Slack', gradient: 'from-emerald-500 to-teal-400' },
   { icon: Linkedin, name: 'LinkedIn', gradient: 'from-blue-600 to-blue-400' },
-  { icon: Send, name: 'SMS', gradient: 'from-orange-500 to-amber-400' },
-  { icon: QrCode, name: 'QR Code', gradient: 'from-violet-500 to-purple-400' },
-  { icon: Smartphone, name: 'In-App', gradient: 'from-rose-500 to-pink-400' },
-  { icon: Share2, name: 'API', gradient: 'from-indigo-500 to-blue-400' },
+  { icon: Send, name: 'WhatsApp', gradient: 'from-green-500 to-emerald-400' },
+  { icon: QrCode, name: 'Widgets', gradient: 'from-violet-500 to-purple-400' },
+  { icon: Smartphone, name: 'iFrame', gradient: 'from-rose-500 to-pink-400' },
+  { icon: Share2, name: 'CRM', gradient: 'from-indigo-500 to-blue-400' },
 ];
 
 export function Channels() {
@@ -82,7 +82,7 @@ export function Channels() {
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
               <p className="relative text-[var(--text-secondary)] text-base leading-relaxed max-w-2xl mx-auto">
-                Publishing is easy — website embed, email, Slack, LinkedIn, SMS, QR code, in-app, or API. One diagnostic, every channel, zero friction.
+                Publishing is easy — website embed, email, Slack, LinkedIn, WhatsApp, widgets, iFrame, or CRM. One diagnostic, every channel, zero friction.
               </p>
             </div>
           </div>
