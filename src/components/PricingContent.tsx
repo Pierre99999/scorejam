@@ -161,7 +161,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-48' : 'max-h-0'}`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-96' : 'max-h-0'}`}
       >
         <p className="px-6 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-[var(--card-border)] pt-4">
           {answer}
@@ -198,11 +198,14 @@ export function PricingContent() {
   ];
 
   const faqItems = [
-    { q: 'Can I try Scorejam for free?', a: 'Yes! The Starter plan is completely free with 50 credits per month. No credit card required.' },
-    { q: 'What happens when I run out of credits?', a: 'You can purchase additional credit packs anytime, or upgrade to Pro for more monthly credits.' },
-    { q: 'Can I cancel anytime?', a: 'Absolutely. No commitment, no hidden fees. Cancel your Pro subscription anytime.' },
-    { q: 'Do unused credits roll over?', a: 'Monthly credits reset each billing cycle, but purchased credit packs never expire.' },
-    { q: 'Is there a setup fee?', a: 'No. Zero setup fee, zero complexity. You\'re up and running in 10 minutes.' },
+    { q: 'How do credits work?', a: 'Think of credits as a flexible currency. Instead of limiting you to "3 Projects" or "100 Responses," we give you credits so you can choose how to use ScoreJam. One month you might use all your credits to create new surveys; the next month you might use them all to analyze responses.' },
+    { q: 'What happens to my unused monthly credits?', a: 'Your 15 monthly credits reset at the start of each billing cycle. They do not roll over. This ensures we can maintain the high-performance AI infrastructure required for your analysis at a fair monthly price.' },
+    { q: 'What happens if I buy a Jam Pack?', a: 'Jam credits are different from monthly credits. They are purchased separately (e.g., 50 Credits for $49.99) and remain in your "Wallet" for 12 months. The system always uses your expiring monthly credits first, and only touches your Jam wallet if you run out.' },
+    { q: 'What happens if I run out of credits mid-survey?', a: 'We will never stop a live survey. We continue to collect responses from your participants so you do not look bad. However, the analysis and dashboard for those new responses will be locked until you purchase a Jam pack or your monthly credits renew.' },
+    { q: 'Why is there a cost for AI Smart Edits?', a: 'Minor manual tweaks (like fixing a typo) are always free. Credits are only deducted when you ask our AI to restructure, rewrite, or generate new logic for your diagnostic, as this requires significant processing power.' },
+    { q: 'Can I cap my spending?', a: 'Yes. By default, you are never auto-charged for overage. If you run out of credits, ScoreJam will simply pause AI-powered features (like analysis or new diagnostic creation) until you buy Jam packs or your monthly credits renew.' },
+    { q: 'Can I cancel anytime?', a: 'Absolutely. Cancel from your dashboard at any time. Your subscription remains active until the end of the current billing cycle, then you simply will not be charged again.' },
+    { q: 'What if I need more than 15 credits per month?', a: 'You can purchase Jam Packs (i.e 50 Credits for $49.99) as needed, which remain valid for 12 months. We are also working on higher-tier plans for power users - if you consistently need more capacity, reach out and let us know.' },
   ];
 
   return (
