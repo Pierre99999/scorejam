@@ -3,8 +3,8 @@
 import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
-  const title = 'Score what matters';
-  const highlightKeywords = ['what matters'];
+  const title = 'From questions to decisions—automatically.';
+  const highlightKeywords = ['decisions'];
   let highlightedPart = '';
   let beforePart = title;
   let afterPart = '';
@@ -43,10 +43,10 @@ export function Solution() {
             {afterPart}
           </h2>
           <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
-            Scorejam analyzes your data in real-time and tells you exactly where to focus — so every action drives revenue.
+            ScoreJam builds structured diagnostics, scores what matters, and shows you exactly what to do next.
           </p>
           <p className="text-lg sm:text-xl font-medium italic text-[var(--text-primary)] opacity-80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
-            You&apos;re not just collecting answers. You&apos;re truly understanding.
+            You&apos;re not collecting answers. You&apos;re generating decisions.
           </p>
         </AnimatedSection>
       </div>
