@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 import { cn } from '@/lib/utils';
 
-type TabKey = 'sales' | 'marketing' | 'saas' | 'ecommerce';
+type TabKey = 'sales' | 'marketing' | 'customer-success' | 'product' | 'hr' | 'training';
 
 interface TabContent {
   tabKey: TabKey;
@@ -20,50 +20,87 @@ const tabs: TabContent[] = [
   {
     tabKey: 'sales',
     label: 'Sales',
-    title: 'Close more deals, faster',
+    title: 'Close More Deals, Faster',
     text: 'Prioritize leads by conversion probability. Stop wasting time on dead ends.',
     bullets: [
-      'Lead scoring based on real behavior',
-      'Pipeline prioritization',
-      'Automated alerts on hot leads',
+      'Uncover prospect pain points and rank outreach by urgency',
+      'Validate solution fit before investing sales time',
+      'Match each prospect to the right product, tier, or plan',
+      'Generate ROI projections that help buyers get internal buy-in',
+      'Score buying readiness to know who to engage now vs. nurture',
     ],
   },
   {
     tabKey: 'marketing',
     label: 'Marketing',
-    title: 'Know what converts',
-    text: 'Understand which campaigns and channels drive actual revenue.',
+    title: 'Know Your Market Before You Spend',
+    text: 'Validate positioning, pricing, and channels with real audience data.',
     bullets: [
-      'Campaign performance scoring',
-      'Channel attribution insights',
-      'Audience segmentation',
+      'Define your ideal customer profile from actual survey data',
+      'Test market demand before committing resources',
+      'Benchmark your positioning against competitors',
+      'Find the right price point and packaging model',
+      'Discover which channels your buyers actually use',
+      'Measure product-market fit with the Sean Ellis test',
+      'Audit brand perception — close the gap between intended and real',
     ],
   },
   {
-    tabKey: 'saas',
-    label: 'SaaS',
-    title: 'Reduce churn, grow revenue',
-    text: "Identify at-risk accounts and expansion opportunities before it's too late.",
+    tabKey: 'customer-success',
+    label: 'Customer Success',
+    title: 'Retain More, Rescue Faster',
+    text: 'Spot at-risk accounts before they churn. Track health at every stage.',
     bullets: [
-      'Health scoring per account',
-      'Churn prediction',
-      'Upsell opportunity detection',
+      'Check implementation readiness before go-live',
+      'Track onboarding progress and unblock stuck accounts',
+      'Monitor account health across satisfaction dimensions',
+      'Verify customers are hitting the outcomes they bought for',
+      'Detect churn signals early and trigger the right intervention',
+      'Assess compliance posture and operational risk',
     ],
   },
   {
-    tabKey: 'ecommerce',
-    label: 'E-commerce',
-    title: 'Maximize customer value',
-    text: 'Score customers by lifetime value and target your best segments.',
+    tabKey: 'product',
+    label: 'Product',
+    title: 'Build What Matters, Fix What Hurts',
+    text: 'Replace gut feelings with scored user feedback on every product decision.',
     bullets: [
-      'Customer lifetime value scoring',
-      'Purchase propensity prediction',
-      'Personalized offer targeting',
+      'Prioritize your roadmap with evidence-based feature ranking',
+      'Validate beta features before full launch',
+      'Pinpoint UX friction and usability blockers',
+      'Run product satisfaction surveys with built-in NPS',
+      'Diagnose why specific features aren't getting adopted',
+    ],
+  },
+  {
+    tabKey: 'hr',
+    label: 'HR',
+    title: 'Measure People, Not Opinions',
+    text: 'Turn performance reviews, culture checks, and hiring into structured data.',
+    bullets: [
+      'Run structured individual performance evaluations',
+      'Assess team effectiveness and collaboration dynamics',
+      'Evaluate role fit across technical, behavioral, and cultural dimensions',
+      'Measure employee engagement drivers and killers',
+      'Audit culture health — what's real vs. what's performative',
+    ],
+  },
+  {
+    tabKey: 'training',
+    label: 'Training & L&D',
+    title: 'Prove Training Works — Or Fix It',
+    text: 'Assess skills before, validate impact after. No more guessing if programs delivered.',
+    bullets: [
+      'Verify actual skill levels against stated competencies',
+      'Place learners on a maturity continuum with a clear next step',
+      'Identify training gaps and prioritize what to teach first',
+      'Score certification readiness before exam day',
+      'Collect post-training feedback that drives program improvement',
     ],
   },
 ];
 
-const tabKeys: TabKey[] = ['sales', 'marketing', 'saas', 'ecommerce'];
+const tabKeys: TabKey[] = ['sales', 'marketing', 'customer-success', 'product', 'hr', 'training'];
 
 export function UseCases() {
   const [activeTab, setActiveTab] = useState<TabKey>('sales');
