@@ -60,10 +60,10 @@ const tabs: TabContent[] = [
     ],
   },
   {
-    tabKey: 'product',
-    label: 'Product',
-    title: 'Build What Matters, Fix What Hurts',
-    text: 'Replace gut feelings with scored user feedback on every product decision.',
+    tabKey: "product",
+    label: "Product",
+    title: "Build What Matters, Fix What Hurts",
+    text: "Replace gut feelings with scored user feedback on every product decision.",
     bullets: [
       "Prioritize your roadmap with evidence-based feature ranking",
       "Validate beta features before full launch",

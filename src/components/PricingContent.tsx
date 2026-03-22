@@ -236,7 +236,7 @@ export function PricingContent() {
             <AnimatedSection delay={0.1}>
               <PlanCard
                 name="Subscription"
-                price="49"
+                price="14.99"
                 period="/month"
                 desc="For teams that need real results"
                 features={proFeatures}
