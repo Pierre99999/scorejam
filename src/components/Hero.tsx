@@ -220,7 +220,7 @@ export function Hero() {
             {/* Eyebrow badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
-                AI-powered lead scoring
+                AI powered Diagnostics
               </span>
             </motion.div>
 
