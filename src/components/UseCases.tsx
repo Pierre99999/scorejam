@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 import { cn } from '@/lib/utils';
 
-type TabKey = 'sales' | 'marketing' | 'customer-success' | 'product' | 'hr' | 'training';
+type TabKey = "sales" | "marketing" | "customer-success" | "product" | "hr" | "training";
 
 interface TabContent {
   tabKey: TabKey;

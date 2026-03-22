@@ -174,11 +174,8 @@ export function PricingContent() {
   ];
 
   const proFeatures = [
-    '500 credits / month',
-    'Unlimited projects',
-    'Advanced AI insights',
-    'Priority support',
-    'Team collaboration',
+    'Included Credits: 15 Credits / month',
+    'Credit Expiration: Monthly reset',
   ];
 
   const scaleFeatures = [
@@ -238,12 +235,12 @@ export function PricingContent() {
 
             <AnimatedSection delay={0.1}>
               <PlanCard
-                name="Pro"
+                name="Subscription"
                 price="49"
                 period="/month"
                 desc="For teams that need real results"
                 features={proFeatures}
-                ctaLabel="Start Pro trial"
+                ctaLabel="Start Subscription"
                 badge="Most popular"
                 highlighted
                 onCtaClick={openSignup}
