@@ -169,10 +169,8 @@ export function PricingContent() {
   const { openSignup, openContactSales } = useSignup();
 
   const starterFeatures = [
-    '50 credits / month',
-    '1 scoring project',
-    'Basic insights',
-    'Email support',
+    'Included: Build, preview and test 2 diagnostics, no credit card required',
+    'Credit Expiration: Valid until used',
   ];
 
   const proFeatures = [
