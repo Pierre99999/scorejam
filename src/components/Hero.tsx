@@ -268,7 +268,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-xs text-[var(--text-muted)]"
             >
-              No credit card required · Setup in 10 minutes
+              No credit card required · Your first diagnostic in 5 minutes
             </motion.p>
           </motion.div>
 
