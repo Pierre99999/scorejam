@@ -72,9 +72,9 @@ function LogoPlaceholders() {
 
 export function SocialProof() {
   const kpis = [
-    { rawValue: '+32%', label: 'conversion rate' },
-    { rawValue: '-45%', label: 'wasted time' },
-    { rawValue: '10min', label: 'setup time' },
+    { rawValue: '10', label: 'Minutes from objective to live diagnostic' },
+    { rawValue: '95%', label: 'AI-Built. You edit the last 5%.' },
+    { rawValue: '0', label: 'Code required. Zero learning curve, zero friction.' },
   ];
 
   return (
