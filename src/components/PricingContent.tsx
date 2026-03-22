@@ -70,8 +70,13 @@ function PlanCard({
               <span className="text-5xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
               <span className="text-[var(--text-muted)] text-sm mb-1">{period}</span>
             </>
-          ) : (
+          ) : price === "Free" ? (
             <span className="text-4xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
+          ) : (
+            <>
+              <span className="text-[var(--text-secondary)] text-2xl font-semibold self-start mt-1.5">$</span>
+              <span className="text-4xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
+            </>
           )}
         </div>
 
