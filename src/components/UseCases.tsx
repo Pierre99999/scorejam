@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { AnimatedSection } from './AnimatedSection';
-import { cn } from '@/lib/utils';
+import { CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedSection } from "./AnimatedSection";
+import { cn } from "@/lib/utils";
 
 type TabKey = "sales" | "marketing" | "customer-success" | "product" | "hr" | "training";
 
@@ -18,45 +18,45 @@ interface TabContent {
 
 const tabs: TabContent[] = [
   {
-    tabKey: 'sales',
-    label: 'Sales',
-    title: 'Close More Deals, Faster',
-    text: 'Prioritize leads by conversion probability. Stop wasting time on dead ends.',
+    tabKey: "sales",
+    label: "Sales",
+    title: "Close More Deals, Faster",
+    text: "Prioritize leads by conversion probability. Stop wasting time on dead ends.",
     bullets: [
-      'Uncover prospect pain points and rank outreach by urgency',
-      'Validate solution fit before investing sales time',
-      'Match each prospect to the right product, tier, or plan',
-      'Generate ROI projections that help buyers get internal buy-in',
-      'Score buying readiness to know who to engage now vs. nurture',
+      "Uncover prospect pain points and rank outreach by urgency",
+      "Validate solution fit before investing sales time",
+      "Match each prospect to the right product, tier, or plan",
+      "Generate ROI projections that help buyers get internal buy-in",
+      "Score buying readiness to know who to engage now vs. nurture",
     ],
   },
   {
-    tabKey: 'marketing',
-    label: 'Marketing',
-    title: 'Know Your Market Before You Spend',
-    text: 'Validate positioning, pricing, and channels with real audience data.',
+    tabKey: "marketing",
+    label: "Marketing",
+    title: "Know Your Market Before You Spend",
+    text: "Validate positioning, pricing, and channels with real audience data.",
     bullets: [
-      'Define your ideal customer profile from actual survey data',
-      'Test market demand before committing resources',
-      'Benchmark your positioning against competitors',
-      'Find the right price point and packaging model',
-      'Discover which channels your buyers actually use',
-      'Measure product-market fit with the Sean Ellis test',
-      'Audit brand perception — close the gap between intended and real',
+      "Define your ideal customer profile from actual survey data",
+      "Test market demand before committing resources",
+      "Benchmark your positioning against competitors",
+      "Find the right price point and packaging model",
+      "Discover which channels your buyers actually use",
+      "Measure product-market fit with the Sean Ellis test",
+      "Audit brand perception - close the gap between intended and real",
     ],
   },
   {
-    tabKey: 'customer-success',
-    label: 'Customer Success',
-    title: 'Retain More, Rescue Faster',
-    text: 'Spot at-risk accounts before they churn. Track health at every stage.',
+    tabKey: "customer-success",
+    label: "Customer Success",
+    title: "Retain More, Rescue Faster",
+    text: "Spot at-risk accounts before they churn. Track health at every stage.",
     bullets: [
-      'Check implementation readiness before go-live',
-      'Track onboarding progress and unblock stuck accounts',
-      'Monitor account health across satisfaction dimensions',
-      'Verify customers are hitting the outcomes they bought for',
-      'Detect churn signals early and trigger the right intervention',
-      'Assess compliance posture and operational risk',
+      "Check implementation readiness before go-live",
+      "Track onboarding progress and unblock stuck accounts",
+      "Monitor account health across satisfaction dimensions",
+      "Verify customers are hitting the outcomes they bought for",
+      "Detect churn signals early and trigger the right intervention",
+      "Assess compliance posture and operational risk",
     ],
   },
   {
@@ -73,10 +73,10 @@ const tabs: TabContent[] = [
     ],
   },
   {
-    tabKey: 'hr',
-    label: 'HR',
-    title: 'Measure People, Not Opinions',
-    text: 'Turn performance reviews, culture checks, and hiring into structured data.',
+    tabKey: "hr",
+    label: "HR",
+    title: "Measure People, Not Opinions",
+    text: "Turn performance reviews, culture checks, and hiring into structured data.",
     bullets: [
       "Run structured individual performance evaluations",
       "Assess team effectiveness and collaboration dynamics",
@@ -86,24 +86,24 @@ const tabs: TabContent[] = [
     ],
   },
   {
-    tabKey: 'training',
-    label: 'Training & L&D',
-    title: 'Prove Training Works — Or Fix It',
-    text: 'Assess skills before, validate impact after. No more guessing if programs delivered.',
+    tabKey: "training",
+    label: "Training & L&D",
+    title: "Prove Training Works - Or Fix It",
+    text: "Assess skills before, validate impact after. No more guessing if programs delivered.",
     bullets: [
-      'Verify actual skill levels against stated competencies',
-      'Place learners on a maturity continuum with a clear next step',
-      'Identify training gaps and prioritize what to teach first',
-      'Score certification readiness before exam day',
-      'Collect post-training feedback that drives program improvement',
+      "Verify actual skill levels against stated competencies",
+      "Place learners on a maturity continuum with a clear next step",
+      "Identify training gaps and prioritize what to teach first",
+      "Score certification readiness before exam day",
+      "Collect post-training feedback that drives program improvement",
     ],
   },
 ];
 
-const tabKeys: TabKey[] = ['sales', 'marketing', 'customer-success', 'product', 'hr', 'training'];
+const tabKeys: TabKey[] = ["sales", "marketing", "customer-success", "product", "hr", "training"];
 
 export function UseCases() {
-  const [activeTab, setActiveTab] = useState<TabKey>('sales');
+  const [activeTab, setActiveTab] = useState<TabKey>("sales");
 
   const activeContent = tabs.find((tab) => tab.tabKey === activeTab)!;
 
@@ -134,10 +134,10 @@ export function UseCases() {
                 key={key}
                 onClick={() => setActiveTab(key)}
                 className={cn(
-                  'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border',
+                  "px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border",
                   activeTab === key
-                    ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg shadow-purple-900/30'
-                    : 'text-[var(--text-secondary)] border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)]'
+                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg shadow-purple-900/30"
+                    : "text-[var(--text-secondary)] border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)]"
                 )}
               >
                 {tab.label}
@@ -154,7 +154,7 @@ export function UseCases() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25, ease: 'easeInOut' }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
             >
               <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/20 via-blue-500/10 to-purple-500/5">
                 <div className="relative rounded-2xl bg-[var(--card-bg)] p-8 sm:p-10 overflow-hidden backdrop-blur-sm">

@@ -115,16 +115,19 @@ function PlanCard({
 // ─── Credit pack card ─────────────────────────────────────────────────────────
 
 function CreditPack({
-  label,
+  credits,
+  validity,
   price,
 }: {
-  label: string;
+  credits: string;
+  validity: string;
   price: string;
 }) {
   return (
     <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 flex items-center justify-between hover:border-[var(--card-border-hover)] transition-all duration-200">
       <div>
-        <p className="text-[var(--text-primary)] font-semibold text-base">{label}</p>
+        <p className="text-[var(--text-primary)] font-semibold text-base">{credits}</p>
+        <p className="text-[var(--text-secondary)] text-sm">{validity}</p>
       </div>
       <div className="text-right">
         <p className="text-[var(--text-primary)] font-bold text-xl">
@@ -271,9 +274,9 @@ export function PricingContent() {
 
           <AnimatedSection delay={0.1}>
             <div className="flex flex-col gap-4">
-              <CreditPack label="100 credits" price="9" />
-              <CreditPack label="500 credits" price="39" />
-              <CreditPack label="2000 credits" price="129" />
+              <CreditPack credits="10 Credits" validity="Valid 1 year" price="9.99" />
+              <CreditPack credits="50 Credits" validity="Valid 1 year" price="49.99" />
+              <CreditPack credits="100 Credits" validity="Valid 1 year" price="99.99" />
             </div>
           </AnimatedSection>
         </div>
