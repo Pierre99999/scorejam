@@ -84,7 +84,7 @@ export function UseCases() {
             Use Cases
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Built for your team
+            Built For Your Team
           </h2>
         </AnimatedSection>
 

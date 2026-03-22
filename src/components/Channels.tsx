@@ -37,7 +37,7 @@ export function Channels() {
             Distribution
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            From analysis to distribution
+            From Analysis To Distribution
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
             Your diagnosis becomes a touchpoint with your ecosystem.

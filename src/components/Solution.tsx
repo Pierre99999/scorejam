@@ -3,7 +3,7 @@
 import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
-  const title = 'From questions to decisions automatically.';
+  const title = 'From Questions To Decisions Automatically.';
   const highlightKeywords = ['decisions'];
   let highlightedPart = '';
   let beforePart = title;

@@ -47,7 +47,7 @@ export function Differentiation() {
         {/* Title */}
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Why Scorejam
+            Why ScoreJam
           </h2>
         </AnimatedSection>
 

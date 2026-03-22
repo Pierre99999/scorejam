@@ -51,7 +51,7 @@ export function HowItWorks() {
             Process
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            How it works
+            How It Works
           </h2>
         </AnimatedSection>
 

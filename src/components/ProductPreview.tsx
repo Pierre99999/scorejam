@@ -161,7 +161,7 @@ export function ProductPreview() {
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Your scoring dashboard
+            Your Scoring Dashboard
           </h2>
           <p className="mt-4 text-[var(--text-secondary)] text-lg">Real-time insights at a glance</p>
         </AnimatedSection>

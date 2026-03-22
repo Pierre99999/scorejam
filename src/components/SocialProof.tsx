@@ -87,7 +87,7 @@ export function SocialProof() {
         {/* Title */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Results that speak
+            Results That Speak
           </h2>
         </AnimatedSection>
 

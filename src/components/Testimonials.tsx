@@ -33,7 +33,7 @@ export function Testimonials() {
             Testimonials
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            What our users say
+            What Our Users Say
           </h2>
         </AnimatedSection>
 
