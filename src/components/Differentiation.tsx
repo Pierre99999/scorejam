@@ -16,22 +16,22 @@ const items: DiffItem[] = [
   {
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
-    title: 'Real-time',
-    text: 'Scores update as your data changes. No batch processing, no delays.',
+    title: 'We Design The Hard Part',
+    text: "Most people don't know what to ask. ScoreJam builds structured, reliable diagnostics for you.",
     delay: 0,
   },
   {
     icon: Cpu,
     gradient: 'from-blue-500 to-violet-500',
-    title: 'AI-native',
-    text: 'Built from the ground up with machine learning — not bolted on.',
+    title: 'Built For Real Decisions',
+    text: 'Questions are scored, weighted, and turned into clear priorities and next steps.',
     delay: 0.1,
   },
   {
     icon: Sparkles,
     gradient: 'from-violet-500 to-purple-500',
-    title: 'Zero complexity',
-    text: 'No setup headaches. Connect your data and get insights in minutes.',
+    title: 'Instant, No Setup',
+    text: 'Start from a URL and get a complete diagnostic in minutes.',
     delay: 0.2,
   },
 ];
