@@ -16,22 +16,22 @@ const steps: Step[] = [
   {
     number: '01',
     icon: Target,
-    title: 'Define your objective',
-    text: 'Understand, qualify, validate, prioritize.',
+    title: 'Start From Your Context',
+    text: 'Paste a URL or describe your goal. We identify what matters.',
     delay: 0,
   },
   {
     number: '02',
     icon: Brain,
-    title: 'Scorejam builds the diagnosis',
-    text: 'Guided questions + AI logic.',
+    title: 'We Design The Diagnostic',
+    text: 'ScoreJam generates structured, statistically sound questions and scoring logic.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'Get clear insights',
-    text: 'Scores, priorities, recommendations.',
+    title: 'Get Clarity On What To Do Next',
+    text: 'Answers turn into scores, priorities, and clear actions.',
     delay: 0.3,
   },
 ];
