@@ -229,7 +229,9 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              <HighlightedHeadline text="Turn your data into revenue with AI scoring" />
+              We design the questions.
+              <br />
+              <span className="text-[var(--text-secondary)]">You know what to do next.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -237,7 +239,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              Know exactly who to target, when, and why.
+              ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.
             </motion.p>
 
             {/* CTAs */}
