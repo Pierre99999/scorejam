@@ -1,5 +1,6 @@
 "use client";
 
+// Use cases component for team-specific diagnostics
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";

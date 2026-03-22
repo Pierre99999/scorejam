@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Eye, Zap, TrendingUp, ChevronDown } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { useSignup } from './SignupContext';
@@ -191,12 +191,6 @@ export function PricingContent() {
     'Valid until used',
   ];
 
-  const valueItems = [
-    { icon: Eye, gradient: 'from-purple-500 to-blue-500', title: 'Clarity', text: 'Stop guessing. Know exactly where to focus.', delay: 0 },
-    { icon: Zap, gradient: 'from-blue-500 to-violet-500', title: 'Speed', text: 'From data to decisions in minutes, not weeks.', delay: 0.1 },
-    { icon: TrendingUp, gradient: 'from-violet-500 to-purple-500', title: 'Results', text: 'Teams using Scorejam convert 32% more.', delay: 0.2 },
-  ];
-
   const faqItems = [
     { q: 'How do credits work?', a: 'Think of credits as a flexible currency. Instead of limiting you to "3 Projects" or "100 Responses," we give you credits so you can choose how to use ScoreJam. One month you might use all your credits to create new surveys; the next month you might use them all to analyze responses.' },
     { q: 'What happens to my unused monthly credits?', a: 'Your 15 monthly credits reset at the start of each billing cycle. They do not roll over. This ensures we can maintain the high-performance AI infrastructure required for your analysis at a fair monthly price.' },
@@ -301,38 +295,7 @@ export function PricingContent() {
         </div>
       </section>
 
-      {/* Section 5: Value Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
-        <div className="max-w-7xl mx-auto">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-              What you actually get
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {valueItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <AnimatedSection key={item.title} delay={item.delay}>
-                  <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
-                    <div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
-                    >
-                      <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                    </div>
-                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{item.title}</h3>
-                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6: What Are Credits For */}
+      {/* Section 5: What Are Credits For */}
       <section className="relative py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection className="text-center mb-10">
