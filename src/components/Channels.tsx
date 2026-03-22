@@ -37,10 +37,10 @@ export function Channels() {
             Distribution
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            From Analysis To Distribution
+            Publish Everywhere In One Click
           </h2>
           <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Your diagnosis becomes a touchpoint with your ecosystem.
+            Easily share your diagnostics across multiple channels to reach your audience wherever they are.
           </p>
         </AnimatedSection>
 
@@ -82,7 +82,7 @@ export function Channels() {
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
               <p className="relative text-[var(--text-secondary)] text-base leading-relaxed max-w-2xl mx-auto">
-                Scorejam turns every diagnosis into an engagement lever by intelligently distributing it across your channels. You don&apos;t just collect answers — you create useful interactions.
+                Publishing is easy — website embed, email, Slack, LinkedIn, SMS, QR code, in-app, or API. One diagnostic, every channel, zero friction.
               </p>
             </div>
           </div>
