@@ -17,7 +17,7 @@ export function FinalCTA() {
 
       <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          Start Focusing On What Matters
+          Right Questions. Honest Answers. Clear Actions.
         </h2>
         <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
           Join the teams that stopped guessing and started scoring.
