@@ -229,9 +229,9 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              We design the <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">questions</span>.
+              We Design The <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Questions</span>.
               <br />
-              You know <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">what to do</span> next.
+              You Know <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">What To Do</span> Next.
             </motion.h1>
 
             {/* Subheadline */}
