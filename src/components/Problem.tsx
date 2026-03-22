@@ -55,7 +55,7 @@ export function Problem() {
             The Problem
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            You&apos;re losing opportunities every day
+            Bad questions lead to useless answers
           </h2>
         </AnimatedSection>
 
