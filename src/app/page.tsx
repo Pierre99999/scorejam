@@ -10,7 +10,7 @@ import { InlineCTA } from '@/components/InlineCTA';
 import { ProductPreview } from '@/components/ProductPreview';
 import { SocialProof } from '@/components/SocialProof';
 import { Differentiation } from '@/components/Differentiation';
-import { Testimonials } from '@/components/Testimonials';
+
 import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
 
@@ -30,7 +30,6 @@ export default function HomePage() {
         <ProductPreview />
         <SocialProof />
         <Differentiation />
-        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />
