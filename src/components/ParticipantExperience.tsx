@@ -112,7 +112,7 @@ export function ParticipantExperience() {
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <AnimatedSection className="text-center mb-4">
-          <span className="inline-block text-sm font-semibold text-blue-500 dark:text-blue-400 uppercase tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
             For Participants
           </span>
         </AnimatedSection>
