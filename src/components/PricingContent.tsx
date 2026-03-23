@@ -16,7 +16,8 @@ interface PlanCardProps {
   ctaLabel: string;
   badge?: string;
   highlighted?: boolean;
-  onCtaClick: () => void;
+  ctaHref?: string;
+  onCtaClick?: () => void;
 }
 
 function PlanCard({
@@ -28,6 +29,7 @@ function PlanCard({
   ctaLabel,
   badge,
   highlighted,
+  ctaHref,
   onCtaClick,
 }: PlanCardProps) {
   return (
@@ -102,16 +104,31 @@ function PlanCard({
         </ul>
 
         {/* CTA */}
-        <button
-          onClick={onCtaClick}
-          className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
-            highlighted
-              ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
-              : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
-          }`}
-        >
-          {ctaLabel}
-        </button>
+        {ctaHref ? (
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              highlighted
+                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
+                : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
+            }`}
+          >
+            {ctaLabel}
+          </a>
+        ) : (
+          <button
+            onClick={onCtaClick}
+            className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              highlighted
+                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
+                : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
+            }`}
+          >
+            {ctaLabel}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -231,7 +248,7 @@ export function PricingContent() {
                 desc="Perfect to discover Scorejam"
                 features={starterFeatures}
                 ctaLabel="Get started free"
-                onCtaClick={openSignup}
+                ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
 
@@ -245,7 +262,7 @@ export function PricingContent() {
                 ctaLabel="Start Subscription"
                 badge="Most popular"
                 highlighted
-                onCtaClick={openSignup}
+                ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
 
@@ -256,7 +273,7 @@ export function PricingContent() {
                 desc="One-time purchase, no subscription"
                 features={scaleFeatures}
                 ctaLabel="Buy now"
-                onCtaClick={openSignup}
+                ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
           </div>
