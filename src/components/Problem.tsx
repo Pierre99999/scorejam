@@ -51,9 +51,9 @@ export function Problem() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section heading */}
         <AnimatedSection className="text-center mb-16">
-          <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
             The Problem
-          </p>
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
             Bad Questions Lead To Useless Answers
           </h2>
