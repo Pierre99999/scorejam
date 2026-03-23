@@ -62,12 +62,14 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <button
-            onClick={openLogin}
+          <a
+            href="https://www.scorejam.app/app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
           >
             Log in
-          </button>
+          </a>
           <a
             href="https://www.scorejam.app/app"
             target="_blank"
@@ -99,12 +101,15 @@ export function Header() {
           <a href="#use-cases" onClick={(e) => handleAnchorClick(e, '#use-cases')} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Use Cases</a>
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Pricing</Link>
           <div className="pt-2 pb-1 border-t border-[var(--line-subtle)] flex items-center justify-between mt-1">
-            <button
-              onClick={() => { setMobileOpen(false); openLogin(); }}
+            <a
+              href="https://www.scorejam.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
               Log in
-            </button>
+            </a>
             <a
               href="https://www.scorejam.app/app"
               target="_blank"
