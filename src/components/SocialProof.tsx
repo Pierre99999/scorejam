@@ -72,9 +72,9 @@ function LogoPlaceholders() {
 
 export function SocialProof() {
   const kpis = [
-    { rawValue: '+32%', label: 'conversion rate' },
-    { rawValue: '-45%', label: 'wasted time' },
-    { rawValue: '10min', label: 'setup time' },
+    { rawValue: '10', label: 'Minutes from objective to live diagnostic' },
+    { rawValue: '95%', label: 'AI-Built. You edit the last 5%.' },
+    { rawValue: '0', label: 'Code required. Zero learning curve, zero friction.' },
   ];
 
   return (
@@ -87,7 +87,7 @@ export function SocialProof() {
         {/* Title */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Results that speak
+            Results That Speak
           </h2>
         </AnimatedSection>
 

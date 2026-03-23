@@ -3,8 +3,8 @@
 import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
-  const title = 'Score what matters';
-  const highlightKeywords = ['what matters'];
+  const title = 'From Questions To Decisions Automatically.';
+  const highlightKeywords = ['decisions'];
   let highlightedPart = '';
   let beforePart = title;
   let afterPart = '';
@@ -30,9 +30,9 @@ export function Solution() {
 
       <div className="relative max-w-3xl mx-auto px-6 text-center">
         <AnimatedSection>
-          <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
             Solution
-          </p>
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight mb-6">
             {beforePart}
             {highlightedPart ? (
@@ -43,10 +43,10 @@ export function Solution() {
             {afterPart}
           </h2>
           <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
-            Scorejam analyzes your data in real-time and tells you exactly where to focus — so every action drives revenue.
+            ScoreJam builds structured diagnostics, scores what matters, and shows you exactly what to do next.
           </p>
           <p className="text-lg sm:text-xl font-medium italic text-[var(--text-primary)] opacity-80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
-            You&apos;re not just collecting answers. You&apos;re truly understanding.
+            You&apos;re not collecting answers. You&apos;re generating decisions.
           </p>
         </AnimatedSection>
       </div>

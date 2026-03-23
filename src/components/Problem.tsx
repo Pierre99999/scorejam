@@ -18,24 +18,24 @@ const cards: ProblemCard[] = [
     icon: Target,
     iconBg: 'bg-purple-500/10',
     iconColor: 'text-purple-400',
-    title: 'No prioritization',
-    text: 'Too many leads, no way to know which ones matter most.',
+    title: 'No structure',
+    text: 'Questions are improvised, not designed.',
     delay: 0,
   },
   {
     icon: Clock,
     iconBg: 'bg-blue-500/10',
     iconColor: 'text-blue-400',
-    title: 'Wasted effort',
-    text: 'Sales teams spend hours chasing prospects that will never convert.',
+    title: 'No scoring logic',
+    text: "Answers aren't weighted or interpreted.",
     delay: 0.1,
   },
   {
     icon: EyeOff,
     iconBg: 'bg-violet-500/10',
     iconColor: 'text-violet-400',
-    title: 'Zero visibility',
-    text: "Marketing can't see what's actually driving conversions.",
+    title: 'No link to decisions',
+    text: "Insights don't turn into action.",
     delay: 0.2,
   },
 ];
@@ -51,11 +51,11 @@ export function Problem() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section heading */}
         <AnimatedSection className="text-center mb-16">
-          <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
             The Problem
-          </p>
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            You&apos;re losing opportunities every day
+            Bad Questions Lead To Useless Answers
           </h2>
         </AnimatedSection>
 

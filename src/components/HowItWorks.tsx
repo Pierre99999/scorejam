@@ -16,22 +16,22 @@ const steps: Step[] = [
   {
     number: '01',
     icon: Target,
-    title: 'Define your objective',
-    text: 'Understand, qualify, validate, prioritize.',
+    title: 'Start From Your Context',
+    text: 'Paste a URL or describe your goal. We identify what matters.',
     delay: 0,
   },
   {
     number: '02',
     icon: Brain,
-    title: 'Scorejam builds the diagnosis',
-    text: 'Guided questions + AI logic.',
+    title: 'We Design The Diagnostic',
+    text: 'ScoreJam generates structured, statistically sound questions and scoring logic.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'Get clear insights',
-    text: 'Scores, priorities, recommendations.',
+    title: 'Get Clarity On What To Do Next',
+    text: 'Answers turn into scores, priorities, and clear actions.',
     delay: 0.3,
   },
 ];
@@ -47,11 +47,11 @@ export function HowItWorks() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section heading */}
         <AnimatedSection className="text-center mb-16">
-          <p className="text-xs font-medium uppercase tracking-widest text-purple-400 mb-3">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
             Process
-          </p>
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            How it works
+            How It Works
           </h2>
         </AnimatedSection>
 

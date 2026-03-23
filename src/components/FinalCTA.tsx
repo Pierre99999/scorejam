@@ -17,18 +17,20 @@ export function FinalCTA() {
 
       <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          Start focusing on what matters
+          Right Questions. Honest Answers. Clear Actions.
         </h2>
         <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
           Join the teams that stopped guessing and started scoring.
         </p>
         <div className="mt-10">
-          <button
-            onClick={openSignup}
+          <a
+            href="https://www.scorejam.app/app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
           >
             Start for free
-          </button>
+          </a>
         </div>
       </div>
     </AnimatedSection>

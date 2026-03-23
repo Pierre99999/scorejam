@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Eye, Zap, TrendingUp, ChevronDown } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { useSignup } from './SignupContext';
@@ -16,7 +16,8 @@ interface PlanCardProps {
   ctaLabel: string;
   badge?: string;
   highlighted?: boolean;
-  onCtaClick: () => void;
+  ctaHref?: string;
+  onCtaClick?: () => void;
 }
 
 function PlanCard({
@@ -28,6 +29,7 @@ function PlanCard({
   ctaLabel,
   badge,
   highlighted,
+  ctaHref,
   onCtaClick,
 }: PlanCardProps) {
   return (
@@ -70,8 +72,13 @@ function PlanCard({
               <span className="text-5xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
               <span className="text-[var(--text-muted)] text-sm mb-1">{period}</span>
             </>
-          ) : (
+          ) : price === "Free" ? (
             <span className="text-4xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
+          ) : (
+            <>
+              <span className="text-[var(--text-secondary)] text-2xl font-semibold self-start mt-1.5">$</span>
+              <span className="text-4xl font-bold text-[var(--text-primary)] leading-none">{price}</span>
+            </>
           )}
         </div>
 
@@ -97,16 +104,31 @@ function PlanCard({
         </ul>
 
         {/* CTA */}
-        <button
-          onClick={onCtaClick}
-          className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
-            highlighted
-              ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
-              : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
-          }`}
-        >
-          {ctaLabel}
-        </button>
+        {ctaHref ? (
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              highlighted
+                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
+                : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
+            }`}
+          >
+            {ctaLabel}
+          </a>
+        ) : (
+          <button
+            onClick={onCtaClick}
+            className={`w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              highlighted
+                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-400 hover:to-blue-400 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5'
+                : 'border border-[var(--card-border-hover)] text-[var(--text-secondary)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10'
+            }`}
+          >
+            {ctaLabel}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -115,16 +137,19 @@ function PlanCard({
 // ─── Credit pack card ─────────────────────────────────────────────────────────
 
 function CreditPack({
-  label,
+  credits,
+  validity,
   price,
 }: {
-  label: string;
+  credits: string;
+  validity: string;
   price: string;
 }) {
   return (
     <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 flex items-center justify-between hover:border-[var(--card-border-hover)] transition-all duration-200">
       <div>
-        <p className="text-[var(--text-primary)] font-semibold text-base">{label}</p>
+        <p className="text-[var(--text-primary)] font-semibold text-base">{credits}</p>
+        <p className="text-[var(--text-secondary)] text-sm">{validity}</p>
       </div>
       <div className="text-right">
         <p className="text-[var(--text-primary)] font-bold text-xl">
@@ -153,7 +178,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-48' : 'max-h-0'}`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-96' : 'max-h-0'}`}
       >
         <p className="px-6 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-[var(--card-border)] pt-4">
           {answer}
@@ -169,40 +194,24 @@ export function PricingContent() {
   const { openSignup, openContactSales } = useSignup();
 
   const starterFeatures = [
-    '50 credits / month',
-    '1 scoring project',
-    'Basic insights',
-    'Email support',
+    'Included: Build, preview and test 2 diagnostics, no credit card required',
+    'Credit Expiration: Valid until used',
   ];
 
   const proFeatures = [
-    '500 credits / month',
-    'Unlimited projects',
-    'Advanced AI insights',
-    'Priority support',
-    'Team collaboration',
-  ];
-
-  const scaleFeatures = [
-    'Unlimited credits',
-    'Dedicated account manager',
-    'Custom integrations',
-    'SLA & premium support',
-    'On-premise option',
-  ];
-
-  const valueItems = [
-    { icon: Eye, gradient: 'from-purple-500 to-blue-500', title: 'Clarity', text: 'Stop guessing. Know exactly where to focus.', delay: 0 },
-    { icon: Zap, gradient: 'from-blue-500 to-violet-500', title: 'Speed', text: 'From data to decisions in minutes, not weeks.', delay: 0.1 },
-    { icon: TrendingUp, gradient: 'from-violet-500 to-purple-500', title: 'Results', text: 'Teams using Scorejam convert 32% more.', delay: 0.2 },
+    'Included Credits: 15 Credits / month',
+    'Credit Expiration: Monthly reset',
   ];
 
   const faqItems = [
-    { q: 'Can I try Scorejam for free?', a: 'Yes! The Starter plan is completely free with 50 credits per month. No credit card required.' },
-    { q: 'What happens when I run out of credits?', a: 'You can purchase additional credit packs anytime, or upgrade to Pro for more monthly credits.' },
-    { q: 'Can I cancel anytime?', a: 'Absolutely. No commitment, no hidden fees. Cancel your Pro subscription anytime.' },
-    { q: 'Do unused credits roll over?', a: 'Monthly credits reset each billing cycle, but purchased credit packs never expire.' },
-    { q: 'Is there a setup fee?', a: 'No. Zero setup fee, zero complexity. You\'re up and running in 10 minutes.' },
+    { q: 'How do credits work?', a: 'Think of credits as a flexible currency. Instead of limiting you to "3 Projects" or "100 Responses," we give you credits so you can choose how to use ScoreJam. One month you might use all your credits to create new surveys; the next month you might use them all to analyze responses.' },
+    { q: 'What happens to my unused monthly credits?', a: 'Your 15 monthly credits reset at the start of each billing cycle. They do not roll over. This ensures we can maintain the high-performance AI infrastructure required for your analysis at a fair monthly price.' },
+    { q: 'What happens if I buy a Jam Pack?', a: 'Jam credits are different from monthly credits. They are purchased separately (e.g., 50 Credits for $49.99) and remain in your "Wallet" for 12 months. The system always uses your expiring monthly credits first, and only touches your Jam wallet if you run out.' },
+    { q: 'What happens if I run out of credits mid-survey?', a: 'We will never stop a live survey. We continue to collect responses from your participants so you do not look bad. However, the analysis and dashboard for those new responses will be locked until you purchase a Jam pack or your monthly credits renew.' },
+    { q: 'Why is there a cost for AI Smart Edits?', a: 'Minor manual tweaks (like fixing a typo) are always free. Credits are only deducted when you ask our AI to restructure, rewrite, or generate new logic for your diagnostic, as this requires significant processing power.' },
+    { q: 'Can I cap my spending?', a: 'Yes. By default, you are never auto-charged for overage. If you run out of credits, ScoreJam will simply pause AI-powered features (like analysis or new diagnostic creation) until you buy Jam packs or your monthly credits renew.' },
+    { q: 'Can I cancel anytime?', a: 'Absolutely. Cancel from your dashboard at any time. Your subscription remains active until the end of the current billing cycle, then you simply will not be charged again.' },
+    { q: 'What if I need more than 15 credits per month?', a: 'You can purchase Jam Packs (i.e 50 Credits for $49.99) as needed, which remain valid for 12 months. We are also working on higher-tier plans for power users - if you consistently need more capacity, reach out and let us know.' },
   ];
 
   return (
@@ -226,7 +235,7 @@ export function PricingContent() {
       {/* Section 2: Pricing Plans */}
       <section className="relative py-8 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-3xl mx-auto">
             <AnimatedSection delay={0}>
               <PlanCard
                 name="Starter"
@@ -234,32 +243,21 @@ export function PricingContent() {
                 desc="Perfect to discover Scorejam"
                 features={starterFeatures}
                 ctaLabel="Get started free"
-                onCtaClick={openSignup}
+                ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
               <PlanCard
-                name="Pro"
-                price="49"
+                name="Subscription"
+                price="14.99"
                 period="/month"
                 desc="For teams that need real results"
                 features={proFeatures}
-                ctaLabel="Start Pro trial"
-                badge="Most popular"
+                ctaLabel="Start Subscription"
+                badge="Subscription"
                 highlighted
-                onCtaClick={openSignup}
-              />
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <PlanCard
-                name="Scale"
-                price="Custom"
-                desc="For organizations with specific needs"
-                features={scaleFeatures}
-                ctaLabel="Contact sales"
-                onCtaClick={openContactSales}
+                ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
           </div>
@@ -276,9 +274,9 @@ export function PricingContent() {
 
           <AnimatedSection delay={0.1}>
             <div className="flex flex-col gap-4">
-              <CreditPack label="100 credits" price="9" />
-              <CreditPack label="500 credits" price="39" />
-              <CreditPack label="2000 credits" price="129" />
+              <CreditPack credits="10 Credits" validity="Valid 1 year" price="9.99" />
+              <CreditPack credits="50 Credits" validity="Valid 1 year" price="49.99" />
+              <CreditPack credits="100 Credits" validity="Valid 1 year" price="99.99" />
             </div>
           </AnimatedSection>
         </div>
@@ -293,64 +291,40 @@ export function PricingContent() {
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
               How credits work
             </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">Each scoring analysis uses credits. A simple questionnaire uses ~5 credits. A detailed diagnostic uses ~20 credits. Credits never expire.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Each scoring analysis uses credits. A simple diagnostic uses ~3 credits. 50 responses uses ~1 credit. AI analytics uses ~1 credit.</p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Section 5: Value Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
-        <div className="max-w-7xl mx-auto">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-              What you actually get
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {valueItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <AnimatedSection key={item.title} delay={item.delay}>
-                  <div className="group bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-300 h-full text-center md:text-left">
-                    <div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br ${item.gradient} mb-5 transition-transform duration-300 group-hover:scale-110`}
-                    >
-                      <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                    </div>
-                    <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-2">{item.title}</h3>
-                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6: Usage Projection */}
+      {/* Section 5: What Are Credits For */}
       <section className="relative py-16 px-6">
-        <div className="max-w-2xl mx-auto">
-          <AnimatedSection className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">What can you do with credits?</h2>
+        <div className="max-w-3xl mx-auto">
+          <AnimatedSection className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">What Are Credits For?</h2>
+            <p className="mt-4 text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
+              Credits power every step of your diagnostic—from creation to continuous improvement.
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <ul className="flex flex-col gap-4">
-              {[
-                '50 credits = ~10 basic scoring analyses',
-                '500 credits = ~100 basic or ~25 deep analyses',
-                'Unlimited = score everything, all the time',
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl px-5 py-4">
-                  <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 mt-0.5">
-                    <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
-                  </span>
-                  <span className="text-[var(--text-secondary)] text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Generate Your Diagnostic</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Build structured questionnaires, scoring logic, and recommendations automatically.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Analyze Every Response</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Each answer is processed to update scores, priorities, and insights in real time.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Run AI-Powered Analytics</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Aggregate responses to uncover patterns, gaps, and opportunities.</p>
+              </div>
+              <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--card-border-hover)] transition-all duration-200">
+                <h3 className="text-[var(--text-primary)] font-semibold text-base mb-2">Recompute When Things Change</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">Update a question, adjust scoring, or refine your model—everything is reanalyzed instantly.</p>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
