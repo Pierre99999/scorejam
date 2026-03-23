@@ -129,9 +129,13 @@ export function HowItWorks() {
         <AnimatedSection className="text-center mt-12" delay={0.4}>
           <button
             onClick={openScoreJamForm}
-            className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 hover:from-purple-500 hover:via-purple-400 hover:to-blue-400 transition-all duration-300 shadow-xl shadow-purple-900/40 hover:shadow-purple-500/50 hover:-translate-y-1 hover:scale-105 border border-purple-400/30"
           >
-            Experience it
+            <span className="relative z-10">Try a live diagnostic</span>
+            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 to-blue-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </AnimatedSection>
       </div>
