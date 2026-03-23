@@ -55,7 +55,7 @@ export function Problem() {
             The Problem
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            Bad Questions Lead To Useless Answers
+            The Problem Is What To Ask.
           </h2>
         </AnimatedSection>
 
