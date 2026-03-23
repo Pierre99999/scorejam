@@ -3,6 +3,15 @@
 import { Target, Brain, BarChart3 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import Script from 'next/script';
+
+declare global {
+  interface Window {
+    ScoreJam?: {
+      popup: (formId: string, options: { width: string; height: string; onClose?: () => void }) => void;
+    };
+  }
+}
 
 interface Step {
   number: string;
@@ -37,8 +46,21 @@ const steps: Step[] = [
 ];
 
 export function HowItWorks() {
+  const openScoreJamForm = () => {
+    if (typeof window !== 'undefined' && window.ScoreJam) {
+      window.ScoreJam.popup('scorejam-27', {
+        width: '800px',
+        height: '90vh',
+        onClose: () => {
+          console.log('Popup closed');
+        },
+      });
+    }
+  };
+
   return (
     <section id="how-it-works" className="relative py-24 overflow-hidden">
+      <Script src="https://www.scorejam.app/sdk/embed.js" strategy="lazyOnload" />
       {/* Subtle gradient background */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-blue-950/5 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -102,6 +124,16 @@ export function HowItWorks() {
             })}
           </div>
         </div>
+
+        {/* Experience it button */}
+        <AnimatedSection className="text-center mt-12" delay={0.4}>
+          <button
+            onClick={openScoreJamForm}
+            className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+          >
+            Experience it
+          </button>
+        </AnimatedSection>
       </div>
     </section>
   );
