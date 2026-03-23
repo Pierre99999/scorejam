@@ -34,20 +34,20 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Product</h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
-                  href="#how-it-works"
+                <Link
+                  href="/#how-it-works"
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   How it works
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#use-cases"
+                <Link
+                  href="/#use-cases"
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   Use Cases
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -63,14 +63,6 @@ export function Footer() {
                 >
                   Contact us
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
-                >
-                  Blog
-                </a>
               </li>
             </ul>
           </div>
