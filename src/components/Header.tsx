@@ -51,7 +51,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
         <Link href="/" className="flex items-center shrink-0 group">
           <Image src="/logo-black.webp" alt="ScoreJam logo" width={140} height={32} className="block dark:hidden" />
-          <Image src="/images/scorejam-logo.png" alt="ScoreJam logo" width={140} height={32} className="hidden dark:block" />
+          <Image src="/logo-white.webp" alt="ScoreJam logo" width={140} height={32} className="hidden dark:block" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
