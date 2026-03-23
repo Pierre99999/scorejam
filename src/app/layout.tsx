@@ -7,15 +7,15 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Feedback that works',
+  title: 'ScoreJam - Feedback that works',
   description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
   icons: {
-    icon: '/icon.webp',
-    shortcut: '/icon.webp',
-    apple: '/icon.webp',
+    icon: '/favicon.png',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
   },
   openGraph: {
-    title: 'Feedback that works',
+    title: 'ScoreJam - Feedback that works',
     description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
     type: 'website',
     locale: 'en_US',
