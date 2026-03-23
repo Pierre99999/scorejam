@@ -88,7 +88,7 @@ const tabs: TabContent[] = [
   },
   {
     tabKey: "training",
-    label: "Training & L&D",
+    label: "Training",
     title: "Prove Training Works - Or Fix It",
     text: "Assess skills before, validate impact after. No more guessing if programs delivered.",
     bullets: [
