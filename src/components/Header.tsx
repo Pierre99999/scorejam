@@ -70,6 +70,8 @@ export function Header() {
           </button>
           <a
             href="https://www.scorejam.app/app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-md shadow-purple-900/30"
           >
             Start for free
@@ -105,6 +107,8 @@ export function Header() {
             </button>
             <a
               href="https://www.scorejam.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200"
             >
