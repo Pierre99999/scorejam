@@ -30,68 +30,68 @@ function AnimatedSection({
 
 function ParticipantCard() {
   return (
-    <div className="relative rounded-2xl p-px bg-gradient-to-br from-blue-500/50 via-blue-400/30 to-blue-500/20 shadow-2xl shadow-blue-900/20 dark:shadow-blue-500/10 max-w-2xl mx-auto">
+    <div className="relative rounded-xl p-px bg-gradient-to-br from-blue-500/50 via-blue-400/30 to-blue-500/20 shadow-xl shadow-blue-900/20 dark:shadow-blue-500/10 max-w-md mx-auto">
       {/* Dark mode card */}
-      <div className="hidden dark:block relative rounded-2xl bg-[#1a1f2e] p-8 overflow-hidden">
+      <div className="hidden dark:block relative rounded-xl bg-[#1a1f2e] p-5 overflow-hidden">
         {/* Inner card with border */}
-        <div className="relative rounded-xl border border-blue-500/40 bg-[#1e2436] p-8">
+        <div className="relative rounded-lg border border-blue-500/40 bg-[#1e2436] p-5">
           {/* Score badge */}
-          <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">6.7/10</span>
+          <div className="flex justify-center mb-4">
+            <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
+              <span className="text-white text-base font-bold">6.7/10</span>
             </div>
           </div>
           
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white text-center mb-4">
+          <h3 className="text-lg font-bold text-white text-center mb-3">
             Automated Consultant Tier
           </h3>
           
           {/* Description */}
-          <p className="text-gray-300 text-center leading-relaxed">
-            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly. Self-Assessment: High-fit; your logic requirements are exactly what we built the Smart Question Engine for.
+          <p className="text-gray-300 text-center leading-relaxed text-sm">
+            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly.
           </p>
         </div>
         
         {/* Navigation buttons */}
-        <div className="flex gap-3 mt-6">
-          <button className="px-6 py-3 rounded-lg bg-gray-700 text-white font-medium hover:bg-gray-600 transition-colors">
+        <div className="flex gap-2 mt-4">
+          <button className="px-4 py-2 rounded-lg bg-gray-700 text-white text-sm font-medium hover:bg-gray-600 transition-colors">
             Previous
           </button>
-          <button className="flex-1 px-6 py-3 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-400 transition-colors">
+          <button className="flex-1 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-400 transition-colors">
             Next
           </button>
         </div>
       </div>
 
       {/* Light mode card */}
-      <div className="block dark:hidden relative rounded-2xl bg-white p-8 overflow-hidden">
+      <div className="block dark:hidden relative rounded-xl bg-white p-5 overflow-hidden">
         {/* Inner card with border */}
-        <div className="relative rounded-xl border border-blue-300/60 bg-blue-50/50 p-8">
+        <div className="relative rounded-lg border border-blue-300/60 bg-blue-50/50 p-5">
           {/* Score badge */}
-          <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">6.7/10</span>
+          <div className="flex justify-center mb-4">
+            <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
+              <span className="text-white text-base font-bold">6.7/10</span>
             </div>
           </div>
           
           {/* Title */}
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+          <h3 className="text-lg font-bold text-gray-900 text-center mb-3">
             Automated Consultant Tier
           </h3>
           
           {/* Description */}
-          <p className="text-gray-600 text-center leading-relaxed">
-            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly. Self-Assessment: High-fit; your logic requirements are exactly what we built the Smart Question Engine for.
+          <p className="text-gray-600 text-center leading-relaxed text-sm">
+            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly.
           </p>
         </div>
         
         {/* Navigation buttons */}
-        <div className="flex gap-3 mt-6">
-          <button className="px-6 py-3 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors">
+        <div className="flex gap-2 mt-4">
+          <button className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-300 transition-colors">
             Previous
           </button>
-          <button className="flex-1 px-6 py-3 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-400 transition-colors">
+          <button className="flex-1 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-400 transition-colors">
             Next
           </button>
         </div>
