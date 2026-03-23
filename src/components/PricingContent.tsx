@@ -203,11 +203,6 @@ export function PricingContent() {
     'Credit Expiration: Monthly reset',
   ];
 
-  const scaleFeatures = [
-    'Includes 15 credits',
-    'Valid until used',
-  ];
-
   const faqItems = [
     { q: 'How do credits work?', a: 'Think of credits as a flexible currency. Instead of limiting you to "3 Projects" or "100 Responses," we give you credits so you can choose how to use ScoreJam. One month you might use all your credits to create new surveys; the next month you might use them all to analyze responses.' },
     { q: 'What happens to my unused monthly credits?', a: 'Your 15 monthly credits reset at the start of each billing cycle. They do not roll over. This ensures we can maintain the high-performance AI infrastructure required for your analysis at a fair monthly price.' },
@@ -240,7 +235,7 @@ export function PricingContent() {
       {/* Section 2: Pricing Plans */}
       <section className="relative py-8 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-3xl mx-auto">
             <AnimatedSection delay={0}>
               <PlanCard
                 name="Starter"
@@ -260,19 +255,8 @@ export function PricingContent() {
                 desc="For teams that need real results"
                 features={proFeatures}
                 ctaLabel="Start Subscription"
-                badge="Most popular"
+                badge="Subscription"
                 highlighted
-                ctaHref="https://www.scorejam.app/app"
-              />
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <PlanCard
-                name="One-Shot"
-                price="19.99"
-                desc="One-time purchase, no subscription"
-                features={scaleFeatures}
-                ctaLabel="Buy now"
                 ctaHref="https://www.scorejam.app/app"
               />
             </AnimatedSection>
