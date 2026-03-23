@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   title: 'Feedback that works',
   description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
   icons: {
-    icon: '/icon.webp',
-    shortcut: '/icon.webp',
-    apple: '/icon.webp',
+    icon: '/favicon.webp',
+    shortcut: '/favicon.webp',
+    apple: '/favicon.webp',
   },
   openGraph: {
     title: 'Feedback that works',
