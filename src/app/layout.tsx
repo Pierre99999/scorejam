@@ -7,11 +7,16 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Scorejam — Turn your data into revenue with AI scoring',
-  description: 'AI-powered scoring platform that helps teams prioritize what matters most. Know exactly who to target, when, and why.',
+  title: 'ScoreJam — AI Powered Diagnostics',
+  description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
+  icons: {
+    icon: '/icon.webp',
+    shortcut: '/icon.webp',
+    apple: '/icon.webp',
+  },
   openGraph: {
-    title: 'Scorejam — Turn your data into revenue with AI scoring',
-    description: 'AI-powered scoring platform that helps teams prioritize what matters most. Know exactly who to target, when, and why.',
+    title: 'ScoreJam — AI Powered Diagnostics',
+    description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
     type: 'website',
     locale: 'en_US',
   },
