@@ -2,10 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSignup } from './SignupContext';
 
 export function Footer() {
-  const { openContactSales } = useSignup();
 
   return (
     <footer className="border-t border-[var(--card-border)] py-12">
@@ -59,12 +57,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Company</h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <button
-                  onClick={openContactSales}
+                <Link
+                  href="/contact"
                   className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
                   Contact us
-                </button>
+                </Link>
               </li>
               <li>
                 <a
