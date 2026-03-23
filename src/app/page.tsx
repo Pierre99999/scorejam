@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Problem } from '@/components/Problem';
 import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
+import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
 import { Channels } from '@/components/Channels';
 import { InlineCTA } from '@/components/InlineCTA';
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Problem />
         <Solution />
         <HowItWorks />
+        <ParticipantExperience />
         <UseCases />
         <Channels />
         <InlineCTA />
