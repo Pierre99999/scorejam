@@ -30,14 +30,14 @@ function AnimatedSection({
 
 function ParticipantCard() {
   return (
-    <div className="relative rounded-xl p-px bg-gradient-to-br from-blue-500/50 via-blue-400/30 to-blue-500/20 shadow-xl shadow-blue-900/20 dark:shadow-blue-500/10 max-w-md mx-auto">
+    <div className="relative rounded-xl p-px bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-xl shadow-purple-900/20 dark:shadow-purple-500/10 max-w-md mx-auto">
       {/* Dark mode card */}
       <div className="hidden dark:block relative rounded-xl bg-[#1a1f2e] p-5 overflow-hidden">
         {/* Inner card with border */}
-        <div className="relative rounded-lg border border-blue-500/40 bg-[#1e2436] p-5">
+        <div className="relative rounded-lg border border-purple-500/40 bg-[#1e2436] p-5">
           {/* Score badge */}
           <div className="flex justify-center mb-4">
-            <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
               <span className="text-white text-base font-bold">6.7/10</span>
             </div>
           </div>
@@ -58,7 +58,7 @@ function ParticipantCard() {
           <button className="px-4 py-2 rounded-lg bg-gray-700 text-white text-sm font-medium hover:bg-gray-600 transition-colors">
             Previous
           </button>
-          <button className="flex-1 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-400 transition-colors">
+          <button className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-medium hover:from-purple-400 hover:to-purple-500 transition-colors">
             Next
           </button>
         </div>
@@ -67,10 +67,10 @@ function ParticipantCard() {
       {/* Light mode card */}
       <div className="block dark:hidden relative rounded-xl bg-white p-5 overflow-hidden">
         {/* Inner card with border */}
-        <div className="relative rounded-lg border border-blue-300/60 bg-blue-50/50 p-5">
+        <div className="relative rounded-lg border border-purple-300/60 bg-purple-50/50 p-5">
           {/* Score badge */}
           <div className="flex justify-center mb-4">
-            <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
               <span className="text-white text-base font-bold">6.7/10</span>
             </div>
           </div>
@@ -91,7 +91,7 @@ function ParticipantCard() {
           <button className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-300 transition-colors">
             Previous
           </button>
-          <button className="flex-1 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-400 transition-colors">
+          <button className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-medium hover:from-purple-400 hover:to-purple-500 transition-colors">
             Next
           </button>
         </div>
