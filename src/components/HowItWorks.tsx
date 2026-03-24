@@ -48,7 +48,7 @@ const steps: Step[] = [
 export function HowItWorks() {
   const openScoreJamForm = () => {
     if (typeof window !== 'undefined' && window.ScoreJam) {
-      window.ScoreJam.popup('scorejam-27', {
+      window.ScoreJam.popup('scorejam-33', {
         width: '800px',
         height: '90vh',
         onClose: () => {
