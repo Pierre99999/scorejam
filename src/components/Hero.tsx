@@ -242,9 +242,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              We Design The <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Questions</span>.
-              <br />
-              You Know <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">What To Do</span> Next.
+              See What Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Data</span> Has Been Trying To <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Tell You</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -252,7 +250,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.
+              ScoreJam builds the diagnostic, scores every answer, and delivers the insights — so you know exactly who to prioritize, what to fix, and where to act.
             </motion.p>
 
             {/* CTAs */}
