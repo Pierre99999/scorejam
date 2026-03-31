@@ -15,7 +15,7 @@ export function FinalCTA() {
         <div className="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full bg-[var(--glow-purple)] blur-3xl" />
       </div>
 
-      <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative py-16 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
           Raw answers don&apos;t drive decisions. Structured intelligence does.
         </h2>

@@ -205,7 +205,7 @@ function DashboardMockup() {
 
 export function ProductPreview() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -213,10 +213,13 @@ export function ProductPreview() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--badge-bg)] border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wider uppercase mb-4">
+            From Answers to Decisions
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Your Scoring Dashboard
+            From Answers to Decisions
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] text-lg">Real-time insights at a glance</p>
+          <p className="mt-4 text-[var(--text-secondary)] text-lg">See how responses turn into clear scores, priorities, and concrete actions</p>
         </AnimatedSection>
 
         {/* Dashboard mockup with scale-up animation */}
