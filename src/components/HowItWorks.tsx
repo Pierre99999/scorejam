@@ -25,22 +25,22 @@ const steps: Step[] = [
   {
     number: '01',
     icon: Target,
-    title: 'Start From Your Context',
-    text: 'Paste a URL or describe your goal. We identify what matters.',
+    title: 'Tell us what you need to know',
+    text: 'Paste a URL, describe your goal, or pick a path. ScoreJam identifies the dimensions that matter.',
     delay: 0,
   },
   {
     number: '02',
     icon: Brain,
-    title: 'We Design The Diagnostic',
-    text: 'ScoreJam generates structured, statistically sound questions and scoring logic.',
+    title: 'Your audience gets a real experience',
+    text: 'Not a survey. Participants receive scored feedback, personalized insights, and tailored recommendations as they go. They get value. You get signal.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'Get Clarity On What To Do Next',
-    text: 'Answers turn into scores, priorities, and clear actions.',
+    title: 'You see what no spreadsheet can show you',
+    text: 'Structured scores, segments, pain patterns, and clear priorities — across every response. Not raw data. Decisions.',
     delay: 0.3,
   },
 ];
