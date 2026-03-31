@@ -71,10 +71,10 @@ function LogoPlaceholders() {
 }
 
 export function SocialProof() {
-  const kpis = [
-    { rawValue: '10', label: 'Minutes from objective to live diagnostic' },
-    { rawValue: '95%', label: 'AI-Built. You edit the last 5%.' },
-    { rawValue: '0', label: 'Code required. Zero learning curve, zero friction.' },
+  const outcomes = [
+    { title: 'From hours to minutes', text: 'A complete diagnostic, live and collecting responses, before your coffee gets cold.' },
+    { title: 'From data to decisions', text: 'Every response is scored, segmented, and translated into priorities. No spreadsheet squinting.' },
+    { title: 'From one-way surveys to two-way value', text: 'Participants get personalized insights. You get structured intelligence. Both sides win.' },
   ];
 
   return (
@@ -87,15 +87,18 @@ export function SocialProof() {
         {/* Title */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Results That Speak
+            What Changes When You Stop Guessing
           </h2>
         </AnimatedSection>
 
-        {/* KPI counters */}
+        {/* Outcome cards */}
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 max-w-3xl mx-auto">
-            {kpis.map((kpi, i) => (
-              <AnimatedKpi key={i} rawValue={kpi.rawValue} label={kpi.label} />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {outcomes.map((outcome, i) => (
+              <div key={i} className="text-center p-6 rounded-xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-colors">
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">{outcome.title}</h3>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{outcome.text}</p>
+              </div>
             ))}
           </div>
         </AnimatedSection>
