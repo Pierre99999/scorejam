@@ -24,10 +24,10 @@ export default function HomePage() {
         <UseCases />
         <Problem />
         <AnswersToDecisions />
+        <ParticipantExperience />
         <Solution />
         <ProductPreview />
         <HowItWorks />
-        <ParticipantExperience />
         <InlineCTA />
         <SocialProof />
         <Differentiation />
