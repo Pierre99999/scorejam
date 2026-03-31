@@ -17,7 +17,7 @@ const items: DiffItem[] = [
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
     title: "You don't need to know what to ask",
-    text: 'ScoreJam designs the diagnostic from your context — structured, scored, and ready to deploy.',
+    text: 'ScoreJam designs the diagnostic from your context, structured, scored, and ready to deploy.',
     delay: 0,
   },
   {

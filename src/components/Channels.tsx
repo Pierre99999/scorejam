@@ -82,7 +82,7 @@ export function Channels() {
               <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
               <p className="relative text-[var(--text-secondary)] text-base leading-relaxed max-w-2xl mx-auto">
-                Publishing is easy — website embed, email, Slack, LinkedIn, WhatsApp, widgets, iFrame, or CRM. One diagnostic, every channel, zero friction.
+                Publishing is easy, website embed, email, Slack, LinkedIn, WhatsApp, widgets, iFrame, or CRM. One diagnostic, every channel, zero friction.
               </p>
             </div>
           </div>
