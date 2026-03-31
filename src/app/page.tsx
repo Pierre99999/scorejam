@@ -20,12 +20,12 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <UseCases />
         <Problem />
         <Solution />
         <ProductPreview />
         <HowItWorks />
         <ParticipantExperience />
-        <UseCases />
         <InlineCTA />
         <SocialProof />
         <Differentiation />
