@@ -22,12 +22,12 @@ export default function HomePage() {
         <Hero />
         <Problem />
         <Solution />
+        <ProductPreview />
         <HowItWorks />
         <ParticipantExperience />
         <UseCases />
         <Channels />
         <InlineCTA />
-        <ProductPreview />
         <SocialProof />
         <Differentiation />
         <FinalCTA />
