@@ -16,22 +16,22 @@ const items: DiffItem[] = [
   {
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
-    title: 'From hours to minutes',
-    text: 'A complete diagnostic, live and collecting responses, before your coffee gets cold.',
+    title: "You don't need to know what to ask",
+    text: 'ScoreJam designs the diagnostic from your context — structured, scored, and ready to deploy.',
     delay: 0,
   },
   {
     icon: Cpu,
     gradient: 'from-blue-500 to-violet-500',
-    title: 'From data to decisions',
-    text: 'Every response is scored, segmented, and translated into priorities. No spreadsheet squinting.',
+    title: 'The insight is built in',
+    text: 'Every answer feeds a scoring engine that surfaces patterns, flags risks, and ranks priorities automatically.',
     delay: 0.1,
   },
   {
     icon: Sparkles,
     gradient: 'from-violet-500 to-purple-500',
-    title: 'From one-way surveys to two-way value',
-    text: 'Participants get personalized insights. You get structured intelligence. Both sides win.',
+    title: 'It works in 5 minutes, not 5 weeks',
+    text: "Paste a URL. Get a diagnostic. Share it. See the dashboard. That's it.",
     delay: 0.2,
   },
 ];
@@ -46,8 +46,11 @@ export function Differentiation() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
         <AnimatedSection className="text-center mb-16">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
+            Why ScoreJam
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            What Changes When You Stop Guessing
+            Why ScoreJam
           </h2>
         </AnimatedSection>
 
