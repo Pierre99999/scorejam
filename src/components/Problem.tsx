@@ -18,24 +18,24 @@ const cards: ProblemCard[] = [
     icon: Target,
     iconBg: 'bg-purple-500/10',
     iconColor: 'text-purple-400',
-    title: 'No structure',
-    text: 'Questions are improvised, not designed.',
+    title: "Who's ready and who's not",
+    text: "Your pipeline is full of leads, but you're guessing which ones are serious. Your CS team finds out accounts are unhappy after they've already churned.",
     delay: 0,
   },
   {
     icon: Clock,
     iconBg: 'bg-blue-500/10',
     iconColor: 'text-blue-400',
-    title: 'No scoring logic',
-    text: "Answers aren't weighted or interpreted.",
+    title: "What's actually working",
+    text: "You ran the training, launched the feature, changed the process. Did it land? You have opinions. You don't have signal.",
     delay: 0.1,
   },
   {
     icon: EyeOff,
     iconBg: 'bg-violet-500/10',
     iconColor: 'text-violet-400',
-    title: 'No link to decisions',
-    text: "Insights don't turn into action.",
+    title: 'What to do about it',
+    text: "Even when you collect answers, they sit in a spreadsheet. No scoring, no patterns, no priorities. Data without decisions is just noise.",
     delay: 0.2,
   },
 ];
@@ -55,7 +55,7 @@ export function Problem() {
             The Problem
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight max-w-3xl mx-auto">
-            The Problem Is What To Ask
+            You&apos;re Making Decisions Without Knowing
           </h2>
         </AnimatedSection>
 
