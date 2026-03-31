@@ -23,7 +23,6 @@ export function Footer() {
                 Scorejam
               </span>
             </div>
-            <p className="mt-2 text-sm text-[var(--text-secondary)]">Turn data into revenue.</p>
           </div>
         </div>
 
