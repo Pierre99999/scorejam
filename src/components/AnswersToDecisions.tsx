@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function AnswersToDecisions() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
         <div className="w-[800px] h-[400px] rounded-full bg-gradient-radial from-purple-600/10 via-blue-600/5 to-transparent blur-3xl" />

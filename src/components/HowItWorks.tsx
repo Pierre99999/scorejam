@@ -59,7 +59,7 @@ export function HowItWorks() {
   };
 
   return (
-    <section id="how-it-works" className="relative py-24 overflow-hidden">
+    <section id="how-it-works" className="relative py-16 overflow-hidden">
       <Script src="https://www.scorejam.app/sdk/embed.js" strategy="lazyOnload" />
       {/* Subtle gradient background */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-blue-950/5 to-transparent" />
