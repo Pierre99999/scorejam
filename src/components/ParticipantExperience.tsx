@@ -33,11 +33,11 @@ function ParticipantFlow() {
     <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6">
       {/* Image 1 - Questions */}
       <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
-        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+        <div className="rounded-xl bg-white dark:bg-[#0f1219] p-2 overflow-hidden">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%201-Ba80hITOfBnfky7vSv9bvSx9AxCBZb.png"
             alt="ScoreJam diagnostic questionnaire"
-            className="w-full h-64 object-cover object-top rounded-lg"
+            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Questions</p>
         </div>
@@ -57,11 +57,11 @@ function ParticipantFlow() {
 
       {/* Image 2 - Recommendation */}
       <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
-        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+        <div className="rounded-xl bg-white dark:bg-[#0f1219] p-2 overflow-hidden">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%202-va44g9fX6fnLFurnjI2h8q9yExhnj1.png"
             alt="Participant recommendation with score"
-            className="w-full h-64 object-cover object-top rounded-lg"
+            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Real-time Feedback</p>
         </div>
@@ -81,11 +81,11 @@ function ParticipantFlow() {
 
       {/* Image 3 - Final Recommendations */}
       <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
-        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+        <div className="rounded-xl bg-white dark:bg-[#0f1219] p-2 overflow-hidden">
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%203-7FhLXg8UcrqoD1Jd0F90ZiT6nzHOTF.png"
             alt="Final personalized recommendations"
-            className="w-full h-64 object-cover object-top rounded-lg"
+            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Full Recommendations</p>
         </div>
