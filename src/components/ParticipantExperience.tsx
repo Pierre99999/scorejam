@@ -28,72 +28,66 @@ function AnimatedSection({
   );
 }
 
-function ParticipantCard() {
+function ParticipantFlow() {
   return (
-    <div className="relative rounded-xl p-px bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-xl shadow-purple-900/20 dark:shadow-purple-500/10 max-w-md mx-auto">
-      {/* Dark mode card */}
-      <div className="hidden dark:block relative rounded-xl bg-[#1a1f2e] p-5 overflow-hidden">
-        {/* Inner card with border */}
-        <div className="relative rounded-lg border border-purple-500/40 bg-[#1e2436] p-5">
-          {/* Score badge */}
-          <div className="flex justify-center mb-4">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white text-base font-bold">6.7/10</span>
-            </div>
-          </div>
-          
-          {/* Title */}
-          <h3 className="text-lg font-bold text-white text-center mb-3">
-            Automated Consultant Tier
-          </h3>
-          
-          {/* Description */}
-          <p className="text-gray-300 text-center leading-relaxed text-sm">
-            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly.
-          </p>
-        </div>
-        
-        {/* Navigation buttons */}
-        <div className="flex gap-2 mt-4">
-          <button className="px-4 py-2 rounded-lg bg-gray-700 text-white text-sm font-medium hover:bg-gray-600 transition-colors">
-            Previous
-          </button>
-          <button className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-medium hover:from-purple-400 hover:to-purple-500 transition-colors">
-            Next
-          </button>
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6">
+      {/* Image 1 - Questions */}
+      <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
+        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%201-Ba80hITOfBnfky7vSv9bvSx9AxCBZb.png"
+            alt="ScoreJam diagnostic questionnaire"
+            className="w-full h-64 object-cover object-top rounded-lg"
+          />
+          <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Questions</p>
         </div>
       </div>
 
-      {/* Light mode card */}
-      <div className="block dark:hidden relative rounded-xl bg-white p-5 overflow-hidden">
-        {/* Inner card with border */}
-        <div className="relative rounded-lg border border-purple-300/60 bg-purple-50/50 p-5">
-          {/* Score badge */}
-          <div className="flex justify-center mb-4">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white text-base font-bold">6.7/10</span>
-            </div>
-          </div>
-          
-          {/* Title */}
-          <h3 className="text-lg font-bold text-gray-900 text-center mb-3">
-            Automated Consultant Tier
-          </h3>
-          
-          {/* Description */}
-          <p className="text-gray-600 text-center leading-relaxed text-sm">
-            You require complex, multi-step recommendations that usually require a human consultant; ScoreJam automates this delivery instantly.
-          </p>
+      {/* Arrow 1 */}
+      <div className="hidden lg:flex items-center justify-center text-purple-400">
+        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </div>
+      <div className="lg:hidden flex items-center justify-center text-purple-400">
+        <svg className="w-8 h-8 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </div>
+
+      {/* Image 2 - Recommendation */}
+      <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
+        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%202-va44g9fX6fnLFurnjI2h8q9yExhnj1.png"
+            alt="Participant recommendation with score"
+            className="w-full h-64 object-cover object-top rounded-lg"
+          />
+          <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Real-time Feedback</p>
         </div>
-        
-        {/* Navigation buttons */}
-        <div className="flex gap-2 mt-4">
-          <button className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-300 transition-colors">
-            Previous
-          </button>
-          <button className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-medium hover:from-purple-400 hover:to-purple-500 transition-colors">
-            Next
-          </button>
+      </div>
+
+      {/* Arrow 2 */}
+      <div className="hidden lg:flex items-center justify-center text-purple-400">
+        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </div>
+      <div className="lg:hidden flex items-center justify-center text-purple-400">
+        <svg className="w-8 h-8 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </div>
+
+      {/* Image 3 - Final Recommendations */}
+      <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-purple-400/30 to-purple-500/20 shadow-lg shadow-purple-500/10 w-full max-w-xs">
+        <div className="rounded-xl bg-white dark:bg-gray-900 p-2 overflow-hidden">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%203-7FhLXg8UcrqoD1Jd0F90ZiT6nzHOTF.png"
+            alt="Final personalized recommendations"
+            className="w-full h-64 object-cover object-top rounded-lg"
+          />
+          <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Full Recommendations</p>
         </div>
       </div>
     </div>
@@ -134,9 +128,9 @@ export function ParticipantExperience() {
           </p>
         </AnimatedSection>
 
-        {/* Card */}
+        {/* Image Flow */}
         <AnimatedSection delay={0.2}>
-          <ParticipantCard />
+          <ParticipantFlow />
         </AnimatedSection>
       </div>
     </section>
