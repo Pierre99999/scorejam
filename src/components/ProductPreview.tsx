@@ -213,6 +213,9 @@ export function ProductPreview() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--badge-bg)] border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wider uppercase mb-4">
+            From Answers to Decisions
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             From Answers to Decisions
           </h2>
