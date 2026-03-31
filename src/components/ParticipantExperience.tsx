@@ -37,7 +37,7 @@ function ParticipantFlow() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%201-Ba80hITOfBnfky7vSv9bvSx9AxCBZb.png"
             alt="ScoreJam diagnostic questionnaire"
-            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
+            className="w-full h-64 object-cover object-top rounded-lg dark:invert dark:hue-rotate-180"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Questions</p>
         </div>
@@ -61,7 +61,7 @@ function ParticipantFlow() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%202-va44g9fX6fnLFurnjI2h8q9yExhnj1.png"
             alt="Participant recommendation with score"
-            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
+            className="w-full h-64 object-cover object-top rounded-lg dark:invert dark:hue-rotate-180"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Real-time Feedback</p>
         </div>
@@ -85,7 +85,7 @@ function ParticipantFlow() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%203-7FhLXg8UcrqoD1Jd0F90ZiT6nzHOTF.png"
             alt="Final personalized recommendations"
-            className="w-full h-64 object-cover object-top rounded-lg dark:brightness-90 dark:contrast-110"
+            className="w-full h-64 object-cover object-top rounded-lg dark:invert dark:hue-rotate-180"
           />
           <p className="text-center text-sm font-medium text-[var(--text-primary)] mt-2">Full Recommendations</p>
         </div>
