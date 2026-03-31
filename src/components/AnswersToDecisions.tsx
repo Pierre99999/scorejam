@@ -26,7 +26,8 @@ export function AnswersToDecisions() {
 
         {/* Dashboard Preview */}
         <AnimatedSection delay={0.1}>
-          <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-xl">
+          <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-purple-500/50 via-blue-500/30 to-purple-500/20 shadow-lg shadow-purple-500/10">
+          <div className="rounded-xl bg-gray-50 dark:bg-gray-900 p-6 overflow-hidden">
             
             {/* Segments Section */}
             <div className="mb-8">
@@ -38,7 +39,7 @@ export function AnswersToDecisions() {
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Thriving */}
-                <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-4 relative overflow-hidden">
+                <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-yellow-400" />
                   <div className="flex items-center gap-1.5 text-yellow-500 text-xs font-semibold mb-2">
                     <span>⭐</span> THRIVING
@@ -53,7 +54,7 @@ export function AnswersToDecisions() {
                 </div>
 
                 {/* Stable */}
-                <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-4 relative overflow-hidden">
+                <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-green-500" />
                   <div className="flex items-center gap-1.5 text-green-500 text-xs font-semibold mb-2">
                     <span>✅</span> STABLE
@@ -68,7 +69,7 @@ export function AnswersToDecisions() {
                 </div>
 
                 {/* At Risk */}
-                <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-4 relative overflow-hidden">
+                <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-orange-400" />
                   <div className="flex items-center gap-1.5 text-orange-500 text-xs font-semibold mb-2">
                     <span>⚠️</span> AT RISK
@@ -83,7 +84,7 @@ export function AnswersToDecisions() {
                 </div>
 
                 {/* Critical */}
-                <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-4 relative overflow-hidden">
+                <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-red-500" />
                   <div className="flex items-center gap-1.5 text-red-500 text-xs font-semibold mb-2">
                     <span>🚨</span> CRITICAL
@@ -100,7 +101,7 @@ export function AnswersToDecisions() {
             </div>
 
             {/* Key Findings Section */}
-            <div className="mb-8 rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-5">
+            <div className="mb-8 rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
               <div className="flex items-center gap-2 mb-4 text-[var(--text-primary)] font-semibold">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -166,8 +167,8 @@ export function AnswersToDecisions() {
             {/* Risk/Gap Analysis & Priority Actions Grid */}
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Risk / Gap Analysis */}
-              <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-5">
-                <div className="flex items-center gap-2 mb-4 text-[var(--text-primary)] font-semibold">
+              <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+                <div className="flex items-center gap-2 mb-4 text-gray-900 dark:text-white font-semibold">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -200,8 +201,8 @@ export function AnswersToDecisions() {
               </div>
 
               {/* Priority Actions */}
-              <div className="rounded-lg border border-[var(--card-border)] bg-[var(--background)] p-5">
-                <div className="flex items-center gap-2 mb-4 text-[var(--text-primary)] font-semibold">
+              <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+                <div className="flex items-center gap-2 mb-4 text-gray-900 dark:text-white font-semibold">
                   Priority Actions
                 </div>
                 
@@ -240,6 +241,7 @@ export function AnswersToDecisions() {
               </div>
             </div>
 
+          </div>
           </div>
         </AnimatedSection>
       </div>
