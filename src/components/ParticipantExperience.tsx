@@ -120,14 +120,17 @@ export function ParticipantExperience() {
         {/* Title */}
         <AnimatedSection className="text-center mb-4" delay={0.1}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            An Experience, Not A Questionnaire
+            They Get <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Insights</span>. You Get <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Intelligence</span>.
           </h2>
         </AnimatedSection>
 
         {/* Subtitle */}
         <AnimatedSection className="text-center mb-12" delay={0.15}>
+          <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-4">
+            Every participant receives real-time scoring, personalized recommendations, and a clear picture of where they stand. It&apos;s not a form — it&apos;s a conversation that gives back.
+          </p>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Participants receive real-time feedback, scoring, and tailored recommendations as they progress. This creates continuous engagement, and eliminates survey fatigue.
+            That&apos;s why completion rates stay high and the data you collect actually means something.
           </p>
         </AnimatedSection>
 

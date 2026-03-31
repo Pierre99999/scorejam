@@ -17,11 +17,8 @@ export function FinalCTA() {
 
       <div className="relative py-24 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          Right Questions. Honest Answers. Clear Actions.
+          Raw answers don&apos;t drive decisions. Structured intelligence does.
         </h2>
-        <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
-          Join the teams that stopped guessing and started scoring.
-        </p>
         <div className="mt-10">
           <a
             href="https://www.scorejam.app/app"

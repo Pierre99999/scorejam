@@ -20,16 +20,16 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <UseCases />
         <Problem />
         <Solution />
+        <ProductPreview />
         <HowItWorks />
         <ParticipantExperience />
-        <UseCases />
-        <Channels />
         <InlineCTA />
-        <ProductPreview />
         <SocialProof />
         <Differentiation />
+        <Channels />
         <FinalCTA />
       </main>
       <Footer />

@@ -16,22 +16,22 @@ const items: DiffItem[] = [
   {
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
-    title: 'We Design The Hard Part',
-    text: "Most people don't know what to ask. ScoreJam builds structured, reliable diagnostics for you.",
+    title: "You don't need to know what to ask",
+    text: 'ScoreJam designs the diagnostic from your context — structured, scored, and ready to deploy.',
     delay: 0,
   },
   {
     icon: Cpu,
     gradient: 'from-blue-500 to-violet-500',
-    title: 'Built For Real Decisions',
-    text: 'Questions are scored, weighted, and turned into clear priorities and next steps.',
+    title: 'The insight is built in',
+    text: 'Every answer feeds a scoring engine that surfaces patterns, flags risks, and ranks priorities automatically.',
     delay: 0.1,
   },
   {
     icon: Sparkles,
     gradient: 'from-violet-500 to-purple-500',
-    title: 'Instant, No Setup',
-    text: 'Start from a URL and get a complete diagnostic in minutes.',
+    title: 'It works in 5 minutes, not 5 weeks',
+    text: "Paste a URL. Get a diagnostic. Share it. See the dashboard. That's it.",
     delay: 0.2,
   },
 ];
@@ -46,6 +46,9 @@ export function Differentiation() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
         <AnimatedSection className="text-center mb-16">
+          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
+            Why ScoreJam
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             Why ScoreJam
           </h2>

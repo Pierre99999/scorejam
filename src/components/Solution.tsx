@@ -3,22 +3,6 @@
 import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
-  const title = 'From Questions To Decisions Automatically';
-  const highlightKeywords = ['decisions'];
-  let highlightedPart = '';
-  let beforePart = title;
-  let afterPart = '';
-
-  for (const kw of highlightKeywords) {
-    const idx = title.toLowerCase().indexOf(kw.toLowerCase());
-    if (idx !== -1) {
-      beforePart = title.slice(0, idx);
-      highlightedPart = title.slice(idx, idx + kw.length);
-      afterPart = title.slice(idx + kw.length);
-      break;
-    }
-  }
-
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Radial gradient glow */}
@@ -34,19 +18,13 @@ export function Solution() {
             Solution
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight mb-6">
-            {beforePart}
-            {highlightedPart ? (
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {highlightedPart}
-              </span>
-            ) : null}
-            {afterPart}
+            From Noise To <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Next Steps</span> — Automatically
           </h2>
           <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
-            ScoreJam builds structured diagnostics, scores what matters, and shows you exactly what to do next.
+            Tell ScoreJam what you&apos;re trying to learn. It builds a structured diagnostic with calibrated scoring, delivers it to your audience, and returns with the patterns, segments, and priorities you need to act.
           </p>
           <p className="text-lg sm:text-xl font-medium italic text-[var(--text-primary)] opacity-80 border-l-2 border-purple-500 pl-4 mx-auto max-w-xl text-left">
-            You&apos;re not collecting answers. You&apos;re generating decisions.
+            You don&apos;t design questions. You don&apos;t analyze spreadsheets. You get clarity.
           </p>
         </AnimatedSection>
       </div>

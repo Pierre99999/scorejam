@@ -2,7 +2,6 @@
 
 // Use cases component for team-specific diagnostics
 import { useState } from "react";
-import { CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { cn } from "@/lib/utils";
@@ -12,96 +11,43 @@ type TabKey = "sales" | "marketing" | "customer-success" | "product" | "hr" | "t
 interface TabContent {
   tabKey: TabKey;
   label: string;
-  title: string;
-  text: string;
-  bullets: string[];
+  scenario: string;
 }
 
 const tabs: TabContent[] = [
   {
     tabKey: "sales",
     label: "Sales",
-    title: "Close More Deals, Faster",
-    text: "Prioritize leads by conversion probability. Stop wasting time on dead ends.",
-    bullets: [
-      "Uncover prospect pain points and rank outreach by urgency",
-      "Validate solution fit before investing sales time",
-      "Match each prospect to the right product, tier, or plan",
-      "Generate ROI projections that help buyers get internal buy-in",
-      "Score buying readiness to know who to engage now vs. nurture",
-    ],
-  },
-  {
-    tabKey: "marketing",
-    label: "Marketing",
-    title: "Know Your Market Before You Spend",
-    text: "Validate positioning, pricing, and channels with real audience data.",
-    bullets: [
-      "Define your ideal customer profile from actual survey data",
-      "Test market demand before committing resources",
-      "Benchmark your positioning against competitors",
-      "Find the right price point and packaging model",
-      "Discover which channels your buyers actually use",
-      "Measure product-market fit with the Sean Ellis test",
-      "Audit brand perception - close the gap between intended and real",
-    ],
+    scenario: "Your sales team sends a 3-minute diagnostic to 50 prospects. Within a day, the dashboard shows 12 are in the \"Critical Need\" segment with high buying readiness — and exactly which pain points to lead with. The other 38 get nurtured automatically. No pipeline reviews. No guessing.",
   },
   {
     tabKey: "customer-success",
     label: "Customer Success",
-    title: "Retain More, Rescue Faster",
-    text: "Spot at-risk accounts before they churn. Track health at every stage.",
-    bullets: [
-      "Check implementation readiness before go-live",
-      "Track onboarding progress and unblock stuck accounts",
-      "Monitor account health across satisfaction dimensions",
-      "Verify customers are hitting the outcomes they bought for",
-      "Detect churn signals early and trigger the right intervention",
-      "Assess compliance posture and operational risk",
-    ],
-  },
-  {
-    tabKey: "product",
-    label: "Product",
-    title: "Build What Matters, Fix What Hurts",
-    text: "Replace gut feelings with scored user feedback on every product decision.",
-    bullets: [
-      "Prioritize your roadmap with evidence-based feature ranking",
-      "Validate beta features before full launch",
-      "Pinpoint UX friction and usability blockers",
-      "Run product satisfaction surveys with built-in NPS",
-      "Diagnose why specific features are not being adopted",
-    ],
+    scenario: "You run a health check diagnostic across 80 accounts. The dashboard flags 6 silently at-risk customers — accounts that score fine on satisfaction but show churn-pattern signals underneath. Your team reaches out before the renewal conversation, not after.",
   },
   {
     tabKey: "hr",
     label: "HR",
-    title: "Measure People, Not Opinions",
-    text: "Turn performance reviews, culture checks, and hiring into structured data.",
-    bullets: [
-      "Run structured individual performance evaluations",
-      "Assess team effectiveness and collaboration dynamics",
-      "Evaluate role fit across technical, behavioral, and cultural dimensions",
-      "Measure employee engagement drivers and killers",
-      "Audit culture health - what is real vs. what is performative",
-    ],
+    scenario: "After onboarding 30 new hires, you run a readiness diagnostic. Instead of a spreadsheet of Likert-scale averages, you see exactly which teams are ramping well, which are stuck, and what's causing the gap — with specific recommendations per segment.",
   },
   {
     tabKey: "training",
     label: "Learning",
-    title: "Prove Training Works - Or Fix It",
-    text: "Assess skills before, validate impact after. No more guessing if programs delivered.",
-    bullets: [
-      "Verify actual skill levels against stated competencies",
-      "Place learners on a maturity continuum with a clear next step",
-      "Identify training gaps and prioritize what to teach first",
-      "Score certification readiness before exam day",
-      "Collect post-training feedback that drives program improvement",
-    ],
+    scenario: "You delivered a certification program to 60 people. The diagnostic shows who actually retained the skills vs. who passed on momentum. The analytics separate real competency gaps from confidence gaps — so you know where to reinvest.",
+  },
+  {
+    tabKey: "marketing",
+    label: "Marketing",
+    scenario: "You need to understand how your market perceives your positioning. The diagnostic goes to 100 contacts. You get back structured awareness segments, message-resonance scores, and the exact gaps between what you're saying and what they're hearing.",
+  },
+  {
+    tabKey: "product",
+    label: "Product",
+    scenario: "You're prioritizing the next quarter's roadmap. A feature-priority diagnostic goes to 200 users. Instead of a wishlist, you get scored feature demand cross-referenced by user segment, adoption maturity, and pain intensity. The roadmap writes itself.",
   },
 ];
 
-const tabKeys: TabKey[] = ["sales", "marketing", "customer-success", "product", "hr", "training"];
+const tabKeys: TabKey[] = ["sales", "customer-success", "hr", "training", "marketing", "product"];
 
 export function UseCases() {
   const [activeTab, setActiveTab] = useState<TabKey>("sales");
@@ -164,30 +110,10 @@ export function UseCases() {
                   <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
 
                   <div className="relative">
-                    {/* Content title */}
-                    <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-3">
-                      {activeContent.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-8 max-w-2xl">
-                      {activeContent.text}
+                    {/* Scenario text */}
+                    <p className="text-[var(--text-secondary)] text-lg sm:text-xl leading-relaxed">
+                      {activeContent.scenario}
                     </p>
-
-                    {/* Bullet points */}
-                    <ul className="space-y-4">
-                      {activeContent.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <CheckCircle
-                            className="w-5 h-5 text-purple-400 shrink-0 mt-0.5"
-                            strokeWidth={1.5}
-                          />
-                          <span className="text-[var(--text-secondary)] text-base leading-relaxed">
-                            {bullet}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               </div>
