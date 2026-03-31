@@ -26,10 +26,10 @@ export default function HomePage() {
         <HowItWorks />
         <ParticipantExperience />
         <UseCases />
-        <Channels />
         <InlineCTA />
         <SocialProof />
         <Differentiation />
+        <Channels />
         <FinalCTA />
       </main>
       <Footer />
