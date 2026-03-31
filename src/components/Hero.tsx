@@ -221,7 +221,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-12 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 pt-12 pb-8 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
           {/* Left: Text */}
           <motion.div
