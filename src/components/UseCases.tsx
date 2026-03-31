@@ -18,22 +18,22 @@ const tabs: TabContent[] = [
   {
     tabKey: "sales",
     label: "Sales",
-    scenario: "Your sales team sends a 3-minute diagnostic to 50 prospects. Within a day, the dashboard shows 12 are in the \"Critical Need\" segment with high buying readiness — and exactly which pain points to lead with. The other 38 get nurtured automatically. No pipeline reviews. No guessing.",
+    scenario: "Your sales team sends a 3-minute diagnostic to 50 prospects. Within a day, the dashboard shows 12 are in the \"Critical Need\" segment with high buying readiness, and exactly which pain points to lead with. The other 38 get nurtured automatically. No pipeline reviews. No guessing.",
   },
   {
     tabKey: "customer-success",
     label: "Customer Success",
-    scenario: "You run a health check diagnostic across 80 accounts. The dashboard flags 6 silently at-risk customers — accounts that score fine on satisfaction but show churn-pattern signals underneath. Your team reaches out before the renewal conversation, not after.",
+    scenario: "You run a health check diagnostic across 80 accounts. The dashboard flags 6 silently at-risk customers, accounts that score fine on satisfaction but show churn-pattern signals underneath. Your team reaches out before the renewal conversation, not after.",
   },
   {
     tabKey: "hr",
     label: "HR",
-    scenario: "After onboarding 30 new hires, you run a readiness diagnostic. Instead of a spreadsheet of Likert-scale averages, you see exactly which teams are ramping well, which are stuck, and what's causing the gap — with specific recommendations per segment.",
+    scenario: "After onboarding 30 new hires, you run a readiness diagnostic. Instead of a spreadsheet of Likert-scale averages, you see exactly which teams are ramping well, which are stuck, and what's causing the gap, with specific recommendations per segment.",
   },
   {
     tabKey: "training",
     label: "Learning",
-    scenario: "You delivered a certification program to 60 people. The diagnostic shows who actually retained the skills vs. who passed on momentum. The analytics separate real competency gaps from confidence gaps — so you know where to reinvest.",
+    scenario: "You delivered a certification program to 60 people. The diagnostic shows who actually retained the skills vs. who passed on momentum. The analytics separate real competency gaps from confidence gaps, so you know where to reinvest.",
   },
   {
     tabKey: "marketing",

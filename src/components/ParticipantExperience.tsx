@@ -127,7 +127,7 @@ export function ParticipantExperience() {
         {/* Subtitle */}
         <AnimatedSection className="text-center mb-12" delay={0.15}>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-4">
-            Every participant receives real-time scoring, personalized recommendations, and a clear picture of where they stand. It&apos;s not a form — it&apos;s a conversation that gives back.
+            Every participant receives real-time scoring, personalized recommendations, and a clear picture of where they stand. It&apos;s not a form, it&apos;s a conversation that gives back.
           </p>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
             That&apos;s why completion rates stay high and the data you collect actually means something.

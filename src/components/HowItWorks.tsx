@@ -40,7 +40,7 @@ const steps: Step[] = [
     number: '03',
     icon: BarChart3,
     title: 'You see what no spreadsheet can show you',
-    text: 'Structured scores, segments, pain patterns, and clear priorities — across every response. Not raw data. Decisions.',
+    text: 'Structured scores, segments, pain patterns, and clear priorities, across every response. Not raw data. Decisions.',
     delay: 0.3,
   },
 ];

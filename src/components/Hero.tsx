@@ -250,7 +250,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              ScoreJam builds the diagnostic, scores every answer, and delivers the insights — so you know exactly who to prioritize, what to fix, and where to act.
+              ScoreJam builds the diagnostic, scores every answer, and delivers the insights, so you know exactly who to prioritize, what to fix, and where to act.
             </motion.p>
 
             {/* CTAs */}
