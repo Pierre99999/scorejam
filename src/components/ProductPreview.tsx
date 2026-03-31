@@ -214,9 +214,9 @@ export function ProductPreview() {
         {/* Heading */}
         <AnimatedSection className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Your Scoring Dashboard
+            From Answers to Decisions
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] text-lg">Real-time insights at a glance</p>
+          <p className="mt-4 text-[var(--text-secondary)] text-lg">See how responses turn into clear scores, priorities, and concrete actions</p>
         </AnimatedSection>
 
         {/* Dashboard mockup with scale-up animation */}
