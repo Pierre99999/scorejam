@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function Solution() {
   return (
-    <section className="relative py-16 overflow-hidden">
+    <section className="relative py-28 overflow-hidden">
       {/* Radial gradient glow */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
         <div className="w-[600px] h-[300px] rounded-full bg-gradient-radial from-purple-600/15 via-blue-600/10 to-transparent blur-3xl" />

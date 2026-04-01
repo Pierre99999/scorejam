@@ -54,21 +54,7 @@ function AnimatedKpi({ rawValue, label }: { rawValue: string; label: string }) {
   );
 }
 
-// Placeholder logo boxes (client logos / integrations)
-function LogoPlaceholders() {
-  const logos = [0, 1, 2, 3, 4, 5];
-  return (
-    <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
-      {logos.map((i) => (
-        <div
-          key={i}
-          className="h-12 w-24 rounded-lg bg-[var(--card-bg)] border border-[var(--line-subtle)] animate-pulse"
-          style={{ animationDelay: `${i * 120}ms` }}
-        />
-      ))}
-    </div>
-  );
-}
+
 
 export function SocialProof() {
   const outcomes = [
@@ -78,7 +64,7 @@ export function SocialProof() {
   ];
 
   return (
-    <section className="relative py-16 overflow-hidden">
+    <section className="relative py-28 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-blue-950/5 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -103,10 +89,7 @@ export function SocialProof() {
           </div>
         </AnimatedSection>
 
-        {/* Logo row */}
-        <AnimatedSection delay={0.2}>
-          <LogoPlaceholders />
-        </AnimatedSection>
+        
       </div>
     </section>
   );

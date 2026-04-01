@@ -55,7 +55,7 @@ export function UseCases() {
   const activeContent = tabs.find((tab) => tab.tabKey === activeTab)!;
 
   return (
-    <section id="use-cases" className="relative py-16 overflow-hidden">
+    <section id="use-cases" className="relative py-28 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />

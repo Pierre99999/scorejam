@@ -60,97 +60,26 @@ const mockVariants: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 } },
 };
 
-// Metric card for the top row
-function MetricCard({
-  title,
-  value,
-  suffix,
-  progressColor,
-  progressPercent,
-  statusText,
-}: {
-  title: string;
-  value: string;
-  suffix?: string;
-  progressColor: string;
-  progressPercent: number;
-  statusText: string;
-}) {
-  return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm border border-gray-100 dark:border-gray-700">
-      <p className="text-[10px] text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider leading-tight whitespace-pre-line">
-        {title}
-      </p>
-      <div className="mt-1 flex items-baseline gap-0.5">
-        <span className="text-2xl font-bold text-gray-900 dark:text-white">{value}</span>
-        {suffix && <span className="text-sm text-gray-500 dark:text-gray-400">{suffix}</span>}
-      </div>
-      <div className="mt-2 h-1 rounded-full bg-gray-200 dark:bg-gray-600 overflow-hidden">
-        <div
-          className={`h-full rounded-full ${progressColor}`}
-          style={{ width: `${progressPercent}%` }}
-        />
-      </div>
-      <div className="mt-1.5 flex items-center gap-1">
-        <span className="text-green-500 dark:text-green-400 text-xs">↗</span>
-        <span className="text-xs text-green-500 dark:text-green-400 font-medium">{statusText}</span>
-      </div>
-    </div>
-  );
-}
-
-// Score distribution row
-function ScoreDistributionRow({
-  icon,
-  label,
-  range,
-  barColor,
-  barPercent,
-  count,
-  percent,
-}: {
-  icon: string;
-  label: string;
-  range: string;
-  barColor: string;
-  barPercent: number;
-  count: number;
-  percent: string;
-}) {
-  return (
-    <div className="py-3 border-b border-gray-100 dark:border-gray-700 last:border-b-0">
-      <div className="flex items-center justify-between mb-1.5">
-        <div className="flex items-center gap-2">
-          <span className="text-sm">{icon}</span>
-          <span className="text-sm font-semibold text-gray-900 dark:text-white">{label}</span>
-          <span className="text-xs text-gray-400 dark:text-gray-500">{range}</span>
-        </div>
-        <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">{count} · {percent}</span>
-      </div>
-      <div className="h-2 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
-        <div
-          className={`h-full rounded-full ${barColor}`}
-          style={{ width: `${barPercent}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
-// Dashboard mock card
+// Dashboard mock card - built with components like AnswersToDecisions
 function DashboardMock() {
   const metrics = [
-    { title: 'TOTAL\nPARTICIPANTS', value: '12', progressColor: 'bg-gray-800 dark:bg-gray-300', progressPercent: 100, statusText: '12 responses collected' },
-    { title: 'AVERAGE\nSCORE', value: '62', suffix: '/100', progressColor: 'bg-gray-800 dark:bg-gray-300', progressPercent: 62, statusText: 'Strong signal' },
-    { title: 'QUALIFIED\nLEADS', value: '58', suffix: '%', progressColor: 'bg-gray-300 dark:bg-gray-500', progressPercent: 58, statusText: 'Score above 60' },
-    { title: 'COMPLETION\nRATE', value: '100', suffix: '%', progressColor: 'bg-gray-800 dark:bg-gray-300', progressPercent: 100, statusText: 'Excellent engagement' },
+    { label: 'TOTAL PARTICIPANTS', value: '101', sub: '101 responses collected', subColor: 'text-green-500' },
+    { label: 'AVERAGE SCORE', value: '55', suffix: '/100', sub: 'Moderate signal', subColor: 'text-[var(--text-secondary)]' },
+    { label: 'HIGH SCORE', value: '12', suffix: '%', sub: 'Score above 70', subColor: 'text-green-500' },
+    { label: 'COMPLETION RATE', value: '100', suffix: '%', sub: 'Excellent engagement', subColor: 'text-green-500' },
   ];
 
   const distributions = [
-    { icon: '🔥', label: 'Critical Need', range: '80-100', barColor: 'bg-red-500', barPercent: 17, count: 2, percent: '17%' },
-    { icon: '🌶️', label: 'High Potential', range: '61-80', barColor: 'bg-orange-400', barPercent: 42, count: 5, percent: '42%' },
-    { icon: '❄️', label: 'Moderate Interest', range: '41-60', barColor: 'bg-blue-500', barPercent: 25, count: 3, percent: '25%' },
-    { icon: '⬇️', label: 'Low Priority', range: '0-40', barColor: 'bg-teal-400', barPercent: 17, count: 2, percent: '17%' },
+    { icon: '🔥', label: 'Strong Signal', range: '80-100', barColor: 'bg-red-500', barPercent: 12, count: 12, percent: '12%' },
+    { icon: '🌶️', label: 'Positive Signal', range: '61-80', barColor: 'bg-orange-400', barPercent: 48, count: 48, percent: '48%' },
+    { icon: '❄️', label: 'Mixed Signal', range: '41-60', barColor: 'bg-blue-500', barPercent: 11, count: 11, percent: '11%' },
+    { icon: '⬇️', label: 'Weak Signal', range: '0-40', barColor: 'bg-teal-400', barPercent: 30, count: 30, percent: '30%' },
+  ];
+
+  const insights = [
+    { icon: '💡', type: 'Opportunity', typeColor: 'bg-green-500/20 text-green-400', title: 'High demand for advanced navigation features among large property owners.', sub: '52% of respondents indicated a higher budget for advanced navigation.' },
+    { icon: '⚠️', type: 'Risk', typeColor: 'bg-yellow-500/20 text-yellow-400', title: 'Many prospects may be overqualified for basic models.', sub: '48% of respondents scored 61-80, indicating potential mismatch.' },
+    { icon: '📈', type: 'Trend', typeColor: 'bg-blue-500/20 text-blue-400', title: 'Improvement in average scores suggests growing interest in premium features.', sub: 'Last 7 days average score is 56.1, showing upward trend.' },
   ];
 
   return (
@@ -161,34 +90,51 @@ function DashboardMock() {
         <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-200/30 dark:bg-blue-500/20 blur-2xl pointer-events-none" />
 
         {/* Metric cards grid */}
-        <div className="grid grid-cols-2 gap-2 mb-4">
+        <div className="grid grid-cols-2 gap-2 mb-3">
           {metrics.map((metric, i) => (
-            <MetricCard
-              key={i}
-              title={metric.title}
-              value={metric.value}
-              suffix={metric.suffix}
-              progressColor={metric.progressColor}
-              progressPercent={metric.progressPercent}
-              statusText={metric.statusText}
-            />
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-2.5 border border-gray-100 dark:border-gray-700">
+              <p className="text-[8px] text-[var(--text-secondary)] font-semibold uppercase tracking-wider">{metric.label}</p>
+              <div className="flex items-baseline gap-0.5 mt-0.5">
+                <span className="text-xl font-bold text-[var(--text-primary)]">{metric.value}</span>
+                {metric.suffix && <span className="text-xs text-[var(--text-secondary)]">{metric.suffix}</span>}
+              </div>
+              <div className="mt-1 h-0.5 rounded-full bg-gray-200 dark:bg-gray-700" />
+              <p className={`text-[8px] mt-1 ${metric.subColor}`}>↗ {metric.sub}</p>
+            </div>
           ))}
         </div>
 
         {/* Score Distribution */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-700">
-          <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2">Score Distribution</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-100 dark:border-gray-700 mb-3">
+          <h3 className="text-xs font-bold text-[var(--text-primary)] mb-2">Score Distribution</h3>
           {distributions.map((dist, i) => (
-            <ScoreDistributionRow
-              key={i}
-              icon={dist.icon}
-              label={dist.label}
-              range={dist.range}
-              barColor={dist.barColor}
-              barPercent={dist.barPercent}
-              count={dist.count}
-              percent={dist.percent}
-            />
+            <div key={i} className="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-b-0">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs">{dist.icon}</span>
+                  <span className="text-[10px] font-semibold text-[var(--text-primary)]">{dist.label}</span>
+                  <span className="text-[9px] text-[var(--text-secondary)]">{dist.range}</span>
+                </div>
+                <span className="text-[9px] text-[var(--text-secondary)] bg-[var(--badge-bg)] px-1.5 py-0.5 rounded">{dist.count} · {dist.percent}</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                <div className={`h-full rounded-full ${dist.barColor}`} style={{ width: `${dist.barPercent}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Insights */}
+        <div className="grid grid-cols-3 gap-2">
+          {insights.map((insight, i) => (
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-2 border border-gray-100 dark:border-gray-700">
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-xs">{insight.icon}</span>
+                <span className={`px-1.5 py-0.5 rounded text-[8px] font-medium ${insight.typeColor}`}>{insight.type}</span>
+              </div>
+              <p className="text-[9px] font-semibold text-[var(--text-primary)] leading-tight mb-1">{insight.title}</p>
+              <p className="text-[8px] text-[var(--text-secondary)] leading-tight">{insight.sub}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -233,7 +179,7 @@ export function Hero() {
             {/* Eyebrow badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
-                AI powered Diagnostics
+                For Sales, CS, HR, L&amp;D, Product, and Marketing teams
               </span>
             </motion.div>
 

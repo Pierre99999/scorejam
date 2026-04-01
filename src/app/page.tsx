@@ -8,8 +8,6 @@ import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
 import { Channels } from '@/components/Channels';
 import { InlineCTA } from '@/components/InlineCTA';
-import { ProductPreview } from '@/components/ProductPreview';
-import { SocialProof } from '@/components/SocialProof';
 import { Differentiation } from '@/components/Differentiation';
 
 import { FinalCTA } from '@/components/FinalCTA';
@@ -26,10 +24,8 @@ export default function HomePage() {
         <AnswersToDecisions />
         <ParticipantExperience />
         <Solution />
-        <ProductPreview />
         <HowItWorks />
         <InlineCTA />
-        <SocialProof />
         <Differentiation />
         <Channels />
         <FinalCTA />
