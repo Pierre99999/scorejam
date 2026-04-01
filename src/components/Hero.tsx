@@ -60,20 +60,83 @@ const mockVariants: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 } },
 };
 
-// Dashboard mock card
+// Dashboard mock card - built with components like AnswersToDecisions
 function DashboardMock() {
+  const metrics = [
+    { label: 'TOTAL PARTICIPANTS', value: '101', sub: '101 responses collected', subColor: 'text-green-500' },
+    { label: 'AVERAGE SCORE', value: '55', suffix: '/100', sub: 'Moderate signal', subColor: 'text-[var(--text-secondary)]' },
+    { label: 'HIGH SCORE', value: '12', suffix: '%', sub: 'Score above 70', subColor: 'text-green-500' },
+    { label: 'COMPLETION RATE', value: '100', suffix: '%', sub: 'Excellent engagement', subColor: 'text-green-500' },
+  ];
+
+  const distributions = [
+    { icon: '🔥', label: 'Strong Signal', range: '80-100', barColor: 'bg-red-500', barPercent: 12, count: 12, percent: '12%' },
+    { icon: '🌶️', label: 'Positive Signal', range: '61-80', barColor: 'bg-orange-400', barPercent: 48, count: 48, percent: '48%' },
+    { icon: '❄️', label: 'Mixed Signal', range: '41-60', barColor: 'bg-blue-500', barPercent: 11, count: 11, percent: '11%' },
+    { icon: '⬇️', label: 'Weak Signal', range: '0-40', barColor: 'bg-teal-400', barPercent: 30, count: 30, percent: '30%' },
+  ];
+
+  const insights = [
+    { icon: '💡', type: 'Opportunity', typeColor: 'bg-green-500/20 text-green-400', title: 'High demand for advanced navigation features among large property owners.', sub: '52% of respondents indicated a higher budget for advanced navigation.' },
+    { icon: '⚠️', type: 'Risk', typeColor: 'bg-yellow-500/20 text-yellow-400', title: 'Many prospects may be overqualified for basic models.', sub: '48% of respondents scored 61-80, indicating potential mismatch.' },
+    { icon: '📈', type: 'Trend', typeColor: 'bg-blue-500/20 text-blue-400', title: 'Improvement in average scores suggests growing interest in premium features.', sub: 'Last 7 days average score is 56.1, showing upward trend.' },
+  ];
+
   return (
     <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/40 via-blue-500/30 to-purple-500/10 shadow-2xl shadow-purple-900/30">
-      <div className="relative rounded-2xl bg-gray-50 dark:bg-gray-900 p-3 overflow-hidden">
+      <div className="relative rounded-2xl bg-gray-50 dark:bg-gray-900 p-4 overflow-hidden">
         {/* Subtle glow */}
         <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-purple-200/30 dark:bg-purple-500/20 blur-2xl pointer-events-none" />
         <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-200/30 dark:bg-blue-500/20 blur-2xl pointer-events-none" />
 
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Capture%20d%E2%80%99e%CC%81cran%202026-04-01%20a%CC%80%2010.26.45-d5xSorHObrrazJVItUSboTimzMmQxE.png"
-          alt="ScoreJam dashboard showing participant metrics, score distribution, and insights"
-          className="w-full rounded-xl dark:invert dark:hue-rotate-180 dark:brightness-[1.8] dark:contrast-[0.8]"
-        />
+        {/* Metric cards grid */}
+        <div className="grid grid-cols-2 gap-2 mb-3">
+          {metrics.map((metric, i) => (
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-2.5 border border-gray-100 dark:border-gray-700">
+              <p className="text-[8px] text-[var(--text-secondary)] font-semibold uppercase tracking-wider">{metric.label}</p>
+              <div className="flex items-baseline gap-0.5 mt-0.5">
+                <span className="text-xl font-bold text-[var(--text-primary)]">{metric.value}</span>
+                {metric.suffix && <span className="text-xs text-[var(--text-secondary)]">{metric.suffix}</span>}
+              </div>
+              <div className="mt-1 h-0.5 rounded-full bg-gray-200 dark:bg-gray-700" />
+              <p className={`text-[8px] mt-1 ${metric.subColor}`}>↗ {metric.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Score Distribution */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-100 dark:border-gray-700 mb-3">
+          <h3 className="text-xs font-bold text-[var(--text-primary)] mb-2">Score Distribution</h3>
+          {distributions.map((dist, i) => (
+            <div key={i} className="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-b-0">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs">{dist.icon}</span>
+                  <span className="text-[10px] font-semibold text-[var(--text-primary)]">{dist.label}</span>
+                  <span className="text-[9px] text-[var(--text-secondary)]">{dist.range}</span>
+                </div>
+                <span className="text-[9px] text-[var(--text-secondary)] bg-[var(--badge-bg)] px-1.5 py-0.5 rounded">{dist.count} · {dist.percent}</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                <div className={`h-full rounded-full ${dist.barColor}`} style={{ width: `${dist.barPercent}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Insights */}
+        <div className="grid grid-cols-3 gap-2">
+          {insights.map((insight, i) => (
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-2 border border-gray-100 dark:border-gray-700">
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-xs">{insight.icon}</span>
+                <span className={`px-1.5 py-0.5 rounded text-[8px] font-medium ${insight.typeColor}`}>{insight.type}</span>
+              </div>
+              <p className="text-[9px] font-semibold text-[var(--text-primary)] leading-tight mb-1">{insight.title}</p>
+              <p className="text-[8px] text-[var(--text-secondary)] leading-tight">{insight.sub}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
