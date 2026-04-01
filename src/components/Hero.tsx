@@ -72,7 +72,7 @@ function DashboardMock() {
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Capture%20d%E2%80%99e%CC%81cran%202026-04-01%20a%CC%80%2010.26.45-d5xSorHObrrazJVItUSboTimzMmQxE.png"
           alt="ScoreJam dashboard showing participant metrics, score distribution, and insights"
-          className="w-full rounded-xl dark:invert dark:hue-rotate-180 dark:brightness-[1.15] dark:contrast-[0.95]"
+          className="w-full rounded-xl dark:invert dark:hue-rotate-180 dark:brightness-[1.8] dark:contrast-[0.8]"
         />
       </div>
     </div>
