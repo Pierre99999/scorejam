@@ -12,16 +12,22 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
           <div>
             <div className="flex items-center gap-2.5">
+              {/* Light mode logo */}
               <Image
-                src="/images/scorejam-symbol-white.webp"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ScoreJam%20-%20Logo%20Noir-XGLX3H8RVFDoj1dVjb7n39pDwBABOq.webp"
                 alt="Scorejam logo"
-                width={24}
-                height={24}
-                className="rounded-sm"
+                width={120}
+                height={28}
+                className="dark:hidden"
               />
-              <span className="font-bold text-[var(--text-primary)] text-lg tracking-tight">
-                Scorejam
-              </span>
+              {/* Dark mode logo */}
+              <Image
+                src="/images/scorejam-logo-white.webp"
+                alt="Scorejam logo"
+                width={120}
+                height={28}
+                className="hidden dark:block"
+              />
             </div>
           </div>
         </div>
