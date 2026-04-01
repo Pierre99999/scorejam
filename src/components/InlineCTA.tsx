@@ -7,7 +7,7 @@ export function InlineCTA() {
   const { openSignup } = useSignup();
 
   return (
-    <AnimatedSection className="py-16">
+    <AnimatedSection className="py-28">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <a
           href="https://www.scorejam.app/app"

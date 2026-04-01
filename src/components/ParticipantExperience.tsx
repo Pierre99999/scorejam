@@ -96,7 +96,7 @@ function ParticipantFlow() {
 
 export function ParticipantExperience() {
   return (
-    <section className="relative py-16 px-6 overflow-hidden">
+    <section className="relative py-28 px-6 overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-[var(--glow-blue)] rounded-full blur-3xl opacity-30" />
