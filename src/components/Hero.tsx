@@ -64,7 +64,7 @@ const mockVariants: Variants = {
 function DashboardMock() {
   return (
     <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/40 via-blue-500/30 to-purple-500/10 shadow-2xl shadow-purple-900/30">
-      <div className="relative rounded-2xl bg-white dark:bg-[#0f1219] p-3 overflow-hidden">
+      <div className="relative rounded-2xl bg-gray-50 dark:bg-gray-900 p-3 overflow-hidden">
         {/* Subtle glow */}
         <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-purple-200/30 dark:bg-purple-500/20 blur-2xl pointer-events-none" />
         <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-200/30 dark:bg-blue-500/20 blur-2xl pointer-events-none" />
