@@ -1,7 +1,6 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Problem } from '@/components/Problem';
-import { AnswersToDecisions } from '@/components/AnswersToDecisions';
 import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
@@ -23,7 +22,6 @@ export default function HomePage() {
         <Hero />
         <UseCases />
         <Problem />
-        <AnswersToDecisions />
         <ParticipantExperience />
         <Solution />
         <ProductPreview />
