@@ -14,16 +14,16 @@ export function Footer() {
             <div className="flex items-center gap-2.5">
               {/* Light mode logo */}
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ScoreJam%20-%20Logo%20Noir-XGLX3H8RVFDoj1dVjb7n39pDwBABOq.webp"
-                alt="Scorejam logo"
+                src="/logo-black.webp"
+                alt="ScoreJam logo"
                 width={120}
                 height={28}
-                className="dark:hidden"
+                className="block dark:hidden"
               />
               {/* Dark mode logo */}
               <Image
-                src="/images/scorejam-logo-white.webp"
-                alt="Scorejam logo"
+                src="/logo-white.webp"
+                alt="ScoreJam logo"
                 width={120}
                 height={28}
                 className="hidden dark:block"
