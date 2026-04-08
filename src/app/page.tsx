@@ -4,7 +4,6 @@ import { Problem } from '@/components/Problem';
 import { AnswersToDecisions } from '@/components/AnswersToDecisions';
 import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
-import { SurveyComparison } from '@/components/SurveyComparison';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
 import { Channels } from '@/components/Channels';
@@ -26,7 +25,6 @@ export default function HomePage() {
         <ParticipantExperience />
         <Solution />
         <HowItWorks />
-        <SurveyComparison />
         <InlineCTA />
         <Differentiation />
         <Channels />
