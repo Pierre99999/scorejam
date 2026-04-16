@@ -26,7 +26,7 @@ export function ManifestoContent() {
           </h2>
           <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
             <p>
-              Typeform, SurveyMonkey, Google Forms — same promise: 3,000 templates, total customization, change everything. Sounds great. Also why most assessments are garbage.
+              Typeform, SurveyMonkey, Google Forms — same promise: 3,000 templates, total customization, change everything. Sounds great.
             </p>
             <p>
               The person building the questionnaire isn&apos;t a methodologist. They&apos;re a CS manager who needs answers by Friday. They pick a template, tweak some questions, and unknowingly introduce leading scales, flat scoring, and missing dimensions.
