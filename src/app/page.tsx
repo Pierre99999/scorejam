@@ -7,6 +7,7 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
 import { Channels } from '@/components/Channels';
+import { FAQ } from '@/components/FAQ';
 import { InlineCTA } from '@/components/InlineCTA';
 import { Differentiation } from '@/components/Differentiation';
 
@@ -28,6 +29,7 @@ export default function HomePage() {
         <InlineCTA />
         <Differentiation />
         <Channels />
+        <FAQ />
         <FinalCTA />
       </main>
       <Footer />
