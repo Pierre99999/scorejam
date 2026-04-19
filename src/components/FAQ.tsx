@@ -6,7 +6,7 @@ import { AnimatedSection } from './AnimatedSection';
 const faqs = [
   {
     question: 'What is ScoreJam?',
-    answer: 'ScoreJam turns every questionnaire into a two-way exchange. Participants answer — and instantly get a personalized score, focus areas, and recommendations. You get structured, scored, segment-ready data you can act on the same day. The AI does the hard part: asking sharper questions, scoring answers against weighted criteria, and turning raw responses into concrete next steps.',
+    answer: 'ScoreJam turns every questionnaire into a two-way exchange. Participants answer — and instantly get a personalized score and recommendations. You get structured, scored, segment-ready data you can act on the same day. The AI does the hard part: asking sharper questions, scoring answers against weighted criteria, and turning raw responses into concrete next steps.',
   },
   {
     question: 'How much does ScoreJam cost?',
