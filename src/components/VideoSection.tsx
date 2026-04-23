@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function VideoSection() {
   // Convert youtu.be link to embed format
-  const videoId = 'klPgONGAg3I';
+  const videoId = '4ETGZLfedl0';
   const embedUrl = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
 
   return (
