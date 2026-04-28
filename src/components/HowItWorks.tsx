@@ -25,22 +25,22 @@ const steps: Step[] = [
   {
     number: '01',
     icon: Target,
-    title: 'Tell us what you need to know',
-    text: 'Paste a URL, describe your goal, or pick a path. ScoreJam identifies the dimensions that matter.',
+    title: 'Tell ScoreJam about your method.',
+    text: 'Paste your website, your framework PDF, or describe your approach in a sentence. ScoreJam structures the dimensions, writes the questions, and calibrates the scoring.',
     delay: 0,
   },
   {
     number: '02',
     icon: Brain,
-    title: 'Your audience gets a real experience',
-    text: 'Not a survey. Participants receive scored feedback, personalized insights, and tailored recommendations as they go. They get value. You get signal.',
+    title: 'Send it to anyone, anywhere.',
+    text: 'Embed on your site, share a link, drop it into LinkedIn or email. Respondents get a real diagnostic experience, not a Google Form.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'You see what no spreadsheet can show you',
-    text: 'Structured scores, segments, pain patterns, and clear priorities, across every response. Not raw data. Decisions.',
+    title: 'They get a personalized report. You get qualified intelligence.',
+    text: 'Each respondent walks away with a score, recommendations, and a reason to call you. You see patterns, segments, and who\'s ready to talk — across every response.',
     delay: 0.3,
   },
 ];
