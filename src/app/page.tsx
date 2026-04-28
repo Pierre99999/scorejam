@@ -2,7 +2,6 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { TrustStrip } from '@/components/TrustStrip';
 import { VideoSection } from '@/components/VideoSection';
-import { Problem } from '@/components/Problem';
 import { AnswersToDecisions } from '@/components/AnswersToDecisions';
 import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
@@ -25,7 +24,6 @@ export default function HomePage() {
         <TrustStrip />
         <VideoSection />
         <UseCases />
-        <Problem />
         <AnswersToDecisions />
         <ParticipantExperience />
         <Solution />

@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { B2BTeamsContent } from '@/components/B2BTeamsContent';
+import { Problem } from '@/components/Problem';
 
 export const metadata = {
   title: 'B2B Teams | ScoreJam',
@@ -12,6 +13,7 @@ export default function B2BTeamsPage() {
     <>
       <Header />
       <B2BTeamsContent />
+      <Problem />
       <Footer />
     </>
   );
