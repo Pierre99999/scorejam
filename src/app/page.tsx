@@ -1,12 +1,11 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { TrustStrip } from '@/components/TrustStrip';
 import { VideoSection } from '@/components/VideoSection';
-import { Problem } from '@/components/Problem';
-import { AnswersToDecisions } from '@/components/AnswersToDecisions';
-import { Solution } from '@/components/Solution';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
+import { Objections } from '@/components/Objections';
 import { Channels } from '@/components/Channels';
 import { FAQ } from '@/components/FAQ';
 import { InlineCTA } from '@/components/InlineCTA';
@@ -21,12 +20,11 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <TrustStrip />
         <VideoSection />
         <UseCases />
-        <Problem />
-        <AnswersToDecisions />
+        <Objections />
         <ParticipantExperience />
-        <Solution />
         <HowItWorks />
         <InlineCTA />
         <Differentiation />

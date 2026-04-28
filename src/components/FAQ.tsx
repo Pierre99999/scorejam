@@ -5,24 +5,24 @@ import { AnimatedSection } from './AnimatedSection';
 
 const faqs = [
   {
-    question: 'What is ScoreJam?',
-    answer: 'ScoreJam turns every questionnaire into a two-way exchange. Participants answer — and instantly get a personalized score and recommendations. You get structured, scored, segment-ready data you can act on the same day. The AI does the hard part: asking sharper questions, scoring answers against weighted criteria, and turning raw responses into concrete next steps.',
+    question: 'Who is ScoreJam for?',
+    answer: 'Three groups, mostly: Independent consultants and fractional execs who want every prospect call to start three questions ahead. Coaches, trainers, and methodology builders who\'ve turned their thinking into a framework and want it working for more clients than they can personally meet. Subject-matter experts with 5–15 years of domain depth — sales, leadership, pricing, GTM, finance, ops, culture, FinOps, ESG, cybersecurity — who want their judgment to scale beyond their calendar. If you\'ve ever explained your "way of doing it" in a sales call and wished you could just send the prospect through it instead — ScoreJam is for you.',
   },
   {
-    question: 'How much does ScoreJam cost?',
-    answer: 'Pricing starts at $14.99/month and scales with ambition, not feature gates. Tiers map to what you\'re actually running — a lightweight lead qualifier, a multi-segment market diagnostic, or a full certification-readiness assessment.',
+    question: 'What is ScoreJam?',
+    answer: 'ScoreJam turns every questionnaire into a two-way exchange. Participants answer — and instantly get a personalized score and recommendations. You get structured, scored, segment-ready data you can act on the same day. The AI does the hard part: asking sharper questions, scoring answers against weighted criteria, and turning raw responses into concrete next steps.',
   },
   {
     question: 'How does ScoreJam work?',
     answer: 'Pick one of 33+ pre-wired diagnostics — lead qualifier, churn risk, product-market fit, skills check, culture health, pricing explorer, and more — or build your own. Drop in your expertise and context. ScoreJam generates the focus areas, writes the questions, scores every response, and delivers a personalized report to each participant plus an analytics dashboard for you.',
   },
   {
-    question: 'Who is ScoreJam for?',
-    answer: 'B2B teams in sales, customer success, marketing, product, HR, and L&D — plus consultants and subject-matter experts who want to package their methodology into something scalable. Anyone who needs to qualify, assess, diagnose, or benchmark at scale without writing the same questionnaire twice.',
-  },
-  {
     question: 'What makes ScoreJam different?',
     answer: 'Form builders collect. ScoreJam diagnoses. Every path ships with weighted focus areas, scoring logic, and AI-generated recommendations built on real domain expertise — not empty templates. Participants get genuine value on the spot, which is why they answer honestly. You get data that\'s already structured for decisions, not a spreadsheet to untangle.',
+  },
+  {
+    question: 'How much does ScoreJam cost?',
+    answer: 'Pricing starts at $14.99/month and scales with ambition, not feature gates. Tiers map to what you\'re actually running — a lightweight lead qualifier, a multi-segment market diagnostic, or a full certification-readiness assessment.',
   },
 ];
 

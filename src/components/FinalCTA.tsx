@@ -17,8 +17,11 @@ export function FinalCTA() {
 
       <div className="relative py-28 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          Raw answers don&apos;t drive decisions. Structured intelligence does.
+          Stop doing the same audit twice.
         </h2>
+        <p className="mt-4 text-xl sm:text-2xl text-[var(--text-secondary)]">
+          Build it once. Run it forever.
+        </p>
         <div className="mt-10">
           <a
             href="https://www.scorejam.app/app"
@@ -26,7 +29,7 @@ export function FinalCTA() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
           >
-            Start for free
+            Start free — your first diagnostic in 5 minutes
           </a>
         </div>
       </div>

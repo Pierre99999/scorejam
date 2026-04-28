@@ -179,7 +179,7 @@ export function Hero() {
             {/* Eyebrow badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
-                For Sales, CS, HR, L&amp;D, Product, and Marketing teams
+                For independent consultants, fractional execs, coaches, and trainers
               </span>
             </motion.div>
 
@@ -188,7 +188,8 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              See What Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Data</span> Has Been Trying To <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Tell You</span>
+              Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">methodology</span> is your moat.<br />
+              Make it <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">scale</span> without you in the room.
             </motion.h1>
 
             {/* Subheadline */}
@@ -196,7 +197,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              ScoreJam builds the diagnostic, scores every answer, and delivers the insights, so you know exactly who to prioritize, what to fix, and where to act.
+              ScoreJam turns your framework, scorecard, or assessment into an AI-powered diagnostic — scored, personalized, and ready to send — in under 10 minutes.
             </motion.p>
 
             {/* CTAs */}
@@ -210,14 +211,14 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
               >
-                Start for free
+                Start free — your first diagnostic in 5 min
               </a>
               <a
                 href="#how-it-works"
                 onClick={handleHowItWorks}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-secondary)] border border-[var(--line-subtle)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10 transition-all duration-200"
               >
-                See how it works
+                See it built live
                 <span className="ml-2 text-[var(--text-muted)]">&rarr;</span>
               </a>
             </motion.div>
@@ -227,7 +228,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-xs text-[var(--text-muted)]"
             >
-              No credit card required · Your first diagnostic in 5 minutes
+              No credit card. No agency quote. No more rebuilding the same scorecard for every client.
             </motion.p>
           </motion.div>
 

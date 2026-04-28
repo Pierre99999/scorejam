@@ -16,22 +16,22 @@ const items: DiffItem[] = [
   {
     icon: Zap,
     gradient: 'from-purple-500 to-blue-500',
-    title: "You don't need to know what to ask",
-    text: 'ScoreJam designs the diagnostic from your context, structured, scored, and ready to deploy.',
+    title: '"I don\'t have time to build this."',
+    text: 'Paste a URL. Get a working diagnostic. Edit if you want, ship if you don\'t. Five minutes, total.',
     delay: 0,
   },
   {
     icon: Cpu,
     gradient: 'from-blue-500 to-violet-500',
-    title: 'The insight is built in',
-    text: 'Every answer feeds a scoring engine that surfaces patterns, flags risks, and ranks priorities automatically.',
+    title: '"It needs to look like mine, not a SaaS form."',
+    text: 'Your name, your brand, your colors, your domain. Embedded on your site or hosted on ours — your call.',
     delay: 0.1,
   },
   {
     icon: Sparkles,
     gradient: 'from-violet-500 to-purple-500',
-    title: 'It works in 5 minutes, not 5 weeks',
-    text: "Paste a URL. Get a diagnostic. Share it. See the dashboard. That's it.",
+    title: '"What if my method is too unique to fit a template?"',
+    text: 'ScoreJam doesn\'t use templates. It builds the diagnostic from your inputs — your dimensions, your weights, your recommendations.',
     delay: 0.2,
   },
 ];
