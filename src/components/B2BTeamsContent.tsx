@@ -45,14 +45,14 @@ const useCases: UseCase[] = [
     gradient: 'from-green-500 to-yellow-500',
     tagline: 'Capture intent, not just emails',
     description:
-      'Turn content downloads into scored leads with embedded diagnostics. Know who's ready to buy, who's just browsing, and what message will land.',
+      "Turn content downloads into scored leads with embedded diagnostics. Know who's ready to buy, who's just browsing, and what message will land.",
   },
   {
     team: 'Product',
     gradient: 'from-yellow-500 to-orange-500',
     tagline: 'Prioritize with real user signal',
     description:
-      'Discovery surveys that score feature demand, willingness to pay, and switching intent. Ship what matters, not what's loudest.',
+      "Discovery surveys that score feature demand, willingness to pay, and switching intent. Ship what matters, not what's loudest.",
   },
 ];
 
