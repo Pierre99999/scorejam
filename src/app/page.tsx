@@ -5,6 +5,7 @@ import { VideoSection } from '@/components/VideoSection';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
 import { UseCases } from '@/components/UseCases';
+import { Objections } from '@/components/Objections';
 import { Channels } from '@/components/Channels';
 import { FAQ } from '@/components/FAQ';
 import { InlineCTA } from '@/components/InlineCTA';
@@ -22,6 +23,7 @@ export default function HomePage() {
         <TrustStrip />
         <VideoSection />
         <UseCases />
+        <Objections />
         <ParticipantExperience />
         <HowItWorks />
         <InlineCTA />
