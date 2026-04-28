@@ -57,6 +57,7 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
           <a href="#how-it-works" onClick={(e) => handleAnchorClick(e, '#how-it-works')} className="hover:text-[var(--text-primary)] transition-colors duration-200">How it works</a>
           <a href="#use-cases" onClick={(e) => handleAnchorClick(e, '#use-cases')} className="hover:text-[var(--text-primary)] transition-colors duration-200">Use Cases</a>
+          <Link href="/b2b-teams" className="hover:text-[var(--text-primary)] transition-colors duration-200">B2B Teams</Link>
           <Link href="/manifesto" className="hover:text-[var(--text-primary)] transition-colors duration-200">Manifesto</Link>
           <Link href="/pricing" className="hover:text-[var(--text-primary)] transition-colors duration-200">Pricing</Link>
         </nav>
@@ -100,6 +101,7 @@ export function Header() {
         <nav className="flex flex-col gap-1 px-6 py-4">
           <a href="#how-it-works" onClick={(e) => handleAnchorClick(e, '#how-it-works')} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">How it works</a>
           <a href="#use-cases" onClick={(e) => handleAnchorClick(e, '#use-cases')} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Use Cases</a>
+          <Link href="/b2b-teams" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">B2B Teams</Link>
           <Link href="/manifesto" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Manifesto</Link>
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Pricing</Link>
           <div className="pt-2 pb-1 border-t border-[var(--line-subtle)] flex items-center justify-between mt-1">
