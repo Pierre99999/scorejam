@@ -5,31 +5,27 @@ import { motion } from 'framer-motion';
 const useCases = [
   {
     persona: 'B2B sales consultant',
-    color: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
     headline: 'Stop giving away your pipeline playbook on free calls.',
     before: '60-min discovery calls. Half don\'t convert. They take the insights and ghost.',
     withScoreJam: 'Pipeline Health Diagnostic — 12 questions, scored report naming exactly where revenue leaks.',
-    unlock: 'Calls start at \'let\'s discuss your three weak points\' — not \'tell me about your pipeline.\'',
+    unlock: 'Calls start at "let\'s discuss your three weak points" — not "tell me about your pipeline."',
   },
   {
     persona: 'Fractional CMO',
-    color: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
     headline: 'Prove their positioning is broken before they pay you to fix it.',
-    before: 'Every prospect thinks their messaging is \'fine.\' You can\'t prove otherwise without doing the audit first.',
+    before: 'Every prospect thinks their messaging is "fine." You can\'t prove otherwise without doing the audit first.',
     withScoreJam: 'Drop in their URL + 3 competitors. AI-powered audit returns a comparative scorecard in minutes.',
     unlock: 'The audit names the gap. The call is now about scope, not convincing.',
   },
   {
     persona: 'Leadership coach',
-    color: 'bg-green-500/20 text-green-400 border-green-500/30',
     headline: 'Stand out from 10,000 coaches who all sound the same.',
-    before: '\'Develops high-performing leaders\' — every coach says it. Prospects pick whoever was referred.',
+    before: '"Develops high-performing leaders" — every coach says it. Prospects pick whoever was referred.',
     withScoreJam: 'Leaders take a 16-question diagnostic built around your 5-pillar model. They get a profile in your voice.',
-    unlock: 'They didn\'t meet \'a coach.\' They met your worldview operating on their leadership.',
+    unlock: 'They didn\'t meet "a coach." They met your worldview operating on their leadership.',
   },
   {
     persona: 'Product strategy consultant',
-    color: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
     headline: 'Show founders that intuition isn\'t strategy — without confrontation.',
     before: 'Founders insist their strategy is sound. Pushing back loses the deal.',
     withScoreJam: 'Strategy Maturity Assessment scores discovery rigor, prioritization, validation depth, success metrics.',
@@ -37,34 +33,19 @@ const useCases = [
   },
   {
     persona: 'Methodology trainer',
-    color: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
-    headline: 'Beat \'we\'ll just do it internally\' before they say it.',
+    headline: 'Beat "we\'ll just do it internally" before they say it.',
     before: 'Buyers stall. They try to replicate your training from a slide deck.',
     withScoreJam: 'Pre-training capability diagnostic scores each participant. Manager sees aggregated team gaps.',
     unlock: 'Personalized intervention with measurable baseline. Procurement objections evaporate.',
   },
   {
     persona: 'Retention consultant',
-    color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
     headline: 'Prove churn isn\'t a support problem — it\'s a value-realization problem.',
     before: 'Founders blame their support team. They won\'t pay until they believe the real cause.',
     withScoreJam: 'Post-Purchase Evaluator routes churn signal to expectation, value, confidence, or onboarding.',
     unlock: 'Churn becomes diagnosable. You arrive with the answer, not the question.',
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 export function UseCasesPageContent() {
   return (
@@ -101,70 +82,61 @@ export function UseCasesPageContent() {
         </div>
       </section>
 
-      {/* Use Cases Grid */}
+      {/* Use Cases - Paragraph Style */}
       <section className="relative py-16 px-6">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        <div className="max-w-4xl mx-auto space-y-24">
           {useCases.map((useCase, index) => (
-            <motion.div
+            <motion.article
               key={index}
-              variants={itemVariants}
-              className="relative group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.6 }}
+              className="relative"
             >
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-500/30 via-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative h-full rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] p-6 flex flex-col">
-                {/* Persona Badge */}
-                <span className={`inline-block self-start px-3 py-1 rounded-full text-xs font-medium border ${useCase.color} mb-4`}>
+              {/* Number + Persona */}
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="text-lg font-medium text-[var(--text-secondary)]">
                   {useCase.persona}
                 </span>
-                
-                {/* Headline */}
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 leading-snug">
-                  {useCase.headline}
-                </h3>
-                
-                {/* Before Block */}
-                <div className="mb-4">
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-red-400/80 mb-1 block">
-                    Before
-                  </span>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    {useCase.before}
-                  </p>
-                </div>
-                
-                {/* With ScoreJam Block */}
-                <div className="mb-4">
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-purple-400/80 mb-1 block">
-                    With ScoreJam
-                  </span>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    {useCase.withScoreJam}
-                  </p>
-                </div>
-                
-                {/* Unlock Block */}
-                <div className="mt-auto pt-4 border-t border-[var(--line-subtle)]">
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-green-400/80 mb-1 block">
-                    Unlock
-                  </span>
-                  <p className="text-sm text-[var(--text-primary)] font-medium leading-relaxed">
-                    {useCase.unlock}
-                  </p>
-                </div>
               </div>
-            </motion.div>
+
+              {/* Headline */}
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] leading-snug mb-8">
+                {useCase.headline}
+              </h2>
+
+              {/* Content Flow */}
+              <div className="space-y-6 text-lg leading-relaxed">
+                <p>
+                  <span className="font-semibold text-red-400">The problem:</span>{' '}
+                  <span className="text-[var(--text-secondary)]">{useCase.before}</span>
+                </p>
+                
+                <p>
+                  <span className="font-semibold text-purple-400">With ScoreJam:</span>{' '}
+                  <span className="text-[var(--text-secondary)]">{useCase.withScoreJam}</span>
+                </p>
+                
+                <p className="text-[var(--text-primary)] font-medium border-l-4 border-purple-500 pl-6 py-2">
+                  {useCase.unlock}
+                </p>
+              </div>
+
+              {/* Divider - except last */}
+              {index < useCases.length - 1 && (
+                <div className="mt-16 border-b border-[var(--line-subtle)]" />
+              )}
+            </motion.article>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 px-6">
+      <section className="relative py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
