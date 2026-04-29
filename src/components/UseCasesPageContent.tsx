@@ -95,13 +95,13 @@ export function UseCasesPageContent() {
               className="relative"
             >
               {/* Number + Persona */}
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <div className="mb-8">
+                <span className="text-sm font-semibold text-purple-400 tracking-wider uppercase">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-lg font-medium text-[var(--text-secondary)]">
+                <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
                   {useCase.persona}
-                </span>
+                </h3>
               </div>
 
               {/* Headline */}
