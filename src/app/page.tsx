@@ -8,7 +8,6 @@ import { UseCases } from '@/components/UseCases';
 import { Objections } from '@/components/Objections';
 import { Channels } from '@/components/Channels';
 import { FAQ } from '@/components/FAQ';
-import { InlineCTA } from '@/components/InlineCTA';
 import { Differentiation } from '@/components/Differentiation';
 
 import { FinalCTA } from '@/components/FinalCTA';
@@ -26,7 +25,6 @@ export default function HomePage() {
         <Objections />
         <ParticipantExperience />
         <HowItWorks />
-        <InlineCTA />
         <Differentiation />
         <Channels />
         <FAQ />

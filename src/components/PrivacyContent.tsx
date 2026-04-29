@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: '6. Your Rights',
-    text: 'Depending on your location, you may have the following rights regarding your personal data:\n- Access: request a copy of your personal data\n- Rectification: request correction of inaccurate data\n- Erasure: request deletion of your data\n- Portability: request transfer of your data\n- Objection: object to the processing of your data\n\nTo exercise these rights, contact us at privacy@scorejam.com.',
+    text: 'Depending on your location, you may have the following rights regarding your personal data:\n- Access: request a copy of your personal data\n- Rectification: request correction of inaccurate data\n- Erasure: request deletion of your data\n- Portability: request transfer of your data\n- Objection: object to the processing of your data\n\nTo exercise these rights, contact us at contact@scorejam.ai.',
   },
   {
     title: '7. Cookies',
@@ -31,7 +31,7 @@ const sections = [
   },
   {
     title: '8. Contact Us',
-    text: 'If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: privacy@scorejam.com\nAddress: Scorejam SAS, Paris, France',
+    text: 'If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: contact@scorejam.ai\nAddress: Scorejam SAS, Paris, France',
   },
 ];
 
