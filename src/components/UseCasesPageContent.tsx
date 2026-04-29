@@ -68,7 +68,7 @@ export function UseCasesPageContent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight"
           >
-            Your expertise is stuck in your calendar. <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Let it work without you.</span>
+            Let your expertise do the convincing — <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">before the call.</span>
           </motion.h1>
           
           <motion.p
@@ -77,7 +77,7 @@ export function UseCasesPageContent() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto"
           >
-            Turn the framework you&apos;ve used 100 times into a scored diagnostic prospects take in 10 minutes — and arrive pre-sold.
+            Stop giving away your framework on free discovery calls. Turn it into a diagnostic that proves your value in 10 minutes.
           </motion.p>
         </div>
       </section>
