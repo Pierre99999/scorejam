@@ -188,8 +188,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">methodology</span> is your moat.<br />
-              Make it <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">scale</span> without you in the room.
+              Your expertise is stuck in your calendar. <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Let it work without you.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -197,7 +196,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              ScoreJam turns your framework, scorecard, or assessment into an AI-powered diagnostic — scored, personalized, and ready to send — in under 10 minutes.
+              Turn the framework you&apos;ve used 100 times into a scored diagnostic prospects take in 10 minutes — and arrive pre-sold.
             </motion.p>
 
             {/* CTAs */}
