@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ScoreJam - Feedback that works',
+  title: 'ScoreJam - The diagnostic engine',
   description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
   icons: {
     icon: '/favicon.png',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'ScoreJam - Feedback that works',
+    title: 'ScoreJam - The diagnostic engine',
     description: 'ScoreJam automatically builds statistically sound diagnostics from your context—then turns answers into clear insights, priorities, and next steps.',
     type: 'website',
     locale: 'en_US',
