@@ -244,7 +244,7 @@ export function Hero() {
             {/* Eyebrow badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase">
-                For independent consultants, fractional execs, coaches, and trainers
+                For consultants, coaches, CROs, sales leaders, HR leaders, PMs, and founders
               </span>
             </motion.div>
 
