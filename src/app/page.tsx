@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { TrustStrip } from '@/components/TrustStrip';
+import { AIFraming } from '@/components/AIFraming';
 import { VideoSection } from '@/components/VideoSection';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
@@ -19,7 +19,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <TrustStrip />
+        <AIFraming />
         <VideoSection />
         <UseCases />
         <Objections />
