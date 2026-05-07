@@ -283,15 +283,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
               >
-                Start free — your first diagnostic in 5 min
-              </a>
-              <a
-                href="#how-it-works"
-                onClick={handleHowItWorks}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-secondary)] border border-[var(--line-subtle)] hover:border-[var(--card-border-hover)] hover:text-[var(--text-primary)] bg-white/5 hover:bg-white/10 transition-all duration-200"
-              >
-                See it built live
-                <span className="ml-2 text-[var(--text-muted)]">&rarr;</span>
+                Start free — your first project up and running in 5 min
               </a>
             </motion.div>
 
