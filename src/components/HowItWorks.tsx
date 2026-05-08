@@ -1,6 +1,6 @@
 'use client';
 
-import { Target, Brain, BarChart3 } from 'lucide-react';
+import { Search, HelpCircle, BarChart3, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import Script from 'next/script';
@@ -24,23 +24,23 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
-    icon: Target,
-    title: 'Tell ScoreJam about your method.',
-    text: 'Paste your website, your framework PDF, or describe your approach in a sentence. ScoreJam structures the dimensions, writes the questions, and calibrates the scoring.',
+    icon: Search,
+    title: 'We read your situation.',
+    text: 'Your website, your documents, your prospect\'s LinkedIn, your sales playbook, your methodology — whatever\'s relevant. We extract the context that no generic tool can see.',
     delay: 0,
   },
   {
     number: '02',
-    icon: Brain,
-    title: 'Send it to anyone, anywhere.',
-    text: 'Embed on your site, share a link, drop it into LinkedIn or email. Respondents get a real diagnostic experience, not a Google Form.',
+    icon: HelpCircle,
+    title: 'We design the questions worth asking.',
+    text: 'Sometimes you arrive with a question — we sharpen it. Sometimes you don\'t yet know — we surface what\'s worth asking. Either way, the questions reflect your specific business, not generic best practice.',
     delay: 0.15,
   },
   {
     number: '03',
     icon: BarChart3,
-    title: 'They get a personalized report. You get qualified intelligence.',
-    text: 'Each respondent walks away with a score, recommendations, and a reason to call you. You see patterns, segments, and who\'s ready to talk — across every response.',
+    title: 'We process the answers.',
+    text: 'Whether the answers come from your customers, your team, a prospect in a meeting, or public evidence — we score them, rank them, and turn them into something you can act on.',
     delay: 0.3,
   },
 ];
@@ -75,6 +75,9 @@ export function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
             How It Works
           </h2>
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
+            One engine. Three steps.
+          </p>
         </AnimatedSection>
 
         {/* Steps grid */}
@@ -125,8 +128,30 @@ export function HowItWorks() {
           </div>
         </div>
 
+        {/* Outcome section */}
+        <AnimatedSection className="mt-20" delay={0.4}>
+          <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/40 via-blue-500/30 to-purple-500/10">
+            <div className="rounded-2xl bg-[var(--card-bg)] p-8 sm:p-10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-white" strokeWidth={2} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+                  What you walk out with
+                </h3>
+              </div>
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                Real signal. Scored. Defensible.
+              </p>
+              <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl">
+                Not a survey result. Not a research report. A scored read of the question that mattered, ready to bring to a meeting, a board, a CEO, or your own next decision.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Experience it button */}
-        <AnimatedSection className="text-center mt-12" delay={0.4}>
+        <AnimatedSection className="text-center mt-12" delay={0.5}>
           <button
             onClick={openScoreJamForm}
             className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 hover:from-purple-500 hover:via-purple-400 hover:to-blue-400 transition-all duration-300 shadow-xl shadow-purple-900/40 hover:shadow-purple-500/50 hover:-translate-y-1 hover:scale-105 border border-purple-400/30"
