@@ -162,6 +162,9 @@ export function HowItWorks() {
             </svg>
             <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 to-blue-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
+          <p className="mt-4 text-sm text-[var(--text-muted)]">
+            Built by ScoreJam in 5 minutes. Unedited. So you can judge the output for yourself.
+          </p>
         </AnimatedSection>
       </div>
     </section>
