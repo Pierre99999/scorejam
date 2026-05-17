@@ -90,7 +90,7 @@ export function TrainersContent() {
           {/* Timeline line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500/30 via-green-500/30 to-blue-500/30 -translate-y-1/2" />
           
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6 items-stretch">
             {stages.map((stage, index) => {
               const Icon = stage.icon;
               return (
@@ -100,12 +100,12 @@ export function TrainersContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="relative"
+                  className="relative h-full"
                 >
                   {/* Card */}
-                  <div className={`relative rounded-2xl p-6 ${stage.bgColor} border ${stage.borderColor} hover:scale-[1.02] transition-transform duration-300`}>
+                  <div className={`relative rounded-2xl p-6 ${stage.bgColor} border ${stage.borderColor} hover:scale-[1.02] transition-transform duration-300 h-full flex flex-col`}>
                     {/* Timing badge */}
-                    <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r ${stage.color} text-white text-xs font-bold mb-4`}>
+                    <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r ${stage.color} text-white text-xs font-bold mb-4 w-fit`}>
                       <span>{stage.timing}</span>
                     </div>
                     
@@ -115,12 +115,12 @@ export function TrainersContent() {
                     </div>
                     
                     {/* Title */}
-                    <h2 className="text-xl font-bold text-[var(--text-primary)] mb-6">
+                    <h2 className="text-xl font-bold text-[var(--text-primary)] mb-6 min-h-[56px]">
                       {stage.title}
                     </h2>
                     
                     {/* Info rows */}
-                    <div className="space-y-3 mb-6">
+                    <div className="space-y-3 mb-6 flex-grow">
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                           <Send className="w-4 h-4 text-[var(--text-secondary)]" />
@@ -146,7 +146,7 @@ export function TrainersContent() {
                       href="https://www.scorejam.app/app"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${stage.color} hover:opacity-90 transition-opacity`}
+                      className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${stage.color} hover:opacity-90 transition-opacity mt-auto`}
                     >
                       {stage.cta}
                     </a>
