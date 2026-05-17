@@ -14,7 +14,7 @@ const situations = [
     bgColor: 'bg-amber-500/10',
     borderColor: 'border-amber-500/30',
     cta: 'Problem Discovery Diagnostic',
-    altCta: 'or Buying Readiness',
+    secondaryCtas: ['Buying Readiness'],
   },
   {
     number: '02',
@@ -26,7 +26,7 @@ const situations = [
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/30',
     cta: 'Solution Fit',
-    altCta: 'Product Match / ROI',
+    secondaryCtas: ['Product Match Finder', 'ROI Calculator'],
   },
   {
     number: '03',
@@ -38,7 +38,7 @@ const situations = [
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
     cta: 'Win/Loss Diagnostic',
-    altCta: 'or Post-Trial Non-Purchase',
+    secondaryCtas: ['Post-Trial Non-Purchase'],
   },
 ];
 
@@ -119,19 +119,27 @@ export function SalesTeamContent() {
                     </p>
                     
                     {/* CTA */}
-                    <a
-                      href="https://www.scorejam.app/app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${situation.color} hover:opacity-90 transition-opacity mt-auto`}
-                    >
-                      {situation.cta}
-                    </a>
-                    {situation.altCta && (
-                      <p className="text-xs text-[var(--text-muted)] text-center mt-2">
-                        {situation.altCta}
-                      </p>
-                    )}
+                    <div className="mt-auto space-y-2">
+                      <a
+                        href="https://www.scorejam.app/app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${situation.color} hover:opacity-90 transition-opacity`}
+                      >
+                        {situation.cta}
+                      </a>
+                      {situation.secondaryCtas && situation.secondaryCtas.map((secondaryCta, idx) => (
+                        <a
+                          key={idx}
+                          href="https://www.scorejam.app/app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-full px-4 py-2.5 rounded-xl text-sm font-medium text-[var(--text-primary)] border border-[var(--card-border)] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all"
+                        >
+                          {secondaryCta}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               );
