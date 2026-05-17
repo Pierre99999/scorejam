@@ -6,7 +6,7 @@ import { AnimatedSection } from './AnimatedSection';
 const faqs = [
   {
     question: 'Who is ScoreJam for?',
-    answer: 'Three groups, mostly: Independent consultants and fractional execs who want every prospect call to start three questions ahead. Coaches, trainers, and methodology builders who\'ve turned their thinking into a framework and want it working for more clients than they can personally meet. Subject-matter experts with 5–15 years of domain depth — sales, leadership, pricing, GTM, finance, ops, culture, FinOps, ESG, cybersecurity — who want their judgment to scale beyond their calendar. If you\'ve ever explained your "way of doing it" in a sales call and wished you could just send the prospect through it instead — ScoreJam is for you.',
+    answer: 'Three groups, mostly:\n\nCommercial leaders — Heads of Sales, CS, and revenue who want to know which deals are real, which customers are about to leave, and which ones are ready to grow. They\'ve made enough decisions on instinct. They want the instinct pressure-tested by the people closest to the truth — prospects, customers, the buyers who said no.\n\nPeople leaders — Trainers, L&D owners, HR and People leads who want to know whether the training is hitting, whether the engagement is real or performative, whether the new hire fits the role, whether the culture says what it does. They run programs on cohorts of humans and want a way to ask those humans honestly.\n\nProduct and founder operators — PMs, founders, and GTM leaders who want to know whether the roadmap matches what users actually need, whether the messaging lands, whether there\'s PMF, whether the price is leaving money on the table. They\'ve heard enough conference advice. They want their own data.\n\nIf you\'ve ever made a decision about people, deals, or product based on a hunch you wished you could pressure-test — ScoreJam is for you.',
   },
   {
     question: 'What is ScoreJam?',
@@ -42,11 +42,13 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
       </button>
       <div
         className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{ maxHeight: isOpen ? '500px' : '0', opacity: isOpen ? 1 : 0 }}
+        style={{ maxHeight: isOpen ? '1000px' : '0', opacity: isOpen ? 1 : 0 }}
       >
-        <p className="pb-5 text-[var(--text-secondary)] leading-relaxed">
-          {answer}
-        </p>
+        <div className="pb-5 text-[var(--text-secondary)] leading-relaxed space-y-4">
+          {answer.split('\n\n').map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
   );
