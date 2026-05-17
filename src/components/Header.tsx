@@ -78,8 +78,6 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
-          <Link href="/use-cases" className="hover:text-[var(--text-primary)] transition-colors duration-200">Built for experts</Link>
-          
           {/* Role Dropdown */}
           <div className="relative role-dropdown">
             <button
@@ -106,7 +104,6 @@ export function Header() {
             )}
           </div>
           
-          <Link href="/b2b-teams" className="hover:text-[var(--text-primary)] transition-colors duration-200">B2B Teams</Link>
           <Link href="/manifesto" className="hover:text-[var(--text-primary)] transition-colors duration-200">Manifesto</Link>
           <Link href="/pricing" className="hover:text-[var(--text-primary)] transition-colors duration-200">Pricing</Link>
         </nav>
@@ -148,8 +145,6 @@ export function Header() {
         )}
       >
         <nav className="flex flex-col gap-1 px-6 py-4">
-          <Link href="/use-cases" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Built for experts</Link>
-          
           {/* Mobile Role Accordion */}
           <div>
             <button
@@ -178,7 +173,6 @@ export function Header() {
             </div>
           </div>
           
-          <Link href="/b2b-teams" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">B2B Teams</Link>
           <Link href="/manifesto" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Manifesto</Link>
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Pricing</Link>
           <div className="pt-2 pb-1 border-t border-[var(--line-subtle)] flex items-center justify-between mt-1">
