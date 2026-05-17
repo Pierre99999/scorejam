@@ -59,6 +59,7 @@ export function Header() {
           <Link href="/trainers" className="hover:text-[var(--text-primary)] transition-colors duration-200">Trainers</Link>
           <Link href="/sales-team" className="hover:text-[var(--text-primary)] transition-colors duration-200">Sales Team</Link>
           <Link href="/customer-success" className="hover:text-[var(--text-primary)] transition-colors duration-200">Customer Success</Link>
+          <Link href="/product-manager" className="hover:text-[var(--text-primary)] transition-colors duration-200">Product Manager</Link>
           <Link href="/b2b-teams" className="hover:text-[var(--text-primary)] transition-colors duration-200">B2B Teams</Link>
           <Link href="/manifesto" className="hover:text-[var(--text-primary)] transition-colors duration-200">Manifesto</Link>
           <Link href="/pricing" className="hover:text-[var(--text-primary)] transition-colors duration-200">Pricing</Link>
@@ -105,6 +106,7 @@ export function Header() {
           <Link href="/trainers" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Trainers</Link>
           <Link href="/sales-team" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Sales Team</Link>
           <Link href="/customer-success" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Customer Success</Link>
+          <Link href="/product-manager" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Product Manager</Link>
           <Link href="/b2b-teams" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">B2B Teams</Link>
           <Link href="/manifesto" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Manifesto</Link>
           <Link href="/pricing" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Pricing</Link>
