@@ -87,9 +87,6 @@ export function TrainersContent() {
 
         {/* Visual Timeline */}
         <div className="relative mb-20">
-          {/* Timeline line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500/30 via-green-500/30 to-blue-500/30 -translate-y-1/2" />
-          
           <div className="grid lg:grid-cols-3 gap-6 items-stretch">
             {stages.map((stage, index) => {
               const Icon = stage.icon;
