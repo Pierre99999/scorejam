@@ -15,6 +15,7 @@ const roleLinks = [
   { href: '/customer-success', label: 'Customer Success' },
   { href: '/product-manager', label: 'Product Manager' },
   { href: '/hr', label: 'HR' },
+  { href: '/founders', label: 'Founders' },
 ];
 
 export function Header() {
