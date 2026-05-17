@@ -75,14 +75,11 @@ export function TrainersContent() {
             For Trainers
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Three moments.{' '}
+            Pick the moment{' '}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Three diagnostics.
+              you&apos;re in.
             </span>
           </h1>
-          <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
-            Pick the moment you&apos;re in.
-          </p>
         </motion.div>
 
         {/* Visual Timeline */}
