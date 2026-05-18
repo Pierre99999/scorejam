@@ -136,7 +136,7 @@ export function TrainersContent() {
                     </div>
                     
                     {/* Diagnostic name */}
-                    <p className={`text-sm font-semibold bg-gradient-to-r ${stage.color} bg-clip-text text-transparent mt-auto`}>
+                    <p className={`text-base font-semibold bg-gradient-to-r ${stage.color} bg-clip-text text-transparent mt-auto text-center`}>
                       {stage.cta}
                     </p>
                   </div>
