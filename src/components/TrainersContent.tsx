@@ -135,19 +135,26 @@ export function TrainersContent() {
                       </div>
                     </div>
                     
-                    {/* CTA */}
-                    <a
-                      href="https://www.scorejam.app/app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${stage.color} hover:opacity-90 transition-opacity mt-auto`}
-                    >
+                    {/* Diagnostic name */}
+                    <p className={`text-sm font-semibold bg-gradient-to-r ${stage.color} bg-clip-text text-transparent mt-auto`}>
                       {stage.cta}
-                    </a>
+                    </p>
                   </div>
                 </motion.div>
               );
             })}
+          </div>
+          
+          {/* Single CTA button */}
+          <div className="text-center mt-10">
+            <a
+              href="https://www.scorejam.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+            >
+              Open ScoreJam for trainers
+            </a>
           </div>
         </div>
 
