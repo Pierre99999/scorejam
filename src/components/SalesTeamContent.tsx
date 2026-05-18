@@ -118,32 +118,36 @@ export function SalesTeamContent() {
                       {situation.description}
                     </p>
                     
-                    {/* CTA */}
-                    <div className="mt-auto space-y-2">
-                      <a
-                        href="https://www.scorejam.app/app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r ${situation.color} hover:opacity-90 transition-opacity`}
-                      >
+                    {/* Diagnostic names */}
+                    <div className="mt-auto space-y-1 text-center">
+                      <p className={`text-base font-semibold bg-gradient-to-r ${situation.color} bg-clip-text text-transparent`}>
                         {situation.cta}
-                      </a>
+                      </p>
                       {situation.secondaryCtas && situation.secondaryCtas.map((secondaryCta, idx) => (
-                        <a
+                        <p
                           key={idx}
-                          href="https://www.scorejam.app/app"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-full px-4 py-2.5 rounded-xl text-sm font-medium text-[var(--text-primary)] border border-[var(--card-border)] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all"
+                          className={`text-base font-semibold bg-gradient-to-r ${situation.color} bg-clip-text text-transparent`}
                         >
                           {secondaryCta}
-                        </a>
+                        </p>
                       ))}
                     </div>
                   </div>
                 </motion.div>
               );
             })}
+          </div>
+          
+          {/* Single CTA button */}
+          <div className="text-center mt-10">
+            <a
+              href="https://www.scorejam.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+            >
+              Open ScoreJam for sales teams
+            </a>
           </div>
         </div>
 
