@@ -16,12 +16,6 @@ export function FinalCTA() {
       </div>
 
       <div className="relative py-28 max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
-          Stop doing the same audit twice.
-        </h2>
-        <p className="mt-4 text-xl sm:text-2xl text-[var(--text-secondary)]">
-          Build it once. Run it forever.
-        </p>
         <div className="mt-10">
           <a
             href="https://www.scorejam.app/app"
