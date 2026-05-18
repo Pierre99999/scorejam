@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Compass, Target, TrendingUp, Rocket, Users, BarChart3, DollarSign, Megaphone, Sparkles } from 'lucide-react';
+import { Compass, Target, TrendingUp, Rocket, Megaphone } from 'lucide-react';
 
 const situations = [
   {
@@ -70,34 +70,6 @@ export function FoundersContent() {
               you&apos;re trying to answer.
             </span>
           </h1>
-        </motion.div>
-
-        {/* Strategic Mirror CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-16"
-        >
-          <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-2xl p-6 text-center">
-            <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-4 shadow-lg">
-              <Sparkles className="w-7 h-7 text-white" />
-            </div>
-            <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2">
-              Not sure what to ask first?
-            </h2>
-            <p className="text-sm text-[var(--text-secondary)] mb-5 max-w-lg mx-auto">
-              Run the Strategic Mirror — it reads your business and surfaces what&apos;s worth questioning before you commit to a diagnostic.
-            </p>
-            <a
-              href="https://www.scorejam.app/app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg"
-            >
-              Open the Strategic Mirror
-            </a>
-          </div>
         </motion.div>
 
         {/* Situations Grid */}
