@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, CheckCircle } from 'lucide-react';
+import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, CheckCircle, Award, BarChart3, GraduationCap } from 'lucide-react';
 
 const benefits = [
   {
@@ -47,6 +47,27 @@ const moments = [
     description: 'Prove durable behavior change',
     icon: TrendingUp,
     color: 'from-blue-400 to-cyan-500',
+  },
+];
+
+const specificSituations = [
+  {
+    title: 'Skills Validation',
+    description: 'Concrete picture of what people can actually do today.',
+    icon: Award,
+    color: 'from-violet-400 to-purple-500',
+  },
+  {
+    title: 'Skills Maturity',
+    description: 'Stage learners on a beginner-to-advanced continuum.',
+    icon: BarChart3,
+    color: 'from-pink-400 to-rose-500',
+  },
+  {
+    title: 'Certification Readiness',
+    description: 'Predict pass likelihood before the exam.',
+    icon: GraduationCap,
+    color: 'from-teal-400 to-cyan-500',
   },
 ];
 
@@ -136,6 +157,49 @@ export function TrainersLandingContent() {
                   </h3>
                   <p className="text-sm text-[var(--text-secondary)]">
                     {moment.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Specific Situations Section */}
+      <section className="py-16 border-t border-[var(--line-subtle)]">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+              For specific situations
+            </h3>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {specificSituations.map((situation, index) => {
+              const Icon = situation.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 hover:border-purple-500/30 transition-colors"
+                >
+                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${situation.color} flex items-center justify-center mb-3 shadow-md`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 className="text-base font-bold text-[var(--text-primary)] mb-1">
+                    {situation.title}
+                  </h4>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    {situation.description}
                   </p>
                 </motion.div>
               );
