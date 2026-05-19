@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, CheckCircle, Award, BarChart3, GraduationCap, Check } from 'lucide-react';
+import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, Award, BarChart3, GraduationCap, Check } from 'lucide-react';
 
 const benefits = [
   {
@@ -375,37 +375,6 @@ export function TrainersLandingContent() {
               </a>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-6 shadow-lg">
-              <CheckCircle className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
-              Ready to prove your training works?
-            </h2>
-            <p className="text-lg text-[var(--text-secondary)] mb-8">
-              Start free. Your first diagnostic up and running in 5 minutes.
-            </p>
-            <a
-              href="https://www.scorejam.app/app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
-            >
-              Open ScoreJam for Trainers
-              <span className="ml-2">&rarr;</span>
-            </a>
-          </motion.div>
         </div>
       </section>
     </main>
