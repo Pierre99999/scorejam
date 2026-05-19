@@ -290,7 +290,7 @@ export function TrainersLandingContent() {
                 Perfect to discover ScoreJam
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[var(--text-muted)]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 text-[var(--text-muted)]" />
@@ -308,15 +308,6 @@ export function TrainersLandingContent() {
                   </p>
                 </div>
               </div>
-
-              <a
-                href="https://www.scorejam.app/app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-primary)] border border-[var(--card-border)] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all"
-              >
-                Get started free
-              </a>
             </motion.div>
 
             {/* Subscription Plan */}
@@ -346,7 +337,7 @@ export function TrainersLandingContent() {
                 For teams that need real results
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 text-rose-400" />
@@ -364,15 +355,6 @@ export function TrainersLandingContent() {
                   </p>
                 </div>
               </div>
-
-              <a
-                href="https://www.scorejam.app/app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-rose-400 to-orange-400 hover:from-rose-300 hover:to-orange-300 transition-all shadow-lg"
-              >
-                Start Subscription
-              </a>
             </motion.div>
           </div>
         </div>
