@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, CheckCircle, Award, BarChart3, GraduationCap } from 'lucide-react';
+import { ClipboardCheck, MessageSquare, TrendingUp, Target, Clock, FileCheck, Layers, CheckCircle, Award, BarChart3, GraduationCap, Check } from 'lucide-react';
 
 const benefits = [
   {
@@ -249,6 +249,131 @@ export function TrainersLandingContent() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 border-t border-[var(--line-subtle)]">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
+              Simple pricing
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)]">
+              Start free, upgrade when you need more
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Free Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6"
+            >
+              <p className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-2">
+                Starter
+              </p>
+              <h3 className="text-4xl font-bold text-[var(--text-primary)] mb-1">
+                Free
+              </h3>
+              <p className="text-sm text-[var(--text-secondary)] mb-6">
+                Perfect to discover ScoreJam
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[var(--text-muted)]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-[var(--text-muted)]" />
+                  </div>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    <span className="text-[var(--text-primary)] font-medium">Included:</span> Build, preview and test 2 diagnostics, no credit card required
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[var(--text-muted)]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-[var(--text-muted)]" />
+                  </div>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    <span className="text-[var(--text-primary)] font-medium">Credit Expiration:</span> Valid until used
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="https://www.scorejam.app/app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-xl text-sm font-semibold text-[var(--text-primary)] border border-[var(--card-border)] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all"
+              >
+                Get started free
+              </a>
+            </motion.div>
+
+            {/* Subscription Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative bg-[var(--card-bg)] border-2 border-purple-500/50 rounded-2xl p-6"
+            >
+              {/* Badge */}
+              <div className="absolute -top-3 right-6">
+                <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-rose-400 to-orange-400 text-white text-xs font-bold">
+                  Subscription
+                </span>
+              </div>
+
+              <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
+                Subscription
+              </p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-lg text-[var(--text-secondary)]">$</span>
+                <span className="text-4xl font-bold text-[var(--text-primary)]">14.99</span>
+                <span className="text-sm text-[var(--text-secondary)]">/month</span>
+              </div>
+              <p className="text-sm text-[var(--text-secondary)] mb-6">
+                For teams that need real results
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-rose-400" />
+                  </div>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    <span className="text-[var(--text-primary)] font-medium">Included Credits:</span> 15 Credits / month
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-rose-400" />
+                  </div>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    <span className="text-[var(--text-primary)] font-medium">Credit Expiration:</span> Monthly reset
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="https://www.scorejam.app/app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-rose-400 to-orange-400 hover:from-rose-300 hover:to-orange-300 transition-all shadow-lg"
+              >
+                Start Subscription
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
