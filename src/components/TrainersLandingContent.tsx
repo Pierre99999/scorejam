@@ -208,6 +208,39 @@ export function TrainersLandingContent() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 border-t border-[var(--line-subtle)]">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+              20s video
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl"
+          >
+            <iframe
+              src="https://www.youtube.com/embed/a2p1PYM-a60"
+              title="ScoreJam for Trainers"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-20 bg-[var(--card-bg)] border-t border-b border-[var(--line-subtle)]">
         <div className="max-w-5xl mx-auto px-6">
