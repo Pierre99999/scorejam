@@ -358,23 +358,6 @@ export function SalesTeamContent() {
           </div>
         </motion.section>
 
-        {/* Footer note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center justify-center gap-4 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 mb-16"
-        >
-          <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
-            <Target className="w-5 h-5 text-purple-400" />
-          </div>
-          <p className="text-sm text-[var(--text-secondary)]">
-            <strong className="text-[var(--text-primary)]">Each diagnostic is independent.</strong>{' '}
-            Run them in parallel on different deals.
-          </p>
-        </motion.div>
-
         {/* Final CTA Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
