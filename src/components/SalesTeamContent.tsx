@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { UserPlus, MessageCircle, Trophy, Target, Users, DollarSign, Send, FileText } from 'lucide-react';
+import { UserPlus, MessageCircle, Trophy, Target, Users, DollarSign, Send, FileText, MessageSquareText, TrendingUp, Crosshair, Layers } from 'lucide-react';
 
 const situations = [
   {
@@ -57,6 +57,29 @@ const specificSituations = [
     icon: DollarSign,
     title: 'Pricing Model',
     description: 'When you\'re not sure your pricing is right',
+  },
+];
+
+const benefits = [
+  {
+    icon: MessageSquareText,
+    title: 'The buyer\'s answer, not the rep\'s theory.',
+    description: 'Your CRM is full of closed-lost reasons typed by the rep who lost the deal. "Price." "Timing." "Went with competitor." They\'re guesses, and they build the wrong playbook. ScoreJam goes to the buyer directly and gets the real reason.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Win/loss that runs on wins too.',
+    description: 'Most teams only ask questions when they lose, if they ask at all. But the deals you won are where the repeatable pattern lives. ScoreJam\'s Win/Loss diagnostic runs on both: losses tell you what to fix, wins tell you what to systematize.',
+  },
+  {
+    icon: Crosshair,
+    title: 'Qualify by pain, not by gut feel.',
+    description: 'Reps chase the loudest prospect, not the one in the most pain. ScoreJam sorts new leads by problem severity and buying readiness, so the team spends its hours on the deals most likely to close, in the right order.',
+  },
+  {
+    icon: Layers,
+    title: 'One platform for the whole deal cycle.',
+    description: 'Discovery in one tool, mid-deal validation in another, win/loss in a consultant\'s slide deck six months later — disconnected data you can\'t learn from. ScoreJam keeps the full cycle in one place.',
   },
 ];
 
@@ -194,6 +217,51 @@ export function SalesTeamContent() {
                 </motion.a>
               );
             })}
+          </div>
+        </motion.section>
+
+        {/* Why Sales Teams Choose ScoreJam */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 py-16 -mx-6 px-6 bg-[var(--card-bg)] border-t border-b border-[var(--line-subtle)]"
+        >
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+                Why sales teams choose ScoreJam
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {benefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex gap-4"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.section>
 
