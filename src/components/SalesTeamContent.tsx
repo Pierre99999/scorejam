@@ -220,6 +220,31 @@ export function SalesTeamContent() {
           </div>
         </motion.section>
 
+        {/* Video Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+              20s video
+            </h2>
+          </div>
+
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl max-w-4xl mx-auto">
+            <iframe
+              src="https://www.youtube.com/embed/J4iku_hnsFk"
+              title="ScoreJam for Sales Teams"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </motion.section>
+
         {/* Why Sales Teams Choose ScoreJam */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
