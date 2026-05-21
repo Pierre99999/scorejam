@@ -74,12 +74,15 @@ export function SalesTeamContent() {
           <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-6">
             For Sales Teams
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Pick the situation{' '}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-tight mb-6">
+            Stop guessing why you{' '}
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              you&apos;re in.
+              win and why you lose.
             </span>
           </h1>
+          <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+            ScoreJam gives sales teams diagnostics that line up with the three situations every deal moves through — a new lead, an active conversation, a deal that just closed. Qualify prospects by real pain and readiness. Diagnose what&apos;s actually stuck mid-deal. And get the truth about every win and loss from the only person who knows it — the buyer.
+          </p>
         </motion.div>
 
         {/* Situations Grid */}
