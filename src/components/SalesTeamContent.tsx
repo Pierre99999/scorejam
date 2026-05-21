@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { UserPlus, MessageCircle, Trophy, Target, Users, DollarSign, Send, FileText, MessageSquareText, TrendingUp, Crosshair, Layers, Check } from 'lucide-react';
+import { UserPlus, MessageCircle, Trophy, Target, Users, DollarSign, Send, FileText, MessageSquareText, TrendingUp, Crosshair, Layers, Check, CheckCircle } from 'lucide-react';
 
 const situations = [
   {
@@ -364,7 +364,7 @@ export function SalesTeamContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center justify-center gap-4 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5"
+          className="flex items-center justify-center gap-4 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-5 mb-16"
         >
           <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
             <Target className="w-5 h-5 text-purple-400" />
@@ -374,6 +374,34 @@ export function SalesTeamContent() {
             Run them in parallel on different deals.
           </p>
         </motion.div>
+
+        {/* Final CTA Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="py-16 text-center"
+        >
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-6 shadow-lg">
+            <CheckCircle className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">
+            Ready to know why you really win and lose?
+          </h2>
+          <p className="text-lg text-[var(--text-secondary)] mb-8">
+            Start free. Your first diagnostic up and running in 5 minutes.
+          </p>
+          <a
+            href="https://www.scorejam.app/app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+          >
+            Open ScoreJam for Sales Teams
+            <span className="ml-2">&rarr;</span>
+          </a>
+        </motion.section>
       </div>
     </main>
   );
