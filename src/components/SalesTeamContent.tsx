@@ -83,6 +83,17 @@ export function SalesTeamContent() {
           <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
             ScoreJam gives sales teams diagnostics that line up with the three situations every deal moves through — a new lead, an active conversation, a deal that just closed. Qualify prospects by real pain and readiness. Diagnose what&apos;s actually stuck mid-deal. And get the truth about every win and loss from the only person who knows it — the buyer.
           </p>
+          <div className="mt-8">
+            <a
+              href="https://www.scorejam.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+            >
+              Open ScoreJam for sales teams
+              <span className="ml-2">&rarr;</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* Situations Grid */}
@@ -139,18 +150,6 @@ export function SalesTeamContent() {
                 </motion.div>
               );
             })}
-          </div>
-          
-          {/* Single CTA button */}
-          <div className="text-center mt-10">
-            <a
-              href="https://www.scorejam.app/app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
-            >
-              Open ScoreJam for sales teams
-            </a>
           </div>
         </div>
 
