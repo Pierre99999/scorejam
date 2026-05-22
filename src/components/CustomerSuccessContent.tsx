@@ -232,7 +232,7 @@ export function CustomerSuccessContent() {
         >
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
-              20s video
+              30s video
             </h2>
           </div>
 
