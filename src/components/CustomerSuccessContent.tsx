@@ -238,7 +238,7 @@ export function CustomerSuccessContent() {
 
           <div className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl max-w-4xl mx-auto">
             <iframe
-              src="https://www.youtube.com/embed/a2p1PYM-a60"
+              src="https://www.youtube.com/embed/fqNVw6PB_Cc"
               title="ScoreJam for Customer Success"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
