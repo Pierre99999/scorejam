@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Rocket, Users, HeartPulse, AlertTriangle, Shield, MessageSquareText, TrendingUp, Clock, Layers, Check, CheckCircle } from 'lucide-react';
+import { Rocket, Users, HeartPulse, AlertTriangle, Shield, Clock, Layers, Check, CheckCircle, AlertCircle, RefreshCw } from 'lucide-react';
 
 const situations = [
   {
@@ -64,24 +64,24 @@ const specificSituations = [
 
 const benefits = [
   {
-    icon: Clock,
-    title: 'Know before they tell you — or leave.',
-    description: 'Most churn signals show up in CRM notes after the damage is done. ScoreJam surfaces dissatisfaction, disengagement, and competitive evaluation while you still have time to act.',
+    icon: AlertCircle,
+    title: 'Churn signals while there\'s still time to act.',
+    description: 'Health scores tell you a customer is red after they\'ve already checked out. ScoreJam surfaces the real signals — disengagement, dissatisfaction, competitive shopping — early enough to do something about it.',
   },
   {
-    icon: MessageSquareText,
-    title: 'The customer\'s words, not the CSM\'s interpretation.',
-    description: 'Health scores built on product usage and meeting notes miss the customer\'s actual sentiment. ScoreJam asks the customer directly — and gives you structured, comparable answers.',
+    icon: RefreshCw,
+    title: 'The whole lifecycle, not one snapshot.',
+    description: 'Onboarding in one tool, NPS in another, churn discovered in a QBR. ScoreJam runs implementation, onboarding, health, and risk in one place — so each account\'s story stays continuous.',
   },
   {
-    icon: TrendingUp,
-    title: 'Expansion signals you can act on.',
-    description: 'Knowing an account is "healthy" isn\'t the same as knowing they\'re ready to grow. ScoreJam\'s Expansion Readiness diagnostic tells you which accounts to approach and when.',
+    icon: Users,
+    title: 'Built for accounts, not just feelings.',
+    description: 'Generic surveys measure sentiment. ScoreJam diagnoses what\'s actually happening in the account — what\'s blocking activation, what\'s stalling goals, what\'s pulling them toward the exit.',
   },
   {
     icon: Layers,
-    title: 'One platform, every stage.',
-    description: 'Implementation readiness in one tool, onboarding in another, health in a spreadsheet, churn risk in someone\'s head. ScoreJam keeps the full customer journey in one place so you can see patterns across stages.',
+    title: 'A hundred accounts, a hundred moments.',
+    description: 'A good CS team isn\'t running one play. ScoreJam lets you run the implementation diagnostic on a new account and the churn diagnostic on a slipping one — same week, no reconfiguring.',
   },
 ];
 
