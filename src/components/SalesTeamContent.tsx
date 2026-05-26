@@ -108,7 +108,7 @@ export function SalesTeamContent() {
           </p>
           <div className="mt-8">
             <a
-              href="https://www.scorejam.app/app"
+              href="https://www.scorejam.app/app/categories/sales-team"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
@@ -196,7 +196,7 @@ export function SalesTeamContent() {
               return (
                 <motion.a
                   key={index}
-                  href="https://www.scorejam.app/app"
+                  href="https://www.scorejam.app/app/categories/sales-team"
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
@@ -401,7 +401,7 @@ export function SalesTeamContent() {
             Start free. Your first diagnostic up and running in 5 minutes.
           </p>
           <a
-            href="https://www.scorejam.app/app"
+            href="https://www.scorejam.app/app/categories/sales-team"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
