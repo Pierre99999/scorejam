@@ -234,7 +234,7 @@ export function SalesTeamContent() {
             </h2>
           </div>
 
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl max-w-4xl mx-auto">
+          <div className="relative aspect-video overflow-hidden max-w-4xl mx-auto">
             <iframe
               src="https://www.youtube.com/embed/J4iku_hnsFk"
               title="ScoreJam for Sales Teams"

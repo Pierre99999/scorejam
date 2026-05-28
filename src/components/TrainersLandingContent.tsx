@@ -228,7 +228,7 @@ export function TrainersLandingContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl"
+            className="relative aspect-video overflow-hidden"
           >
             <iframe
               src="https://www.youtube.com/embed/a2p1PYM-a60"
