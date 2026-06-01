@@ -253,24 +253,50 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              Being wrong is <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">expensive.</span>
+              Stop making decisions on <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">guesses.</span>
             </motion.h1>
 
-            {/* Bridge */}
+            {/* Who knows what */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-6 space-y-1 text-lg text-[var(--text-secondary)] max-w-xl mx-auto lg:mx-0"
+            >
+              <p>Customers know why they buy.</p>
+              <p>Prospects know why they don&apos;t.</p>
+              <p>Teams know what&apos;s broken.</p>
+              <p>Users know what blocks adoption.</p>
+            </motion.div>
+
+            {/* Problem statement */}
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
+              className="mt-6 text-lg text-[var(--text-primary)] font-semibold max-w-xl mx-auto lg:mx-0"
             >
-              The answers are in your customers, your team, your prospects — even in your own business. The hard part isn&apos;t getting answers. It&apos;s knowing what to ask.
+              The problem isn&apos;t getting answers.
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="mt-1 text-lg text-[var(--text-primary)] font-semibold max-w-xl mx-auto lg:mx-0"
+            >
+              The problem is knowing what to ask.
             </motion.p>
 
-            {/* Sub-hero */}
+            {/* Value prop */}
             <motion.p
               variants={itemVariants}
-              className="mt-4 text-base text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
+              className="mt-6 text-base text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              ScoreJam reads your situation and turns it into the questions worth asking — whether you have one already, or you don&apos;t yet know.
+              ScoreJam turns your expertise into diagnostics that uncover the signal behind the decision.
             </motion.p>
+
+            {/* Benefits */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-4 space-y-1 text-base text-[var(--text-secondary)] max-w-xl mx-auto lg:mx-0"
+            >
+              <p>Participants get scores, feedback, and recommendations.</p>
+              <p>You get the evidence to decide what happens next.</p>
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
@@ -283,7 +309,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
               >
-                Start free — your first project up and running in 5 min
+                Start Free — Build Your First Diagnostic
               </a>
             </motion.div>
 
@@ -292,7 +318,7 @@ export function Hero() {
               variants={itemVariants}
               className="mt-6 text-xs text-[var(--text-muted)]"
             >
-              No credit card. No agency quote. No more rebuilding the same scorecard for every client.
+              No credit card. First diagnostic live in minutes.
             </motion.p>
           </motion.div>
 
