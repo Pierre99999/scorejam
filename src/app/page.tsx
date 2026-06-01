@@ -4,7 +4,6 @@ import { AIFraming } from '@/components/AIFraming';
 import { VideoSection } from '@/components/VideoSection';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ParticipantExperience } from '@/components/ParticipantExperience';
-import { Objections } from '@/components/Objections';
 import { Channels } from '@/components/Channels';
 import { FAQ } from '@/components/FAQ';
 import { Differentiation } from '@/components/Differentiation';
@@ -20,7 +19,6 @@ export default function HomePage() {
         <Hero />
         <AIFraming />
         <VideoSection />
-        <Objections />
         <ParticipantExperience />
         <HowItWorks />
         <Differentiation />

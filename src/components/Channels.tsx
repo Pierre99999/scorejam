@@ -1,26 +1,14 @@
 'use client';
 
 import { AnimatedSection } from './AnimatedSection';
-import {
-  Globe,
-  Mail,
-  MessageSquare,
-  Linkedin,
-  QrCode,
-  Share2,
-  Send,
-  Smartphone,
-} from 'lucide-react';
+import { UserX, Wrench, Target, AlertTriangle, Megaphone } from 'lucide-react';
 
-const channels = [
-  { icon: Globe, name: 'Website', gradient: 'from-blue-500 to-cyan-400' },
-  { icon: Mail, name: 'Email', gradient: 'from-purple-500 to-pink-400' },
-  { icon: MessageSquare, name: 'Slack', gradient: 'from-emerald-500 to-teal-400' },
-  { icon: Linkedin, name: 'LinkedIn', gradient: 'from-blue-600 to-blue-400' },
-  { icon: Send, name: 'WhatsApp', gradient: 'from-green-500 to-emerald-400' },
-  { icon: QrCode, name: 'Widgets', gradient: 'from-violet-500 to-purple-400' },
-  { icon: Smartphone, name: 'iFrame', gradient: 'from-rose-500 to-pink-400' },
-  { icon: Share2, name: 'CRM', gradient: 'from-indigo-500 to-blue-400' },
+const mistakes = [
+  { icon: UserX, text: 'Hiring the wrong person.' },
+  { icon: Wrench, text: 'Building the wrong feature.' },
+  { icon: Target, text: 'Chasing the wrong prospect.' },
+  { icon: AlertTriangle, text: 'Ignoring the wrong customer signal.' },
+  { icon: Megaphone, text: 'Launching the wrong message.' },
 ];
 
 export function Channels() {
@@ -33,57 +21,59 @@ export function Channels() {
       <div className="relative max-w-5xl mx-auto px-6">
         {/* Section heading */}
         <AnimatedSection className="text-center mb-14">
-          <span className="inline-block px-3 py-1 rounded-full bg-[var(--badge-bg)] border border-[var(--badge-border)] text-purple-400 text-xs font-medium tracking-wide uppercase mb-4">
-            Distribution
-          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-tight">
-            Publish Everywhere In One Click
+            The Cost of Being{' '}
+            <span className="bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent">
+              Wrong
+            </span>
           </h2>
-          <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Easily share your diagnostics across multiple channels to reach your audience wherever they are.
-          </p>
         </AnimatedSection>
 
-        {/* Channel cards grid */}
+        {/* Mistakes grid */}
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {channels.map(({ icon: Icon, name, gradient }) => (
-              <div
-                key={name}
-                className="group relative rounded-2xl p-px bg-gradient-to-br from-purple-500/15 via-blue-500/5 to-purple-500/0 hover:from-purple-500/30 hover:via-blue-500/15 hover:to-purple-500/10 transition-all duration-300"
-              >
-                <div className="relative flex flex-col items-center gap-3 rounded-2xl bg-[var(--card-bg)] px-4 py-6 sm:py-8 overflow-hidden">
-                  {/* Hover glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[var(--glow-purple)] blur-2xl" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {mistakes.map((mistake, index) => {
+              const Icon = mistake.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative p-5 rounded-xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-rose-500/30 transition-all duration-300"
+                >
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-rose-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative flex items-center gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center group-hover:bg-rose-500/20 transition-colors duration-300">
+                      <Icon className="w-5 h-5 text-rose-400" />
+                    </div>
+                    <p className="text-base text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors duration-300">
+                      {mistake.text}
+                    </p>
                   </div>
-
-                  {/* Icon */}
-                  <div
-                    className={`relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                  </div>
-
-                  {/* Label */}
-                  <span className="relative text-sm font-medium text-[var(--text-primary)]">
-                    {name}
-                  </span>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </AnimatedSection>
 
-        {/* Micro-text */}
-        <AnimatedSection delay={0.2} className="mt-10">
-          <div className="relative rounded-2xl p-px bg-gradient-to-br from-purple-500/20 via-blue-500/10 to-purple-500/5">
-            <div className="relative rounded-2xl bg-[var(--card-bg)] px-8 py-6 text-center overflow-hidden">
-              <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[var(--glow-purple)] blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-[var(--glow-blue)] blur-2xl pointer-events-none" />
-              <p className="relative text-[var(--text-secondary)] text-base leading-relaxed max-w-2xl mx-auto">
-                Publishing is easy, website embed, email, Slack, LinkedIn, WhatsApp, widgets, iFrame, or CRM. One diagnostic, every channel, zero friction.
+        {/* Conclusion */}
+        <AnimatedSection delay={0.2} className="mt-14">
+          <div className="relative rounded-2xl p-px bg-gradient-to-r from-rose-500/20 via-purple-500/20 to-blue-500/20">
+            <div className="relative rounded-2xl bg-[var(--card-bg)] px-8 py-8 text-center overflow-hidden">
+              <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-rose-500/5 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-purple-500/5 blur-3xl pointer-events-none" />
+              <p className="relative text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-3">
+                Every one of those decisions is expensive.
               </p>
+              <p className="relative text-lg text-[var(--text-secondary)] mb-8">
+                ScoreJam helps you test assumptions before you bet.
+              </p>
+              <a
+                href="https://www.scorejam.app/app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
+              >
+                Start Your First Diagnostic
+              </a>
             </div>
           </div>
         </AnimatedSection>

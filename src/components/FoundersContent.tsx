@@ -224,7 +224,7 @@ export function FoundersContent() {
             </h2>
           </div>
 
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-[var(--card-border)] shadow-xl max-w-4xl mx-auto">
+          <div className="relative aspect-video overflow-hidden max-w-4xl mx-auto">
             <iframe
               src="https://www.youtube.com/embed/sY27wfC_VfE"
               title="ScoreJam for Founders"
