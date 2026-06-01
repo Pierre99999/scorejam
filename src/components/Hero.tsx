@@ -253,7 +253,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight"
             >
-              Stop making decisions on <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">guesses.</span>
+              Stop betting the company on <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">assumptions.</span>
             </motion.h1>
 
             {/* Who knows what */}
