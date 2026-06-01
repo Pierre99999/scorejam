@@ -94,15 +94,6 @@ export function AIFraming() {
               </motion.div>
             ))}
           </div>
-
-          <div className="mt-10">
-            <Link
-              href="/use-cases"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:-translate-y-0.5"
-            >
-              Explore Use Cases
-            </Link>
-          </div>
         </motion.div>
       </div>
     </section>
