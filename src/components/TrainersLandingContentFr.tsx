@@ -362,8 +362,8 @@ export function TrainersLandingContentFr() {
                 Abonnement
               </p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-lg text-[var(--text-secondary)]">$</span>
-                <span className="text-4xl font-bold text-[var(--text-primary)]">14.99</span>
+                <span className="text-4xl font-bold text-[var(--text-primary)]">14,99</span>
+                <span className="text-lg text-[var(--text-secondary)]">€</span>
                 <span className="text-sm text-[var(--text-secondary)]">/mois</span>
               </div>
               <p className="text-sm text-[var(--text-secondary)] mb-6">
