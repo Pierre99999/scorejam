@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Fira Sans is the single typeface for the site. `--font-serif` is kept as an
+       alias so the existing `font-serif` heading classes resolve to it too. */
+    --font-sans: 'Fira Sans', -apple-system, sans-serif;
+    --font-serif: 'Fira Sans', -apple-system, sans-serif;
+    --navy: #1A2B5C;
+    --navy-deep: #11183a;
+    --orange: #F4A027;
+    --ink: #1A2B5C;
+    --paper: #FBFAF7;
+    --paper-2: #F2EFE8;
+    --line: rgba(26,43,92,0.14);
+    --muted: #5b6480;
+    --background: 43 33% 98%;
+    --foreground: 222 53% 23%;
+    --card: 43 33% 98%;
+    --card-foreground: 222 53% 23%;
+    --popover: 43 33% 98%;
+    --popover-foreground: 222 53% 23%;
+    --primary: 222 53% 23%;
+    --primary-foreground: 43 33% 98%;
+    --secondary: 40 23% 94%;
+    --secondary-foreground: 222 53% 23%;
+    --muted-hsl: 40 23% 94%;
+    --muted-foreground: 224 14% 43%;
+    --accent: 38 91% 55%;
+    --accent-foreground: 222 53% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 53% 23% / 0.14;
+    --input: 222 53% 23% / 0.14;
+    --ring: 38 91% 55%;
+    --chart-1: 38 91% 55%;
+    --chart-2: 222 53% 23%;
+    --chart-3: 222 53% 35%;
+    --chart-4: 38 91% 65%;
+    --chart-5: 222 53% 45%;
+    --radius: 0.5rem;
+    --sidebar-background: 43 33% 98%;
+    --sidebar-foreground: 222 53% 23%;
+    --sidebar-primary: 222 53% 23%;
+    --sidebar-primary-foreground: 43 33% 98%;
+    --sidebar-accent: 40 23% 94%;
+    --sidebar-accent-foreground: 222 53% 23%;
+    --sidebar-border: 222 53% 23% / 0.14;
+    --sidebar-ring: 38 91% 55%;
+  }
+  .dark {
+    --background: 222 53% 15%;
+    --foreground: 43 33% 98%;
+    --card: 222 53% 15%;
+    --card-foreground: 43 33% 98%;
+    --popover: 222 53% 15%;
+    --popover-foreground: 43 33% 98%;
+    --primary: 43 33% 98%;
+    --primary-foreground: 222 53% 15%;
+    --secondary: 222 53% 23%;
+    --secondary-foreground: 43 33% 98%;
+    --muted-hsl: 222 53% 23%;
+    --muted-foreground: 224 14% 70%;
+    --accent: 38 91% 55%;
+    --accent-foreground: 222 53% 15%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 33% 98% / 0.14;
+    --input: 43 33% 98% / 0.14;
+    --ring: 38 91% 55%;
+    --chart-1: 38 91% 55%;
+    --chart-2: 43 33% 98%;
+    --chart-3: 43 33% 80%;
+    --chart-4: 38 91% 45%;
+    --chart-5: 43 33% 60%;
+    --sidebar-background: 222 53% 15%;
+    --sidebar-foreground: 43 33% 98%;
+    --sidebar-primary: 38 91% 55%;
+    --sidebar-primary-foreground: 222 53% 15%;
+    --sidebar-accent: 222 53% 23%;
+    --sidebar-accent-foreground: 43 33% 98%;
+    --sidebar-border: 43 33% 98% / 0.14;
+    --sidebar-ring: 38 91% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  /* Smooth easing for in-page anchors, but never for users who ask for less motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background-color: #FBFAF7;
+    color: #1A2B5C;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fira Sans', -apple-system, sans-serif;
+    /* A sans needs a little more weight than a serif to hold a display size */
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+}

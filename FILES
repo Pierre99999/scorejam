@@ -1,0 +1,65 @@
+// app/layout.tsx
+import { Html, Head, Main, NextScript } from 'next/document';
+
+export default function Document() {
+  return (
+    <Html>
+      <Head>
+        {/* Insert the inline recovery script here */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){function r(){try{var u=new URL(window.location.href);u.searchParams.set("_",Date.now().toString());window.location.replace(u.toString())}catch(e){window.location.reload()}}function msg(x){try{return typeof x==="string"?x:(x&&x.message)?String(x.message):""}catch{return""}}window.addEventListener("error",function(e){var m=msg(e);var f=e && e.filename?String(e.filename):"";if(m.includes("Loading chunk")||m.includes("ChunkLoadError")||f.includes("/_next/static/chunks/")){r()}},true);window.addEventListener("unhandledrejection",function(e){var m=msg(e.reason);var n=e&&e.reason&&e.reason.name; if(m.includes("Loading chunk")||n==="ChunkLoadError"){r()}},true);})();`,
+          }}
+        />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+// components/site-header.tsx
+import Link from 'next/link';
+
+const SiteHeader = ({ setOpen }) => {
+  return (
+    <header>
+      {/* Logo link with prefetch disabled */}
+      <Link href="/" prefetch={false} className="flex items-center gap-2" aria-label="Go to homepage">
+        Logo
+      </Link>
+      {/* Desktop nav links with prefetch disabled */}
+      <nav className="hidden md:flex">
+        <Link href="/" prefetch={false} className="text-gray-700 hover:text-gray-900">Home</Link>
+        <Link href="/compass" prefetch={false} className="text-gray-700 hover:text-gray-900">The Compass</Link>
+        <Link href="/switch" prefetch={false} className="text-gray-700 hover:text-gray-900">The Switch</Link>
+        <Link href="/book" prefetch={false} className="text-gray-700 hover:text-gray-900">The Book</Link>
+        <Link href="/testimonials" prefetch={false} className="text-gray-700 hover:text-gray-900">Testimonials</Link>
+      </nav>
+      {/* Mobile menu links with prefetch disabled */}
+      <nav className="md:hidden">
+        <div className="panel">
+          <Link href="/" prefetch={false} className="rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/compass" prefetch={false} className="rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50" onClick={() => setOpen(false)}>The Compass</Link>
+          <Link href="/switch" prefetch={false} className="rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50" onClick={() => setOpen(false)}>The Switch</Link>
+          <Link href="/book" prefetch={false} className="rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50" onClick={() => setOpen(false)}>The Book</Link>
+          <Link href="/testimonials" prefetch={false} className="rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50" onClick={() => setOpen(false)}>Testimonials</Link>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+// app/page.tsx
+// This file is now a Server Component, so the "use client" directive is removed
+const HomePage = () => {
+  return (
+    <div>
+      {/* Home page content here */}
+    </div>
+  );
+};
+
+export default HomePage;
