@@ -27,6 +27,7 @@ const CONTENT: Record<
     newTab: string
     hero: { eyebrow: string; title: string; description: string; benefit: string; shotAlt: string }
     problem: { title: string; text: string; strong: string }
+    stakes: { lead: string[]; items: string[]; close: string }
     how: {
       title: string
       steps: { n: string; label: string; body: string; shot: keyof typeof SHOTS; alt: string }[]
@@ -59,6 +60,16 @@ const CONTENT: Record<
       title: "Un bon rendez-vous. Mais le deal a-t-il avancé ?",
       text: "Un client intéressé n'a pas encore décidé.",
       strong: "Switch vous montre ce qui est établi, ce qui manque et ce qu'il faut clarifier.",
+    },
+    stakes: {
+      lead: ["La plupart des deals ne se perdent pas à la fin.", "Ils se perdent conversation après conversation."],
+      items: [
+        "Une hypothèse que vous n'avez pas vérifiée.",
+        "Une urgence que vous croyiez réelle.",
+        "Un impact que vous n'avez jamais établi.",
+        "Un processus de décision que personne n'a vraiment compris.",
+      ],
+      close: "Votre CRM ne vous le dira pas. Switch, si.",
     },
     how: {
       title: "Vos conversations. Votre playbook. La prochaine action.",
@@ -157,6 +168,16 @@ const CONTENT: Record<
       title: "A good meeting. But did the deal move forward?",
       text: "An interested customer hasn't decided yet.",
       strong: "Switch shows you what's established, what's missing, and what needs clarifying.",
+    },
+    stakes: {
+      lead: ["Most deals aren't lost at the end.", "They're lost conversation after conversation."],
+      items: [
+        "An assumption you didn't verify.",
+        "An urgency you thought existed.",
+        "An impact you never established.",
+        "A decision process nobody really understood.",
+      ],
+      close: "Your CRM won't tell you that. Switch will.",
     },
     how: {
       title: "Your conversations. Your playbook. The next action.",
@@ -309,6 +330,27 @@ export function SwitchPage() {
           <p className="mt-5 text-lg leading-relaxed text-muted">{t.problem.text}</p>
           <p className="mx-auto mt-8 max-w-2xl text-balance font-serif text-2xl leading-snug text-orange md:text-3xl">
             {t.problem.strong}
+          </p>
+        </div>
+      </section>
+
+      {/* 2b. THE STAKES — deals are lost conversation after conversation */}
+      <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[880px]">
+          <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
+            {t.stakes.lead[0]}
+            <br />
+            <span className="text-muted">{t.stakes.lead[1]}</span>
+          </h2>
+          <ul className="mt-10 grid gap-x-10 sm:grid-cols-2">
+            {t.stakes.items.map((item) => (
+              <li key={item} className="border-t border-line py-5 text-lg leading-relaxed text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-balance font-serif text-2xl leading-snug text-orange md:text-3xl">
+            {t.stakes.close}
           </p>
         </div>
       </section>
