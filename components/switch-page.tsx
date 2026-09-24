@@ -50,10 +50,10 @@ const CONTENT: Record<
     newTab: "ouvre un nouvel onglet",
     hero: {
       eyebrow: "SWITCH · VENTES COMPLEXES B2B",
-      title: "Pour que vendre cesse d'être un pari.",
+      title: "Vous croyez savoir où en sont vos deals. La plupart du temps, vous devinez.",
       description:
-        "Switch analyse vos conversations clients à partir de votre playbook commercial. Il distingue ce que le client a confirmé de ce que vous supposez encore — et vous aide à préparer la prochaine conversation.",
-      benefit: "Sachez où en est chaque deal. Et quoi faire ensuite.",
+        "Switch lit vos conversations clients et distingue ce que vous savez de ce que vous supposez.",
+      benefit: "Sachez quels deals sont réels. Ce qui manque. Et quoi faire ensuite.",
       shotAlt: "Analyse d'un deal dans Switch : ce qui est établi, ce qui manque, la prochaine action.",
     },
     problem: {
