@@ -26,6 +26,7 @@ const CONTENT: Record<
     noCard: string
     newTab: string
     hero: { eyebrow: string; title: string; description: string; benefit: string; shotAlt: string }
+    results: { title: string; items: string[] }
     problem: { title: string; text: string; strong: string }
     stakes: { lead: string[]; items: string[]; close: string }
     how: {
@@ -55,6 +56,14 @@ const CONTENT: Record<
         "Switch lit vos conversations clients et distingue ce que vous savez de ce que vous supposez.",
       benefit: "Sachez quels deals sont réels. Ce qui manque. Et quoi faire ensuite.",
       shotAlt: "Analyse d'un deal dans Switch : ce qui est établi, ce qui manque, la prochaine action.",
+    },
+    results: {
+      title: "Ce qui change quand vous arrêtez de deviner",
+      items: [
+        "Des cycles de vente divisés par deux.",
+        "Fini les remises.",
+        "On ne perd plus les deals qu'on aurait dû gagner.",
+      ],
     },
     problem: {
       title: "Un bon rendez-vous. Mais le deal a-t-il avancé ?",
@@ -163,6 +172,10 @@ const CONTENT: Record<
         "Switch reads your customer conversations and separates what you know from what you assume.",
       benefit: "Know which deals are real. What's missing. And what to do next.",
       shotAlt: "A deal analysis in Switch: what's established, what's missing, the next action.",
+    },
+    results: {
+      title: "What happens when you stop guessing",
+      items: ["Cut sales cycle in half.", "Stop discounting.", "No longer losing deals we should have won."],
     },
     problem: {
       title: "A good meeting. But did the deal move forward?",
@@ -318,6 +331,23 @@ export function SwitchPage() {
               className="h-auto w-full rounded-xl"
             />
           </figure>
+        </div>
+      </section>
+
+      {/* 1b. RESULTS — the outcomes once guessing stops */}
+      <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1180px]">
+          <h2 className="max-w-2xl text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
+            {t.results.title}
+          </h2>
+          <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+            {t.results.items.map((item) => (
+              <li key={item} className="flex flex-col gap-4 bg-paper p-8">
+                <span aria-hidden="true" className="h-1.5 w-8 rounded-full bg-orange" />
+                <span className="text-pretty font-serif text-2xl leading-snug text-navy">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
