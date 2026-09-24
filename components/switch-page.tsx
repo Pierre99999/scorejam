@@ -147,10 +147,10 @@ const CONTENT: Record<
     newTab: "opens in a new tab",
     hero: {
       eyebrow: "SWITCH · COMPLEX B2B SALES",
-      title: "So selling stops being a gamble.",
+      title: "You think you know where your deals stand. Most of the time, you're guessing.",
       description:
-        "Switch analyzes your customer conversations against your sales playbook. It separates what the customer confirmed from what you're still assuming — and helps you prepare the next conversation.",
-      benefit: "Know where every deal stands. And what to do next.",
+        "Switch reads your customer conversations and separates what you know from what you assume.",
+      benefit: "Know which deals are real. What's missing. And what to do next.",
       shotAlt: "A deal analysis in Switch: what's established, what's missing, the next action.",
     },
     problem: {
