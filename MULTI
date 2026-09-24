@@ -1,0 +1,35 @@
+import type { Metadata } from "next"
+import "./globals.css"
+
+export const metadata: Metadata = {
+title: "34 Elements",
+description: "Become a better entrepreneur",
+}
+
+export default function RootLayout({
+children,
+}: {
+children: React.ReactNode
+}) {
+return (
+  <html lang="en">
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+      {/* Early recovery for stale chunk errors */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){function b(){try{var u=new URL(window.location.href);u.searchParams.set("_",Date.now().toString());window.location.replace(u.toString())}catch(e){window.location.reload()}}function m(x){try{return typeof x==="string"?x:(x&&x.message)?String(x.message):""}catch{return""}}window.addEventListener("error",function(e){var msg=m(e);var file=e&&e.filename?String(e.filename):"";if(msg.includes("Loading chunk")||msg.includes("ChunkLoadError")||file.includes("/_next/static/chunks/")){b()}},true);window.addEventListener("unhandledrejection",function(e){var msg=m(e.reason);var n=e&&e.reason&&e.reason.name;if(msg.includes("Loading chunk")||n==="ChunkLoadError"){b()}},true);})();`,
+        }}
+      />
+    </head>
+    <body className="font-fira">
+      {children}
+    </body>
+  </html>
+)
+}

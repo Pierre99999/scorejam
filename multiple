@@ -1,0 +1,36 @@
+// app/compass/page.tsx
+<section id="top" className="relative py-16 md:py-24">
+{/* Hero section content here */}
+</section>
+
+// app/switch/page.tsx
+<section id="top" className="relative py-16 md:py-24">
+{/* Hero section content here */}
+</section>
+
+// app/page.tsx
+<ProgramSection
+id="compass"
+eyebrow="The Compass"
+title="Gain clarity"
+highlight="— move in the right direction"
+lead="Diagnose your company, set a clear course, and accelerate your growth."
+body="The Compass is a 4-week experience designed to help you gain strategic clarity, make better decisions, and align your business with what truly matters. You'll explore 10 essential strategic moves — the ones that shape your path, attract the right people, and help you grow without losing your way."
+cta="More information"
+ctaHref="/compass#top"
+background="white"
+features={[/* ...unchanged... */]}
+/>
+
+<ProgramSection
+id="switch"
+eyebrow="The Switch"
+title="Turn every conversation into a client"
+highlight="— reinvent how you sell"
+lead="Double your conversion rate by building strategy as the conversation unfolds."
+body="The Switch is a 2‑week experience designed to transform the way you sell — from the inside out. You'll work on 5 essential themes, each unlocking a key shift in how you show up, connect, and close."
+cta="More information"
+ctaHref="/switch#top"
+background="gray"
+features={[/* ...unchanged... */]}
+/>
