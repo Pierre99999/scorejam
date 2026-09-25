@@ -495,9 +495,9 @@ const CONTENT = {
         },
         {
           q: "Switch enregistre-t-il mes appels ?",
-          todo: "Préciser la fonctionnalité exacte actuelle.",
           a: [
-            "Switch peut analyser [comptes rendus / transcriptions / enregistrements — préciser exactement ce qui est pris en charge aujourd'hui].",
+            "Non.",
+            "En revanche, Switch peut lire les fichiers Gong, Fireflies, Granola, Otter, Teams, Zoom, etc.",
           ],
         },
         {
@@ -569,30 +569,29 @@ const CONTENT = {
         },
         {
           q: "Combien de temps faut-il pour mettre en place Switch ?",
-          todo: "Réponse réelle.",
           a: [
+            "Une conversation peut être lue dans la minute qui suit.",
             "Votre playbook fournit à Switch le contexte dont il a besoin pour comprendre comment votre entreprise vend, à qui, et ce qui compte dans un deal.",
           ],
         },
         {
           q: "Switch s'intègre-t-il à mon CRM ?",
-          todo: "Intégrations actuelles / roadmap.",
-          a: [],
+          a: ["Non."],
         },
         {
           q: "Switch s'intègre-t-il à Zoom, Teams ou Google Meet ?",
-          todo: "Fonctionnalité actuelle.",
-          a: [],
+          a: ["Non."],
         },
         {
           q: "Mes données clients sont-elles sécurisées ?",
-          todo: "Informations sécurité / hébergement / RGPD.",
-          a: [],
+          a: [
+            "Oui.",
+            "Tout est expliqué dans les mentions légales, les conditions et la politique de confidentialité, accessibles dans le logiciel.",
+          ],
         },
         {
           q: "Mes données servent-elles à entraîner des modèles d'IA ?",
-          todo: "Politique de données exacte.",
-          a: [],
+          a: ["Non."],
         },
         {
           q: "Combien coûte Switch ?",
@@ -1093,8 +1092,10 @@ const CONTENT = {
         },
         {
           q: "Does Switch record my calls?",
-          todo: "Insert exact current functionality here.",
-          a: ["Switch can analyze [meeting notes / transcripts / recordings — specify exactly what is currently supported]."],
+          a: [
+            "No.",
+            "It can, however, read Gong, Fireflies, Granola, Otter, Teams, Zoom files, and more.",
+          ],
         },
         {
           q: "What information does Switch use?",
@@ -1165,15 +1166,21 @@ const CONTENT = {
         },
         {
           q: "How long does Switch take to set up?",
-          todo: "Insert real answer.",
           a: [
+            "A conversation can be read within the minute.",
             "Your playbook provides Switch with the context it needs to understand how your company sells, who you sell to and what matters in a deal.",
           ],
         },
-        { q: "Does Switch integrate with my CRM?", todo: "Insert current integrations / roadmap.", a: [] },
-        { q: "Does Switch integrate with Zoom, Teams or Google Meet?", todo: "Insert current functionality.", a: [] },
-        { q: "Is my customer data secure?", todo: "Insert security / hosting / GDPR information.", a: [] },
-        { q: "Is my data used to train AI models?", todo: "Insert exact data policy.", a: [] },
+        { q: "Does Switch integrate with my CRM?", a: ["No."] },
+        { q: "Does Switch integrate with Zoom, Teams or Google Meet?", a: ["No."] },
+        {
+          q: "Is my customer data secure?",
+          a: [
+            "Yes.",
+            "Everything is explained in the legal notices, terms and privacy policy, available inside the software.",
+          ],
+        },
+        { q: "Is my data used to train AI models?", a: ["No."] },
         {
           q: "How much does Switch cost?",
           a: [
