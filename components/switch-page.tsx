@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -217,6 +218,18 @@ const CONTENT = {
       evolve: "Ces quatre questions évoluent après chaque conversation.",
       closeStrong: "Parce qu'un deal n'est pas une étape. C'est une décision en mouvement.",
       slot: "Les quatre questions évaluées sur un deal.",
+      chart: {
+        eyebrow: "L'ÉVOLUTION DES NOTES",
+        hint: "Cliquez un round pour lire ce qu'il a changé",
+        rounds: [
+          { id: "R1", date: "13 juil." },
+          { id: "R2", date: "14 juil." },
+          { id: "R3", date: "10 sept." },
+          { id: "R4", date: "10 sept." },
+          { id: "R5", date: "23 sept.", who: "Paul" },
+        ],
+        series: ["L'opportunité", "La capacité à gagner", "L'impact", "Momentum"],
+      },
     },
 
     before: {
@@ -247,7 +260,7 @@ const CONTENT = {
         "Le deal a-t-il réellement avancé ?",
       ],
       thenPrepare: "Puis Switch prépare la suite.",
-      flow: "Conversation → Analyse → Briefing → Conversation.",
+      flow: "Conversation → Analyse ��� Briefing → Conversation.",
       slot: "L'import d'une conversation et l'analyse qui met à jour le deal.",
     },
 
@@ -775,6 +788,18 @@ const CONTENT = {
       evolve: "These four questions evolve after every conversation.",
       closeStrong: "Because a deal isn't a stage. It's a decision in motion.",
       slot: "The four questions scored on a deal.",
+      chart: {
+        eyebrow: "HOW THE SCORES MOVED",
+        hint: "Click a round to read what it changed",
+        rounds: [
+          { id: "R1", date: "13 Jul" },
+          { id: "R2", date: "14 Jul" },
+          { id: "R3", date: "10 Sept" },
+          { id: "R4", date: "10 Sept" },
+          { id: "R5", date: "23 Sept", who: "Paul" },
+        ],
+        series: ["The opportunity", "The ability to win", "The impact", "Momentum"],
+      },
     },
 
     before: {
@@ -1281,6 +1306,180 @@ function LocalizedShot({ srcFr, srcEn, lang, alt }: { srcFr: string; srcEn: stri
   )
 }
 
+type ScoreChartData = {
+  eyebrow: string
+  hint: string
+  rounds: readonly { readonly id: string; readonly date: string; readonly who?: string }[]
+  series: readonly string[]
+}
+
+/** An interactive line chart showing how the four scores moved across rounds. */
+function ScoreChart({ data }: { data: ScoreChartData }) {
+  // Scores are language-independent, so they live here keyed by series/round index.
+  const values = [
+    [1.9, 2.6, 3.2, 4.0, 3.6],
+    [0.8, 1.2, 3.2, 3.6, 3.5],
+    [0.4, 0.5, 1.2, 1.4, 3.0],
+    [0.4, 0.4, 0.9, 1.3, 2.9],
+  ]
+  const dashes = ["none", "7 5", "1.5 4", "9 4 1.5 4"]
+  const last = data.rounds.length - 1
+  const [active, setActive] = useState(last)
+
+  const W = 720
+  const H = 300
+  const padL = 40
+  const padR = 60
+  const padT = 18
+  const padB = 26
+  const x = (i: number) => padL + ((W - padL - padR) * i) / last
+  const y = (v: number) => padT + (H - padT - padB) * (1 - v / 5)
+  const gridLines = [0, 1, 2, 3, 4, 5]
+
+  // Nudge overlapping end-of-line value labels apart so close scores stay legible.
+  const endLabels = values
+    .map((row, s) => ({ s, value: row[last], yy: y(row[last]) }))
+    .sort((a, b) => a.yy - b.yy)
+  const minGap = 15
+  for (let i = 1; i < endLabels.length; i++) {
+    if (endLabels[i].yy - endLabels[i - 1].yy < minGap) {
+      endLabels[i].yy = endLabels[i - 1].yy + minGap
+    }
+  }
+
+  return (
+    <figure className="rounded-2xl border border-line bg-paper p-5 md:p-6">
+      <figcaption className="mb-4">
+        <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{data.eyebrow}</p>
+        <p className="mt-2 font-mono text-sm text-muted">{data.hint}</p>
+      </figcaption>
+
+      <div className="flex flex-wrap gap-2">
+        {data.rounds.map((r, i) => {
+          const on = i === active
+          return (
+            <button
+              key={r.id}
+              type="button"
+              onClick={() => setActive(i)}
+              aria-pressed={on}
+              className={`rounded-lg border px-3.5 py-2.5 text-left transition-colors ${
+                on ? "border-navy/40 bg-navy/5" : "border-line bg-paper-2 hover:border-navy/25"
+              }`}
+            >
+              <span className="block font-mono text-sm font-bold text-navy">{r.id}</span>
+              <span className="mt-0.5 block font-mono text-xs text-muted">{r.date}</span>
+              {r.who ? <span className="block font-mono text-xs text-muted">{r.who}</span> : null}
+            </button>
+          )
+        })}
+      </div>
+
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        className="mt-6 h-auto w-full text-navy"
+        role="img"
+        aria-label={data.eyebrow}
+      >
+        {gridLines.map((g) => (
+          <g key={g}>
+            <line
+              x1={padL}
+              x2={W - padR}
+              y1={y(g)}
+              y2={y(g)}
+              stroke="currentColor"
+              strokeOpacity={0.12}
+            />
+            <text
+              x={padL - 10}
+              y={y(g)}
+              dominantBaseline="middle"
+              textAnchor="end"
+              className="font-mono"
+              fontSize={12}
+              fill="currentColor"
+              fillOpacity={0.5}
+            >
+              {g}
+            </text>
+          </g>
+        ))}
+
+        <line
+          x1={x(active)}
+          x2={x(active)}
+          y1={y(5)}
+          y2={y(0)}
+          stroke="currentColor"
+          strokeOpacity={0.35}
+          strokeDasharray="4 4"
+        />
+
+        {values.map((row, s) => (
+          <path
+            key={s}
+            d={row.map((v, i) => `${i === 0 ? "M" : "L"} ${x(i)} ${y(v)}`).join(" ")}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeDasharray={dashes[s] === "none" ? undefined : dashes[s]}
+          />
+        ))}
+
+        {values.map((row, s) =>
+          row.map((v, i) => (
+            <circle
+              key={`${s}-${i}`}
+              cx={x(i)}
+              cy={y(v)}
+              r={i === active ? 4.5 : 2.5}
+              fill="currentColor"
+            />
+          )),
+        )}
+
+        {endLabels.map((l) => (
+          <text
+            key={`lbl-${l.s}`}
+            x={W - padR + 8}
+            y={l.yy}
+            dominantBaseline="middle"
+            className="font-mono"
+            fontSize={13}
+            fontWeight={700}
+            fill="currentColor"
+          >
+            {l.value.toFixed(1)}
+          </text>
+        ))}
+      </svg>
+
+      <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+        {data.series.map((label, s) => (
+          <li key={label} className="flex items-center gap-2 text-navy">
+            <svg viewBox="0 0 30 8" className="h-2 w-[30px] shrink-0 text-navy" aria-hidden="true">
+              <line
+                x1={0}
+                x2={30}
+                y1={4}
+                y2={4}
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeDasharray={dashes[s] === "none" ? undefined : dashes[s]}
+              />
+            </svg>
+            <span className="text-sm">{label}</span>
+            <span className="font-mono text-sm font-semibold">{values[s][last].toFixed(1)}</span>
+          </li>
+        ))}
+      </ul>
+    </figure>
+  )
+}
+
 /** A numbered blank placeholder marking where a screenshot should go. */
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
@@ -1564,7 +1763,7 @@ export function SwitchPage() {
             </ol>
 
             <div className="lg:sticky lg:top-24">
-              <ShotSlot n={4} label={t.fourQ.slot} ratio="4 / 3" />
+              <ScoreChart data={t.fourQ.chart} />
             </div>
           </div>
 
