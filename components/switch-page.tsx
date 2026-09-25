@@ -127,6 +127,26 @@ const CONTENT = {
       remembersConversation: "Switch ne se souvient pas seulement de la conversation.",
       remembersDeal: "Il se souvient du deal.",
       slot: "La boucle d'un deal : conversation → briefing → conversation.",
+      flow: {
+        playbook: {
+          label: "SALES PLAYBOOK",
+          desc: "ce que vous vendez, à qui, contre qui — et ce que le directeur commercial sait",
+        },
+        sameRef: "la même référence",
+        boxes: [
+          { n: 1, title: "Le deal", desc: "site et documents lus, puis confrontés au playbook" },
+          { n: 2, title: "Le briefing", desc: "les questions que ce moment du deal réclame" },
+          { n: 3, title: "La conversation", desc: "capturée, attribuée à des voix pesées selon leur rôle" },
+          { n: 4, title: "Le diagnostic", desc: "trois portes, un momentum, vingt critères plafonnés" },
+        ],
+        connectors: ["ce qui manque", "à établir", "ce qui a été dit"],
+        brace: "le seul geste du vendeur",
+        feedback: "round suivant : le diagnostic écrit le briefing",
+        note: {
+          label: "AUCUNE SAISIE DEMANDÉE AU VENDEUR",
+          desc: "le contexte, les questions, la lecture et les notes sont produits — il n'y a qu'une conversation à importer",
+        },
+      },
     },
 
     combines: {
@@ -670,6 +690,26 @@ const CONTENT = {
       remembersConversation: "Switch doesn't just remember the conversation.",
       remembersDeal: "It remembers the deal.",
       slot: "One deal's loop: conversation → briefing → conversation.",
+      flow: {
+        playbook: {
+          label: "SALES PLAYBOOK",
+          desc: "what you sell, to whom, against whom — and what the sales director knows",
+        },
+        sameRef: "the same reference",
+        boxes: [
+          { n: 1, title: "The deal", desc: "site and documents read, then checked against the playbook" },
+          { n: 2, title: "The briefing", desc: "the questions this moment of the deal calls for" },
+          { n: 3, title: "The conversation", desc: "captured, attributed to voices weighted by their role" },
+          { n: 4, title: "The diagnostic", desc: "three gates, one momentum, twenty capped criteria" },
+        ],
+        connectors: ["what's missing", "to establish", "what was said"],
+        brace: "the seller's only move",
+        feedback: "next round: the diagnostic writes the briefing",
+        note: {
+          label: "NO INPUT ASKED OF THE SELLER",
+          desc: "the context, the questions, the read and the notes are produced — there's only a conversation to import",
+        },
+      },
     },
 
     combines: {
@@ -1099,6 +1139,94 @@ function Emph({ text, strongClass = "font-semibold text-navy" }: { text: string;
   )
 }
 
+type FlowData = {
+  playbook: { label: string; desc: string }
+  sameRef: string
+  boxes: readonly { n: number; title: string; desc: string }[]
+  connectors: readonly string[]
+  brace: string
+  feedback: string
+  note: { label: string; desc: string }
+}
+
+/** Slot 3 — the deal→briefing→conversation→diagnostic pipeline, rendered natively so it localizes. */
+function FlowDiagram({ data }: { data: FlowData }) {
+  const green = "#2f7d6b"
+  return (
+    <figure className="overflow-hidden rounded-2xl border border-line bg-paper-2 p-6 md:p-10">
+      {/* Playbook banner */}
+      <div className="rounded-xl border border-navy/25 bg-paper px-6 py-5 text-center">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-navy">{data.playbook.label}</p>
+        <p className="mt-2 text-pretty leading-relaxed text-muted">{data.playbook.desc}</p>
+      </div>
+
+      {/* Feeds all steps */}
+      <p
+        className="mt-4 text-center font-mono text-xs tracking-[0.12em]"
+        style={{ color: green }}
+      >
+        {"↓ "}
+        {data.sameRef}
+        {" ↓"}
+      </p>
+
+      {/* Steps */}
+      <ol className="mt-4 flex flex-col items-stretch gap-4 md:flex-row md:items-start">
+        {data.boxes.map((box, i) => (
+          <li key={box.n} className="flex flex-col md:flex-1 md:flex-row md:items-start">
+            <div className="flex-1">
+              <div className="rounded-xl border border-navy/25 bg-paper p-5">
+                <p className="font-mono text-xs text-muted">{box.n}</p>
+                <p className="mt-2 font-semibold text-navy-deep">{box.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{box.desc}</p>
+              </div>
+              {/* Brace under step 3 */}
+              {box.n === 3 && (
+                <div className="mt-3 text-center">
+                  <div className="mx-auto h-2 w-full rounded-b-md border-x border-b" style={{ borderColor: green }} />
+                  <p className="mt-2 font-mono text-xs tracking-[0.1em]" style={{ color: green }}>
+                    {data.brace}
+                  </p>
+                </div>
+              )}
+            </div>
+            {/* Connector to next step */}
+            {i < data.boxes.length - 1 && (
+              <div className="flex shrink-0 flex-col items-center justify-center gap-1 py-2 md:w-24 md:self-stretch md:py-0 md:pt-8">
+                <span className="text-center font-mono text-[0.7rem] leading-tight text-muted">
+                  {data.connectors[i]}
+                </span>
+                <span aria-hidden="true" className="text-lg text-navy md:rotate-0" style={{ transform: "none" }}>
+                  <span className="md:hidden">↓</span>
+                  <span className="hidden md:inline">→</span>
+                </span>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+
+      {/* Feedback loop */}
+      <p className="mt-6 text-center font-mono text-xs tracking-[0.1em] text-muted">
+        <span aria-hidden="true" className="mr-2">
+          ↺
+        </span>
+        {data.feedback}
+      </p>
+
+      {/* No-input note */}
+      <div className="mt-6 rounded-xl border border-dashed p-5" style={{ borderColor: green }}>
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em]" style={{ color: green }}>
+          {data.note.label}
+        </p>
+        <p className="mt-2 text-pretty leading-relaxed" style={{ color: green }}>
+          {data.note.desc}
+        </p>
+      </div>
+    </figure>
+  )
+}
+
 /** A delivered screenshot, framed like the placeholders it replaces. */
 type DecisionPanelData = {
   aside: string
@@ -1363,7 +1491,7 @@ export function SwitchPage() {
           </ol>
 
           <div className="mt-12">
-            <ShotSlot n={3} label={t.loop.slot} ratio="16 / 7" />
+            <FlowDiagram data={t.loop.flow} />
           </div>
 
           <div className="mt-12 max-w-2xl">
