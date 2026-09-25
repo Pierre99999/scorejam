@@ -1839,6 +1839,25 @@ function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; r
   )
 }
 
+function CtaBand({ label, newTab }: { label: string; newTab: string }) {
+  return (
+    <section className="border-b border-line bg-paper-2 px-6 py-14 md:px-10 md:py-16">
+      <div className="mx-auto flex max-w-[880px] justify-center">
+        <a
+          href={SIGNUP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-navy-deep transition-transform hover:-translate-y-0.5"
+        >
+          {label}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          <span className="sr-only">({newTab})</span>
+        </a>
+      </div>
+    </section>
+  )
+}
+
 export function SwitchPage() {
   const { language } = useLanguage()
   const lang: Lang = language === "en" ? "en" : "fr"
@@ -2044,6 +2063,8 @@ export function SwitchPage() {
         </div>
       </section>
 
+      <CtaBand label={t.cta} newTab={t.newTab} />
+
       {/* 6. THREE INGREDIENTS */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1180px]">
@@ -2195,6 +2216,8 @@ export function SwitchPage() {
           <p className="mt-2 font-serif text-2xl leading-snug text-orange md:text-3xl">{t.between.objYes}</p>
         </div>
       </section>
+
+      <CtaBand label={t.cta} newTab={t.newTab} />
 
       {/* 11. FOR SALESPEOPLE */}
       <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
@@ -2388,6 +2411,8 @@ export function SwitchPage() {
           </div>
         </div>
       </section>
+
+      <CtaBand label={t.cta} newTab={t.newTab} />
 
       {/* 17. WHAT SWITCH CAN HELP YOU DO */}
       <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
