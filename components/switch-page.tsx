@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Sparkle } from "lucide-react"
 
 const SIGNUP_URL = "https://www.switch34.com/signup"
 
@@ -246,6 +246,7 @@ const CONTENT = {
       ],
       close: "Vous arrivez au rendez-vous en sachant **pourquoi vous y êtes.**",
       slot: "Le briefing d'avant rendez-vous.",
+      cta: "Créer le briefing du round 3",
     },
 
     after: {
@@ -816,6 +817,7 @@ const CONTENT = {
       ],
       close: "You walk into the meeting knowing **why you're there.**",
       slot: "The pre-meeting briefing.",
+      cta: "Write the round 3 briefing",
     },
 
     after: {
@@ -1481,6 +1483,18 @@ function ScoreChart({ data }: { data: ScoreChartData }) {
 }
 
 /** A numbered blank placeholder marking where a screenshot should go. */
+function BriefingCta({ label }: { label: string }) {
+  return (
+    <button
+      type="button"
+      className="inline-flex items-center gap-3 rounded-xl bg-orange px-7 py-4 font-semibold text-paper shadow-sm transition-colors hover:bg-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+    >
+      <Sparkle className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} aria-hidden="true" />
+      <span className="text-lg">{label}</span>
+    </button>
+  )
+}
+
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
     <figure
@@ -1801,7 +1815,9 @@ export function SwitchPage() {
             </p>
           </div>
 
-          <ShotSlot n={5} label={t.before.slot} ratio="3 / 4" />
+          <div className="flex items-center justify-center">
+            <BriefingCta label={t.before.cta} />
+          </div>
         </div>
       </section>
 
