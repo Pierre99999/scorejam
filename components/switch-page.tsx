@@ -25,6 +25,18 @@ const CONTENT = {
       description: "Switch lit vos conversations clients et distingue ce que vous **savez** de ce que vous **supposez**.",
       benefit: ["Sachez quels deals sont réels.", "Ce qui manque.", "Et quoi faire ensuite."],
       slot: "L'analyse d'un deal : ce qui est établi, ce qui manque, la prochaine action.",
+      panel: {
+        aside: "OÙ EN EST LE DEAL",
+        round: "Round 6",
+        eyebrow: "LA DÉCISION APPROCHE",
+        title: "Une décision est prévue le 30 septembre — dans 5 jours.",
+        lead: "Ce sur quoi elle va se jouer, et où vous êtes encore court — du plus fragile au moins fragile :",
+        items: [
+          { label: "Réalité d'adoption", score: "2,5" },
+          { label: "Crédibilité et perception", score: "2,5" },
+          { label: "Adéquation problème/solution", score: "2,9" },
+        ],
+      },
     },
 
     crm: {
@@ -559,6 +571,18 @@ const CONTENT = {
       description: "Switch reads your customer conversations and separates what you **know** from what you **assume**.",
       benefit: ["Know which deals are real.", "What's missing.", "And what to do next."],
       slot: "A deal analysis: what's established, what's missing, the next action.",
+      panel: {
+        aside: "WHERE THE DEAL STANDS",
+        round: "Round 6",
+        eyebrow: "THE DECISION IS COMING",
+        title: "A decision is expected on September 30 — in 5 days.",
+        lead: "What it will hinge on, and where you're still short — from most fragile to least fragile:",
+        items: [
+          { label: "Adoption reality", score: "2.5" },
+          { label: "Credibility and perception", score: "2.5" },
+          { label: "Problem/solution fit", score: "2.9" },
+        ],
+      },
     },
 
     crm: {
@@ -1076,13 +1100,40 @@ function Emph({ text, strongClass = "font-semibold text-navy" }: { text: string;
 }
 
 /** A delivered screenshot, framed like the placeholders it replaces. */
-function ShotImage({ src, alt, ratio = "16 / 10" }: { src: string; alt: string; ratio?: string }) {
+type DecisionPanelData = {
+  aside: string
+  round: string
+  eyebrow: string
+  title: string
+  lead: string
+  items: readonly { label: string; score: string }[]
+}
+
+/** Slot 1 — the "decision approaching" deal read, rendered natively so it localizes. */
+function DecisionPanel({ panel }: { panel: DecisionPanelData }) {
   return (
-    <figure
-      className="overflow-hidden rounded-2xl border border-line bg-paper-2"
-      style={{ aspectRatio: ratio }}
-    >
-      <img src={src || "/placeholder.svg"} alt={alt} className="h-full w-full object-contain" />
+    <figure className="overflow-hidden rounded-2xl border border-line bg-paper-2 p-6 md:p-8">
+      <div className="grid gap-6 sm:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] sm:gap-8">
+        <div className="text-right sm:border-none">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{panel.aside}</p>
+          <p className="mt-2 font-mono text-sm text-muted">{panel.round}</p>
+        </div>
+        <div className="border-l-2 border-orange-deep pl-5 md:pl-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange">{panel.eyebrow}</p>
+          <p className="mt-3 text-balance font-serif text-2xl font-normal leading-[1.15] text-navy-deep md:text-[1.75rem]">
+            {panel.title}
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-muted">{panel.lead}</p>
+          <ul className="mt-4 space-y-2">
+            {panel.items.map((it, i) => (
+              <li key={i} className="text-base leading-relaxed text-navy">
+                <span aria-hidden="true" className="mr-2 text-muted">·</span>
+                {it.label} <span className="text-muted">— {it.score}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </figure>
   )
 }
@@ -1170,7 +1221,7 @@ export function SwitchPage() {
             </div>
           </div>
 
-          <ShotImage src={`/images/switch-portfolio-${lang}.png`} alt={t.hero.slot} ratio="2 / 1" />
+          <DecisionPanel panel={t.hero.panel} />
         </div>
       </section>
 
