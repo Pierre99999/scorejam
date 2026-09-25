@@ -1829,23 +1829,6 @@ function PortfolioScatter({ data }: { data: ScatterData }) {
   )
 }
 
-function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
-  return (
-    <figure
-      className="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-line bg-paper-2 px-6 py-10 text-center"
-      style={{ aspectRatio: ratio }}
-    >
-      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-orange font-mono text-base font-semibold text-orange">
-        {n}
-      </span>
-      <figcaption className="max-w-sm text-sm leading-relaxed text-muted">
-        <span className="font-mono text-xs uppercase tracking-[0.14em] text-orange">Visuel {n}</span>
-        <span className="mt-2 block">{label}</span>
-      </figcaption>
-    </figure>
-  )
-}
-
 function CtaBand({ label, newTab }: { label: string; newTab: string }) {
   return (
     <section className="border-b border-line bg-paper-2 px-6 py-14 md:px-10 md:py-16">
@@ -2228,24 +2211,20 @@ export function SwitchPage() {
 
       {/* 11. FOR SALESPEOPLE */}
       <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.forReps.eyebrow}</p>
-            <h2 className="mt-4 text-balance font-serif text-3xl font-normal leading-[1.1] text-navy md:text-4xl">
-              {t.forReps.title}
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted">{t.forReps.intro}</p>
-            <ul className="mt-8 grid gap-x-8 sm:grid-cols-2">
-              {t.forReps.items.map((item) => (
-                <li key={item} className="border-t border-line py-3 leading-relaxed text-navy">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-pretty font-serif text-2xl leading-snug text-orange">{t.forReps.close}</p>
-          </div>
-
-          <ShotSlot n={7} label={t.forReps.slot} ratio="4 / 3" />
+        <div className="mx-auto max-w-[880px]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.forReps.eyebrow}</p>
+          <h2 className="mt-4 text-balance font-serif text-3xl font-normal leading-[1.1] text-navy md:text-4xl">
+            {t.forReps.title}
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted">{t.forReps.intro}</p>
+          <ul className="mt-8 grid gap-x-8 sm:grid-cols-2">
+            {t.forReps.items.map((item) => (
+              <li key={item} className="border-t border-line py-3 leading-relaxed text-navy">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-pretty font-serif text-2xl leading-snug text-orange">{t.forReps.close}</p>
         </div>
       </section>
 
