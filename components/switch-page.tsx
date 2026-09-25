@@ -345,6 +345,19 @@ const CONTENT = {
       notDashboard: "Switch n'est pas un tableau de bord de plus à surveiller.",
       isWay: "C'est une façon de savoir où votre attention a de la valeur.",
       slot: "Mission Control : la vue portefeuille des opportunités.",
+      scatter: {
+        legend: {
+          inplay: "en cours",
+          stale: "rien depuis 10 jours",
+          off: "hors playbook",
+          decision: "date de décision fixée",
+        },
+        zones: ["L'opportunité", "La capacité à gagner", "L'impact"],
+        xLeft: "Début",
+        xCenter: "Portes franchies",
+        xRight: "Signature",
+        yLabel: "Momentum",
+      },
     },
 
     methodology: {
@@ -926,6 +939,19 @@ const CONTENT = {
       notDashboard: "Switch isn't another dashboard to monitor.",
       isWay: "It's a way to know where your attention is worth something.",
       slot: "Mission Control: the portfolio view of opportunities.",
+      scatter: {
+        legend: {
+          inplay: "in play",
+          stale: "nothing for 10 days",
+          off: "off playbook",
+          decision: "decision date set",
+        },
+        zones: ["The opportunity", "The ability to win", "The impact"],
+        xLeft: "Start",
+        xCenter: "Gates carried",
+        xRight: "Signature",
+        yLabel: "Momentum",
+      },
     },
 
     methodology: {
@@ -1579,6 +1605,223 @@ function ImportDialog({
   )
 }
 
+type ScatterData = {
+  legend: { inplay: string; stale: string; off: string; decision: string }
+  zones: readonly string[]
+  xLeft: string
+  xCenter: string
+  xRight: string
+  yLabel: string
+}
+
+/**
+ * Slot 8 — the portfolio scatter (Momentum × gates carried). The point geometry is
+ * language-independent, so it lives here; only the legend/zone/axis copy is translated.
+ * x = gates carried (0–3), y = momentum (0–5). base "stale" = hatched (nothing for 10 days),
+ * "inplay" = open ring; `off` adds an off-playbook dot, `decision` recolors the ring green.
+ */
+const SCATTER_POINTS: readonly {
+  name: string
+  x: number
+  y: number
+  r: number
+  base: "inplay" | "stale"
+  off?: boolean
+  decision?: boolean
+  side?: "left" | "right"
+}[] = [
+  { name: "Kelvyn", x: 2.95, y: 4.7, r: 24, base: "stale", side: "left" },
+  { name: "BD Gest", x: 1.5, y: 3.05, r: 26, base: "inplay", decision: true, off: true, side: "right" },
+  { name: "Casely", x: 0.62, y: 2.45, r: 22, base: "inplay", side: "right" },
+  { name: "Teedup", x: 1.42, y: 1.75, r: 22, base: "stale", side: "right" },
+  { name: "Lemlist", x: 1.66, y: 1.58, r: 26, base: "stale", off: true, side: "right" },
+  { name: "Bubble Teach", x: 1.46, y: 1.48, r: 24, base: "stale", side: "right" },
+  { name: "Ekstere", x: 0.75, y: 1.45, r: 24, base: "stale", side: "right" },
+  { name: "Kmotors", x: 1.34, y: 1.12, r: 22, base: "stale", side: "right" },
+  { name: "taamis", x: 1.2, y: 1.05, r: 22, base: "stale", side: "left" },
+  { name: "haliro", x: 1.52, y: 1.05, r: 20, base: "inplay", side: "right" },
+  { name: "Ortec", x: 0.36, y: 1.1, r: 24, base: "stale", side: "right" },
+  { name: "buddy", x: 0.52, y: 0.92, r: 30, base: "stale", side: "right" },
+  { name: "boring cash…", x: 0.26, y: 0.86, r: 24, base: "stale", side: "right" },
+  { name: "memory", x: 0.66, y: 0.68, r: 34, base: "stale", side: "right" },
+  { name: "Kobi", x: 0.26, y: 0.52, r: 24, base: "stale", side: "right" },
+  { name: "Reform", x: 0.58, y: 0.2, r: 24, base: "inplay", side: "right" },
+  { name: "Tonton gege", x: 0.2, y: 0.05, r: 22, base: "stale", side: "right" },
+]
+
+function PortfolioScatter({ data }: { data: ScatterData }) {
+  const RED = "#9e3b2a"
+  const GREEN = "#1f7a5c"
+  const W = 1000
+  const H = 520
+  const padL = 64
+  const padR = 16
+  const padT = 56
+  const padB = 66
+  const px = (v: number) => padL + (v / 3) * (W - padL - padR)
+  const py = (v: number) => H - padB - (v / 5) * (H - padT - padB)
+  const zoneTints = ["#FCFBF9", "#F0E9DD", "#EBE2D1"]
+  const yTicks: { v: number; label: string }[] = [
+    { v: 0, label: "0" },
+    { v: 2.5, label: "2,5" },
+    { v: 5, label: "5" },
+  ]
+
+  return (
+    <figure className="rounded-2xl border border-line bg-paper p-5 md:p-6">
+      {/* Legend */}
+      <figcaption className="mb-2 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-navy">
+        <span className="inline-flex items-center gap-2">
+          <svg width="18" height="18" aria-hidden="true">
+            <circle cx="9" cy="9" r="7" fill="none" stroke={RED} strokeWidth="2" />
+          </svg>
+          {data.legend.inplay}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <svg width="18" height="18" aria-hidden="true">
+            <defs>
+              <pattern id="legend-hatch" width="4" height="4" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="4" stroke="#7d8296" strokeWidth="1.1" />
+              </pattern>
+            </defs>
+            <circle cx="9" cy="9" r="7" fill="url(#legend-hatch)" stroke={RED} strokeWidth="1.5" />
+          </svg>
+          {data.legend.stale}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <svg width="14" height="14" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill={RED} />
+          </svg>
+          {data.legend.off}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <svg width="18" height="18" aria-hidden="true">
+            <circle cx="9" cy="9" r="7" fill="none" stroke={GREEN} strokeWidth="2" />
+          </svg>
+          {data.legend.decision}
+        </span>
+      </figcaption>
+
+      <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label={data.yLabel}>
+        <defs>
+          <pattern id="scatter-hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <rect width="6" height="6" fill="#FBFAF7" />
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#7d8296" strokeWidth="1.2" />
+          </pattern>
+        </defs>
+
+        {/* Zone bands + labels */}
+        {data.zones.map((z, i) => (
+          <g key={i}>
+            <rect x={px(i)} y={padT} width={px(i + 1) - px(i)} height={H - padT - padB} fill={zoneTints[i]} />
+            <text
+              x={px(i) + 12}
+              y={padT - 18}
+              className="font-sans"
+              fontSize={17}
+              fill="#4a4a4a"
+            >
+              <tspan fontWeight={700} fill="#1a1a1a">{`${i + 1} · `}</tspan>
+              {z}
+            </text>
+          </g>
+        ))}
+
+        {/* Y grid + ticks */}
+        {yTicks.map((t) => (
+          <g key={t.v}>
+            <line
+              x1={padL}
+              x2={W - padR}
+              y1={py(t.v)}
+              y2={py(t.v)}
+              stroke="#1A2B5C"
+              strokeOpacity={0.14}
+              strokeDasharray={t.v === 2.5 ? "4 5" : undefined}
+            />
+            <text
+              x={padL - 12}
+              y={py(t.v)}
+              dominantBaseline="middle"
+              textAnchor="end"
+              className="font-sans"
+              fontSize={15}
+              fill="#6b6b6b"
+            >
+              {t.label}
+            </text>
+          </g>
+        ))}
+
+        {/* Y axis label */}
+        <text
+          x={18}
+          y={(padT + (H - padB)) / 2}
+          transform={`rotate(-90 18 ${(padT + (H - padB)) / 2})`}
+          textAnchor="middle"
+          className="font-sans"
+          fontSize={15}
+          fill="#6b6b6b"
+        >
+          {data.yLabel}
+        </text>
+
+        {/* X ticks (1,2,3) */}
+        {[1, 2, 3].map((v) => (
+          <text
+            key={v}
+            x={px(v)}
+            y={H - padB + 26}
+            textAnchor="middle"
+            className="font-sans"
+            fontSize={15}
+            fill="#6b6b6b"
+          >
+            {v}
+          </text>
+        ))}
+
+        {/* X axis captions */}
+        <text x={padL} y={H - 12} textAnchor="start" className="font-sans" fontSize={15} fill="#6b6b6b">
+          {data.xLeft}
+        </text>
+        <text x={px(1.5)} y={H - 12} textAnchor="middle" className="font-sans" fontSize={15} fill="#6b6b6b">
+          {data.xCenter}
+        </text>
+        <text x={W - padR} y={H - 12} textAnchor="end" className="font-sans" fontSize={15} fill="#6b6b6b">
+          {data.xRight}
+        </text>
+
+        {/* Bubbles */}
+        {SCATTER_POINTS.map((p) => {
+          const cx = px(p.x)
+          const cy = py(p.y)
+          const ring = p.decision ? GREEN : RED
+          const fill = p.base === "stale" ? "url(#scatter-hatch)" : "#FBFAF7"
+          const labelX = p.side === "left" ? cx - p.r - 8 : cx + p.r + 8
+          return (
+            <g key={p.name}>
+              <circle cx={cx} cy={cy} r={p.r} fill={fill} stroke={ring} strokeWidth={p.decision ? 2.5 : 1.6} />
+              {p.off ? <circle cx={cx + p.r * 0.72} cy={cy - p.r * 0.72} r={5.5} fill={RED} /> : null}
+              <text
+                x={labelX}
+                y={cy}
+                dominantBaseline="middle"
+                textAnchor={p.side === "left" ? "end" : "start"}
+                className="font-mono"
+                fontSize={15}
+                fill="#3a3a3a"
+              >
+                {p.name}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
+    </figure>
+  )
+}
+
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
     <figure
@@ -2022,7 +2265,7 @@ export function SwitchPage() {
           </div>
 
           <div className="mt-12">
-            <ShotSlot n={8} label={t.mission.slot} ratio="16 / 9" />
+            <PortfolioScatter data={t.mission.scatter} />
           </div>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
