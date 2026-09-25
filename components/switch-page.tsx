@@ -1138,6 +1138,21 @@ function DecisionPanel({ panel }: { panel: DecisionPanelData }) {
   )
 }
 
+/** A localized screenshot that follows the FR/EN toggle. */
+function LocalizedShot({ srcFr, srcEn, lang, alt }: { srcFr: string; srcEn: string; lang: Lang; alt: string }) {
+  return (
+    <figure className="overflow-hidden rounded-2xl border border-line bg-paper-2">
+      <img
+        src={lang === "en" ? srcEn : srcFr}
+        alt={alt}
+        className="h-auto w-full"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  )
+}
+
 /** A numbered blank placeholder marking where a screenshot should go. */
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
@@ -1269,7 +1284,12 @@ export function SwitchPage() {
             </ol>
 
             <div className="lg:sticky lg:top-24">
-              <ShotSlot n={2} label={t.meeting.slot} ratio="4 / 5" />
+              <LocalizedShot
+                srcFr="/images/switch-gates-fr.png"
+                srcEn="/images/switch-gates-en.png"
+                lang={lang}
+                alt={t.meeting.slot}
+              />
               <p className="mt-8 text-lg leading-relaxed text-muted">{t.meeting.notSummary}</p>
               <p className="mt-2 font-serif text-2xl leading-snug text-navy md:text-3xl">{t.meeting.clearer}</p>
             </div>
