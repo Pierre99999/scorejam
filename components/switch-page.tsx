@@ -1075,6 +1075,18 @@ function Emph({ text, strongClass = "font-semibold text-navy" }: { text: string;
   )
 }
 
+/** A delivered screenshot, framed like the placeholders it replaces. */
+function ShotImage({ src, alt, ratio = "16 / 10" }: { src: string; alt: string; ratio?: string }) {
+  return (
+    <figure
+      className="overflow-hidden rounded-2xl border border-line bg-paper-2"
+      style={{ aspectRatio: ratio }}
+    >
+      <img src={src || "/placeholder.svg"} alt={alt} className="h-full w-full object-contain" />
+    </figure>
+  )
+}
+
 /** A numbered blank placeholder marking where a screenshot should go. */
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
@@ -1158,7 +1170,7 @@ export function SwitchPage() {
             </div>
           </div>
 
-          <ShotSlot n={1} label={t.hero.slot} />
+          <ShotImage src={`/images/switch-portfolio-${lang}.png`} alt={t.hero.slot} ratio="2 / 1" />
         </div>
       </section>
 
