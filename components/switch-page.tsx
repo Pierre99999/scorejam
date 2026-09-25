@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { ArrowRight, Sparkle } from "lucide-react"
+import { ArrowRight, Sparkle, X } from "lucide-react"
 
 const SIGNUP_URL = "https://www.switch34.com/signup"
 
@@ -261,8 +261,18 @@ const CONTENT = {
         "Le deal a-t-il réellement avancé ?",
       ],
       thenPrepare: "Puis Switch prépare la suite.",
-      flow: "Conversation → Analyse ��� Briefing → Conversation.",
+      flow: "Conversation → Analyse → Briefing → Conversation.",
       slot: "L'import d'une conversation et l'analyse qui met à jour le deal.",
+      dialog: {
+        title: "Importer la conversation du round 6",
+        desc: "Round 6. Switch le lit, attribue chaque propos à celui qui l'a tenu, note les critères et met à jour le diagnostic.",
+        drop: "Choisir un fichier — Gong, Fireflies, Granola, Otter, Teams, Zoom…",
+        or: "ou collez-le",
+        paste: "Collez le transcript. Gardez les noms des intervenants : Switch pondère chaque propos selon le rôle de celui qui l'a dit.",
+        more: "Un élément est venu avec cette conversation",
+        analyze: "Analyser la conversation",
+        manual: "Pas de transcript ? Saisir à la main",
+      },
     },
 
     between: {
@@ -834,6 +844,16 @@ const CONTENT = {
       thenPrepare: "Then Switch prepares the next move.",
       flow: "Conversation → Analysis → Briefing → Conversation.",
       slot: "Importing a conversation and the analysis that updates the deal.",
+      dialog: {
+        title: "Import the round 6 conversation",
+        desc: "Round 6. Switch reads it, attributes each statement to whoever made it, scores the criteria and updates the diagnostic.",
+        drop: "Choose a file — Gong, Fireflies, Granola, Otter, Teams, Zoom…",
+        or: "or paste it",
+        paste: "Paste the transcript. Keep the speakers' names: Switch weighs each statement by the role of whoever said it.",
+        more: "Something else came with this conversation",
+        analyze: "Analyse the conversation",
+        manual: "No transcript? Type it in",
+      },
     },
 
     between: {
@@ -1495,6 +1515,70 @@ function BriefingCta({ label }: { label: string }) {
   )
 }
 
+function ImportDialog({
+  d,
+}: {
+  d: {
+    title: string
+    desc: string
+    drop: string
+    or: string
+    paste: string
+    more: string
+    analyze: string
+    manual: string
+  }
+}) {
+  return (
+    <figure className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm">
+      <div className="flex items-start justify-between gap-4 px-7 pt-7">
+        <h3 className="text-pretty font-serif text-2xl font-normal leading-tight text-navy">{d.title}</h3>
+        <span
+          className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center text-muted"
+          aria-hidden="true"
+        >
+          <X className="h-5 w-5" strokeWidth={1.75} />
+        </span>
+      </div>
+      <p className="px-7 pt-3 text-base leading-relaxed text-muted">{d.desc}</p>
+
+      <div className="px-7 pt-6">
+        <div className="flex items-center justify-center rounded-lg border-2 border-dashed border-line px-6 py-8 text-center">
+          <span className="text-pretty text-base font-semibold text-navy">{d.drop}</span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4 px-7 pt-5">
+        <span className="h-px flex-1 bg-line" />
+        <span className="font-mono text-sm text-muted">{d.or}</span>
+        <span className="h-px flex-1 bg-line" />
+      </div>
+
+      <div className="px-7 pt-4">
+        <div className="min-h-[140px] rounded-md border-b-2 border-navy/70 bg-paper-2 px-5 py-4">
+          <p className="text-pretty text-base leading-relaxed text-muted">{d.paste}</p>
+        </div>
+      </div>
+
+      <p className="px-7 pt-6 text-base font-semibold text-navy">
+        <span className="text-muted">+ </span>
+        {d.more}
+      </p>
+
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-7 pb-7 pt-5">
+        <span className="inline-flex items-center gap-2 rounded-lg bg-orange/40 px-6 py-3.5 font-semibold text-paper">
+          <Sparkle className="h-4 w-4 shrink-0" fill="currentColor" strokeWidth={0} aria-hidden="true" />
+          {d.analyze}
+        </span>
+        <span className="inline-flex items-center gap-2 text-base text-muted">
+          {d.manual}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </span>
+      </div>
+    </figure>
+  )
+}
+
 function ShotSlot({ n, label, ratio = "16 / 10" }: { n: number; label: string; ratio?: string }) {
   return (
     <figure
@@ -1824,7 +1908,7 @@ export function SwitchPage() {
       {/* 9. AFTER THE MEETING */}
       <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
-          <ShotSlot n={6} label={t.after.slot} ratio="4 / 3" />
+          <ImportDialog d={t.after.dialog} />
 
           <div>
             <SectionHeading lines={t.after.title} />
