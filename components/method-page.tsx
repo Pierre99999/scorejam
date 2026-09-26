@@ -77,18 +77,6 @@ export function MethodPage({ method }: { method: MethodKey }) {
 
             <div className="mt-9 flex flex-wrap gap-3">
               {method === "sales" && (
-                <a
-                  href={links.switchApp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-navy-deep transition-transform hover:-translate-y-0.5"
-                >
-                  {all.common.tryApp}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  <span className="sr-only">({all.common.newTab})</span>
-                </a>
-              )}
-              {method === "sales" && (
                 <Link
                   href="/switch"
                   className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
 import { links } from "@/lib/site-content"
-import { Mail, ArrowRight } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export function SiteFooter() {
   const { language } = useLanguage()
@@ -30,16 +30,6 @@ export function SiteFooter() {
               <span className="font-serif text-2xl text-white">34 Elements</span>
             </Link>
             <p className="mt-3 max-w-sm leading-relaxed text-white/70">{f.tagline}</p>
-            <a
-              href={links.switchApp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3 font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:bg-orange/90"
-            >
-              {t.common.tryApp}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              <span className="sr-only">({t.common.newTab})</span>
-            </a>
           </div>
 
           {/* Methods */}
