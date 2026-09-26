@@ -72,19 +72,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        {/* Right: try, language, CTA, mobile trigger */}
+        {/* Right: language, CTA, mobile trigger */}
         <div className="flex flex-none items-center gap-3">
-          {/* Highest-intent action: kept visible at every breakpoint */}
-          <a
-            href={links.switchApp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:bg-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2"
-          >
-            {translations[language].common.tryApp}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">({translations[language].common.newTab})</span>
-          </a>
           <button
             className="hidden rounded-full border border-line px-3 py-1.5 text-xs font-semibold text-navy transition-colors hover:bg-navy hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 lg:inline-flex"
             onClick={() => setLanguage(language === "en" ? "fr" : "en")}
@@ -155,17 +144,6 @@ export function SiteHeader() {
               </button>
 
               <div className="mt-4 flex flex-col gap-3 border-t border-line pt-4">
-                <a
-                  href={links.switchApp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-orange py-3 font-semibold text-navy-deep transition-all hover:bg-orange/90"
-                  onClick={() => setOpen(false)}
-                >
-                  {translations[language].common.tryApp}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  <span className="sr-only">({translations[language].common.newTab})</span>
-                </a>
                 <a
                   href={links.calendly}
                   target="_blank"

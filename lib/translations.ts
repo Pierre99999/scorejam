@@ -373,7 +373,7 @@ export const translations = {
         heroTitle: "Stop persuading.",
         heroHighlight: "Start building decisions.",
         heroLead:
-          "Sales Unlocked is not about persuasion techniques. It is about reading a deal: three gates, in order — should I stay? can I win? will it land? — and the momentum that tells you whether a decision is actually being built.",
+          "Sales Unlocked is not about persuasion techniques. Read it in the book. Learn it with coaching. Run it on every deal with Switch.",
         audience: {
           eyebrow: "Who it's for",
           title: "For complex B2B sales, startup to enterprise.",
@@ -391,6 +391,14 @@ export const translations = {
         },
         ctaFormats: "Choose your format",
         ctaMethod: "Discover the discipline",
+        ctaSwitch: "Discover Switch",
+        switchBridge: {
+          eyebrow: "The software behind the discipline",
+          title: "Sales Unlocked is the discipline.",
+          highlight: "Switch puts it to work on every deal.",
+          body: "Switch applies Sales Unlocked to your real customer conversations, deal after deal. It shows you what you know, what you're assuming, what's missing — and what the next conversation needs to accomplish.",
+          cta: "Discover Switch",
+        },
         methodEyebrow: "The discipline",
         formatsEyebrow: "Three ways to live the discipline",
         formatsTitle: "Read the discipline. Master it with coaching. Tailor it to your business.",
@@ -1779,7 +1787,7 @@ export const translations = {
         heroTitle: "Arrêtez de persuader.",
         heroHighlight: "Construisez des décisions.",
         heroLead:
-          "Sales Unlocked ne parle pas de techniques de persuasion. Il s'agit de lire un deal : trois portes, dans l'ordre — dois-je rester ? puis-je gagner ? est-ce que ça va aboutir ? — et le momentum qui vous dit si une décision est réellement en train de se construire.",
+          "Sales Unlocked ne parle pas de techniques de persuasion. Lisez la méthode dans le livre. Apprenez-la en coaching. Appliquez-la à chaque deal avec Switch.",
         audience: {
           eyebrow: "Pour qui",
           title: "Pour les ventes complexes en B2B, de la startup au grand groupe.",
@@ -1800,6 +1808,14 @@ export const translations = {
         },
         ctaFormats: "Choisir mon format",
         ctaMethod: "Découvrir la discipline",
+        ctaSwitch: "Découvrir Switch",
+        switchBridge: {
+          eyebrow: "Le logiciel derrière la discipline",
+          title: "Sales Unlocked est la discipline.",
+          highlight: "Switch la met en œuvre sur chaque deal.",
+          body: "Switch applique Sales Unlocked à vos vraies conversations clients, deal après deal. Il vous montre ce que vous savez, ce que vous supposez, ce qui manque — et ce que la prochaine conversation doit accomplir.",
+          cta: "Découvrir Switch",
+        },
         methodEyebrow: "La discipline",
         formatsEyebrow: "Trois façons de vivre la discipline",
         formatsTitle: "Lire la discipline. La maîtriser avec du coaching. L'adapter à votre entreprise.",
@@ -2528,7 +2544,7 @@ export const translations = {
       },
       description: {
         p1: "Ce livre n'est pas un énième guide sur le lancement d'une startup – il en existe déjà beaucoup. C'est une méthode d'introspection applicable à n'importe quelle étape de votre parcours entrepreneurial.",
-        p2: "Vous revisiterez les décisions clés qui ont façonné votre entreprise et découvrirez si des aspects critiques ont été négligés ou sous-estimés.",
+        p2: "Vous revisiterez les décisions cl��s qui ont façonné votre entreprise et découvrirez si des aspects critiques ont été négligés ou sous-estimés.",
       },
       outcomes: {
         title: "Après avoir lu ce livre, vous serez capable de :",
