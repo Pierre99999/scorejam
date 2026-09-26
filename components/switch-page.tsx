@@ -107,27 +107,9 @@ const CONTENT = {
         "Switch n'analyse pas les rendez-vous isolément.",
         "Il construit sa compréhension du deal **conversation après conversation**.",
       ],
-      steps: [
-        { label: "Conversation nº 1", lines: ["Que savons-nous ?", "Que supposons-nous ?", "Qu'est-ce qui manque ?"] },
-        {
-          label: "Briefing nº 2",
-          lines: ["Que faut-il comprendre ensuite ?", "Quelles questions comptent ?", "Qu'éviter de faire trop tôt ?"],
-        },
-        {
-          label: "Conversation nº 2",
-          lines: [
-            "Qu'est-ce qui a changé ?",
-            "Qu'est-ce qui s'est renforcé ?",
-            "Qu'est-ce qui s'est affaibli ?",
-            "Quelles nouvelles hypothèses sont apparues ?",
-          ],
-        },
-        { label: "Briefing nº 3", lines: ["Que doit-il se passer ensuite ?"] },
-      ],
       cycle: "Et le cycle continue jusqu'à ce que vous **gagniez — ou décidiez que le deal ne vaut pas la peine.**",
       remembersConversation: "Switch ne se souvient pas seulement de la conversation.",
       remembersDeal: "Il se souvient du deal.",
-      slot: "La boucle d'un deal : conversation → briefing → conversation.",
       flow: {
         playbook: {
           label: "SALES PLAYBOOK",
@@ -144,8 +126,8 @@ const CONTENT = {
         brace: "le seul geste du vendeur",
         feedback: "round suivant : le diagnostic écrit le briefing",
         note: {
-          label: "AUCUNE SAISIE DEMANDÉE AU VENDEUR",
-          desc: "le contexte, les questions, la lecture et les notes sont produits — il n'y a qu'une conversation à importer",
+          label: "AUCUNE MISE À JOUR MANUELLE DU DEAL",
+          desc: "Pas de formulaires façon CRM. Pas de notation manuelle. Pas de questionnaire sur l'état du deal. Le vendeur apporte la conversation. Switch construit l'analyse.",
         },
       },
     },
@@ -157,27 +139,20 @@ const CONTENT = {
         {
           n: "01",
           label: "Votre client",
-          lines: [
-            "Ce qu'il a réellement dit.",
-            "Comptes rendus, transcriptions et informations recueillies tout au long du deal.",
-          ],
+          lines: ["Ce qu'il a réellement dit — comptes rendus, transcriptions, tout ce qui a été recueilli pendant le deal."],
         },
         {
           n: "02",
           label: "Votre playbook",
           lines: [
-            "Votre offre. Vos clients. Votre positionnement. Votre valeur.",
+            "Votre offre, vos clients, votre positionnement, votre valeur.",
             "Ce qui vous fait gagner. Ce qui vous fait perdre.",
-            "La façon dont votre entreprise vend.",
           ],
         },
         {
           n: "03",
           label: "Sales Unlocked",
-          lines: [
-            "La discipline derrière Switch.",
-            "Une manière systématique de comprendre comment les clients passent d'un problème à une décision.",
-          ],
+          lines: ["La discipline derrière Switch : comment un client passe d'un problème à une décision."],
         },
       ],
       closeLead: "Switch n'analyse pas une conversation dans le vide.",
@@ -232,37 +207,36 @@ const CONTENT = {
       },
     },
 
+    sequence: {
+      flow: "Conversation → Analyse → Briefing → Conversation.",
+      title: "Avant, après et entre les rendez-vous.",
+    },
+
     before: {
-      title: "Avant le prochain rendez-vous, sachez ce qui compte.",
-      intro: "Switch transforme tout ce qu'il sait du deal en un briefing.",
-      notGeneric: ["Pas vingt questions génériques.", "Les questions qui comptent **maintenant**."],
+      label: "Avant le rendez-vous",
+      lead: "Switch prépare le briefing. Pas vingt questions génériques : celles qui comptent **maintenant**.",
       items: [
-        "Ce qu'il vous reste à comprendre.",
+        "Ce qui compte maintenant.",
+        "Ce qui manque encore.",
         "Ce qui doit être validé.",
-        "Quelle hypothèse met le deal en danger.",
-        "Quelle objection peut surgir.",
-        "Ce qu'il ne faut pas encore présenter.",
-        "Ce que la prochaine conversation doit accomplir.",
+        "Les questions à poser.",
+        "Les objections possibles.",
+        "L'objectif de la conversation.",
       ],
-      close: "Vous arrivez au rendez-vous en sachant **pourquoi vous y êtes.**",
-      slot: "Le briefing d'avant rendez-vous.",
+      close: "Vous arrivez en sachant **pourquoi vous y êtes.**",
       cta: "Créer le briefing du round 3",
     },
 
     after: {
-      title: "Après le rendez-vous, déposez la conversation.",
-      intro: ["Ajoutez votre compte rendu ou votre transcription.", "Switch analyse ce qui s'est passé et met à jour le deal."],
-      questions: [
-        "Qu'est-ce qui a été confirmé ?",
-        "Qu'est-ce qui reste une hypothèse ?",
-        "Qu'est-ce que le client a contredit ?",
-        "Qu'est-ce qui a changé ?",
-        "Qu'avez-vous omis d'explorer ?",
-        "Le deal a-t-il réellement avancé ?",
+      label: "Après le rendez-vous",
+      lead: "Importez le compte rendu ou la transcription. Switch identifie :",
+      items: [
+        "Ce qui a été confirmé.",
+        "Ce qui reste supposé.",
+        "Ce qui a changé.",
+        "Ce qui s'est renforcé ou affaibli.",
+        "Ce qui a été manqué.",
       ],
-      thenPrepare: "Puis Switch prépare la suite.",
-      flow: "Conversation → Analyse → Briefing → Conversation.",
-      slot: "L'import d'une conversation et l'analyse qui met à jour le deal.",
       dialog: {
         title: "Importer la conversation du round 6",
         desc: "Round 6. Switch le lit, attribue chaque propos à celui qui l'a tenu, note les critères et met à jour le diagnostic.",
@@ -276,20 +250,16 @@ const CONTENT = {
     },
 
     between: {
-      title: "Ne perdez plus le deal entre les rendez-vous.",
-      intro: [
-        "Les deals n'avancent pas qu'en rendez-vous.",
-        "Switch vous aide à décider ce qui doit se passer entre les conversations.",
-      ],
+      label: "Entre les rendez-vous",
+      lead: "Switch aide à choisir la bonne prochaine action :",
       items: [
-        "Envoyer la bonne relance.",
-        "Clarifier une question restée sans réponse.",
-        "Confirmer ce qui a été convenu.",
-        "Partager quelque chose qui aide le client à décider.",
-        "Faire entrer un autre interlocuteur dans la conversation.",
+        "Relancer.",
+        "Clarifier.",
+        "Confirmer.",
+        "Partager quelque chose d'utile.",
+        "Faire entrer un autre interlocuteur.",
+        "Ou, délibérément, ne rien faire encore.",
       ],
-      sometimes: "Ou parfois :",
-      doNothing: "ne rien faire encore.",
       objNot: "L'objectif n'est pas de rester visible.",
       objYes: "C'est de faire avancer la décision.",
     },
@@ -301,7 +271,6 @@ const CONTENT = {
       items: [
         "Repérez où vous êtes trop optimiste.",
         "Repérez où vous êtes trop pessimiste.",
-        "Voyez ce que vous avez mal compris.",
         "Sachez ce qui vous manque.",
         "Sachez quoi demander ensuite.",
         "Sachez quand pousser.",
@@ -316,16 +285,6 @@ const CONTENT = {
       eyebrow: "POUR LES DIRECTEURS COMMERCIAUX",
       title: ["Arrêtez de gérer le récit.", "Gérez les preuves."],
       intro: ["Vos commerciaux vous disent qu'un deal est à 80 %.", "Switch vous montre pourquoi.", "Ou pourquoi pas."],
-      acrossTeam: "Sur toute l'équipe, voyez :",
-      items: [
-        "Quels deals demandent de l'attention.",
-        "Quelles opportunités s'affaiblissent.",
-        "Où manque une information critique.",
-        "Où des hypothèses sont prises pour des faits.",
-        "Où la dynamique disparaît.",
-        "Où un commercial a besoin d'aide.",
-        "Et où votre temps peut avoir le plus d'impact.",
-      ],
       close:
         "Les revues de deals deviennent des conversations sur **les preuves et l'action**, pas sur la confiance et les pourcentages du CRM.",
     },
@@ -334,17 +293,17 @@ const CONTENT = {
       eyebrow: "MISSION CONTROL",
       title: ["N'inspectez pas chaque deal.", "Sachez où intervenir."],
       intro: "Switch offre aux directeurs commerciaux une vue portefeuille de leurs opportunités.",
-      asksIntro: "Demandez :",
-      asks: [
-        "Où dois-je intervenir ?",
-        "Quels deals sont en danger ?",
-        "Où se trouve le plus gros potentiel ?",
-        "Que pouvons-nous gagner vite ?",
+      showsIntro: "Sur toute l'équipe, Mission Control montre :",
+      items: [
+        "Quels deals demandent de l'attention — et pourquoi.",
+        "Où des preuves manquent.",
+        "Où des hypothèses sont prises pour des faits.",
+        "Où la dynamique s'affaiblit.",
+        "Où un commercial a besoin d'aide.",
+        "Où votre attention aura le plus d'impact.",
       ],
-      then: "Puis entrez directement dans les deals qui comptent.",
       notDashboard: "Switch n'est pas un tableau de bord de plus à surveiller.",
       isWay: "C'est une façon de savoir où votre attention a de la valeur.",
-      slot: "Mission Control : la vue portefeuille des opportunités.",
       scatter: {
         legend: {
           inplay: "en cours",
@@ -397,11 +356,8 @@ const CONTENT = {
       title: "De la formation à la discipline commerciale.",
       lines: [
         "La plupart des formations à la vente se déroulent en dehors du deal.",
-        "Un atelier.",
-        "Un cadre.",
-        "Un playbook.",
-        "Puis chacun retourne au travail.",
-        "Et retombe peu à peu dans ses vieilles habitudes.",
+        "Un atelier. Un cadre. Un playbook.",
+        "Puis chacun retourne au travail — et à ses vieilles habitudes.",
       ],
       putsInside: [
         "Switch met la discipline **à l'intérieur du deal**.",
@@ -421,15 +377,12 @@ const CONTENT = {
         "Préparer un rendez-vous client.",
         "Analyser une conversation.",
         "Challenger votre perception d'un deal.",
-        "Trouver les informations manquantes.",
-        "Repérer les hypothèses non étayées.",
+        "Repérer les informations manquantes et les hypothèses non étayées.",
         "Comprendre pourquoi un deal est bloqué.",
-        "Préparer les bonnes questions.",
-        "Décider quoi envoyer entre deux rendez-vous.",
+        "Préparer les prochaines questions et la prochaine action.",
         "Mener des revues de deals fondées sur les preuves.",
         "Coacher un commercial sur une opportunité réelle.",
-        "Appliquer votre playbook avec constance.",
-        "Intégrer plus vite les nouveaux commerciaux.",
+        "Appliquer le playbook de l'entreprise avec constance.",
         "Décider de poursuivre ou d'abandonner un deal.",
       ],
       closeLead: "Et au fond :",
@@ -443,8 +396,6 @@ const CONTENT = {
         "Des problèmes découverts plus tôt.",
         "Moins de pitchs prématurés.",
         "Moins de remises pour sauver des deals faibles.",
-        "De meilleures revues de deals.",
-        "Un meilleur coaching.",
         "Des cycles de décision plus courts.",
         "Un meilleur taux de conversion.",
       ],
@@ -475,7 +426,7 @@ const CONTENT = {
         {
           q: "Qu'est-ce que Switch, exactement ?",
           a: [
-            "Switch est une plateforme d'intelligence de deal, propulsée par l'IA, pour les ventes B2B complexes.",
+            "Switch est une plateforme d'intelligence de deal par IA pour les ventes B2B complexes.",
             "Il analyse les conversations clients à l'aune de votre playbook commercial pour distinguer les preuves des hypothèses, repérer les informations manquantes, suivre l'évolution d'un deal et préparer la prochaine conversation.",
           ],
         },
@@ -497,7 +448,7 @@ const CONTENT = {
           q: "Switch enregistre-t-il mes appels ?",
           a: [
             "Non.",
-            "En revanche, Switch peut lire les fichiers Gong, Fireflies, Granola, Otter, Teams, Zoom, etc.",
+            "En revanche, Switch lit les comptes rendus et transcriptions produits par Gong, Fireflies, Granola, Otter, Teams, Zoom et d'autres outils.",
           ],
         },
         {
@@ -576,17 +527,25 @@ const CONTENT = {
         },
         {
           q: "Switch s'intègre-t-il à mon CRM ?",
-          a: ["Non."],
+          a: [
+            "Pas encore.",
+            "Switch fonctionne indépendamment de votre CRM et n'a pas besoin de ses données pour comprendre et analyser un deal.",
+            "Vous pouvez donc commencer à utiliser Switch sans rien changer à votre CRM.",
+          ],
         },
         {
-          q: "Switch s'intègre-t-il à Zoom, Teams ou Google Meet ?",
-          a: ["Non."],
+          q: "Switch s'intègre-t-il directement à Zoom, Teams ou Google Meet ?",
+          a: [
+            "Pas encore.",
+            "Switch analyse déjà les transcriptions et fichiers produits par Zoom, Teams, Gong, Fireflies, Granola, Otter et d'autres outils de conversation. Aucune intégration native n'est nécessaire pour commencer.",
+          ],
         },
         {
           q: "Mes données clients sont-elles sécurisées ?",
           a: [
             "Oui.",
-            "Tout est expliqué dans les mentions légales, les conditions et la politique de confidentialité, accessibles dans le logiciel.",
+            "Vos données ne servent pas à entraîner des modèles d'IA.",
+            "Le traitement, l'hébergement et la protection de vos données sont détaillés dans les mentions légales, les conditions et la politique de confidentialité, accessibles dans le logiciel.",
           ],
         },
         {
@@ -705,27 +664,9 @@ const CONTENT = {
         "Switch doesn't analyze meetings in isolation.",
         "It builds its understanding of the deal **conversation after conversation**.",
       ],
-      steps: [
-        { label: "Conversation #1", lines: ["What do we know?", "What are we assuming?", "What is missing?"] },
-        {
-          label: "Briefing #2",
-          lines: ["What needs to be understood next?", "Which questions matter?", "What should you avoid doing too early?"],
-        },
-        {
-          label: "Conversation #2",
-          lines: [
-            "What changed?",
-            "What became stronger?",
-            "What became weaker?",
-            "What new assumptions appeared?",
-          ],
-        },
-        { label: "Briefing #3", lines: ["What should happen next?"] },
-      ],
       cycle: "And the cycle continues until you **win — or decide the deal isn't worth pursuing.**",
       remembersConversation: "Switch doesn't just remember the conversation.",
       remembersDeal: "It remembers the deal.",
-      slot: "One deal's loop: conversation → briefing → conversation.",
       flow: {
         playbook: {
           label: "SALES PLAYBOOK",
@@ -742,8 +683,8 @@ const CONTENT = {
         brace: "the seller's only move",
         feedback: "next round: the diagnostic writes the briefing",
         note: {
-          label: "NO INPUT ASKED OF THE SELLER",
-          desc: "the context, the questions, the read and the notes are produced — there's only a conversation to import",
+          label: "NO MANUAL DEAL UPDATES",
+          desc: "No CRM-like forms. No manual scoring. No deal-status questionnaires. The seller brings the conversation. Switch builds the analysis.",
         },
       },
     },
@@ -755,27 +696,17 @@ const CONTENT = {
         {
           n: "01",
           label: "Your customer",
-          lines: [
-            "What they actually said.",
-            "Meeting notes, transcripts and the information collected throughout the deal.",
-          ],
+          lines: ["What they actually said — meeting notes, transcripts, everything collected throughout the deal."],
         },
         {
           n: "02",
           label: "Your playbook",
-          lines: [
-            "Your offer. Your customers. Your positioning. Your value.",
-            "What makes you win. What makes you lose.",
-            "The way your company sells.",
-          ],
+          lines: ["Your offer, your customers, your positioning, your value.", "What makes you win. What makes you lose."],
         },
         {
           n: "03",
           label: "Sales Unlocked",
-          lines: [
-            "The discipline behind Switch.",
-            "A systematic way to understand how customers move from a problem to a decision.",
-          ],
+          lines: ["The discipline behind Switch: how customers move from a problem to a decision."],
         },
       ],
       closeLead: "Switch doesn't analyze a conversation in a vacuum.",
@@ -825,37 +756,36 @@ const CONTENT = {
       },
     },
 
+    sequence: {
+      flow: "Conversation → Analysis → Briefing → Conversation.",
+      title: "Before, after and between meetings.",
+    },
+
     before: {
-      title: "Before the next meeting, know what matters.",
-      intro: "Switch turns everything it knows about the deal into a briefing.",
-      notGeneric: ["Not twenty generic questions.", "The questions that matter **now**."],
+      label: "Before the meeting",
+      lead: "Switch prepares the briefing. Not twenty generic questions: the ones that matter **now**.",
       items: [
-        "What you still need to understand.",
-        "What needs to be validated.",
-        "What assumption is putting the deal at risk.",
-        "What objection may appear.",
-        "What shouldn't be presented yet.",
-        "What the next conversation should accomplish.",
+        "What matters now.",
+        "What is still missing.",
+        "What needs validation.",
+        "The questions worth asking.",
+        "The objections that may come up.",
+        "The objective of the conversation.",
       ],
-      close: "You walk into the meeting knowing **why you're there.**",
-      slot: "The pre-meeting briefing.",
+      close: "You walk in knowing **why you're there.**",
       cta: "Write the round 3 briefing",
     },
 
     after: {
-      title: "After the meeting, drop in the conversation.",
-      intro: ["Add your meeting notes or transcript.", "Switch analyzes what happened and updates the deal."],
-      questions: [
-        "What was confirmed?",
-        "What remains an assumption?",
-        "What did the customer contradict?",
-        "What changed?",
-        "What did you fail to explore?",
-        "Did the deal actually move forward?",
+      label: "After the meeting",
+      lead: "Import the notes or transcript. Switch identifies:",
+      items: [
+        "What was confirmed.",
+        "What remains assumed.",
+        "What changed.",
+        "What became stronger or weaker.",
+        "What was missed.",
       ],
-      thenPrepare: "Then Switch prepares the next move.",
-      flow: "Conversation → Analysis → Briefing → Conversation.",
-      slot: "Importing a conversation and the analysis that updates the deal.",
       dialog: {
         title: "Import the round 6 conversation",
         desc: "Round 6. Switch reads it, attributes each statement to whoever made it, scores the criteria and updates the diagnostic.",
@@ -869,20 +799,16 @@ const CONTENT = {
     },
 
     between: {
-      title: "Stop losing the deal between meetings.",
-      intro: [
-        "Deals don't only move during meetings.",
-        "Switch helps you decide what should happen between conversations.",
-      ],
+      label: "Between meetings",
+      lead: "Switch helps you choose the right next action:",
       items: [
-        "Send the right follow-up.",
-        "Clarify an unanswered question.",
-        "Confirm what was agreed.",
-        "Share something that helps the customer make the decision.",
-        "Bring another stakeholder into the conversation.",
+        "Follow up.",
+        "Clarify.",
+        "Confirm.",
+        "Share something useful.",
+        "Involve another stakeholder.",
+        "Or deliberately do nothing yet.",
       ],
-      sometimes: "Or sometimes:",
-      doNothing: "do nothing yet.",
       objNot: "The objective isn't to stay visible.",
       objYes: "It's to keep the decision moving.",
     },
@@ -894,7 +820,6 @@ const CONTENT = {
       items: [
         "Spot where you're being too optimistic.",
         "Spot where you're being too pessimistic.",
-        "See what you misunderstood.",
         "Know what you're missing.",
         "Know what to ask next.",
         "Know when to push.",
@@ -909,16 +834,6 @@ const CONTENT = {
       eyebrow: "FOR SALES LEADERS",
       title: ["Stop managing the story.", "Manage the evidence."],
       intro: ["Your reps tell you a deal is at 80%.", "Switch shows you why.", "Or why not."],
-      acrossTeam: "Across the team, see:",
-      items: [
-        "Which deals need attention.",
-        "Which opportunities are weakening.",
-        "Where critical information is missing.",
-        "Where assumptions are being treated as facts.",
-        "Where momentum is disappearing.",
-        "Where a rep needs help.",
-        "And where your time can have the biggest impact.",
-      ],
       close:
         "Deal reviews become conversations about **evidence and action**, not confidence and CRM percentages.",
     },
@@ -927,17 +842,17 @@ const CONTENT = {
       eyebrow: "MISSION CONTROL",
       title: ["Don't inspect every deal.", "Know where to intervene."],
       intro: "Switch gives sales leaders a portfolio view of their opportunities.",
-      asksIntro: "Ask:",
-      asks: [
-        "Where should I intervene?",
-        "Which deals are in danger?",
-        "Where is the biggest potential return?",
-        "What can we win quickly?",
+      showsIntro: "Across the team, Mission Control shows:",
+      items: [
+        "Which deals need attention — and why.",
+        "Where evidence is missing.",
+        "Where assumptions are being treated as facts.",
+        "Where momentum is weakening.",
+        "Where a salesperson needs help.",
+        "Where your attention will have the biggest impact.",
       ],
-      then: "Then go directly into the deals that matter.",
       notDashboard: "Switch isn't another dashboard to monitor.",
       isWay: "It's a way to know where your attention is worth something.",
-      slot: "Mission Control: the portfolio view of opportunities.",
       scatter: {
         legend: {
           inplay: "in play",
@@ -994,11 +909,8 @@ const CONTENT = {
       title: "From sales training to sales discipline.",
       lines: [
         "Most sales training happens outside the deal.",
-        "A workshop.",
-        "A framework.",
-        "A playbook.",
-        "Then everyone goes back to work.",
-        "And slowly goes back to their old habits.",
+        "A workshop. A framework. A playbook.",
+        "Then everyone goes back to work — and to their old habits.",
       ],
       putsInside: [
         "Switch puts the discipline **inside the deal**.",
@@ -1018,15 +930,12 @@ const CONTENT = {
         "Prepare for a customer meeting.",
         "Analyze a conversation.",
         "Challenge your perception of a deal.",
-        "Find missing information.",
-        "Identify unsupported assumptions.",
+        "Identify missing information and unsupported assumptions.",
         "Understand why a deal is stuck.",
-        "Prepare the right questions.",
-        "Decide what to send between meetings.",
+        "Prepare the next questions and the next action.",
         "Run evidence-based deal reviews.",
         "Coach a salesperson on a real opportunity.",
-        "Apply your playbook consistently.",
-        "Onboard new salespeople faster.",
+        "Apply the company's sales playbook consistently.",
         "Decide whether to pursue or exit a deal.",
       ],
       closeLead: "And ultimately:",
@@ -1040,8 +949,6 @@ const CONTENT = {
         "Problems discovered earlier.",
         "Less premature pitching.",
         "Less discounting to rescue weak deals.",
-        "Better deal reviews.",
-        "Better coaching.",
         "Shorter decision cycles.",
         "Higher conversion.",
       ],
@@ -1094,7 +1001,7 @@ const CONTENT = {
           q: "Does Switch record my calls?",
           a: [
             "No.",
-            "It can, however, read Gong, Fireflies, Granola, Otter, Teams, Zoom files, and more.",
+            "It does, however, read the notes and transcripts produced by Gong, Fireflies, Granola, Otter, Teams, Zoom and other tools.",
           ],
         },
         {
@@ -1171,13 +1078,27 @@ const CONTENT = {
             "Your playbook provides Switch with the context it needs to understand how your company sells, who you sell to and what matters in a deal.",
           ],
         },
-        { q: "Does Switch integrate with my CRM?", a: ["No."] },
-        { q: "Does Switch integrate with Zoom, Teams or Google Meet?", a: ["No."] },
+        {
+          q: "Does Switch integrate with my CRM?",
+          a: [
+            "Not yet.",
+            "Switch works independently from your CRM and does not require CRM data to understand or analyze a deal.",
+            "You can therefore start using Switch without changing your existing CRM setup.",
+          ],
+        },
+        {
+          q: "Does Switch integrate directly with Zoom, Teams or Google Meet?",
+          a: [
+            "Not yet.",
+            "Switch can already analyze transcripts and files produced by Zoom, Teams, Gong, Fireflies, Granola, Otter and other conversation tools. Native integrations are not required to start using Switch.",
+          ],
+        },
         {
           q: "Is my customer data secure?",
           a: [
             "Yes.",
-            "Everything is explained in the legal notices, terms and privacy policy, available inside the software.",
+            "Your data is not used to train AI models.",
+            "How your data is processed, hosted and protected is set out in the legal notices, terms and privacy policy, available inside the software.",
           ],
         },
         { q: "Is my data used to train AI models?", a: ["No."] },
@@ -2024,21 +1945,6 @@ export function SwitchPage() {
             </div>
           </div>
 
-          <ol className="mt-12 grid gap-4 md:grid-cols-4">
-            {t.loop.steps.map((step) => (
-              <li key={step.label} className="rounded-2xl border border-line bg-paper p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-orange">{step.label}</p>
-                <ul className="mt-4 space-y-2">
-                  {step.lines.map((l, i) => (
-                    <li key={i} className="leading-relaxed text-navy">
-                      {l}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ol>
-
           <div className="mt-12">
             <FlowDiagram data={t.loop.flow} />
           </div>
@@ -2128,82 +2034,49 @@ export function SwitchPage() {
         </div>
       </section>
 
-      {/* 8. BEFORE THE MEETING */}
+      {/* 8. BEFORE · AFTER · BETWEEN MEETINGS */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-16">
-          <div>
-            <SectionHeading lines={t.before.title} />
-            <p className="mt-6 text-lg leading-relaxed text-muted">{t.before.intro}</p>
-            <div className="mt-4 space-y-1 text-lg leading-relaxed text-muted">
-              {t.before.notGeneric.map((l, i) => (
-                <p key={i}>
-                  <Emph text={l} strongClass="font-semibold text-orange" />
+        <div className="mx-auto max-w-[1180px]">
+          <div className="max-w-2xl">
+            <p className="font-mono text-sm font-semibold text-orange">{t.sequence.flow}</p>
+            <div className="mt-4">
+              <SectionHeading lines={t.sequence.title} />
+            </div>
+          </div>
+
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line lg:grid-cols-3">
+            {[t.before, t.after, t.between].map((stage) => (
+              <li key={stage.label} className="flex flex-col gap-4 bg-paper p-8">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-orange">{stage.label}</p>
+                <p className="leading-relaxed text-muted">
+                  <Emph text={stage.lead} strongClass="font-semibold text-orange" />
                 </p>
-              ))}
-            </div>
-            <ul className="mt-8 space-y-3">
-              {t.before.items.map((item) => (
-                <li key={item} className="border-t border-line pt-3 leading-relaxed text-navy">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-pretty font-serif text-2xl leading-snug text-navy">
-              <Emph text={t.before.close} strongClass="font-semibold text-orange" />
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center">
-            <BriefingCta label={t.before.cta} />
-          </div>
-        </div>
-      </section>
-
-      {/* 9. AFTER THE MEETING */}
-      <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
-          <ImportDialog d={t.after.dialog} />
-
-          <div>
-            <SectionHeading lines={t.after.title} />
-            <div className="mt-6 space-y-3 text-lg leading-relaxed text-muted">
-              {t.after.intro.map((l, i) => (
-                <p key={i}>{l}</p>
-              ))}
-            </div>
-            <ul className="mt-8 grid gap-x-8 sm:grid-cols-2">
-              {t.after.questions.map((q) => (
-                <li key={q} className="border-t border-line py-3 leading-relaxed text-navy">
-                  {q}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-lg leading-relaxed text-muted">{t.after.thenPrepare}</p>
-            <p className="mt-3 font-mono text-base font-semibold text-orange">{t.after.flow}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. BETWEEN MEETINGS */}
-      <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-[880px]">
-          <SectionHeading lines={t.between.title} />
-          <div className="mt-6 space-y-3 text-lg leading-relaxed text-muted">
-            {t.between.intro.map((l, i) => (
-              <p key={i}>{l}</p>
-            ))}
-          </div>
-          <ul className="mt-8 space-y-3">
-            {t.between.items.map((item) => (
-              <li key={item} className="border-t border-line pt-3 leading-relaxed text-navy">
-                {item}
+                <ul className="flex flex-col">
+                  {stage.items.map((item) => (
+                    <li key={item} className="border-t border-line py-2.5 leading-relaxed text-navy">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
-          </ul>
-          <p className="mt-8 text-lg leading-relaxed text-muted">{t.between.sometimes}</p>
-          <p className="mt-2 font-serif text-2xl leading-snug text-navy md:text-3xl">{t.between.doNothing}</p>
-          <p className="mt-8 text-lg leading-relaxed text-muted">{t.between.objNot}</p>
-          <p className="mt-2 font-serif text-2xl leading-snug text-orange md:text-3xl">{t.between.objYes}</p>
+          </ol>
+
+          <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
+            <ImportDialog d={t.after.dialog} />
+            <div className="flex flex-col items-start gap-10">
+              <div className="flex flex-col items-start gap-5">
+                <p className="text-pretty font-serif text-2xl leading-snug text-navy">
+                  <Emph text={t.before.close} strongClass="font-semibold text-orange" />
+                </p>
+                <BriefingCta label={t.before.cta} />
+              </div>
+              <div>
+                <p className="text-lg leading-relaxed text-muted">{t.between.objNot}</p>
+                <p className="mt-2 font-serif text-2xl leading-snug text-orange md:text-3xl">{t.between.objYes}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -2228,68 +2101,56 @@ export function SwitchPage() {
         </div>
       </section>
 
-      {/* 12. FOR SALES LEADERS */}
+      {/* 12. FOR SALES LEADERS · MISSION CONTROL */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-[880px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.forLeaders.eyebrow}</p>
-          <h2 className="mt-4 text-balance font-serif text-3xl font-normal leading-[1.1] text-navy md:text-4xl">
-            {t.forLeaders.title.map((l, i) => (
-              <span key={i} className="block">
-                {l}
-              </span>
-            ))}
-          </h2>
-          <div className="mt-6 space-y-2 text-lg leading-relaxed text-muted">
-            {t.forLeaders.intro.map((l, i) => (
-              <p key={i}>{l}</p>
-            ))}
-          </div>
-          <p className="mt-8 font-medium text-navy">{t.forLeaders.acrossTeam}</p>
-          <ul className="mt-4 grid gap-x-8 sm:grid-cols-2">
-            {t.forLeaders.items.map((item) => (
-              <li key={item} className="border-t border-line py-3 leading-relaxed text-navy">
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">
-            <Emph text={t.forLeaders.close} strongClass="font-semibold text-orange" />
-          </p>
-        </div>
-      </section>
-
-      {/* 13. MISSION CONTROL */}
-      <section className="border-b border-line bg-paper-2 px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1180px]">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.mission.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.forLeaders.eyebrow}</p>
             <h2 className="mt-4 text-balance font-serif text-3xl font-normal leading-[1.1] text-navy md:text-4xl">
-              {t.mission.title.map((l, i) => (
+              {t.forLeaders.title.map((l, i) => (
                 <span key={i} className="block">
                   {l}
                 </span>
               ))}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted">{t.mission.intro}</p>
+            <div className="mt-6 space-y-2 text-lg leading-relaxed text-muted">
+              {t.forLeaders.intro.map((l, i) => (
+                <p key={i}>{l}</p>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-16 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.mission.eyebrow}</p>
+            <p className="mt-4 text-balance font-serif text-2xl leading-snug text-navy md:text-3xl">
+              {t.mission.title.map((l, i) => (
+                <span key={i} className="block">
+                  {l}
+                </span>
+              ))}
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{t.mission.intro}</p>
+          </div>
+
+          <div className="mt-10">
             <PortfolioScatter data={t.mission.scatter} />
           </div>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
             <div>
-              <p className="font-medium text-navy">{t.mission.asksIntro}</p>
-              <ul className="mt-4 space-y-3">
-                {t.mission.asks.map((a) => (
-                  <li key={a} className="border-l-2 border-orange pl-5 font-serif text-xl leading-snug text-navy">
-                    {a}
+              <p className="font-medium text-navy">{t.mission.showsIntro}</p>
+              <ul className="mt-4 flex flex-col">
+                {t.mission.items.map((item) => (
+                  <li key={item} className="border-t border-line py-3 leading-relaxed text-navy">
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="lg:pt-2">
-              <p className="text-lg leading-relaxed text-muted">{t.mission.then}</p>
+            <div className="lg:pt-8">
+              <p className="text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">
+                <Emph text={t.forLeaders.close} strongClass="font-semibold text-orange" />
+              </p>
               <p className="mt-8 text-lg leading-relaxed text-muted">{t.mission.notDashboard}</p>
               <p className="mt-2 font-serif text-2xl leading-snug text-orange md:text-3xl">{t.mission.isWay}</p>
             </div>
