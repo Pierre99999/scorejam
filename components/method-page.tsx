@@ -90,6 +90,15 @@ export function MethodPage({ method }: { method: MethodKey }) {
               )}
               {method === "sales" && (
                 <Link
+                  href="/switch"
+                  className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
+                >
+                  {salesT.ctaSwitch}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              )}
+              {method === "sales" && (
+                <Link
                   href="/sales-unlocked/seminar"
                   className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
                 >
@@ -216,6 +225,33 @@ export function MethodPage({ method }: { method: MethodKey }) {
           )}
         </div>
       </section>
+
+      {/* ---------- Sales only: compact bridge to the Switch product page ---------- */}
+      {method === "sales" && (
+        <section className="border-y border-line bg-paper-2 px-6 py-14 md:px-10 md:py-16">
+          <div className="mx-auto grid max-w-[1180px] items-center gap-x-16 gap-y-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.accentText}`}>
+                {salesT.switchBridge.eyebrow}
+              </p>
+              <h2 className="mt-4 font-serif text-2xl font-normal leading-snug text-navy md:text-3xl">
+                <span className="block text-balance">{salesT.switchBridge.title}</span>
+                <span className="block text-balance text-orange">{salesT.switchBridge.highlight}</span>
+              </h2>
+            </div>
+            <div className="flex flex-col items-start gap-6">
+              <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted">{salesT.switchBridge.body}</p>
+              <Link
+                href="/switch"
+                className="inline-flex items-center gap-2 rounded-full bg-orange px-5 py-2.5 text-sm font-semibold text-navy-deep transition-colors hover:bg-orange/90"
+              >
+                {salesT.switchBridge.cta}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ---------- Proof: two short pull-quotes from clients of this method ---------- */}
       {proof.length > 0 && (

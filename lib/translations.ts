@@ -391,6 +391,14 @@ export const translations = {
         },
         ctaFormats: "Choose your format",
         ctaMethod: "Discover the discipline",
+        ctaSwitch: "Discover Switch",
+        switchBridge: {
+          eyebrow: "The software behind the discipline",
+          title: "Sales Unlocked is the discipline.",
+          highlight: "Switch puts it to work on every deal.",
+          body: "Switch applies Sales Unlocked to your real customer conversations, deal after deal. It shows you what you know, what you're assuming, what's missing — and what the next conversation needs to accomplish.",
+          cta: "Discover Switch",
+        },
         methodEyebrow: "The discipline",
         formatsEyebrow: "Three ways to live the discipline",
         formatsTitle: "Read the discipline. Master it with coaching. Tailor it to your business.",
@@ -1800,6 +1808,14 @@ export const translations = {
         },
         ctaFormats: "Choisir mon format",
         ctaMethod: "Découvrir la discipline",
+        ctaSwitch: "Découvrir Switch",
+        switchBridge: {
+          eyebrow: "Le logiciel derrière la discipline",
+          title: "Sales Unlocked est la discipline.",
+          highlight: "Switch la met en œuvre sur chaque deal.",
+          body: "Switch applique Sales Unlocked à vos vraies conversations clients, deal après deal. Il vous montre ce que vous savez, ce que vous supposez, ce qui manque — et ce que la prochaine conversation doit accomplir.",
+          cta: "Découvrir Switch",
+        },
         methodEyebrow: "La discipline",
         formatsEyebrow: "Trois façons de vivre la discipline",
         formatsTitle: "Lire la discipline. La maîtriser avec du coaching. L'adapter à votre entreprise.",
@@ -2528,7 +2544,7 @@ export const translations = {
       },
       description: {
         p1: "Ce livre n'est pas un énième guide sur le lancement d'une startup – il en existe déjà beaucoup. C'est une méthode d'introspection applicable à n'importe quelle étape de votre parcours entrepreneurial.",
-        p2: "Vous revisiterez les décisions clés qui ont façonné votre entreprise et découvrirez si des aspects critiques ont été négligés ou sous-estimés.",
+        p2: "Vous revisiterez les décisions cl��s qui ont façonné votre entreprise et découvrirez si des aspects critiques ont été négligés ou sous-estimés.",
       },
       outcomes: {
         title: "Après avoir lu ce livre, vous serez capable de :",
