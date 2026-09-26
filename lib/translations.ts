@@ -373,7 +373,7 @@ export const translations = {
         heroTitle: "Stop persuading.",
         heroHighlight: "Start building decisions.",
         heroLead:
-          "Sales Unlocked is not about persuasion techniques. It is about reading a deal: three gates, in order — should I stay? can I win? will it land? — and the momentum that tells you whether a decision is actually being built.",
+          "Sales Unlocked is not about persuasion techniques. Read it in the book. Learn it with coaching. Run it on every deal with Switch.",
         audience: {
           eyebrow: "Who it's for",
           title: "For complex B2B sales, startup to enterprise.",
@@ -1787,7 +1787,7 @@ export const translations = {
         heroTitle: "Arrêtez de persuader.",
         heroHighlight: "Construisez des décisions.",
         heroLead:
-          "Sales Unlocked ne parle pas de techniques de persuasion. Il s'agit de lire un deal : trois portes, dans l'ordre — dois-je rester ? puis-je gagner ? est-ce que ça va aboutir ? — et le momentum qui vous dit si une décision est réellement en train de se construire.",
+          "Sales Unlocked ne parle pas de techniques de persuasion. Lisez la méthode dans le livre. Apprenez-la en coaching. Appliquez-la à chaque deal avec Switch.",
         audience: {
           eyebrow: "Pour qui",
           title: "Pour les ventes complexes en B2B, de la startup au grand groupe.",

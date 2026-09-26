@@ -76,24 +76,6 @@ export function MethodPage({ method }: { method: MethodKey }) {
             <p className={`mt-6 max-w-2xl text-lg leading-relaxed ${th.onSurfaceMuted}`}>{t.heroLead}</p>
 
             <div className="mt-9 flex flex-wrap gap-3">
-              {method === "sales" && (
-                <Link
-                  href="/switch"
-                  className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
-                >
-                  {salesT.ctaSwitch}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              )}
-              {method === "sales" && (
-                <Link
-                  href="/sales-unlocked/seminar"
-                  className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
-                >
-                  {language === "fr" ? "Séminaire" : "Seminar"}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              )}
               <a
                 href="#formats"
                 className={`inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold transition-opacity hover:opacity-90 ${th.accentBg} ${th.onAccent}`}
@@ -101,12 +83,31 @@ export function MethodPage({ method }: { method: MethodKey }) {
                 {t.ctaFormats}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
-              <a
-                href="#method"
-                className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
-              >
-                {t.ctaMethod}
-              </a>
+              {method === "sales" ? (
+                <>
+                  <Link
+                    href="/switch"
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-navy-deep transition-transform hover:-translate-y-0.5"
+                  >
+                    {salesT.ctaSwitch}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link
+                    href="/sales-unlocked/seminar"
+                    className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
+                  >
+                    {language === "fr" ? "Séminaire" : "Seminar"}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </>
+              ) : (
+                <a
+                  href="#method"
+                  className={`inline-flex items-center gap-2 rounded-full border px-6 py-3 font-semibold transition-colors ${th.onSurfaceBorder} ${th.onSurface} ${th.onSurfaceHover}`}
+                >
+                  {t.ctaMethod}
+                </a>
+              )}
             </div>
 
             {/* Format progression strip */}
