@@ -11,6 +11,25 @@ const BOOKING_URL = "https://buy.stripe.com/6oU4gzcBkczT8xSgmc0co01"
 
 type Lang = "fr" | "en"
 
+type SeminarTestimonial = {
+  name: string
+  role: string
+  company: string
+  quote: Record<Lang, string>
+}
+
+const TESTIMONIALS: SeminarTestimonial[] = [
+  {
+    name: "Bruno Virieux",
+    role: "CEO",
+    company: "PrediSurge",
+    quote: {
+      fr: "Oubliez tout ce que vous pensiez savoir sur les ventes : ce que propose Pierre, c'est un reset total. Le plus impressionnant ? Tout ce que vous découvrez paraît immédiatement évident… et surtout, directement actionnable dès la sortie de la salle.",
+      en: "Forget everything you thought you knew about sales: what Pierre offers is a total reset. The most impressive part? Everything you discover feels immediately obvious… and above all, directly actionable the moment you leave the room.",
+    },
+  },
+]
+
 const CONTENT: Record<
   Lang,
   {
@@ -23,6 +42,7 @@ const CONTENT: Record<
     questions: string[]
     practice: string[]
     bring: { lead: string; strong: string }
+    testimonialsTitle: string
     closing: string
     cta: string
     newTab: string
@@ -52,6 +72,7 @@ const CONTENT: Record<
       lead: "Venez avec une opportunité commerciale. Repartez avec ",
       strong: "une autre lecture de la situation et les prochaines actions à mener.",
     },
+    testimonialsTitle: "Ils y étaient.",
     closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
     newTab: "ouvre un nouvel onglet",
@@ -80,6 +101,7 @@ const CONTENT: Record<
       lead: "Come with a live opportunity. Leave with ",
       strong: "a different reading of the situation and the next actions to take.",
     },
+    testimonialsTitle: "They were there.",
     closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
     cta: "Book my place",
     newTab: "opens a new tab",
@@ -186,6 +208,33 @@ export function SeminarPage() {
             {t.bring.lead}
             <span className="text-orange">{t.bring.strong}</span>
           </p>
+        </div>
+      </section>
+
+      {/* ---------- Testimonials ---------- */}
+      <section aria-labelledby="seminar-testimonials" className="border-b border-line px-6 py-20 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[900px]">
+          <h2
+            id="seminar-testimonials"
+            className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl"
+          >
+            {t.testimonialsTitle}
+          </h2>
+          <ul className={`mt-12 grid gap-12 ${TESTIMONIALS.length > 1 ? "md:grid-cols-2" : ""}`}>
+            {TESTIMONIALS.map((item) => (
+              <li key={item.name}>
+                <figure className="flex flex-col gap-6 border-t-2 border-orange pt-8">
+                  <blockquote className="text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">
+                    <p>{`« ${item.quote[language]} »`}</p>
+                  </blockquote>
+                  <figcaption className="text-sm leading-relaxed text-muted">
+                    <span className="font-semibold uppercase tracking-[0.12em] text-navy">{item.name}</span>
+                    <span>{` — ${item.role}, ${item.company}`}</span>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
