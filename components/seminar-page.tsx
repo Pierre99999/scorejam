@@ -31,7 +31,7 @@ const CONTENT: Record<
   fr: {
     eyebrow: "Masterclass Switch",
     title: ["Vous allez voir la vente autrement.", "Et vendre autrement."],
-    meta: ["14 octobre", "Paris", "8 heures", "249 €"],
+    meta: ["5 novembre", "Paris", "8 heures", "249 €"],
     intro: [
       "J'ai formé des dizaines et des dizaines d'entreprises à la discipline Switch. J'en ai écrit un livre. J'en ai fait un logiciel.",
       "Et les retours sont forts : des cycles de vente raccourcis de manière drastique. Certains participants me rapportent qu'ils signent 100 % des prospects auprès desquels ils choisissent de s'engager.",
@@ -52,14 +52,14 @@ const CONTENT: Record<
       lead: "Venez avec une opportunité commerciale. Repartez avec ",
       strong: "une autre lecture de la situation et les prochaines actions à mener.",
     },
-    closing: "Une journée avec Pierre Gaubil. Le 14 octobre, à Paris. 249 €.",
+    closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
     newTab: "ouvre un nouvel onglet",
   },
   en: {
     eyebrow: "Switch Masterclass",
     title: ["You'll see selling differently.", "And sell differently."],
-    meta: ["October 14", "Paris", "8 hours", "€249"],
+    meta: ["November 5", "Paris", "8 hours", "€249"],
     intro: [
       "I've trained dozens upon dozens of companies in the Switch discipline. I wrote a book about it. I built software for it.",
       "And the feedback is strong: sales cycles cut down drastically. Some participants tell me they close 100% of the prospects they choose to commit to.",
@@ -80,7 +80,7 @@ const CONTENT: Record<
       lead: "Come with a live opportunity. Leave with ",
       strong: "a different reading of the situation and the next actions to take.",
     },
-    closing: "A day with Pierre Gaubil. October 14, in Paris. €249.",
+    closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
     cta: "Book my place",
     newTab: "opens a new tab",
   },
