@@ -37,7 +37,16 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Pierre changed the way I see sales. It unlocked me!",
   },
   },
-  ]
+  {
+  name: "François Moyne",
+  role: "",
+  company: "Woosmap",
+  quote: {
+  fr: "Ce n'est pas encore une énième nouvelle méthode/technique de vente. Ton approche est très pragmatique et transposable quel que soit son domaine d'activité. J'ai particulièrement apprécié ton concept de \"donnée construite\".",
+  en: "This isn't yet another new sales method or technique. Your approach is very pragmatic and transferable whatever your line of business. I especially appreciated your concept of \"constructed data\".",
+  },
+  },
+]
 
 const CONTENT: Record<
   Lang,
@@ -238,7 +247,7 @@ export function SeminarPage() {
                   </blockquote>
                   <figcaption className="text-sm leading-relaxed text-muted">
                     <span className="font-semibold uppercase tracking-[0.12em] text-navy">{item.name}</span>
-                    <span>{` — ${item.role}, ${item.company}`}</span>
+                    <span>{` — ${[item.role, item.company].filter(Boolean).join(", ")}`}</span>
                   </figcaption>
                 </figure>
               </li>
