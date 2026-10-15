@@ -46,6 +46,24 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "This isn't yet another new sales method or technique. Your approach is very pragmatic and transferable whatever your line of business. I especially appreciated your concept of \"constructed data\".",
   },
   },
+  {
+  name: "François Bourghelle",
+  role: "Directeur",
+  company: "ARI affichage & PLV",
+  quote: {
+  fr: "Enfin une formation qui incite à l'action ! Une prise de recul sur nos pratiques, des échanges, une méthode et un outil à s'approprier et, dès aujourd'hui, une autre manière d'aborder les entretiens et de construire son action.",
+  en: "Finally, a training that drives action! A step back from our practices, real exchanges, a method and a tool to make your own and, starting today, a different way to approach meetings and build your plan of action.",
+  },
+  },
+  {
+  name: "Elisa Passeron-Nguyen",
+  role: "",
+  company: "CSL Conseil",
+  quote: {
+  fr: "Tu nous as montré de façon magistrale comment mener une « autopsie d'un processus commercial » ! Cela n'a plus rien à voir avec une « simple » vente standard, telle que nous la connaissions depuis toujours, pour devenir plutôt de l'ingénierie commerciale.",
+  en: "You masterfully showed us how to run an \"autopsy of a sales process\"! It has nothing to do anymore with a \"simple\" standard sale as we've always known it; it becomes sales engineering.",
+  },
+  },
 ]
 
 const CONTENT: Record<
