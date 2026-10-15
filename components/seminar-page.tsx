@@ -46,6 +46,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "This isn't yet another new sales method or technique. Your approach is very pragmatic and transferable whatever your line of business. I especially appreciated your concept of \"constructed data\".",
   },
   },
+  {
+  name: "François Bourghelle",
+  role: "Directeur",
+  company: "ARI affichage & PLV",
+  quote: {
+  fr: "Enfin une formation qui incite à l'action ! Une prise de recul sur nos pratiques, des échanges, une méthode et un outil à s'approprier et, dès aujourd'hui, une autre manière d'aborder les entretiens et de construire son action.",
+  en: "Finally, a training that drives action! A step back from our practices, real exchanges, a method and a tool to make your own and, starting today, a different way to approach meetings and build your plan of action.",
+  },
+  },
 ]
 
 const CONTENT: Record<
