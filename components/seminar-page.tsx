@@ -55,6 +55,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Finally, a training that drives action! A step back from our practices, real exchanges, a method and a tool to make your own and, starting today, a different way to approach meetings and build your plan of action.",
   },
   },
+  {
+  name: "Elisa Passeron-Nguyen",
+  role: "",
+  company: "CSL Conseil",
+  quote: {
+  fr: "Tu nous as montré de façon magistrale comment mener une « autopsie d'un processus commercial » ! Cela n'a plus rien à voir avec une « simple » vente standard, telle que nous la connaissions depuis toujours, pour devenir plutôt de l'ingénierie commerciale.",
+  en: "You masterfully showed us how to run an \"autopsy of a sales process\"! It has nothing to do anymore with a \"simple\" standard sale as we've always known it; it becomes sales engineering.",
+  },
+  },
 ]
 
 const CONTENT: Record<
