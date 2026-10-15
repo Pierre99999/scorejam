@@ -25,10 +25,19 @@ const TESTIMONIALS: SeminarTestimonial[] = [
     company: "PrediSurge",
     quote: {
       fr: "Oubliez tout ce que vous pensiez savoir sur les ventes : ce que propose Pierre, c'est un reset total. Le plus impressionnant ? Tout ce que vous découvrez paraît immédiatement évident… et surtout, directement actionnable dès la sortie de la salle.",
-      en: "Forget everything you thought you knew about sales: what Pierre offers is a total reset. The most impressive part? Everything you discover feels immediately obvious… and above all, directly actionable the moment you leave the room.",
-    },
+  en: "Forget everything you thought you knew about sales: what Pierre offers is a total reset. The most impressive part? Everything you discover feels immediately obvious… and above all, directly actionable the moment you leave the room.",
   },
-]
+  },
+  {
+  name: "Théo Vasquez",
+  role: "CEO",
+  company: "Levier",
+  quote: {
+  fr: "Pierre a changé ma façon de voir la vente. Ça m'a débloqué !",
+  en: "Pierre changed the way I see sales. It unlocked me!",
+  },
+  },
+  ]
 
 const CONTENT: Record<
   Lang,
