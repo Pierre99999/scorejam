@@ -86,8 +86,7 @@ const CONTENT: Record<
     problemLead: [string, string]
     practiceTitle: string
     questions: string[]
-    practice: string[]
-    bring: { lead: string; strong: string }
+    outcomes: { title: string; intro: string; items: string[]; closing: string }
     testimonialsTitle: string
     closing: string
     cta: string
@@ -122,13 +121,17 @@ const CONTENT: Record<
         body: "Qualifier, ce n'est pas chercher des raisons de poursuivre un deal. C'est savoir s'il existe une vraie opportunité qui vaut la peine d'être poursuivie.",
       },
     ],
-    practice: [
-      "Pendant une journée, je vous forme à Switch, une discipline pour construire des décisions d'achat.",
-      "On la décortique. On travaille sur vos ventes. Et on met en place votre première utilisation de Switch.",
-    ],
-    bring: {
-      lead: "Venez avec une opportunité commerciale. Repartez avec ",
-      strong: "une autre lecture de la situation et les prochaines actions à mener.",
+    outcomes: {
+      title: "Après une journée, vous ne regarderez plus votre pipeline de la même façon.",
+      intro: "Vous saurez :",
+      items: [
+        "Distinguer les vraies opportunités des vœux pieux.",
+        "Identifier ce qui empêche réellement un prospect de décider.",
+        "Arrêter de perdre du temps sur des deals que vous ne devriez pas poursuivre.",
+        "Faire avancer les conversations vers des décisions, pas vers des relances sans fin.",
+        "Savoir quoi demander ensuite — et pourquoi.",
+      ],
+      closing: "Ce n'est pas une énième technique de vente. C'est une nouvelle façon de penser.",
     },
     testimonialsTitle: "Ils y étaient.",
     closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
@@ -163,13 +166,17 @@ const CONTENT: Record<
         body: "Qualifying isn't about finding reasons to pursue a deal. It's about knowing whether there's a real opportunity worth pursuing.",
       },
     ],
-    practice: [
-      "For a full day, I train you in Switch, a discipline for building buying decisions.",
-      "We take it apart. We work on your own deals. And we set up your first use of Switch.",
-    ],
-    bring: {
-      lead: "Come with a live opportunity. Leave with ",
-      strong: "a different reading of the situation and the next actions to take.",
+    outcomes: {
+      title: "After one day, you won't look at your pipeline the same way.",
+      intro: "You'll know how to:",
+      items: [
+        "Distinguish real opportunities from wishful thinking.",
+        "Identify what's actually preventing a prospect from deciding.",
+        "Stop wasting time on deals you shouldn't pursue.",
+        "Move conversations toward decisions, not endless follow-ups.",
+        "Know what to ask next — and why.",
+      ],
+      closing: "This isn't another sales technique. It's a new way of thinking.",
     },
     testimonialsTitle: "They were there.",
     closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
@@ -271,22 +278,34 @@ export function SeminarPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-12 flex max-w-[720px] flex-col gap-6 text-lg leading-relaxed text-muted md:text-xl">
-            {t.practice.map((p) => (
-              <p key={p} className="text-pretty">
-                {p}
-              </p>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ---------- Come with a deal, leave with a plan ---------- */}
-      <section className="bg-navy-deep px-6 py-20 md:px-10 md:py-24">
+      {/* ---------- What you leave with ---------- */}
+      <section aria-labelledby="seminar-outcomes" className="bg-navy-deep px-6 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-[900px]">
-          <p className="text-balance font-serif text-2xl font-normal leading-snug text-white md:text-3xl lg:text-4xl">
-            {t.bring.lead}
-            <span className="text-orange">{t.bring.strong}</span>
+          <h2
+            id="seminar-outcomes"
+            className="text-balance font-serif text-2xl font-normal leading-snug text-white md:text-3xl lg:text-4xl"
+          >
+            {t.outcomes.title}
+          </h2>
+          <p className="mt-10 text-lg leading-relaxed text-white/70 md:text-xl">{t.outcomes.intro}</p>
+          <ul className="mt-6 flex flex-col">
+            {t.outcomes.items.map((item) => (
+              <li
+                key={item}
+                className="flex items-baseline gap-4 border-t border-white/15 py-4 text-lg leading-relaxed text-white last:border-b md:text-xl"
+              >
+                <span className="text-orange" aria-hidden="true">
+                  {"→"}
+                </span>
+                <span className="text-pretty">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-balance font-serif text-xl font-normal leading-snug text-orange md:text-2xl">
+            {t.outcomes.closing}
           </p>
         </div>
       </section>
