@@ -110,11 +110,11 @@ const CONTENT: Record<
       "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
     ],
     meta: ["5 novembre", "Paris", "8 heures", "249 €"],
-    problemTitle: "Trois mois de relances, de remises et de négociations qui ne mènent nulle part.",
-    problemLead: [
-      "Le problème, ce n'est pas votre pitch.",
-      "C'est que vous avez pris de l'intérêt pour une décision d'achat.",
-    ],
+  problemTitle: "Vous ne perdez pas vos ventes au moment où vos prospects disent non.",
+  problemLead: [
+  "Vous les perdez bien avant. Lorsque vous prenez leurs déclarations pour des décisions, leurs intérêts pour des intentions et vos hypothèses pour des faits.",
+  "Et vous ne le savez même pas.",
+  ],
     practiceTitle: "Trois convictions qui changent tout.",
     questions: [
       {
@@ -178,11 +178,11 @@ const CONTENT: Record<
       "One day to rethink everything you thought you knew about selling.",
     ],
     meta: ["November 5", "Paris", "8 hours", "€249"],
-    problemTitle: "Three months of follow-ups, discounts, and negotiations that go nowhere.",
-    problemLead: [
-      "The problem isn't your pitch.",
-      "It's that you've mistaken interest for a buying decision.",
-    ],
+  problemTitle: "You don't lose your deals when your prospects say no.",
+  problemLead: [
+  "You lose them long before. When you take their statements for decisions, their interest for intent, and your assumptions for facts.",
+  "And you don't even know it.",
+  ],
     practiceTitle: "Three convictions that change everything.",
     questions: [
       {
