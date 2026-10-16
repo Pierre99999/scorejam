@@ -107,7 +107,7 @@ const CONTENT: Record<
       "Le problème, ce n'est pas votre pitch.",
       "C'est que vous avez pris de l'intérêt pour une décision d'achat.",
     ],
-    practiceTitle: "Le déclic, puis la pratique.",
+    practiceTitle: "Trois convictions qui changent tout.",
     questions: [
       {
         title: "Arrêtez de vendre. Commencez à comprendre.",
@@ -161,7 +161,7 @@ const CONTENT: Record<
       "The problem isn't your pitch.",
       "It's that you've mistaken interest for a buying decision.",
     ],
-    practiceTitle: "The click, then the practice.",
+    practiceTitle: "Three convictions that change everything.",
     questions: [
       {
         title: "Stop selling. Start understanding.",
