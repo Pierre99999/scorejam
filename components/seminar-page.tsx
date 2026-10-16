@@ -64,6 +64,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "You masterfully showed us how to run an \"autopsy of a sales process\"! It has nothing to do anymore with a \"simple\" standard sale as we've always known it; it becomes sales engineering.",
   },
   },
+  {
+  name: "Eric Lenoir",
+  role: "Président",
+  company: "Groupe Agapé",
+  quote: {
+  fr: "Cette journée de transformation était vraiment décapante. Ton expérience, la singularité de ta vision et ton amour de la transmission nous ont permis de faire un sacré saut, qui rayonne déjà dans l'entreprise.",
+  en: "This day of transformation was truly bracing. Your experience, the uniqueness of your vision and your love of passing on knowledge allowed us to take a huge leap, one that is already spreading across the company.",
+  },
+  },
 ]
 
 const CONTENT: Record<
