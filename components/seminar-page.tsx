@@ -84,8 +84,6 @@ const CONTENT: Record<
     meta: string[]
     problemTitle: string
     problemLead: [string, string]
-    intro: string[]
-    introEmphasis: string
     practiceTitle: string
     questions: string[]
     practice: string[]
@@ -109,12 +107,6 @@ const CONTENT: Record<
       "Le problème, ce n'est pas votre pitch.",
       "C'est que vous avez pris de l'intérêt pour une décision d'achat.",
     ],
-    intro: [
-      "J'ai formé des dizaines et des dizaines d'entreprises à la discipline Switch. J'en ai écrit un livre. J'en ai fait un logiciel.",
-      "Et les retours sont forts : des cycles de vente raccourcis de manière drastique. Certains participants me rapportent qu'ils signent 100 % des prospects auprès desquels ils choisissent de s'engager.",
-      "Ce qui revient surtout, c'est ceci : une façon de voir la vente radicalement différente. Simple à comprendre une fois qu'on l'a vue.",
-    ],
-    introEmphasis: "Et qui change tout.",
     practiceTitle: "Le déclic, puis la pratique.",
     questions: [
       "Pourquoi un prospect intéressé n'achète-t-il pas ?",
@@ -147,12 +139,6 @@ const CONTENT: Record<
       "The problem isn't your pitch.",
       "It's that you've mistaken interest for a buying decision.",
     ],
-    intro: [
-      "I've trained dozens upon dozens of companies in the Switch discipline. I wrote a book about it. I built software for it.",
-      "And the feedback is strong: sales cycles cut down drastically. Some participants tell me they close 100% of the prospects they choose to commit to.",
-      "What comes up most is this: a radically different way of seeing selling. Simple to grasp once you've seen it.",
-    ],
-    introEmphasis: "And it changes everything.",
     practiceTitle: "The click, then the practice.",
     questions: [
       "Why doesn't an interested prospect buy?",
@@ -231,25 +217,15 @@ export function SeminarPage() {
         </div>
       </section>
 
-      {/* ---------- The credibility and the results ---------- */}
+      {/* ---------- The problem ---------- */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-24">
-        <div className="mx-auto flex max-w-[720px] flex-col gap-12">
-          <div className="flex flex-col gap-5">
-            <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
-              {t.problemTitle}
-            </h2>
-            <p className="text-pretty text-lg leading-relaxed text-navy md:text-xl">
-              {t.problemLead[0]} <strong className="font-semibold">{t.problemLead[1]}</strong>
-            </p>
-          </div>
-          <div className="flex flex-col gap-6 border-t border-line pt-12 text-lg leading-relaxed text-muted md:text-xl">
-            {t.intro.map((p) => (
-              <p key={p} className="text-pretty">
-                {p}
-              </p>
-            ))}
-            <p className="text-pretty font-serif text-2xl leading-snug text-navy md:text-3xl">{t.introEmphasis}</p>
-          </div>
+        <div className="mx-auto flex max-w-[720px] flex-col gap-5">
+          <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
+            {t.problemTitle}
+          </h2>
+          <p className="text-pretty text-lg leading-relaxed text-navy md:text-xl">
+            {t.problemLead[0]} <strong className="font-semibold">{t.problemLead[1]}</strong>
+          </p>
         </div>
       </section>
 
