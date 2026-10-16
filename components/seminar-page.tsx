@@ -80,6 +80,7 @@ const CONTENT: Record<
   {
     eyebrow: string
     title: string[]
+    lead: string[]
     meta: string[]
     intro: string[]
     introEmphasis: string
@@ -95,7 +96,11 @@ const CONTENT: Record<
 > = {
   fr: {
     eyebrow: "Masterclass Switch",
-    title: ["Vous allez voir la vente autrement.", "Et vendre autrement."],
+    title: ["La plupart des commerciaux essaient de vendre.", "C'est bien ça le problème."],
+    lead: [
+      "Votre travail n'est pas de convaincre quelqu'un d'acheter. C'est de comprendre ce qui le fait décider.",
+      "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
+    ],
     meta: ["5 novembre", "Paris", "8 heures", "249 €"],
     intro: [
       "J'ai formé des dizaines et des dizaines d'entreprises à la discipline Switch. J'en ai écrit un livre. J'en ai fait un logiciel.",
@@ -124,7 +129,11 @@ const CONTENT: Record<
   },
   en: {
     eyebrow: "Switch Masterclass",
-    title: ["You'll see selling differently.", "And sell differently."],
+    title: ["Most salespeople are trying to sell.", "That's the problem."],
+    lead: [
+      "Your job isn't to convince someone to buy. It's to understand what makes them decide.",
+      "One day to rethink everything you thought you knew about selling.",
+    ],
     meta: ["November 5", "Paris", "8 hours", "€249"],
     intro: [
       "I've trained dozens upon dozens of companies in the Switch discipline. I wrote a book about it. I built software for it.",
@@ -185,6 +194,13 @@ export function SeminarPage() {
               </span>
             ))}
           </h1>
+          <div className="mt-8 flex max-w-[680px] flex-col gap-4 text-lg leading-relaxed text-navy-deep md:text-xl">
+            {t.lead.map((p) => (
+              <p key={p} className="text-pretty">
+                {p}
+              </p>
+            ))}
+          </div>
           <ul className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium uppercase tracking-[0.12em] text-navy-deep/80">
             {t.meta.map((item, i) => (
               <li key={item} className="flex items-center gap-4">
