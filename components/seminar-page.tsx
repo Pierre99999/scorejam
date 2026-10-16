@@ -88,6 +88,12 @@ const CONTENT: Record<
     questions: { title: string; body: string }[]
     outcomes: { title: string; intro: string; items: string[]; closing: string }
     audience: { title: string; groups: string[]; warning: string }
+    blockers: {
+      title: string
+      lead: string
+      headers: [string, string]
+      rows: [string, string][]
+    }
     testimonialsTitle: string
     closingTitle: string
     closingLead: string
@@ -145,6 +151,18 @@ const CONTENT: Record<
       ],
       warning: "Si vous cherchez des astuces de closing, ce n'est pas pour vous.",
     },
+    blockers: {
+      title: "Vos ventes bloquent. Apprenez à comprendre pourquoi.",
+      lead: "Pendant cette journée, vous apprendrez à lire autrement vos opportunités pour savoir quoi approfondir, comment avancer et quand renoncer.",
+      headers: ["Ce que vous apprendrez", "Le problème que vous résolvez"],
+      rows: [
+        ["Distinguer les faits des suppositions", "Arrêter de perdre des deals qu'on croyait gagnés"],
+        ["Comprendre les décisions", "Réduire les cycles de vente interminables"],
+        ["Qualifier radicalement", "Ne plus perdre de temps avec les mauvais prospects"],
+        ["Construire de l'impact", "Réduire la pression sur les remises"],
+        ["Savoir renoncer", "Concentrer les commerciaux sur les bonnes opportunités"],
+      ],
+    },
     testimonialsTitle: "Ils y étaient.",
     closingTitle: "Et si vous arrêtiez enfin de courir après vos prospects ?",
     closingLead: "Une journée pour changer définitivement votre manière d'aborder la vente.",
@@ -200,6 +218,18 @@ const CONTENT: Record<
         "Salespeople who are tired of chasing deals that go nowhere.",
       ],
       warning: "If you're looking for closing tricks, this isn't for you.",
+    },
+    blockers: {
+      title: "Your deals are stuck. Learn to understand why.",
+      lead: "During this day, you'll learn to read your opportunities differently, so you know what to dig into, how to move forward, and when to walk away.",
+      headers: ["What you'll learn", "The problem it solves"],
+      rows: [
+        ["Separate facts from assumptions", "Stop losing deals you thought you'd won"],
+        ["Understand decisions", "Shorten never-ending sales cycles"],
+        ["Qualify radically", "Stop wasting time on the wrong prospects"],
+        ["Build impact", "Reduce pressure on discounts"],
+        ["Know when to walk away", "Focus salespeople on the right opportunities"],
+      ],
     },
     testimonialsTitle: "They were there.",
     closingTitle: "What if you finally stopped chasing your prospects?",
@@ -357,6 +387,51 @@ export function SeminarPage() {
           <p className="mt-12 text-pretty border-l-2 border-orange pl-4 text-lg font-semibold leading-relaxed text-navy md:text-xl">
             {t.audience.warning}
           </p>
+        </div>
+      </section>
+
+      {/* ---------- Why deals get stuck: skill → problem solved ---------- */}
+      <section aria-labelledby="seminar-blockers" className="border-b border-line px-6 py-20 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[900px]">
+          <h2
+            id="seminar-blockers"
+            className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl"
+          >
+            {t.blockers.title}
+          </h2>
+          <p className="mt-5 max-w-[720px] text-pretty text-lg leading-relaxed text-muted md:text-xl">
+            {t.blockers.lead}
+          </p>
+          <table className="mt-12 w-full table-fixed border-collapse text-left">
+            <thead>
+              <tr className="border-b-2 border-navy">
+                {t.blockers.headers.map((header) => (
+                  <th
+                    key={header}
+                    scope="col"
+                    className="pb-4 pr-4 align-bottom text-xs font-semibold uppercase tracking-[0.16em] text-navy md:text-sm"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {t.blockers.rows.map(([skill, problem]) => (
+                <tr key={skill} className="border-b border-line">
+                  <th
+                    scope="row"
+                    className="py-5 pr-4 align-top text-pretty font-serif text-lg font-normal leading-snug text-navy md:text-2xl"
+                  >
+                    {skill}
+                  </th>
+                  <td className="py-5 align-top text-pretty text-base leading-relaxed text-muted md:text-lg">
+                    {problem}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
