@@ -85,8 +85,9 @@ const CONTENT: Record<
     problemTitle: string
     problemLead: [string, string]
     practiceTitle: string
-    questions: string[]
+    questions: { title: string; body: string }[]
     outcomes: { title: string; intro: string; items: string[]; closing: string }
+    audience: { title: string; groups: string[]; warning: string }
     testimonialsTitle: string
     closing: string
     cta: string
@@ -133,6 +134,15 @@ const CONTENT: Record<
       ],
       closing: "Ce n'est pas une énième technique de vente. C'est une nouvelle façon de penser.",
     },
+    audience: {
+      title: "Pour qui ?",
+      groups: [
+        "Les fondateurs qui vendent encore.",
+        "Les dirigeants commerciaux qui s'interrogent sur le fonctionnement de leurs équipes.",
+        "Les commerciaux fatigués de courir après des deals qui ne mènent nulle part.",
+      ],
+      warning: "Si vous cherchez des astuces de closing, ce n'est pas pour vous.",
+    },
     testimonialsTitle: "Ils y étaient.",
     closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
@@ -177,6 +187,15 @@ const CONTENT: Record<
         "Know what to ask next — and why.",
       ],
       closing: "This isn't another sales technique. It's a new way of thinking.",
+    },
+    audience: {
+      title: "Who should attend?",
+      groups: [
+        "Founders who still sell.",
+        "Sales leaders who question how their teams operate.",
+        "Salespeople who are tired of chasing deals that go nowhere.",
+      ],
+      warning: "If you're looking for closing tricks, this isn't for you.",
     },
     testimonialsTitle: "They were there.",
     closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
@@ -306,6 +325,31 @@ export function SeminarPage() {
           </ul>
           <p className="mt-10 text-balance font-serif text-xl font-normal leading-snug text-orange md:text-2xl">
             {t.outcomes.closing}
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- Who should attend ---------- */}
+      <section aria-labelledby="seminar-audience" className="border-b border-line px-6 py-20 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[900px]">
+          <h2
+            id="seminar-audience"
+            className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl"
+          >
+            {t.audience.title}
+          </h2>
+          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+            {t.audience.groups.map((group) => (
+              <li
+                key={group}
+                className="text-pretty border-t-2 border-navy pt-6 font-serif text-xl leading-snug text-navy md:text-2xl"
+              >
+                {group}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-12 text-pretty border-l-2 border-orange pl-4 text-lg font-semibold leading-relaxed text-navy md:text-xl">
+            {t.audience.warning}
           </p>
         </div>
       </section>
