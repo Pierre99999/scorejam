@@ -109,9 +109,18 @@ const CONTENT: Record<
     ],
     practiceTitle: "Le déclic, puis la pratique.",
     questions: [
-      "Pourquoi un prospect intéressé n'achète-t-il pas ?",
-      "Qu'est-ce qui fait réellement avancer une décision ?",
-      "Quand faut-il s'engager dans une vente — et quand faut-il arrêter ?",
+      {
+        title: "Arrêtez de vendre. Commencez à comprendre.",
+        body: "La plupart des commerciaux se concentrent sur ce qu'ils doivent dire ensuite. Les meilleurs se concentrent sur ce qu'ils ne savent pas encore.",
+      },
+      {
+        title: "Votre CRM ne sait pas où en sont vos deals.",
+        body: "Votre pipeline reflète ce que croient vos commerciaux. Pas forcément ce que vos prospects ont réellement décidé.",
+      },
+      {
+        title: "Un bon commercial sait quand NE PAS vendre.",
+        body: "Qualifier, ce n'est pas chercher des raisons de poursuivre un deal. C'est savoir s'il existe une vraie opportunité qui vaut la peine d'être poursuivie.",
+      },
     ],
     practice: [
       "Pendant une journée, je vous forme à Switch, une discipline pour construire des décisions d'achat.",
@@ -141,9 +150,18 @@ const CONTENT: Record<
     ],
     practiceTitle: "The click, then the practice.",
     questions: [
-      "Why doesn't an interested prospect buy?",
-      "What actually moves a decision forward?",
-      "When should you commit to a sale — and when should you stop?",
+      {
+        title: "Stop selling. Start understanding.",
+        body: "Most salespeople focus on what they should say next. The best ones focus on what they still don't know.",
+      },
+      {
+        title: "Your CRM doesn't know where your deals stand.",
+        body: "Your pipeline reflects what your salespeople believe. Not necessarily what your prospects have actually decided.",
+      },
+      {
+        title: "A good salesperson knows when NOT to sell.",
+        body: "Qualifying isn't about finding reasons to pursue a deal. It's about knowing whether there's a real opportunity worth pursuing.",
+      },
     ],
     practice: [
       "For a full day, I train you in Switch, a discipline for building buying decisions.",
@@ -238,13 +256,18 @@ export function SeminarPage() {
           <ul className="mt-12 flex flex-col">
             {t.questions.map((q, i) => (
               <li
-                key={q}
+                key={q.title}
                 className="flex items-baseline gap-5 border-t border-line py-6 last:border-b"
               >
                 <span className="font-mono text-sm font-semibold text-orange" aria-hidden="true">
                   {`0${i + 1}`}
                 </span>
-                <p className="text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">{q}</p>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-pretty font-serif text-xl font-normal leading-snug text-navy md:text-2xl">
+                    {q.title}
+                  </h3>
+                  <p className="text-pretty text-base leading-relaxed text-muted md:text-lg">{q.body}</p>
+                </div>
               </li>
             ))}
           </ul>
