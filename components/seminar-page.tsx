@@ -80,13 +80,14 @@ const CONTENT: Record<
   {
     eyebrow: string
     title: string[]
+    lead: string[]
     meta: string[]
-    intro: string[]
-    introEmphasis: string
+    problemTitle: string
+    problemLead: [string, string]
     practiceTitle: string
-    questions: string[]
-    practice: string[]
-    bring: { lead: string; strong: string }
+    questions: { title: string; body: string }[]
+    outcomes: { title: string; intro: string; items: string[]; closing: string }
+    audience: { title: string; groups: string[]; warning: string }
     testimonialsTitle: string
     closing: string
     cta: string
@@ -95,27 +96,52 @@ const CONTENT: Record<
 > = {
   fr: {
     eyebrow: "Masterclass Switch",
-    title: ["Vous allez voir la vente autrement.", "Et vendre autrement."],
-    meta: ["5 novembre", "Paris", "8 heures", "249 €"],
-    intro: [
-      "J'ai formé des dizaines et des dizaines d'entreprises à la discipline Switch. J'en ai écrit un livre. J'en ai fait un logiciel.",
-      "Et les retours sont forts : des cycles de vente raccourcis de manière drastique. Certains participants me rapportent qu'ils signent 100 % des prospects auprès desquels ils choisissent de s'engager.",
-      "Ce qui revient surtout, c'est ceci : une façon de voir la vente radicalement différente. Simple à comprendre une fois qu'on l'a vue.",
+    title: ["La plupart des commerciaux essaient de vendre.", "C'est bien ça le problème."],
+    lead: [
+      "Votre travail n'est pas de convaincre quelqu'un d'acheter. C'est de comprendre ce qui le fait décider.",
+      "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
     ],
-    introEmphasis: "Et qui change tout.",
+    meta: ["5 novembre", "Paris", "8 heures", "249 €"],
+    problemTitle: "Trois mois de relances, de remises et de négociations qui ne mènent nulle part.",
+    problemLead: [
+      "Le problème, ce n'est pas votre pitch.",
+      "C'est que vous avez pris de l'intérêt pour une décision d'achat.",
+    ],
     practiceTitle: "Le déclic, puis la pratique.",
     questions: [
-      "Pourquoi un prospect intéressé n'achète-t-il pas ?",
-      "Qu'est-ce qui fait réellement avancer une décision ?",
-      "Quand faut-il s'engager dans une vente — et quand faut-il arrêter ?",
+      {
+        title: "Arrêtez de vendre. Commencez à comprendre.",
+        body: "La plupart des commerciaux se concentrent sur ce qu'ils doivent dire ensuite. Les meilleurs se concentrent sur ce qu'ils ne savent pas encore.",
+      },
+      {
+        title: "Votre CRM ne sait pas où en sont vos deals.",
+        body: "Votre pipeline reflète ce que croient vos commerciaux. Pas forcément ce que vos prospects ont réellement décidé.",
+      },
+      {
+        title: "Un bon commercial sait quand NE PAS vendre.",
+        body: "Qualifier, ce n'est pas chercher des raisons de poursuivre un deal. C'est savoir s'il existe une vraie opportunité qui vaut la peine d'être poursuivie.",
+      },
     ],
-    practice: [
-      "Pendant une journée, je vous forme à Switch, une discipline pour construire des décisions d'achat.",
-      "On la décortique. On travaille sur vos ventes. Et on met en place votre première utilisation de Switch.",
-    ],
-    bring: {
-      lead: "Venez avec une opportunité commerciale. Repartez avec ",
-      strong: "une autre lecture de la situation et les prochaines actions à mener.",
+    outcomes: {
+      title: "Après une journée, vous ne regarderez plus votre pipeline de la même façon.",
+      intro: "Vous saurez :",
+      items: [
+        "Distinguer les vraies opportunités des vœux pieux.",
+        "Identifier ce qui empêche réellement un prospect de décider.",
+        "Arrêter de perdre du temps sur des deals que vous ne devriez pas poursuivre.",
+        "Faire avancer les conversations vers des décisions, pas vers des relances sans fin.",
+        "Savoir quoi demander ensuite — et pourquoi.",
+      ],
+      closing: "Ce n'est pas une énième technique de vente. C'est une nouvelle façon de penser.",
+    },
+    audience: {
+      title: "Pour qui ?",
+      groups: [
+        "Les fondateurs qui vendent encore.",
+        "Les dirigeants commerciaux qui s'interrogent sur le fonctionnement de leurs équipes.",
+        "Les commerciaux fatigués de courir après des deals qui ne mènent nulle part.",
+      ],
+      warning: "Si vous cherchez des astuces de closing, ce n'est pas pour vous.",
     },
     testimonialsTitle: "Ils y étaient.",
     closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
@@ -124,27 +150,52 @@ const CONTENT: Record<
   },
   en: {
     eyebrow: "Switch Masterclass",
-    title: ["You'll see selling differently.", "And sell differently."],
-    meta: ["November 5", "Paris", "8 hours", "€249"],
-    intro: [
-      "I've trained dozens upon dozens of companies in the Switch discipline. I wrote a book about it. I built software for it.",
-      "And the feedback is strong: sales cycles cut down drastically. Some participants tell me they close 100% of the prospects they choose to commit to.",
-      "What comes up most is this: a radically different way of seeing selling. Simple to grasp once you've seen it.",
+    title: ["Most salespeople are trying to sell.", "That's the problem."],
+    lead: [
+      "Your job isn't to convince someone to buy. It's to understand what makes them decide.",
+      "One day to rethink everything you thought you knew about selling.",
     ],
-    introEmphasis: "And it changes everything.",
+    meta: ["November 5", "Paris", "8 hours", "€249"],
+    problemTitle: "Three months of follow-ups, discounts, and negotiations that go nowhere.",
+    problemLead: [
+      "The problem isn't your pitch.",
+      "It's that you've mistaken interest for a buying decision.",
+    ],
     practiceTitle: "The click, then the practice.",
     questions: [
-      "Why doesn't an interested prospect buy?",
-      "What actually moves a decision forward?",
-      "When should you commit to a sale — and when should you stop?",
+      {
+        title: "Stop selling. Start understanding.",
+        body: "Most salespeople focus on what they should say next. The best ones focus on what they still don't know.",
+      },
+      {
+        title: "Your CRM doesn't know where your deals stand.",
+        body: "Your pipeline reflects what your salespeople believe. Not necessarily what your prospects have actually decided.",
+      },
+      {
+        title: "A good salesperson knows when NOT to sell.",
+        body: "Qualifying isn't about finding reasons to pursue a deal. It's about knowing whether there's a real opportunity worth pursuing.",
+      },
     ],
-    practice: [
-      "For a full day, I train you in Switch, a discipline for building buying decisions.",
-      "We take it apart. We work on your own deals. And we set up your first use of Switch.",
-    ],
-    bring: {
-      lead: "Come with a live opportunity. Leave with ",
-      strong: "a different reading of the situation and the next actions to take.",
+    outcomes: {
+      title: "After one day, you won't look at your pipeline the same way.",
+      intro: "You'll know how to:",
+      items: [
+        "Distinguish real opportunities from wishful thinking.",
+        "Identify what's actually preventing a prospect from deciding.",
+        "Stop wasting time on deals you shouldn't pursue.",
+        "Move conversations toward decisions, not endless follow-ups.",
+        "Know what to ask next — and why.",
+      ],
+      closing: "This isn't another sales technique. It's a new way of thinking.",
+    },
+    audience: {
+      title: "Who should attend?",
+      groups: [
+        "Founders who still sell.",
+        "Sales leaders who question how their teams operate.",
+        "Salespeople who are tired of chasing deals that go nowhere.",
+      ],
+      warning: "If you're looking for closing tricks, this isn't for you.",
     },
     testimonialsTitle: "They were there.",
     closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
@@ -185,6 +236,13 @@ export function SeminarPage() {
               </span>
             ))}
           </h1>
+          <div className="mt-8 flex max-w-[680px] flex-col gap-4 text-lg leading-relaxed text-navy-deep md:text-xl">
+            {t.lead.map((p) => (
+              <p key={p} className="text-pretty">
+                {p}
+              </p>
+            ))}
+          </div>
           <ul className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium uppercase tracking-[0.12em] text-navy-deep/80">
             {t.meta.map((item, i) => (
               <li key={item} className="flex items-center gap-4">
@@ -203,17 +261,15 @@ export function SeminarPage() {
         </div>
       </section>
 
-      {/* ---------- The credibility and the results ---------- */}
+      {/* ---------- The problem ---------- */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-24">
-        <div className="mx-auto max-w-[720px]">
-          <div className="flex flex-col gap-6 text-lg leading-relaxed text-muted md:text-xl">
-            {t.intro.map((p) => (
-              <p key={p} className="text-pretty">
-                {p}
-              </p>
-            ))}
-            <p className="text-pretty font-serif text-2xl leading-snug text-navy md:text-3xl">{t.introEmphasis}</p>
-          </div>
+        <div className="mx-auto flex max-w-[720px] flex-col gap-5">
+          <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
+            {t.problemTitle}
+          </h2>
+          <p className="text-pretty text-lg leading-relaxed text-navy md:text-xl">
+            {t.problemLead[0]} <strong className="font-semibold">{t.problemLead[1]}</strong>
+          </p>
         </div>
       </section>
 
@@ -226,32 +282,74 @@ export function SeminarPage() {
           <ul className="mt-12 flex flex-col">
             {t.questions.map((q, i) => (
               <li
-                key={q}
+                key={q.title}
                 className="flex items-baseline gap-5 border-t border-line py-6 last:border-b"
               >
                 <span className="font-mono text-sm font-semibold text-orange" aria-hidden="true">
                   {`0${i + 1}`}
                 </span>
-                <p className="text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">{q}</p>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-pretty font-serif text-xl font-normal leading-snug text-navy md:text-2xl">
+                    {q.title}
+                  </h3>
+                  <p className="text-pretty text-base leading-relaxed text-muted md:text-lg">{q.body}</p>
+                </div>
               </li>
             ))}
           </ul>
-          <div className="mt-12 flex max-w-[720px] flex-col gap-6 text-lg leading-relaxed text-muted md:text-xl">
-            {t.practice.map((p) => (
-              <p key={p} className="text-pretty">
-                {p}
-              </p>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ---------- Come with a deal, leave with a plan ---------- */}
-      <section className="bg-navy-deep px-6 py-20 md:px-10 md:py-24">
+      {/* ---------- What you leave with ---------- */}
+      <section aria-labelledby="seminar-outcomes" className="bg-navy-deep px-6 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-[900px]">
-          <p className="text-balance font-serif text-2xl font-normal leading-snug text-white md:text-3xl lg:text-4xl">
-            {t.bring.lead}
-            <span className="text-orange">{t.bring.strong}</span>
+          <h2
+            id="seminar-outcomes"
+            className="text-balance font-serif text-2xl font-normal leading-snug text-white md:text-3xl lg:text-4xl"
+          >
+            {t.outcomes.title}
+          </h2>
+          <p className="mt-10 text-lg leading-relaxed text-white/70 md:text-xl">{t.outcomes.intro}</p>
+          <ul className="mt-6 flex flex-col">
+            {t.outcomes.items.map((item) => (
+              <li
+                key={item}
+                className="flex items-baseline gap-4 border-t border-white/15 py-4 text-lg leading-relaxed text-white last:border-b md:text-xl"
+              >
+                <span className="text-orange" aria-hidden="true">
+                  {"→"}
+                </span>
+                <span className="text-pretty">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-balance font-serif text-xl font-normal leading-snug text-orange md:text-2xl">
+            {t.outcomes.closing}
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- Who should attend ---------- */}
+      <section aria-labelledby="seminar-audience" className="border-b border-line px-6 py-20 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[900px]">
+          <h2
+            id="seminar-audience"
+            className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl"
+          >
+            {t.audience.title}
+          </h2>
+          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+            {t.audience.groups.map((group) => (
+              <li
+                key={group}
+                className="text-pretty border-t-2 border-navy pt-6 font-serif text-xl leading-snug text-navy md:text-2xl"
+              >
+                {group}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-12 text-pretty border-l-2 border-orange pl-4 text-lg font-semibold leading-relaxed text-navy md:text-xl">
+            {t.audience.warning}
           </p>
         </div>
       </section>
