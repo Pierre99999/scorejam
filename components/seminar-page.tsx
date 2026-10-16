@@ -89,6 +89,8 @@ const CONTENT: Record<
     outcomes: { title: string; intro: string; items: string[]; closing: string }
     audience: { title: string; groups: string[]; warning: string }
     testimonialsTitle: string
+    closingTitle: string
+    closingLead: string
     closing: string
     cta: string
     newTab: string
@@ -144,6 +146,8 @@ const CONTENT: Record<
       warning: "Si vous cherchez des astuces de closing, ce n'est pas pour vous.",
     },
     testimonialsTitle: "Ils y étaient.",
+    closingTitle: "Et si vous arrêtiez enfin de courir après vos prospects ?",
+    closingLead: "Une journée pour changer définitivement votre manière d'aborder la vente.",
     closing: "Une journée avec Pierre Gaubil. Le 5 novembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
     newTab: "ouvre un nouvel onglet",
@@ -198,6 +202,8 @@ const CONTENT: Record<
       warning: "If you're looking for closing tricks, this isn't for you.",
     },
     testimonialsTitle: "They were there.",
+    closingTitle: "What if you finally stopped chasing your prospects?",
+    closingLead: "One day to permanently change the way you approach selling.",
     closing: "A day with Pierre Gaubil. November 5, in Paris. €249.",
     cta: "Book my place",
     newTab: "opens a new tab",
@@ -384,6 +390,14 @@ export function SeminarPage() {
       {/* ---------- Closing call to action ---------- */}
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto flex max-w-[900px] flex-col items-start gap-8">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-5xl">
+              {t.closingTitle}
+            </h2>
+            <p className="text-pretty text-lg leading-relaxed text-navy/80 md:text-xl">
+              {t.closingLead}
+            </p>
+          </div>
           <p className="text-balance font-serif text-2xl font-normal leading-snug text-navy md:text-3xl">
             {t.closing}
           </p>
