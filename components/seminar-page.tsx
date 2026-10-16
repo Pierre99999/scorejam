@@ -82,6 +82,8 @@ const CONTENT: Record<
     title: string[]
     lead: string[]
     meta: string[]
+    problemTitle: string
+    problemLead: [string, string]
     intro: string[]
     introEmphasis: string
     practiceTitle: string
@@ -102,6 +104,11 @@ const CONTENT: Record<
       "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
     ],
     meta: ["5 novembre", "Paris", "8 heures", "249 €"],
+    problemTitle: "Trois mois de relances, de remises et de négociations qui ne mènent nulle part.",
+    problemLead: [
+      "Le problème, ce n'est pas votre pitch.",
+      "C'est que vous avez pris de l'intérêt pour une décision d'achat.",
+    ],
     intro: [
       "J'ai formé des dizaines et des dizaines d'entreprises à la discipline Switch. J'en ai écrit un livre. J'en ai fait un logiciel.",
       "Et les retours sont forts : des cycles de vente raccourcis de manière drastique. Certains participants me rapportent qu'ils signent 100 % des prospects auprès desquels ils choisissent de s'engager.",
@@ -135,6 +142,11 @@ const CONTENT: Record<
       "One day to rethink everything you thought you knew about selling.",
     ],
     meta: ["November 5", "Paris", "8 hours", "€249"],
+    problemTitle: "Three months of follow-ups, discounts, and negotiations that go nowhere.",
+    problemLead: [
+      "The problem isn't your pitch.",
+      "It's that you've mistaken interest for a buying decision.",
+    ],
     intro: [
       "I've trained dozens upon dozens of companies in the Switch discipline. I wrote a book about it. I built software for it.",
       "And the feedback is strong: sales cycles cut down drastically. Some participants tell me they close 100% of the prospects they choose to commit to.",
@@ -221,8 +233,16 @@ export function SeminarPage() {
 
       {/* ---------- The credibility and the results ---------- */}
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-24">
-        <div className="mx-auto max-w-[720px]">
-          <div className="flex flex-col gap-6 text-lg leading-relaxed text-muted md:text-xl">
+        <div className="mx-auto flex max-w-[720px] flex-col gap-12">
+          <div className="flex flex-col gap-5">
+            <h2 className="text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl">
+              {t.problemTitle}
+            </h2>
+            <p className="text-pretty text-lg leading-relaxed text-navy md:text-xl">
+              {t.problemLead[0]} <strong className="font-semibold">{t.problemLead[1]}</strong>
+            </p>
+          </div>
+          <div className="flex flex-col gap-6 border-t border-line pt-12 text-lg leading-relaxed text-muted md:text-xl">
             {t.intro.map((p) => (
               <p key={p} className="text-pretty">
                 {p}
