@@ -44,6 +44,17 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen bg-paper">
+      <Link
+        href="/sales-unlocked/seminar"
+        className="group flex items-center justify-center gap-2 bg-orange px-6 py-2.5 text-center text-sm font-semibold text-navy-deep transition-colors hover:bg-orange/90"
+      >
+        <span className="text-pretty">
+          {language === "fr"
+            ? "Inscrivez-vous au séminaire Sales Unlocked du 5 novembre"
+            : "Register for the Sales Unlocked seminar on November 5"}
+        </span>
+        <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+      </Link>
       <SiteHeader />
 
       {/* ---------- Hero ---------- */}
