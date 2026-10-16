@@ -104,10 +104,10 @@ const CONTENT: Record<
 > = {
   fr: {
     eyebrow: "Masterclass Sales Unlocked",
-    title: ["La plupart des commerciaux essaient de vendre.", "C'est bien ça le problème."],
+    title: ["Vous ne perdez pas vos ventes", "au moment où vos prospects disent non."],
     lead: [
-      "Votre travail n'est pas de convaincre quelqu'un d'acheter. C'est de comprendre ce qui le fait décider.",
-      "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
+      "Vous les perdez bien avant. Lorsque vous prenez leurs déclarations pour des décisions, leurs intérêts pour des intentions et vos hypothèses pour des faits.",
+      "Et vous ne le savez même pas.",
     ],
     meta: ["5 novembre", "Paris", "8 heures", "249 €"],
     problemTitle: "Trois mois de relances, de remises et de négociations qui ne mènent nulle part.",
@@ -172,10 +172,10 @@ const CONTENT: Record<
   },
   en: {
     eyebrow: "Sales Unlocked Masterclass",
-    title: ["Most salespeople are trying to sell.", "That's the problem."],
+    title: ["You don't lose your deals", "when your prospects say no."],
     lead: [
-      "Your job isn't to convince someone to buy. It's to understand what makes them decide.",
-      "One day to rethink everything you thought you knew about selling.",
+      "You lose them long before. When you mistake their statements for decisions, their interest for intent, and your assumptions for facts.",
+      "And you don't even know it.",
     ],
     meta: ["November 5", "Paris", "8 hours", "€249"],
     problemTitle: "Three months of follow-ups, discounts, and negotiations that go nowhere.",
