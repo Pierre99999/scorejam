@@ -103,7 +103,7 @@ const CONTENT: Record<
   }
 > = {
   fr: {
-    eyebrow: "Masterclass Switch",
+    eyebrow: "Masterclass Sales Unlocked",
     title: ["La plupart des commerciaux essaient de vendre.", "C'est bien ça le problème."],
     lead: [
       "Votre travail n'est pas de convaincre quelqu'un d'acheter. C'est de comprendre ce qui le fait décider.",
@@ -171,7 +171,7 @@ const CONTENT: Record<
     newTab: "ouvre un nouvel onglet",
   },
   en: {
-    eyebrow: "Switch Masterclass",
+    eyebrow: "Sales Unlocked Masterclass",
     title: ["Most salespeople are trying to sell.", "That's the problem."],
     lead: [
       "Your job isn't to convince someone to buy. It's to understand what makes them decide.",
