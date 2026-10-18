@@ -73,6 +73,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "This day of transformation was truly bracing. Your experience, the uniqueness of your vision and your love of passing on knowledge allowed us to take a huge leap, one that is already spreading across the company.",
   },
   },
+  {
+  name: "Sébastien Cuisinier",
+  role: "Directeur Commercial",
+  company: "MDO",
+  quote: {
+  fr: "Pendant mes études, j'avais été particulièrement marqué par la notion de « myopie du décideur ». Avec Pierre Gaubil, j'ai découvert la myopie du vendeur ! À force d'être éblouis par les méthodes de vente apprises depuis des années, hypnotisés par nos funnels et CRM à renseigner, nous perdons de vue l'essentiel. Cette journée m'a permis de retrouver une vision plus claire de mon métier.",
+  en: "During my studies, I was particularly struck by the notion of \"decision-maker myopia\". With Pierre Gaubil, I discovered salesperson myopia! Dazzled by the sales methods we've learned for years, hypnotized by our funnels and the CRMs we have to fill in, we lose sight of what matters. This day gave me back a clearer vision of my job.",
+  },
+  },
 ]
 
 const CONTENT: Record<
