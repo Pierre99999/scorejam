@@ -82,6 +82,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "During my studies, I was particularly struck by the notion of \"decision-maker myopia\". With Pierre Gaubil, I discovered salesperson myopia! Dazzled by the sales methods we've learned for years, hypnotized by our funnels and the CRMs we have to fill in, we lose sight of what matters. This day gave me back a clearer vision of my job.",
   },
   },
+  {
+  name: "Benoit Bernard",
+  role: "Directeur",
+  company: "Poitou Décort",
+  quote: {
+  fr: "Partir ou rester ! Notre temps est précieux. Merci Pierre de nous avoir bousculés dans nos certitudes et de nous permettre, dès aujourd'hui, d'être plus efficients et efficaces dans notre activité commerciale. Une expérience et une expertise incisives qui nous transforment après seulement une petite journée.",
+  en: "Walk away or stay! Our time is precious. Thank you, Pierre, for shaking up our certainties and for enabling us, starting today, to be more efficient and effective in our sales activity. Incisive experience and expertise that transform us after just one short day.",
+  },
+  },
 ]
 
 const CONTENT: Record<
