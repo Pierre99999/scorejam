@@ -50,8 +50,8 @@ export function HomePage() {
       >
         <span className="text-pretty">
           {language === "fr"
-            ? "Inscrivez-vous au séminaire Sales Unlocked du 5 novembre"
-            : "Register for the Sales Unlocked seminar on November 5"}
+            ? "Inscrivez-vous au séminaire Sales Unlocked du 4 novembre"
+            : "Register for the Sales Unlocked seminar on November 4"}
         </span>
         <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
       </Link>
