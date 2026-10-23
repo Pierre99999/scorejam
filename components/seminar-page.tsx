@@ -118,6 +118,8 @@ const CONTENT: Record<
     closing: string
     cta: string
     newTab: string
+    guaranteeTitle: string
+    guarantee: string
   }
 > = {
   fr: {
@@ -187,6 +189,9 @@ const CONTENT: Record<
     closing: "Une journée avec Pierre Gaubil. Le 4 novembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
     newTab: "ouvre un nouvel onglet",
+    guaranteeTitle: "Satisfait ou remboursé",
+    guarantee:
+      "Je crois tellement à ce séminaire que si vous n'êtes pas satisfait, je vous rembourse la journée.",
   },
   en: {
     eyebrow: "Switch Masterclass",
@@ -255,6 +260,9 @@ const CONTENT: Record<
     closing: "A day with Pierre Gaubil. November 4, in Paris. €249.",
     cta: "Book my place",
     newTab: "opens a new tab",
+    guaranteeTitle: "Satisfied or refunded",
+    guarantee:
+      "I believe in this seminar so much that if you're not satisfied, I'll refund the day.",
   },
 }
 
@@ -495,6 +503,10 @@ export function SeminarPage() {
             {t.closing}
           </p>
           <ReserveButton />
+          <div className="flex max-w-[640px] flex-col gap-2 border-t border-navy/15 pt-6">
+            <p className="font-serif text-xl font-normal text-navy">{t.guaranteeTitle}</p>
+            <p className="text-pretty text-base leading-relaxed text-navy/80">{t.guarantee}</p>
+          </div>
         </div>
       </section>
 
