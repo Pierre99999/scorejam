@@ -1,10 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronDown } from "lucide-react"
 
 /** Where a seat is reserved — Stripe payment link for the masterclass. */
 const BOOKING_URL = "https://buy.stripe.com/6oU4gzcBkczT8xSgmc0co01"
@@ -91,7 +92,82 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Walk away or stay! Our time is precious. Thank you, Pierre, for shaking up our certainties and for enabling us, starting today, to be more efficient and effective in our sales activity. Incisive experience and expertise that transform us after just one short day.",
   },
   },
+  {
+  name: "Nadège Kaci",
+  role: "COO",
+  company: "Tonton Gégé",
+  quote: {
+  fr: "Je suis venue chercher un déclic. Pierre me l'a apporté à 1 000 %. Une phrase m'a particulièrement arrêtée : « Les problèmes d'entreprise justifient une décision, les douleurs humaines la déclenchent. »\n\nJe pensais qu'il me manquait le bon argumentaire, la bonne approche commerciale. En réalité, il me manquait aussi une grille de lecture : celle qui permet de dépasser le problème exprimé pour comprendre la douleur profonde qui pousse réellement un client à agir. C'est toute la différence.\n\nUne journée dense, sans filtre, qui pousse à remettre en question ses certitudes et surtout à regarder sa stratégie commerciale avec beaucoup plus de lucidité.\n\nSi vous vendez en B2B et que vos opportunités avancent, discutent, mûrissent… mais ne se concluent jamais, cette masterclass mérite votre attention. Elle vous aidera peut-être à arrêter de vous raconter des histoires sur votre stratégie commerciale et à revenir à l'essentiel : comprendre ce qui déclenche réellement la décision avec les bonnes conversations.\n\nMerci pour la qualité de la journée et le format petit groupe.",
+  en: "I came looking for a breakthrough. Pierre delivered it 1,000%. One sentence really stopped me: \"Business problems justify a decision; human pain triggers it.\"\n\nI thought I was missing the right pitch, the right sales approach. In reality, I was also missing a reading grid: one that lets you look past the stated problem to understand the deep pain that actually drives a client to act. That makes all the difference.\n\nA dense, unfiltered day that pushes you to question your certainties and, above all, to look at your sales strategy with much more clarity.\n\nIf you sell B2B and your opportunities move forward, get discussed, mature… but never close, this masterclass deserves your attention. It may help you stop telling yourself stories about your sales strategy and get back to what matters: understanding what really triggers the decision, through the right conversations.\n\nThank you for the quality of the day and the small-group format.",
+  },
+  },
 ]
+
+const VISIBLE_TESTIMONIALS = 4
+const LONG_QUOTE_LENGTH = 400
+
+function SeminarTestimonials({
+  language,
+  showAllLabel,
+  showLessLabel,
+}: {
+  language: Lang
+  showAllLabel: string
+  showLessLabel: string
+}) {
+  const [expanded, setExpanded] = useState(false)
+  const hiddenCount = TESTIMONIALS.length - VISIBLE_TESTIMONIALS
+  const visible = expanded ? TESTIMONIALS : TESTIMONIALS.slice(0, VISIBLE_TESTIMONIALS)
+
+  return (
+    <>
+      <ul id="seminar-testimonials-list" className="mt-12 grid gap-12 md:grid-cols-2">
+        {visible.map((item, index) => {
+          const paragraphs = item.quote[language].split("\n\n")
+          const isLong = item.quote[language].length > LONG_QUOTE_LENGTH
+          const attribution = [item.role, item.company].filter(Boolean).join(", ")
+          return (
+            <li key={item.name || index} className={isLong ? "md:col-span-2" : undefined}>
+              <figure className="flex flex-col gap-6 border-t-2 border-orange pt-8">
+                <blockquote
+                  className={`flex flex-col gap-4 text-pretty font-serif text-navy ${
+                    isLong ? "text-lg leading-relaxed md:text-xl" : "text-xl leading-snug md:text-2xl"
+                  }`}
+                >
+                  {paragraphs.map((paragraph, i) => (
+                    <p key={i}>
+                      {i === 0 ? "« " : ""}
+                      {paragraph}
+                      {i === paragraphs.length - 1 ? " »" : ""}
+                    </p>
+                  ))}
+                </blockquote>
+                {item.name ? (
+                  <figcaption className="text-sm leading-relaxed text-muted">
+                    <span className="font-semibold uppercase tracking-[0.12em] text-navy">{item.name}</span>
+                    {attribution ? <span>{` — ${attribution}`}</span> : null}
+                  </figcaption>
+                ) : null}
+              </figure>
+            </li>
+          )
+        })}
+      </ul>
+      {hiddenCount > 0 ? (
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          aria-expanded={expanded}
+          aria-controls="seminar-testimonials-list"
+          className="mt-12 inline-flex items-center gap-2 border-b-2 border-orange pb-1 text-sm font-semibold uppercase tracking-[0.12em] text-navy transition-colors hover:text-orange"
+        >
+          {expanded ? showLessLabel : `${showAllLabel} (${hiddenCount})`}
+          <ChevronDown aria-hidden="true" className={`size-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
+        </button>
+      ) : null}
+    </>
+  )
+}
 
 const CONTENT: Record<
   Lang,
@@ -113,6 +189,8 @@ const CONTENT: Record<
       rows: [string, string][]
     }
     testimonialsTitle: string
+    testimonialsShowAll: string
+    testimonialsShowLess: string
     closingTitle: string
     closingLead: string
     closing: string
@@ -129,7 +207,7 @@ const CONTENT: Record<
       "Votre travail n'est pas de convaincre quelqu'un d'acheter. C'est de comprendre ce qui le fait décider.",
       "Une journée pour repenser tout ce que vous pensiez savoir sur la vente.",
     ],
-    meta: ["4 novembre", "Paris", "8 heures", "249 €"],
+    meta: ["2 décembre", "Paris", "8 heures", "249 €"],
   problemTitle: "Vous ne perdez pas vos ventes au moment où vos prospects disent non.",
   problemLead: [
   "Vous les perdez bien avant. Lorsque vous prenez leurs déclarations pour des décisions, leurs intérêts pour des intentions et vos hypothèses pour des faits.",
@@ -184,9 +262,11 @@ const CONTENT: Record<
       ],
     },
     testimonialsTitle: "Ils y étaient.",
+    testimonialsShowAll: "Voir tous les témoignages",
+    testimonialsShowLess: "Réduire",
     closingTitle: "Et si vous arrêtiez enfin de courir après vos prospects ?",
     closingLead: "Une journée pour changer définitivement votre manière d'aborder la vente.",
-    closing: "Une journée avec Pierre Gaubil. Le 4 novembre, à Paris. 249 €.",
+    closing: "Une journée avec Pierre Gaubil. Le 2 décembre, à Paris. 249 €.",
     cta: "Je réserve ma place",
     newTab: "ouvre un nouvel onglet",
     guaranteeTitle: "Satisfait ou remboursé",
@@ -200,7 +280,7 @@ const CONTENT: Record<
       "Your job isn't to convince someone to buy. It's to understand what makes them decide.",
       "One day to rethink everything you thought you knew about selling.",
     ],
-    meta: ["November 4", "Paris", "8 hours", "€249"],
+    meta: ["December 2", "Paris", "8 hours", "€249"],
   problemTitle: "You don't lose your deals when your prospects say no.",
   problemLead: [
   "You lose them long before. When you take their statements for decisions, their interest for intent, and your assumptions for facts.",
@@ -255,9 +335,11 @@ const CONTENT: Record<
       ],
     },
     testimonialsTitle: "They were there.",
+    testimonialsShowAll: "See all testimonials",
+    testimonialsShowLess: "Show less",
     closingTitle: "What if you finally stopped chasing your prospects?",
     closingLead: "One day to permanently change the way you approach selling.",
-    closing: "A day with Pierre Gaubil. November 4, in Paris. €249.",
+    closing: "A day with Pierre Gaubil. December 2, in Paris. €249.",
     cta: "Book my place",
     newTab: "opens a new tab",
     guaranteeTitle: "Satisfied or refunded",
@@ -470,21 +552,11 @@ export function SeminarPage() {
           >
             {t.testimonialsTitle}
           </h2>
-          <ul className={`mt-12 grid gap-12 ${TESTIMONIALS.length > 1 ? "md:grid-cols-2" : ""}`}>
-            {TESTIMONIALS.map((item) => (
-              <li key={item.name}>
-                <figure className="flex flex-col gap-6 border-t-2 border-orange pt-8">
-                  <blockquote className="text-pretty font-serif text-xl leading-snug text-navy md:text-2xl">
-                    <p>{`« ${item.quote[language]} »`}</p>
-                  </blockquote>
-                  <figcaption className="text-sm leading-relaxed text-muted">
-                    <span className="font-semibold uppercase tracking-[0.12em] text-navy">{item.name}</span>
-                    <span>{` — ${[item.role, item.company].filter(Boolean).join(", ")}`}</span>
-                  </figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
+          <SeminarTestimonials
+            language={language}
+            showAllLabel={t.testimonialsShowAll}
+            showLessLabel={t.testimonialsShowLess}
+          />
         </div>
       </section>
 
