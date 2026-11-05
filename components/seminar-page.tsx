@@ -119,6 +119,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Thank you for a day so rich in knowledge-sharing. You can feel a sales method that has been lived, revisited, and passed on with conviction. I highly recommend it!!!",
   },
   },
+  {
+  name: "Bruno Smadja",
+  role: "CEO",
+  company: "Mobile Film Festival",
+  quote: {
+  fr: "Une bien belle journée Pierre Gaubil, un grand merci à toi. Toutes tes années de vente sur 2 continents combinées à ton esprit analytique donnent un résultat sacrément puissant. Tu es toujours aussi sharp dans tes analyses, mais j'aime ça :) Je le conseille à tout le monde, à tout âge, car cela permet de questionner nos habitudes de vente avec une véritable méthodologie. Et maintenant, au boulot !!!!",
+  en: "A truly great day, Pierre Gaubil, a big thank you. All your years of selling across 2 continents, combined with your analytical mind, produce a seriously powerful result. You're as sharp as ever in your analysis, and I love it :) I recommend it to everyone, at any age, because it lets you question your sales habits with a real methodology. And now, back to work!!!!",
+  },
+  },
 ]
 
 const VISIBLE_TESTIMONIALS = 4
