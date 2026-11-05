@@ -110,6 +110,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Thanks again, Pierre, for a day rich in lessons and in reframed beliefs (spoiler alert: you NEVER lead with a product demo!). My advice to anyone reading this: stop wasting time and go listen to Pierre! His teachings will bring you invaluable value!",
   },
   },
+  {
+  name: "Rémy Deloffre",
+  role: "Transformational CFO",
+  company: "",
+  quote: {
+  fr: "Merci pour cette journée riche en transmission, on sent une méthode de vente vécue, revisitée, et transmise avec conviction. Je recommande vivement !!!",
+  en: "Thank you for a day so rich in knowledge-sharing. You can feel a sales method that has been lived, revisited, and passed on with conviction. I highly recommend it!!!",
+  },
+  },
 ]
 
 const VISIBLE_TESTIMONIALS = 4
