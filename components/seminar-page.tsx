@@ -101,6 +101,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "I came looking for a breakthrough. Pierre delivered it 1,000%. One sentence really stopped me: \"Business problems justify a decision; human pain triggers it.\"\n\nI thought I was missing the right pitch, the right sales approach. In reality, I was also missing a reading grid: one that lets you look past the stated problem to understand the deep pain that actually drives a client to act. That makes all the difference.\n\nA dense, unfiltered day that pushes you to question your certainties and, above all, to look at your sales strategy with much more clarity.\n\nIf you sell B2B and your opportunities move forward, get discussed, mature… but never close, this masterclass deserves your attention. It may help you stop telling yourself stories about your sales strategy and get back to what matters: understanding what really triggers the decision, through the right conversations.\n\nThank you for the quality of the day and the small-group format.",
   },
   },
+  {
+  name: "François-Xavier Bravo",
+  role: "Coach agile",
+  company: "",
+  quote: {
+  fr: "Merci encore Pierre pour cette journée qui a été riche en enseignements et en recadrages de croyances (spoiler alert : on ne fait JAMAIS de démo produit en premier !). Mon conseil pour ceux qui vont me lire : arrêtez de perdre du temps et allez écouter Pierre ! Ses enseignements vous apporteront une valeur inestimable !",
+  en: "Thanks again, Pierre, for a day rich in lessons and in reframed beliefs (spoiler alert: you NEVER lead with a product demo!). My advice to anyone reading this: stop wasting time and go listen to Pierre! His teachings will bring you invaluable value!",
+  },
+  },
 ]
 
 const VISIBLE_TESTIMONIALS = 4
