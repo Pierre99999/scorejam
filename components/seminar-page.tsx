@@ -137,6 +137,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "Thank you, Pierre, for a mind-blowing day! I closed 2 deals this morning at 8:30. I got up at dawn to make major adjustments to my preparation for the meeting. I found where it really hurt, I triggered the urgency, and then I brought out the prescription.",
   },
   },
+  {
+  name: "Damien Ducourty",
+  role: "CEO",
+  company: "Zero Limit",
+  quote: {
+  fr: "Un grand merci Pierre ! Se retrouver une journée à tes côtés, un professionnel qui aime clairement ce qu'il fait et le fait bien, c'est énergisant et inspirant. Être dépositaire de la mise en œuvre de ta méthodologie, fruit de ta passion, de la synthèse de tes lectures et de tes dizaines d'années d'expérience, c'est un privilège ! Et cela ne s'arrête pas là, car l'objectif de Pierre est bien de transformer l'approche de son audience sur l'un des challenges encore trop souvent mal appréciés de l'entrepreneuriat : celui de la vente. Ce qui est offert en détail dans son livre (Sales Unlocked). C'est une évidence : ce type de journée est un rendez-vous incontournable ! Une journée agréable, une transmission de qualité et actionnable immédiatement. Cerise sur le gâteau, tout cela est supporté par un outil IA rapide et pratique. Chapeau bas !",
+  en: "A huge thank you, Pierre! Spending a day alongside you, a professional who clearly loves what he does and does it well, is energizing and inspiring. Being entrusted with putting your methodology into practice, the fruit of your passion, your reading and your decades of experience, is a privilege! And it doesn't stop there, because Pierre's goal is to transform how his audience approaches one of the most underestimated challenges of entrepreneurship: selling. It's all laid out in detail in his book (Sales Unlocked). It's obvious: this kind of day is a must! A pleasant day, high-quality teaching that's immediately actionable. The icing on the cake: it's all backed by a fast, practical AI tool. Hats off!",
+  },
+  },
 ]
 
 const VISIBLE_TESTIMONIALS = 4
