@@ -128,6 +128,15 @@ const TESTIMONIALS: SeminarTestimonial[] = [
   en: "A truly great day, Pierre Gaubil, a big thank you. All your years of selling across 2 continents, combined with your analytical mind, produce a seriously powerful result. You're as sharp as ever in your analysis, and I love it :) I recommend it to everyone, at any age, because it lets you question your sales habits with a real methodology. And now, back to work!!!!",
   },
   },
+  {
+  name: "Sonia Mancy",
+  role: "Consultante AI",
+  company: "",
+  quote: {
+  fr: "Merci Pierre pour cette journée décoiffante ! J'ai conclu 2 ventes ce matin à 8h30. Levée aux aurores pour faire de gros ajustements à la préparation de ce RDV. J'ai trouvé où ils avaient mal, j'ai déclenché l'urgence, et là, j'ai sorti la prescription médicale.",
+  en: "Thank you, Pierre, for a mind-blowing day! I closed 2 deals this morning at 8:30. I got up at dawn to make major adjustments to my preparation for the meeting. I found where it really hurt, I triggered the urgency, and then I brought out the prescription.",
+  },
+  },
 ]
 
 const VISIBLE_TESTIMONIALS = 4
