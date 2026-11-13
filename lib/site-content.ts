@@ -267,7 +267,7 @@ export const startupSystem: {
 } = {
   stats: [
     { value: "34", label: { en: "Elements", fr: "Éléments" }, highlight: true },
-    { value: "10", label: { en: "Components", fr: "Composantes" } },
+    { value: "9", label: { en: "Components", fr: "Composantes" } },
     { value: "172", label: { en: "Scored criteria", fr: "Critères notés" } },
     { value: "34", label: { en: "Decisive questions", fr: "Questions décisives" }, highlight: true },
     { value: "87", label: { en: "Red flags", fr: "Signaux d'alarme" } },
@@ -371,8 +371,7 @@ export const startupSystem: {
       ],
     },
     {
-      index: "8 & 9",
-      plural: true,
+      index: "8",
       label: "Finance",
       title: { en: "The money", fr: "L'argent" },
       question: {
@@ -387,7 +386,7 @@ export const startupSystem: {
       ],
     },
     {
-      index: "10",
+      index: "9",
       label: "Scale",
       title: { en: "The scale", fr: "L'échelle" },
       question: {

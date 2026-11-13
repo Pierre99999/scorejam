@@ -53,6 +53,28 @@ export function SiteFooter() {
                   {t.nav.testimonials}
                 </Link>
               </li>
+              <li>
+                <a
+                  href={links.switchApp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  {f.switchSoftware}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={links.freeDiagnostic[language]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  {f.compassDiagnostic}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -71,6 +93,17 @@ export function SiteFooter() {
                 <Link href="/contact" className="text-white/80 transition-colors hover:text-white">
                   {t.nav.contact}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={links.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  {f.talkToAuthor}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
               </li>
               <li>
                 <a
