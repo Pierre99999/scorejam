@@ -13,11 +13,60 @@ import { ArrowRight, Quote, Compass, Target } from "lucide-react"
 // Four short, complete quotes read stronger than eight clamped ones.
 const featured = featuredTestimonials(4)
 
+function CatalogLink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
+  const { language } = useLanguage()
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+      </Link>
+    )
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+      <span className="sr-only"> ({translations[language].common.newTab})</span>
+    </a>
+  )
+}
+
 export function HomePage() {
   const { language } = useLanguage()
   const all = translations[language]
   const t = all.home
   const tm = t.methodStory
+
+  const tc = t.catalog
+  const startup = methods.startup
+  const sales = methods.sales
+  const catalogRows = [
+    {
+      key: "startup" as const,
+      href: "/startup-unlocked",
+      copy: tc.startup,
+      cover: bookCover(startup.book, language),
+      theme: startup.theme,
+      cells: [
+        { href: startup.book.buy[language] ?? "/startup-unlocked" },
+        { href: startup.guided.signup[language] ?? startup.guided.signup.fr ?? "/startup-unlocked" },
+        { href: startup.onsite.cta },
+        { href: links.freeDiagnostic[language] },
+      ],
+    },
+    {
+      key: "sales" as const,
+      href: "/sales-unlocked",
+      copy: tc.sales,
+      cover: bookCover(sales.book, language),
+      theme: sales.theme,
+      cells: [
+        { href: sales.book.buy[language] ?? "/sales-unlocked" },
+        { href: sales.guided.signup[language] ?? sales.guided.signup.fr ?? "/sales-unlocked" },
+        { href: sales.onsite.cta },
+        { href: links.switchApp },
+      ],
+    },
+  ]
 
   const cards = [
     {
@@ -111,69 +160,108 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ---------- Two methods ---------- */}
+      {/* ---------- Catalogue: two methods, four formats ---------- */}
       <section className="px-6 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-[1180px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">{t.methods.eyebrow}</p>
-          <h2 className="mt-4 max-w-3xl font-serif text-3xl font-normal leading-tight text-navy md:text-4xl lg:text-5xl">
-            <span className="block text-balance">{t.methods.title}</span>
-            <span className="block text-balance">{t.methods.titleLine2}</span>
+          <h2 className="max-w-3xl text-balance font-serif text-3xl font-normal leading-tight text-navy md:text-4xl lg:text-5xl">
+            {tc.title}
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{t.methods.subtitle}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{tc.intro}</p>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {cards.map(({ key, href, copy, Icon, count, book, cover, theme }) => (
-              <article
-                key={key}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
-                {/* Band painted in the book's own cover colour, with the cover itself */}
-                <div className={`flex items-center gap-5 p-7 ${theme.surface}`}>
-                  {cover && (
+          {/* Desktop: a true table, every cell is a link */}
+          <div className="mt-12 hidden overflow-hidden rounded-2xl border border-line bg-white lg:block">
+            <table className="w-full table-fixed border-collapse text-left">
+              <thead>
+                <tr className="border-b border-line bg-paper-2">
+                  <th scope="col" className="w-[19%] px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                    {tc.methodHeader}
+                  </th>
+                  {tc.columns.map((col) => (
+                    <th key={col} scope="col" className="px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {catalogRows.map((row, r) => (
+                  <tr key={row.key} className={r === 0 ? "border-b border-line" : ""}>
+                    <th scope="row" className="px-6 py-6 align-top">
+                      <Link href={row.href} className="group flex items-start gap-4">
+                        {row.cover && (
+                          <Image
+                            src={row.cover}
+                            alt=""
+                            width={120}
+                            height={180}
+                            className="h-auto w-12 flex-none rounded shadow-md ring-1 ring-black/10"
+                          />
+                        )}
+                        <span>
+                          <span className="block font-serif text-xl leading-tight text-navy group-hover:underline group-hover:decoration-orange group-hover:decoration-2 group-hover:underline-offset-4">
+                            {row.copy.name}
+                          </span>
+                          <span className="mt-1 block text-sm font-normal text-muted">({row.copy.tag})</span>
+                        </span>
+                      </Link>
+                    </th>
+                    {row.cells.map((cell, c) => (
+                      <td key={c} className="p-0 align-top">
+                        <CatalogLink
+                          href={cell.href}
+                          className="group flex h-full min-h-28 flex-col justify-between gap-3 px-6 py-6 transition-colors hover:bg-paper"
+                        >
+                          <span className="leading-relaxed text-navy">{row.copy.cells[c]}</span>
+                          <ArrowRight
+                            className="h-4 w-4 text-orange transition-transform group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
+                        </CatalogLink>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile and tablet: one card per method */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:hidden">
+            {catalogRows.map((row) => (
+              <article key={row.key} className="overflow-hidden rounded-2xl border border-line bg-white">
+                <Link href={row.href} className={`flex items-center gap-4 p-6 ${row.theme.surface}`}>
+                  {row.cover && (
                     <Image
-                      src={cover}
-                      alt={`${copy.name} — ${all.formats.book.label}`}
-                      width={300}
-                      height={452}
-                      className="h-auto w-[88px] flex-none rounded shadow-xl ring-1 ring-black/15 transition-transform duration-300 group-hover:-translate-y-1"
+                      src={row.cover}
+                      alt=""
+                      width={120}
+                      height={180}
+                      className="h-auto w-14 flex-none rounded shadow-lg ring-1 ring-black/15"
                     />
                   )}
-                  <div className="min-w-0">
-                    <div className={`flex items-center gap-2 ${theme.onSurfaceHighlight}`}>
-                      <Icon className="h-4 w-4 flex-none" aria-hidden="true" />
-                      <span className="text-xs font-semibold uppercase tracking-[0.14em]">
-                        {copy.countLabel}
-                      </span>
-                    </div>
-                    <h3 className={`mt-2 font-serif text-2xl leading-tight ${theme.onSurface}`}>
-                      {copy.name}
-                    </h3>
-                    <p className={`mt-1 text-sm ${theme.onSurfaceMuted}`}>
-                      {book.status === "available"
-                        ? `${all.formats.book.label} · ${book.price[language]}`
-                        : `${all.formats.book.label} · ${all.common.comingSoon}`}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col p-8">
-                  <p className="font-serif text-xl leading-snug text-navy">{copy.promise}</p>
-
-                  <p className={`mt-4 border-l-2 pl-4 leading-relaxed text-navy/70 ${theme.accentBorder}`}>
-                    {copy.problem}
-                  </p>
-
-                  <div className="mt-auto pt-7">
-                    <Link
-                      href={href}
-                      className={`inline-flex items-center gap-2 font-semibold text-navy underline decoration-2 underline-offset-4 transition-colors hover:opacity-70 ${theme.accentDecoration}`}
-                    >
-                      {copy.cta}
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
-                    <span className="sr-only">{`(${count})`}</span>
-                  </div>
-                </div>
+                  <span>
+                    <span className={`block font-serif text-2xl leading-tight ${row.theme.onSurface}`}>{row.copy.name}</span>
+                    <span className={`mt-1 block text-sm ${row.theme.onSurfaceMuted}`}>({row.copy.tag})</span>
+                  </span>
+                </Link>
+                <ul className="divide-y divide-line">
+                  {row.cells.map((cell, c) => (
+                    <li key={c}>
+                      <CatalogLink
+                        href={cell.href}
+                        className="group flex items-center justify-between gap-4 px-6 py-4 transition-colors hover:bg-paper"
+                      >
+                        <span>
+                          <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                            {tc.columns[c]}
+                          </span>
+                          <span className="mt-1 block leading-relaxed text-navy">{row.copy.cells[c]}</span>
+                        </span>
+                        <ArrowRight className="h-4 w-4 flex-none text-orange" aria-hidden="true" />
+                      </CatalogLink>
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -205,6 +293,15 @@ export function HomePage() {
               </li>
             ))}
           </ol>
+
+          <dl className="mt-12 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15">
+            {tm.stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col-reverse gap-1 bg-navy-deep px-4 py-6 text-center md:px-8">
+                <dt className="text-sm leading-snug text-white/70">{stat.label}</dt>
+                <dd className="font-serif text-4xl text-orange md:text-5xl">{stat.num}</dd>
+              </div>
+            ))}
+          </dl>
 
           <p className="mt-12 text-pretty font-serif text-xl leading-snug text-white/90 md:text-2xl">
             {tm.appsLead}{" "}
@@ -330,22 +427,25 @@ export function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
+          <div className="mt-8 flex flex-col items-center gap-4">
             <a
               href={links.freeDiagnostic[language]}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 underline decoration-orange decoration-2 underline-offset-4 transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 font-semibold text-white underline decoration-orange decoration-2 underline-offset-4 transition-colors hover:text-orange"
             >
               {t.finalCta.ctaDiagnostic}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only"> ({all.common.newTab})</span>
             </a>
             <a
               href={links.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 underline decoration-orange decoration-2 underline-offset-4 transition-colors hover:text-white"
+              className="text-sm text-white/60 underline underline-offset-4 transition-colors hover:text-white"
             >
               {t.finalCta.ctaCall}
+              <span className="sr-only"> ({all.common.newTab})</span>
             </a>
           </div>
         </div>

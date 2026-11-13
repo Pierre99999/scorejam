@@ -2,14 +2,14 @@ import type { Metadata } from "next"
 import { HomePage } from "@/components/home-page"
 
 export const metadata: Metadata = {
-  title: "34 Elements — Build a better company. Win better deals.",
+  title: "34 Elements, method publisher for founders and sales teams",
   description:
-    "Two methods from 25 years of entrepreneurship and 17 years in Silicon Valley. Startup Unlocked makes your company make sense. Sales Unlocked makes your sales convert. Each available as a book, a guided program, or a day on site.",
+    "Two methods, Startup Unlocked and Sales Unlocked, available as a book, a video program, an on-site day and software.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "34 Elements — Build a better company. Win better deals.",
+    title: "34 Elements, method publisher for founders and sales teams",
     description:
-      "Two methods. Three ways to live them. Startup Unlocked for strategy, Sales Unlocked for conversion.",
+      "Two methods, Startup Unlocked and Sales Unlocked, available as a book, a video program, an on-site day and software.",
     url: "/",
     type: "website",
   },

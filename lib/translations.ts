@@ -4,10 +4,11 @@ export const translations = {
       home: "Home",
       startupUnlocked: "Startup Unlocked",
       salesUnlocked: "Sales Unlocked",
-      about: "About Pierre",
+      about: "The author",
       testimonials: "Testimonials",
       contact: "Contact",
       letsTalk: "Let's talk",
+      diagnosticCta: "Take the diagnostic",
       // legacy keys, kept so old routes still compile until they are removed
       compass: "The Compass",
       switch: "The Switch",
@@ -24,7 +25,10 @@ export const translations = {
     },
 
     footer: {
-      tagline: "Two methods. Three ways to live them.",
+      tagline: "Method publisher. Two methods, four formats.",
+      switchSoftware: "Switch software",
+      compassDiagnostic: "Compass34 diagnostic",
+      talkToAuthor: "Talk to the author, 15 min",
       methodsTitle: "Methods",
       companyTitle: "34 Elements",
       contactTitle: "Get in touch",
@@ -240,11 +244,11 @@ export const translations = {
 
     home: {
       hero: {
-        eyebrow: "34 Elements",
+        eyebrow: "34 Elements, method publisher",
         title: "The best companies are built.",
         titleHighlight: "The best deals are too.",
         subtitle:
-          "Two problems. Two methods. One to build a company that makes sense. One to turn conversations into decisions.",
+          "Two methods, published as a book, a video program, an on-site day and software. One to build a coherent company, one to turn conversations into decisions.",
         signature: "Two methods. Three ways to live them.",
         ctaStartup: "Discover Startup Unlocked",
         ctaSales: "Discover Sales Unlocked",
@@ -270,9 +274,40 @@ export const translations = {
           cta: "Explore Sales Unlocked",
         },
       },
+      catalog: {
+        title: "Two methods, four formats.",
+        intro: "Each method can be read, worked through, lived as a team and applied every day.",
+        methodHeader: "Method",
+        columns: ["The book", "The video program", "The on-site day", "The software"],
+        startup: {
+          name: "Startup Unlocked",
+          tag: "strategy",
+          cells: [
+            "€26",
+            "€1,450, 10 modules and 4 h with the author",
+            "€1,900 excl. tax, excl. travel",
+            "Compass34: online diagnostic available, full version coming",
+          ],
+        },
+        sales: {
+          name: "Sales Unlocked",
+          tag: "sales",
+          cells: [
+            "€26",
+            "€725, 5 modules and 2 h with the author (in French)",
+            "€1,900 excl. tax, excl. travel",
+            "Switch: €49.99 per user per month, free trial",
+          ],
+        },
+      },
       methodStory: {
         eyebrow: "The 34 Elements method",
         title: "Most entrepreneurs do the wrong things, beautifully.",
+        stats: [
+          { num: "34", label: "elements" },
+          { num: "172", label: "scored criteria" },
+          { num: "87", label: "red flags" },
+        ],
         systemLine: "A company is a system. A sale is too.",
         principles: [
           "Diagnose before optimizing.",
@@ -283,16 +318,16 @@ export const translations = {
         apps: ["Startup Unlocked", "Sales Unlocked"],
       },
       why: {
-        eyebrow: "Why Pierre",
+        eyebrow: "The author",
         title: "These methods were not invented in a classroom.",
-        body: "Five companies co-founded, two exits, one IPO. Seventeen years building in Silicon Valley. Then 25 years of investing in and coaching entrepreneurs. Both methods come from what actually worked — and from watching what repeatedly did not.",
+        body: "Five companies co-founded, two exits, one IPO. Seventeen years building in Silicon Valley. Then 25 years of investing in and working alongside entrepreneurs. Both methods come from what actually worked — and from watching what repeatedly did not.",
         stats: [
           { num: "300+", label: "startups and companies supported" },
           { num: "5", label: "companies co-founded" },
           { num: "17 yrs", label: "in Silicon Valley" },
           { num: "2", label: "exits, 1 IPO" },
         ],
-        cta: "More about Pierre",
+        cta: "Meet the author",
       },
       proof: {
         eyebrow: "Proof",
@@ -304,11 +339,11 @@ export const translations = {
       },
       finalCta: {
         title: "Which challenge matters most right now?",
-        subtitle: "Not sure? Book a 15-minute call and we will point you to the right one.",
+        subtitle: "Not sure? Start with the free diagnostic: it shows where your company stands today.",
         ctaStartup: "My company needs clarity",
         ctaSales: "My sales need to convert",
         ctaDiagnostic: "Take the free Startup Unlocked diagnostic",
-        ctaCall: "Book a 15-min call",
+        ctaCall: "Talk to the author, 15 min",
       },
     },
 
@@ -1418,10 +1453,11 @@ export const translations = {
       home: "Accueil",
       startupUnlocked: "Startup Unlocked",
       salesUnlocked: "Sales Unlocked",
-      about: "À propos",
+      about: "L'auteur",
       testimonials: "Témoignages",
       contact: "Contact",
       letsTalk: "Parlons-en",
+      diagnosticCta: "Faire le diagnostic",
       // clés héritées, conservées le temps de retirer les anciennes routes
       compass: "The Compass",
       switch: "The Switch",
@@ -1438,7 +1474,10 @@ export const translations = {
     },
 
     footer: {
-      tagline: "Deux méthodes. Trois façons de les vivre.",
+      tagline: "Éditeur de méthodes. Deux méthodes, quatre formats.",
+      switchSoftware: "Logiciel Switch",
+      compassDiagnostic: "Diagnostic Compass34",
+      talkToAuthor: "Parler à l'auteur, 15 min",
       methodsTitle: "Méthodes",
       companyTitle: "34 Elements",
       contactTitle: "Contact",
@@ -1655,11 +1694,11 @@ export const translations = {
 
     home: {
       hero: {
-        eyebrow: "34 Elements",
+        eyebrow: "34 Elements, éditeur de méthodes",
         title: "Les meilleures entreprises se construisent.",
         titleHighlight: "Les meilleurs deals aussi.",
         subtitle:
-          "Deux problèmes. Deux méthodes. Une pour bâtir une entreprise qui a du sens. Une pour transformer les conversations en décisions.",
+          "Deux méthodes éditées en livre, en programme vidéo, en journée sur site et en logiciel. L'une pour construire une entreprise cohérente, l'autre pour transformer les échanges en décisions.",
         signature: "Deux méthodes. Trois façons de les vivre.",
         ctaStartup: "Découvrir Startup Unlocked",
         ctaSales: "Découvrir Sales Unlocked",
@@ -1685,9 +1724,40 @@ export const translations = {
           cta: "Explorer Sales Unlocked",
         },
       },
+      catalog: {
+        title: "Deux méthodes, quatre formats.",
+        intro: "Chaque méthode se lit, se travaille, se vit en équipe et s'applique au quotidien.",
+        methodHeader: "Méthode",
+        columns: ["Le livre", "Le programme vidéo", "La journée sur site", "Le logiciel"],
+        startup: {
+          name: "Startup Unlocked",
+          tag: "stratégie",
+          cells: [
+            "26 €",
+            "1 450 €, 10 modules et 4 h avec l'auteur",
+            "1 900 € HT, hors déplacement",
+            "Compass34 : diagnostic en ligne disponible, version complète à venir",
+          ],
+        },
+        sales: {
+          name: "Sales Unlocked",
+          tag: "vente",
+          cells: [
+            "26 €",
+            "725 €, 5 modules et 2 h avec l'auteur (en français)",
+            "1 900 € HT, hors déplacement",
+            "Switch : 49,99 € par utilisateur et par mois, essai gratuit",
+          ],
+        },
+      },
       methodStory: {
         eyebrow: "La méthode 34 Elements",
         title: "La plupart des entrepreneurs font les mauvaises choses, magnifiquement.",
+        stats: [
+          { num: "34", label: "éléments" },
+          { num: "172", label: "critères scorés" },
+          { num: "87", label: "red flags" },
+        ],
         systemLine: "Une entreprise est un système. Une vente aussi.",
         principles: [
           "Diagnostiquer avant d'optimiser.",
@@ -1698,16 +1768,16 @@ export const translations = {
         apps: ["Startup Unlocked", "Sales Unlocked"],
       },
       why: {
-        eyebrow: "Pourquoi Pierre",
+        eyebrow: "L'auteur",
         title: "Ces méthodes n'ont pas été inventées dans une salle de cours.",
-        body: "Cinq entreprises co-fondées, deux exits, une introduction en bourse. Dix-sept ans à construire dans la Silicon Valley. Puis 25 ans à investir et à accompagner des entrepreneurs. Les deux méthodes viennent de ce qui a réellement marché — et de ce qui, à force, ne marchait jamais.",
+        body: "Cinq entreprises co-fondées, deux exits, une introduction en bourse. Dix-sept ans à construire dans la Silicon Valley. Puis 25 ans à investir aux côtés des entrepreneurs. Les deux méthodes viennent de ce qui a réellement marché — et de ce qui, à force, ne marchait jamais.",
         stats: [
           { num: "300+", label: "startups et entreprises accompagnées" },
           { num: "5", label: "entreprises co-fondées" },
           { num: "17 ans", label: "dans la Silicon Valley" },
           { num: "2", label: "exits, 1 IPO" },
         ],
-        cta: "En savoir plus sur Pierre",
+        cta: "Découvrir l'auteur",
       },
       proof: {
         eyebrow: "Preuves",
@@ -1719,11 +1789,11 @@ export const translations = {
       },
       finalCta: {
         title: "Quel est votre enjeu le plus urgent ?",
-        subtitle: "Vous hésitez ? Réservez 15 minutes et je vous orienterai.",
+        subtitle: "Vous hésitez ? Commencez par le diagnostic gratuit : il montre où en est votre entreprise aujourd'hui.",
         ctaStartup: "Mon entreprise a besoin de clarté",
         ctaSales: "Mes ventes doivent convertir",
         ctaDiagnostic: "Faire le diagnostic gratuit Startup Unlocked",
-        ctaCall: "Réserver 15 minutes",
+        ctaCall: "Parler à l'auteur, 15 min",
       },
     },
 
@@ -2400,7 +2470,7 @@ export const translations = {
         badge: "Calendrier",
         title: "Un Calendrier Flexible",
         subtitle:
-          "Vous choisissez votre rythme, mais nous planifions les 4 sessions à l'avance avant de commencer. Cela crée la discipline dont vous avez besoin pour vraiment terminer. La plupart des gens ne manquent pas d'idées — ils manquent de structure. Nous l'intégrons d��s le premier jour.",
+          "Vous choisissez votre rythme, mais nous planifions les 4 sessions à l'avance avant de commencer. Cela crée la discipline dont vous avez besoin pour vraiment terminer. La plupart des gens ne manquent pas d'idées — ils manquent de structure. Nous l'intégrons d����s le premier jour.",
         legend: {
           workshop: "Atelier",
           workshopDesc: "Méthode Power en Vidéos",

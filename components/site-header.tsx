@@ -83,12 +83,12 @@ export function SiteHeader() {
           </button>
 
           <a
-            href={links.calendly}
+            href={links.freeDiagnostic[language]}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-orange hover:text-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 lg:inline-flex"
           >
-            {t.letsTalk}
+            {t.diagnosticCta}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
             <span className="sr-only">({translations[language].common.newTab})</span>
           </a>
@@ -145,13 +145,13 @@ export function SiteHeader() {
 
               <div className="mt-4 flex flex-col gap-3 border-t border-line pt-4">
                 <a
-                  href={links.calendly}
+                  href={links.freeDiagnostic[language]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-navy py-3 font-semibold text-white transition-all hover:bg-orange hover:text-navy-deep"
                   onClick={() => setOpen(false)}
                 >
-                  {t.letsTalk}
+                  {t.diagnosticCta}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   <span className="sr-only">({translations[language].common.newTab})</span>
                 </a>

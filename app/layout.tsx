@@ -9,11 +9,11 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.34elements.com"),
   title: {
-    default: "34 Elements — Build a better company. Win better deals.",
+    default: "34 Elements, method publisher for founders and sales teams",
     template: "%s",
   },
   description:
-    "Two methods from 25 years of entrepreneurship and 17 years in Silicon Valley. Startup Unlocked for strategy, Sales Unlocked for conversion.",
+    "Two methods, Startup Unlocked and Sales Unlocked, available as a book, a video program, an on-site day and software.",
   icons: {
     icon: "/images/34elements-logo.png",
     apple: "/images/34elements-logo.png",
