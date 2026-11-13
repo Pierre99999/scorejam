@@ -20,6 +20,7 @@ export const translations = {
     common: {
       newTab: "opens in a new tab",
       comingSoon: "Coming soon",
+      publishedBy: "A method published by 34 Elements",
       readMore: "Learn more",
       tryApp: "Try it free",
     },
@@ -197,7 +198,7 @@ export const translations = {
               text: "helps the salesperson understand what is happening and what to do about it.",
             },
           ],
-          note: "No generic coaching. No rigid methodology. No meaningless probability score.",
+          note: "No generic advice. No rigid methodology. No meaningless probability score.",
           kicker: "A simple discipline. Your sales knowledge. Every conversation. The next right move.",
         },
         cta: "Try Switch",
@@ -213,10 +214,10 @@ export const translations = {
 
     /** Shared vocabulary for the three formats. */
     formats: {
-      eyebrow: "Three ways to live the method",
-      title: "Read the method. Master it with coaching. Tailor it to your business.",
-      subtitle: "Same method, three levels of depth. Start where you are.",
-      progression: ["Read", "Master", "Tailor"],
+      eyebrow: "The formats",
+      title: "Four formats, one method.",
+      subtitle: "Same method, four ways to use it. Start where you are.",
+      progression: ["Read", "Work through", "Live as a team", "Apply"],
       book: {
         label: "The Book",
         tagline: "Read the method",
@@ -226,10 +227,10 @@ export const translations = {
         comingSoonNote: "The book is being written. It is not available yet.",
       },
       guided: {
-        label: "The Guided Program",
-        tagline: "Master it with coaching",
+        label: "The Video Program",
+        tagline: "Work through it with the author",
         modulesLabel: "modules",
-        coachingLabel: "hours of 1-on-1 coaching",
+        coachingLabel: "hours one-on-one with the author",
         cycleTitle: "The cycle",
         ctaEn: "Start in English",
         ctaFr: "Commencer en français",
@@ -239,6 +240,24 @@ export const translations = {
         label: "The On-Site Workshop",
         tagline: "Tailor it to your business",
         cta: "Discuss an on-site workshop",
+      },
+      software: {
+        label: "The Software",
+        startup: {
+          name: "Compass34",
+          body: "Compass34 scores your company against the 34 elements.",
+          status: "Online diagnostic available now. Full version coming.",
+          cta: "Take the free diagnostic",
+        },
+        sales: {
+          name: "Switch",
+          body: "Switch applies Sales Unlocked to every real conversation, deal after deal.",
+          price: "€49.99",
+          unit: "per user per month",
+          trial: "Free trial",
+          cta: "Discover Switch",
+          ctaTry: "Try it free",
+        },
       },
     },
 
@@ -351,7 +370,17 @@ export const translations = {
     method: {
       startup: {
         name: "Startup Unlocked",
-        eyebrow: "System 1 · Strategy",
+        eyebrow: "Method 1 · Strategy",
+        factSheet: {
+          title: "The method at a glance",
+          rows: [
+            { label: "Domain", value: "Company strategy" },
+            { label: "For whom", value: "Founders and leadership teams of startups before Series B" },
+            { label: "Formats", value: "Book, video program, on-site day, Compass34 software" },
+            { label: "Languages", value: "English and French" },
+          ],
+          note: "",
+        },
         heroTitle: "Building a product is half the job.",
         heroHighlight: "Build the company too.",
         heroLead:
@@ -366,12 +395,12 @@ export const translations = {
         ctaMethod: "Discover the system",
         methodEyebrow: "The system",
         // Each method page names its own practice: Startup says "system", Sales says "discipline".
-        formatsEyebrow: "Three ways to live the system",
-        formatsTitle: "Read the system. Master it with coaching. Tailor it to your business.",
-        formatsSubtitle: "Same system, three levels of depth. Start where you are.",
+        formatsEyebrow: "The formats",
+        formatsTitle: "Four formats, one method.",
+        formatsSubtitle: "Same method, four ways to use it. Start where you are.",
         closeBody:
           "Fifteen minutes is usually enough to know — or to find out that neither one is what you need. I will tell you either way.",
-        cycle: ["Watch the module", "Apply it to your company", "Get challenged in coaching"],
+        cycle: ["Watch the module", "Apply it to your company", "Get challenged by the author"],
         // The 34-element system replaces the former "ten decisions" grid.
         system: {
           title: "34 elements.",
@@ -393,7 +422,7 @@ export const translations = {
         bookDesc:
           "A practical, straight-to-the-point guide that walks you through the 34 elements with examples, checklists, and exercises you can run alone.",
         guidedDesc:
-          "Ten modules, exercises that produce real strategic artifacts, and four hours of one-to-one coaching where I challenge your assumptions. Available in English and French.",
+          "Ten modules, exercises that produce real strategic artifacts, and four hours one-on-one with the author, who challenges your assumptions. Available in English and French.",
         onsiteLabel: "The On-Site Day",
         onsiteTagline: "Diagnose in the morning, fix in the afternoon.",
         onsiteDesc:
@@ -404,11 +433,21 @@ export const translations = {
       },
       sales: {
         name: "Sales Unlocked",
-        eyebrow: "Discipline 2 · Sales",
+        eyebrow: "Method 2 · Sales",
+        factSheet: {
+          title: "The method at a glance",
+          rows: [
+            { label: "Domain", value: "Complex B2B sales" },
+            { label: "For whom", value: "Founders who sell, sales leaders and reps, from startup to enterprise" },
+            { label: "Formats", value: "Book, video program, on-site day, Switch software" },
+            { label: "Languages", value: "English and French (video program in French)" },
+          ],
+          note: "SPIN, MEDDIC, Challenger, or your own playbook: Sales Unlocked does not replace your methodology.",
+        },
         heroTitle: "Stop persuading.",
         heroHighlight: "Start building decisions.",
         heroLead:
-          "Sales Unlocked is not about persuasion techniques. Read it in the book. Learn it with coaching. Run it on every deal with Switch.",
+          "Sales Unlocked is not about persuasion techniques. Read it in the book. Work through it with the author. Run it on every deal with Switch.",
         audience: {
           eyebrow: "Who it's for",
           title: "For complex B2B sales, startup to enterprise.",
@@ -435,12 +474,12 @@ export const translations = {
           cta: "Discover Switch",
         },
         methodEyebrow: "The discipline",
-        formatsEyebrow: "Three ways to live the discipline",
-        formatsTitle: "Read the discipline. Master it with coaching. Tailor it to your business.",
-        formatsSubtitle: "Same discipline, three levels of depth. Start where you are.",
+        formatsEyebrow: "The formats",
+        formatsTitle: "Four formats, one method.",
+        formatsSubtitle: "Same method, four ways to use it. Start where you are.",
         closeBody:
-          "Fifteen minutes is usually enough to know — or to find out that neither discipline is what you need. I will tell you either way.",
-        cycle: ["Learn the gate", "Apply it to a real deal", "Get challenged in coaching"],
+          "Fifteen minutes is usually enough to know — or to find out that neither method is what you need. I will tell you either way.",
+        cycle: ["Learn the gate", "Apply it to a real deal", "Get challenged by the author"],
         // The method is argued, not diagrammed as a map of gates.
         map: {
           title: "Keep your methodology.",
@@ -470,7 +509,7 @@ export const translations = {
         bookDesc:
           "The 3 gates and the momentum, written down as a practical guide: the questions to ask, the evidence to look for, and how to read a deal that is not moving.",
         guidedDesc:
-          "Five modules, exercises applied to deals actually in your pipeline, and two hours of one-to-one coaching. Most clients see the impact on their next call.",
+          "Five modules, exercises applied to deals actually in your pipeline, and two hours one-on-one with the author. Most clients see the impact on their next call.",
         onsiteLabel: "The On-Site Day",
         onsiteTagline: "A training that doesn't end when the day ends.",
         onsiteDesc:
@@ -1469,6 +1508,7 @@ export const translations = {
     common: {
       newTab: "ouvre un nouvel onglet",
       comingSoon: "Bientôt disponible",
+      publishedBy: "Une méthode éditée par 34 Elements",
       readMore: "En savoir plus",
       tryApp: "Testez",
     },
@@ -1649,7 +1689,7 @@ export const translations = {
               text: "aide le commercial à comprendre ce qui se passe et quoi faire.",
             },
           ],
-          note: "Pas de coaching générique. Pas de méthodologie rigide. Pas de score de probabilité qui ne veut rien dire.",
+          note: "Pas de conseil générique. Pas de méthodologie rigide. Pas de score de probabilité qui ne veut rien dire.",
           kicker: "Une discipline simple. Votre savoir-faire commercial. Chaque conversation. Le prochain bon geste.",
         },
         cta: "Essayer Switch",
@@ -1663,10 +1703,10 @@ export const translations = {
     },
 
     formats: {
-      eyebrow: "Trois façons de vivre la méthode",
-      title: "Lire la méthode. La maîtriser avec du coaching. L'adapter à votre entreprise.",
+      eyebrow: "Les formats",
+      title: "Quatre formats, une méthode.",
       subtitle: "Même méthode, trois niveaux de profondeur. Commencez là o�� vous en êtes.",
-      progression: ["Lire", "Maîtriser", "Adapter"],
+      progression: ["Lire", "Travailler", "Vivre en équipe", "Appliquer"],
       book: {
         label: "Le livre",
         tagline: "Lire la méthode",
@@ -1676,10 +1716,10 @@ export const translations = {
         comingSoonNote: "Le livre est en cours d'écriture. Il n'est pas encore disponible.",
       },
       guided: {
-        label: "Le programme accompagné",
-        tagline: "La maîtriser avec du coaching",
+        label: "Le programme vidéo",
+        tagline: "La travailler avec l'auteur",
         modulesLabel: "modules",
-        coachingLabel: "heures de coaching individuel",
+        coachingLabel: "heures en individuel avec l'auteur",
         cycleTitle: "Le cycle",
         ctaEn: "Commencer en anglais",
         ctaFr: "Commencer en français",
@@ -1689,6 +1729,24 @@ export const translations = {
         label: "La journée sur site",
         tagline: "L'adapter à votre entreprise",
         cta: "Discuter d'une journée sur site",
+      },
+      software: {
+        label: "Le logiciel",
+        startup: {
+          name: "Compass34",
+          body: "Compass34 note votre entreprise sur les 34 éléments.",
+          status: "Diagnostic en ligne disponible. Version complète à venir.",
+          cta: "Faire le diagnostic gratuit",
+        },
+        sales: {
+          name: "Switch",
+          body: "Switch applique Sales Unlocked à chaque vraie conversation, deal après deal.",
+          price: "49,99 €",
+          unit: "par utilisateur et par mois",
+          trial: "Essai gratuit",
+          cta: "Découvrir Switch",
+          ctaTry: "Essayer gratuitement",
+        },
       },
     },
 
@@ -1801,7 +1859,17 @@ export const translations = {
     method: {
       startup: {
         name: "Startup Unlocked",
-        eyebrow: "Système 1 · Stratégie",
+        eyebrow: "Méthode 1 · Stratégie",
+        factSheet: {
+          title: "La méthode en bref",
+          rows: [
+            { label: "Domaine", value: "La stratégie d'entreprise" },
+            { label: "Pour qui", value: "Fondateurs et équipes dirigeantes de startups avant la série B" },
+            { label: "Formats", value: "Livre, programme vidéo, journée sur site, logiciel Compass34" },
+            { label: "Langues", value: "Français et anglais" },
+          ],
+          note: "",
+        },
         heroTitle: "Construire un produit, c'est la moitié du travail.",
         heroHighlight: "Construisez aussi l'entreprise.",
         heroLead:
@@ -1815,12 +1883,12 @@ export const translations = {
         ctaFormats: "Choisir mon format",
         ctaMethod: "Découvrir le système",
         methodEyebrow: "Le système",
-        formatsEyebrow: "Trois façons de vivre le système",
-        formatsTitle: "Lire le système. Le maîtriser avec du coaching. L'adapter à votre entreprise.",
-        formatsSubtitle: "Même système, trois niveaux de profondeur. Commencez là où vous en êtes.",
+        formatsEyebrow: "Les formats",
+        formatsTitle: "Quatre formats, une méthode.",
+        formatsSubtitle: "Même méthode, quatre façons de l'utiliser. Commencez là où vous en êtes.",
         closeBody:
           "Quinze minutes suffisent généralement pour le savoir — ou pour découvrir qu'aucun des deux n'est ce qu'il vous faut. Je vous le dirai franchement.",
-        cycle: ["Regarder le module", "L'appliquer à votre entreprise", "Se faire challenger en coaching"],
+        cycle: ["Regarder le module", "L'appliquer à votre entreprise", "Se faire challenger par l'auteur"],
         // Le système des 34 éléments remplace l'ancienne grille « dix décisions ».
         system: {
           title: "34 éléments.",
@@ -1842,7 +1910,7 @@ export const translations = {
         bookDesc:
           "Un guide pratique et direct qui déroule les 34 éléments avec des exemples, des check-lists et des exercices que vous pouvez faire seul.",
         guidedDesc:
-          "Dix modules, des exercices qui produisent de vrais artefacts stratégiques, et quatre heures de coaching individuel où je challenge vos hypothèses. Disponible en anglais et en français.",
+          "Dix modules, des exercices qui produisent de vrais artefacts stratégiques, et quatre heures en individuel avec l'auteur, qui challenge vos hypothèses. Disponible en anglais et en français.",
         onsiteLabel: "La journée sur site",
         onsiteTagline: "Diagnostiquer le matin, réparer l'après-midi.",
         onsiteDesc:
@@ -1853,11 +1921,21 @@ export const translations = {
       },
       sales: {
         name: "Sales Unlocked",
-        eyebrow: "Discipline 2 · Vente",
+        eyebrow: "Méthode 2 · Vente",
+        factSheet: {
+          title: "La méthode en bref",
+          rows: [
+            { label: "Domaine", value: "La vente B2B complexe" },
+            { label: "Pour qui", value: "Fondateurs qui vendent, directeurs commerciaux et commerciaux, de la startup au grand groupe" },
+            { label: "Formats", value: "Livre, programme vidéo, journée sur site, logiciel Switch" },
+            { label: "Langues", value: "Français et anglais (programme vidéo en français)" },
+          ],
+          note: "SPIN, MEDDIC, Challenger, ou votre propre playbook : Sales Unlocked ne remplace pas votre méthodologie.",
+        },
         heroTitle: "Arrêtez de persuader.",
         heroHighlight: "Construisez des décisions.",
         heroLead:
-          "Sales Unlocked ne parle pas de techniques de persuasion. Lisez la méthode dans le livre. Apprenez-la en coaching. Appliquez-la à chaque deal avec Switch.",
+          "Sales Unlocked ne parle pas de techniques de persuasion. Lisez la méthode dans le livre. Travaillez-la avec l'auteur. Appliquez-la à chaque deal avec Switch.",
         audience: {
           eyebrow: "Pour qui",
           title: "Pour les ventes complexes en B2B, de la startup au grand groupe.",
@@ -1887,12 +1965,12 @@ export const translations = {
           cta: "Découvrir Switch",
         },
         methodEyebrow: "La discipline",
-        formatsEyebrow: "Trois façons de vivre la discipline",
-        formatsTitle: "Lire la discipline. La maîtriser avec du coaching. L'adapter à votre entreprise.",
-        formatsSubtitle: "Même discipline, trois niveaux de profondeur. Commencez là où vous en êtes.",
+        formatsEyebrow: "Les formats",
+        formatsTitle: "Quatre formats, une méthode.",
+        formatsSubtitle: "Même méthode, quatre façons de l'utiliser. Commencez là où vous en êtes.",
         closeBody:
           "Quinze minutes suffisent généralement pour le savoir — ou pour découvrir qu'aucune des deux n'est ce qu'il vous faut. Je vous le dirai franchement.",
-        cycle: ["Apprendre la porte", "L'appliquer à un deal réel", "Se faire challenger en coaching"],
+        cycle: ["Apprendre la porte", "L'appliquer à un deal réel", "Se faire challenger par l'auteur"],
         // La méthode s'expose par l'argument, sans carte des portes.
         map: {
           title: "Gardez votre méthodologie.",
@@ -1922,7 +2000,7 @@ export const translations = {
         bookDesc:
           "Les 3 portes et le momentum, écrits sous forme de guide pratique : les questions à poser, les preuves à chercher, et comment lire un deal qui n'avance pas.",
         guidedDesc:
-          "Cinq modules, des exercices appliqués à des deals réellement dans votre pipeline, et deux heures de coaching individuel. La plupart des clients voient l'impact dès leur appel suivant.",
+          "Cinq modules, des exercices appliqués à des deals réellement dans votre pipeline, et deux heures en individuel avec l'auteur. La plupart des clients voient l'impact dès leur appel suivant.",
         onsiteLabel: "La journée sur site",
         onsiteTagline: "Une formation qui ne s'arrête pas quand la journée s'arrête.",
         onsiteDesc:
@@ -2349,7 +2427,7 @@ export const translations = {
           title: "Le Cycle en Trois Étapes",
           steps: [
             {
-              title: "Regardez les Vidéos",
+              title: "Regardez les Vid��os",
               desc: "Chaque module de 40 minutes vous livre les frameworks, les modèles mentaux et l'approche stratégique pour un sujet essentiel. Pas de superflu, pas de théorie pour la théorie — juste la méthodologie dont vous avez besoin pour prendre de meilleures décisions.",
             },
             {
@@ -2398,7 +2476,7 @@ export const translations = {
           },
           {
             title: "Repenser Votre Utilisateur",
-            desc: "Identifiez votre véritable utilisateur et adaptez votre produit à sa réalité.",
+            desc: "Identifiez votre véritable utilisateur et adaptez votre produit �� sa réalité.",
           },
           {
             title: "Partager Votre Culture",

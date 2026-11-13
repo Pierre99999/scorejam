@@ -35,7 +35,7 @@ export function SalesMethod({
       </h2>
 
       <div className="mt-8 max-w-2xl">
-        <p className="text-lg leading-relaxed text-muted">{copy.frameworks}</p>
+        {copy.frameworks && <p className="text-lg leading-relaxed text-muted">{copy.frameworks}</p>}
         <p className="mt-5 text-lg leading-relaxed text-muted">
           {copy.origin.start}
           <strong className="font-semibold text-navy">{copy.origin.strong}</strong>

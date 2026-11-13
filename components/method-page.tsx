@@ -19,7 +19,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { ArrowRight, BookOpen, Users, MapPin, Check, ExternalLink, Plus } from "lucide-react"
+import { ArrowRight, BookOpen, Users, MapPin, Check, ExternalLink, Plus, Monitor } from "lucide-react"
 
 export function MethodPage({ method }: { method: MethodKey }) {
   const { language } = useLanguage()
@@ -33,7 +33,6 @@ export function MethodPage({ method }: { method: MethodKey }) {
   // Switch is live and gets a full section; Compass34 is only announced for now.
   // Kept as two separate refs so each section keeps its own shape.
   const sw = all.salesSoftware
-  const startupSw = all.startupSoftware
   const cfg = getMethod(method)
 
   // "How it works" copy for the guided program, kept per-method from the original pages.
@@ -66,7 +65,8 @@ export function MethodPage({ method }: { method: MethodKey }) {
       <section className={`border-b border-line px-6 py-20 md:px-10 md:py-28 ${th.surface}`}>
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[1.35fr_1fr]">
           <div>
-            <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.onSurfaceHighlight}`}>
+            <p className={`text-sm ${th.onSurfaceMuted}`}>{all.common.publishedBy}</p>
+            <p className={`mt-3 text-xs font-semibold uppercase tracking-[0.18em] ${th.onSurfaceHighlight}`}>
               {t.eyebrow}
             </p>
             <h1 className={`mt-5 font-serif text-4xl font-normal leading-[1.06] md:text-5xl lg:text-6xl ${th.onSurface}`}>
@@ -152,6 +152,26 @@ export function MethodPage({ method }: { method: MethodKey }) {
         </div>
       </section>
 
+      {/* ---------- Fact sheet: the method in four lines ---------- */}
+      <section aria-labelledby="fact-sheet-title" className="border-b border-line bg-paper-2 px-6 py-12 md:px-10 md:py-14">
+        <div className="mx-auto max-w-[1180px]">
+          <h2 id="fact-sheet-title" className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.accentText}`}>
+            {t.factSheet.title}
+          </h2>
+          <dl className="mt-6 grid overflow-hidden rounded-2xl border border-line bg-white sm:grid-cols-2 lg:grid-cols-4">
+            {t.factSheet.rows.map((row) => (
+              <div key={row.label} className="flex flex-col gap-1.5 border-b border-line p-5 last:border-b-0 sm:border-r lg:border-b-0 lg:last:border-r-0">
+                <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">{row.label}</dt>
+                <dd className="text-pretty leading-relaxed text-navy">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+          {t.factSheet.note && (
+            <p className="mt-5 max-w-3xl text-pretty leading-relaxed text-muted">{t.factSheet.note}</p>
+          )}
+        </div>
+      </section>
+
       {/* ---------- Who it's for: sits right under the hero to qualify the reader early ---------- */}
       <section className="border-b border-line px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto grid max-w-[1180px] gap-x-16 gap-y-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
@@ -210,37 +230,10 @@ export function MethodPage({ method }: { method: MethodKey }) {
             />
           ) : (
             /* Sales Unlocked is presented as an argument, not a diagram */
-            <SalesMethod copy={salesT.map} eyebrow={salesT.methodEyebrow} theme={th} />
+            <SalesMethod copy={{ ...salesT.map, frameworks: "" }} eyebrow={salesT.methodEyebrow} theme={th} />
           )}
         </div>
       </section>
-
-      {/* ---------- Sales only: compact bridge to the Switch product page ---------- */}
-      {method === "sales" && (
-        <section className="border-y border-line bg-paper-2 px-6 py-14 md:px-10 md:py-16">
-          <div className="mx-auto grid max-w-[1180px] items-center gap-x-16 gap-y-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.accentText}`}>
-                {salesT.switchBridge.eyebrow}
-              </p>
-              <h2 className="mt-4 font-serif text-2xl font-normal leading-snug text-navy md:text-3xl">
-                <span className="block text-balance">{salesT.switchBridge.title}</span>
-                <span className="block text-balance text-orange">{salesT.switchBridge.highlight}</span>
-              </h2>
-            </div>
-            <div className="flex flex-col items-start gap-6">
-              <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted">{salesT.switchBridge.body}</p>
-              <Link
-                href="/switch"
-                className="inline-flex items-center gap-2 rounded-full bg-orange px-5 py-2.5 text-sm font-semibold text-navy-deep transition-colors hover:bg-orange/90"
-              >
-                {salesT.switchBridge.cta}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ---------- Proof: two short pull-quotes from clients of this method ---------- */}
       {proof.length > 0 && (
@@ -284,7 +277,7 @@ export function MethodPage({ method }: { method: MethodKey }) {
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{t.formatsSubtitle}</p>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {/* --- Book --- */}
             <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7">
               <header>
@@ -646,6 +639,67 @@ export function MethodPage({ method }: { method: MethodKey }) {
                 </Dialog>
               </div>
             </article>
+
+            {/* --- Software: Compass34 for Startup, Switch for Sales --- */}
+            <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-7">
+              <header>
+                <div className={`flex items-center gap-2 ${th.accentText}`}>
+                  <Monitor className="h-5 w-5" aria-hidden="true" />
+                  <span className="text-xs font-semibold uppercase tracking-wider">{fm.progression[3]}</span>
+                </div>
+                <h3 className="mt-4 font-serif text-2xl text-navy">{fm.software.label}</h3>
+              </header>
+
+              {method === "startup" ? (
+                <>
+                  <h4 className="mt-6 font-semibold text-navy">{fm.software.startup.name}</h4>
+                  <p className="mt-2 leading-relaxed text-muted">{fm.software.startup.body}</p>
+                  <p className="mt-4 rounded-xl border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed text-navy">
+                    {fm.software.startup.status}
+                  </p>
+                  <div className="mt-auto pt-6">
+                    <a
+                      href={links.freeDiagnostic[language]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-5 py-3 font-semibold text-white transition-colors hover:bg-navy-deep"
+                    >
+                      {fm.software.startup.cta}
+                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      <span className="sr-only">({all.common.newTab})</span>
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h4 className="mt-6 font-semibold text-navy">{fm.software.sales.name}</h4>
+                  <p className="mt-2 leading-relaxed text-muted">{fm.software.sales.body}</p>
+                  <div className="mt-auto pt-6">
+                    <p className="font-serif text-2xl text-navy">{fm.software.sales.price}</p>
+                    <p className="mb-3 text-xs text-muted">
+                      {fm.software.sales.unit} · {fm.software.sales.trial}
+                    </p>
+                    <a
+                      href="#switch"
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition-opacity hover:opacity-90 ${th.accentBg} ${th.onAccent}`}
+                    >
+                      {fm.software.sales.cta}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                    <a
+                      href={links.switchApp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-navy transition-colors hover:bg-paper-2"
+                    >
+                      {fm.software.sales.ctaTry}
+                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      <span className="sr-only">({all.common.newTab})</span>
+                    </a>
+                  </div>
+                </>
+              )}
+            </article>
           </div>
         </div>
       </section>
@@ -653,7 +707,7 @@ export function MethodPage({ method }: { method: MethodKey }) {
       {/* ---------- Sales only: the software that carries the method.
                     Compass34 is not ready yet, so Startup gets a one-line notice instead. ---------- */}
       {method === "sales" && (
-        <section className="border-b border-line px-6 py-20 md:px-10 md:py-24">
+        <section id="switch" className="scroll-mt-20 border-b border-line px-6 py-20 md:px-10 md:py-24">
           <div className="mx-auto max-w-[1180px]">
             <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.accentText}`}>{sw.eyebrow}</p>
             <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -807,20 +861,6 @@ export function MethodPage({ method }: { method: MethodKey }) {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* ---------- Startup only: Compass34 is announced, nothing more ---------- */}
-      {method === "startup" && (
-        <section className="border-b border-line px-6 py-14 md:px-10">
-          <div className="mx-auto max-w-[1180px]">
-            <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${th.accentText}`}>
-              {startupSw.eyebrow}
-            </p>
-            <p className="mt-4 max-w-2xl text-pretty font-serif text-2xl leading-snug text-navy md:text-3xl">
-              {startupSw.comingSoon}
-            </p>
           </div>
         </section>
       )}
